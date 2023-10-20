@@ -6,7 +6,7 @@ import React from 'react';
 
 const Login = () => {
     const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg bg-gray-200 outline-none border-2 border-gray-200  focus:border-sky-400';
-    const loginBtnCSS = 'w-full p-2 bg-gray-200 font-bold text-xl rounded-lg hover:shadow-md hover:shadow-gray-200'
+    const loginBtnCSS = 'w-full p-2 bg-gray-200 font-bold text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
     return (
         <AuthContainer>
             <div>
