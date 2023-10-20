@@ -3,7 +3,6 @@ import { AiOutlineAim } from "react-icons/ai";
 import { AiOutlineLeftCircle } from "react-icons/ai";
 import { AiOutlineExperiment } from "react-icons/ai";
 import { AiOutlineApi } from "react-icons/ai";
-
 const Premium = () => {
     return (
         <div className="grid md:grid-cols-3 gap-10">
