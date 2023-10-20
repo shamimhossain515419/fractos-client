@@ -1,9 +1,9 @@
 import React from 'react';
 
-const AuthContainer = () => {
+const AuthContainer = ({children}) => {
     return (
-        <div className='w-full max-w-lg mx-8'>
-            
+        <div className='w-full sm:mx-auto max-w-lg px-2'>
+            {children}
         </div>
     );
 };
