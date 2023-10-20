@@ -2,3 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.boxshadow {
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   }
+
+   body{
+      background-color: #ECF0F3;
+      color: black;
+   }
+   
+
+   .primaryBg {
+      background-color: #27895C;
+    }
+    
+    .primary {
+      color: #27895C;
+    }
+    
+    .textColor {
+      color: #000000b0;
+    }
