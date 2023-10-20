@@ -4,28 +4,6 @@
 
 
 
-.primaryBg {
-  background-color: #27895C;
-}
-
-.primary {
-  color: #27895C;
-}
-.primaryBg2 {
-  background-color: #27895C;
-  
-}
-.primaryBg2:hover {
-  background-color: #04693a;
-  
-}
-
-.textColor {
-  color: #000000b0;
-}
-.textColor2{
-  color: #BEF264;
-}
 .boxshadow {
      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
    }

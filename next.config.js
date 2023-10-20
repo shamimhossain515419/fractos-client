@@ -17,6 +17,10 @@ module.exports = {
                {
                     protocol: "https",
                     hostname: "tecdn.b-cdn.net",
+               },
+               {
+                    protocol: "https",
+                    hostname: "img.freepik.com",
                }
                
           ],
