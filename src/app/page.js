@@ -1,4 +1,5 @@
 import Container from "@/Components/Container/Container";
+import Premium from "@/Components/Premium/Premium";
 
 
 export default function Home() {
@@ -6,7 +7,7 @@ export default function Home() {
     <div>
       <Container>
           
-<p>rrrrrrrrrrrrrrrrrrrr</p>
+<Premium></Premium>
     
       </Container>
 
