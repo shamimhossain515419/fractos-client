@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
 
         <GlobalState>
         
-           <div className=' pt-[75px]'>
+           <div className=''>
             {children}
            </div>
         </GlobalState>
