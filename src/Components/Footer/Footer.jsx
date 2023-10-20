@@ -4,12 +4,11 @@ import Image from "next/image";
 import logo from "../../assets/images/logo.svg";
 import {  FaFacebook, FaLinkedinIn, FaPinterestP, FaTwitter } from "react-icons/fa";
 
+
 const Footer = () => {
   return (
-    <div className="w-full bg-orange-500 py-10 rounded">
-      <h2 className="text-center font-bold text-4xl text-white">
-        this is our footer sections
-      </h2>
+    <div className="w-full primaryBg py-10 rounded">
+
 
       <div className="footer-container grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 px-2 mt-10">
         <div className="footer-item w-full ">
@@ -21,9 +20,13 @@ const Footer = () => {
           </h4>
 
           <div className="footer-icon mt-3 flex flex-row space-x-4">
+
+        
             <div className="icon-box w-[40px] h-[40px] bg-blue-500  rounded relative">
               <FaFacebook className="absolute top-[10%] left-[10%] translate-x-2/4 translate-y-2/4 text-white"></FaFacebook>
             </div>
+     
+
             <div className="icon-box w-[40px] h-[40px] bg-blue-500 rounded relative">
               <FaTwitter className="absolute top-[10%] left-[10%] translate-x-2/4 translate-y-2/4 text-white"></FaTwitter>
             </div>
@@ -37,7 +40,7 @@ const Footer = () => {
         </div>
         <div className="footer-item w-full">
           <div className="footer-title lg:text-left sm:text-center md:text-center">
-            <h2 className="text-3xl font-bold">Information</h2>
+            <h2 className="text-3xl font-bold textColor">Information</h2>
 
             <p className="mt-3 text-1xl font-bold textColor mb-1 cursor-pointer hover:duration-300 hover:text-red-500 hover:ms-2">
               About this project
@@ -62,7 +65,7 @@ const Footer = () => {
         </div>
         <div className="footer-item w-full">
           <div className="footer-title lg:text-left md:text-center sm:text-center">
-            <h2 className="text-3xl font-bold">Popular Courses</h2>
+            <h2 className="text-3xl font-bold textColor">Popular Courses</h2>
 
             <p className="mt-3 text-1xl font-bold textColor mb-1 cursor-pointer hover:duration-300 hover:text-red-500 hover:ms-2">
               Pricing
@@ -80,19 +83,19 @@ const Footer = () => {
         </div>
         <div className="footer-item w-full">
           <div className="footer-title lg:text-left md:text-center sm:text-center">
-            <h2 className="text-3xl font-bold">Contact</h2>
+            <h2 className="text-3xl font-bold textColor">  Contact</h2>
 
             <p className="mt-3 text-1xl font-bold textColor mb-1 cursor-pointer hover:duration-300 hover:text-red-500 hover:ms-2">
-              Facebook
+              <a href="https://github.com/Mostafiz181">Facebook</a> 
             </p>
             <p className="text-1xl font-bold textColor mb-1 cursor-pointer hover:duration-300 hover:text-red-500 hover:ms-2">
-              Twitter
+              <a href="">Twitter</a>
             </p>
             <p className="text-1xl font-bold textColor mb-1 cursor-pointer hover:duration-300 hover:text-red-500 hover:ms-2">
-              Linkdin
+             <a href="">Linkdin</a>
             </p>
             <p className="text-1xl font-bold textColor mb-1 cursor-pointer hover:duration-300 hover:text-red-500 hover:ms-2">
-              Pinterest
+              <a href="">Pinterest</a>
             </p>
           </div>
         </div>
