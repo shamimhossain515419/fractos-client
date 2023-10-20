@@ -8,6 +8,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 
+
 const Login = () => {
 
     const { loginUser } = useContext(GlobalContext);
@@ -30,7 +31,7 @@ const Login = () => {
     }
     return (
         <AuthContainer>
-            <div>
+            <div className='h-[100vh] sm:mx-auto max-w-lg'>
                 <Head>
                     <title>Login</title>
 
@@ -46,7 +47,7 @@ const Login = () => {
                     <div>
                         <div className='flex justify-between'>
                             <label className='text-xl font-semibold'>Password</label>
-                            <button className='text-xl text-sky-400 font-medium hover:underline'>Forgot Password</button>
+                            <button className='text-xl text-slate-500 font-medium hover:underline'>Forgot Password</button>
                         </div>
                         <div className='relative'>
                             <input className={`${inputFieldCommonCSS} w-full`} {...register('password')} type={`${isHidden ? 'password' : 'text'}`} placeholder='XXXXXXXX' />

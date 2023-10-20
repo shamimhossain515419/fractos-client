@@ -8,6 +8,7 @@ import React, { useContext, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 
+
 const Page = () => {
     const { createUser } = useContext(GlobalContext);
     const { register, handleSubmit, formState, watch } = useForm();
@@ -32,7 +33,7 @@ const Page = () => {
 
     return (
         <AuthContainer>
-            <div className='mb-[130px]'>
+            <div className='pb-[130px] sm:mx-auto max-w-lg'>
                 <Head>
                     <title>Create Account</title>
                 </Head>
