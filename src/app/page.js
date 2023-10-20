@@ -1,14 +1,13 @@
-import Contact from "@/Components/Contact";
 import Container from "@/Components/Container/Container";
+import CounterSection from "@/Components/CounterSection/CounterSection";
 
 
 export default function Home() {
   return (
     <div>
       <Container>
-
-        <Contact></Contact>
-
+          <CounterSection> </CounterSection>
+    
       </Container>
 
     </div>
