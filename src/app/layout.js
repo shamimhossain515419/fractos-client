@@ -16,9 +16,14 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
 
         <GlobalState>
+<<<<<<< HEAD
           <Navbar></Navbar>
 
           <div className=' pt-[75px]'>
+=======
+        
+           <div className=''>
+>>>>>>> 579d3ffe6b6e5b60e8ece4e9c9e3fb5f8125a34f
             {children}
           </div>
         </GlobalState>
