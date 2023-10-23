@@ -16,7 +16,9 @@ const GlobalState = ({ children }) => {
      const [loading, setLoading] = useState(true)
      const [user, setUser] = useState(null);
      const [Error, setError] = useState(false)
+     const [setIsAdmin, isAdmin] = useState(false)
      const [userinfo, setUserinfo] = useState(null)
+  
      const [componentLevelLoader, setComponentLevelLoader] = useState({
           loading: false,
           id: "",
@@ -52,10 +54,28 @@ const GlobalState = ({ children }) => {
 
 
 
+     useEffect(() => {
+          const unsubscribe = onAuthStateChanged(auth, currentUser => {
+
+
+               if (currentUser) {
+                    setUser(currentUser);
+                   setLoading(false)
+               }
+               console.log('current User: ', currentUser)
+
+          })
+          return () => {
+               return unsubscribe();
+          }
+     }, [])
+     //
+
+
      const stateInfo = {
           openModal, setOpenModal,
           loading, setLoading,
-          user, setUser,
+          user,
           Error, setError,
           userinfo, setUserinfo,
           componentLevelLoader,
@@ -63,24 +83,15 @@ const GlobalState = ({ children }) => {
           pageLoader, setPageLoader,
           createUser, updateUserProfile,
           loginUser, logOutUser,
-          googleSignIn
+          googleSignIn,
+          setIsAdmin, isAdmin
 
      }
 
 
 
      // abdur rahman code
-     useEffect(() => {
-          const unsubscribe = onAuthStateChanged(auth, currentUser => {
-               setUser(currentUser);
-               console.log('current User: ', currentUser)
-               setLoading(false)
-          })
-          return () => {
-               return unsubscribe();
-          }
-     }, [])
-     //
+
 
      return (
           <div>
