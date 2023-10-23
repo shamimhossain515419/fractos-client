@@ -1,5 +1,5 @@
 'use client'
-
+import Link from "next/link";
 import Notification from "../Notification/Notification";
 
 import { FaBars } from 'react-icons/fa'
@@ -8,7 +8,7 @@ import MenuBar from "./MenuBar";
 import { useContext, useState } from "react";
 import { GlobalContext } from "@/GlobalState";
 import CommonImage from "../CommonImage/CommonImage";
-
+import Image from "next/image";
 
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin } = useContext(GlobalContext);

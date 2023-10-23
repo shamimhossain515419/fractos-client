@@ -20,6 +20,10 @@ const Page = () => {
     const loginBtnCSS = 'w-full p-2 bg-green-500 font-bold text-white text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
 
     const registrationHandler = (data) => {
+               
+                    
+
+
         createUser(data.email, data.password)
             .then(res => {
                 Swal.fire(
