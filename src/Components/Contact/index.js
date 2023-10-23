@@ -5,13 +5,17 @@ import emailjs from '@emailjs/browser';
 
 import { FaFacebook, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Notification from "../Notification/Notification";
-import  {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import Image from "next/image";
 import Link from "next/link";
 
 import image from '../../../public/2912020.webp'
-const Contact = () => {
+import { usePathname } from "next/navigation";
+const ContactSection = () => {
      const form = useRef();
+
+     const pathName = usePathname();
+     console.log(pathName);
      const sendEmail = (e) => {
           e.preventDefault();
           const from = e.target;
@@ -19,7 +23,7 @@ const Contact = () => {
                .then((result) => {
                     if (result.text) {
                          toast.success("massage successfully send")
-                       from.reset();
+                         from.reset();
                     }
 
                }, (error) => {
@@ -70,15 +74,15 @@ const Contact = () => {
                                    <form ref={form} onSubmit={sendEmail}>
                                         <div className=" w-full my-2">
                                              <label htmlFor="Name" className=" text-xl font-semibold  mt-3" > Name:</label>
-                                             <input required className="mt-2 w-full  hover:outline-1   focus:outline rounded-lg focus:outline-[#582ad8] p-2 text-lg font-semibold " type="text" placeholder=" Your name " name="name" id="" />
+                                             <input required className="mt-2 bg-white w-full  hover:outline-1   focus:outline rounded-lg focus:outline-[#582ad8] p-2 text-lg font-semibold " type="text" placeholder=" Your name " name="name" id="" />
                                         </div>
                                         <div className=" w-full my-2">
                                              <label className="  mt-4  text-xl font-semibold " htmlFor="Email" > Email:</label>
-                                             <input required className="p-2    mt-2 w-full   hover:outline-1   focus:outline rounded-lg focus:outline-[#582ad8] " type="email" placeholder=" Your Email " name="email" id="email" />
+                                             <input required className="p-2   bg-white    mt-2 w-full   hover:outline-1   focus:outline rounded-lg focus:outline-[#582ad8] " type="email" placeholder=" Your Email " name="email" id="email" />
                                         </div>
                                         <div className=" w-full my-2">
                                              <label className="  mt-4  text-xl font-semibold " htmlFor="Email" > Message:</label>
-                                             <textarea required className="p-2    mt-2 w-full   hover:outline-1   focus:outline focus:outline-[#582ad8] " name="message" rows={8} ></textarea>
+                                             <textarea required className="p-2   bg-white    mt-2 w-full   hover:outline-1   focus:outline focus:outline-[#582ad8] " name="message" rows={8} ></textarea>
                                         </div>
                                         <div className=" w-full my-2">
                                              <button className="  hover:bg-[#27895C]  boxshadow outline-none border-none text-xl font-medium py-2 rounded-md text-center w-full " type="submit" >Send massage</button>
@@ -99,4 +103,4 @@ const Contact = () => {
      );
 };
 
-export default Contact;
+export default ContactSection;
