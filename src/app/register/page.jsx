@@ -33,7 +33,7 @@ const Page = () => {
 
     return (
         <AuthContainer>
-            <div className='pb-[130px] sm:mx-auto max-w-lg'>
+            <div className='pb-[130px] sm:mx-auto max-w-lg  py-4'>
                 <Head>
                     <title>Create Account</title>
                 </Head>
