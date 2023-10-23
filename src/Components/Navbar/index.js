@@ -7,13 +7,14 @@ import Container from "../Container/Container";
 import MenuBar from "./MenuBar";
 import { useContext, useState } from "react";
 import { GlobalContext } from "@/GlobalState";
-import { data } from "autoprefixer";
+
 
 
 
 const Navbar = () => {
      const { userinfo, user } = useContext(GlobalContext);
      const [Open, setOpen] = useState(true)
+
      return (
           <div>
                <div>
