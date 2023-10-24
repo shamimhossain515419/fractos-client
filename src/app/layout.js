@@ -19,11 +19,13 @@ export default function RootLayout({ children }) {
           <Navbar></Navbar>
 
           <div className=' pt-[75px]'>
-        
+
             {children}
           </div>
+
+
         </GlobalState>
-   
+
       </body>
     </html>
   )

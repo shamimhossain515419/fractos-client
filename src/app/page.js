@@ -7,8 +7,10 @@ import Banner from "./Home/Banner/Banner";
 
 
 import Premium from "@/Components/Premium/Premium";
+// import Premium from "@/Components/Archive/Archive";
 import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
+import Archive from "@/Components/Archive/Archive";
 
 
 
@@ -28,6 +30,11 @@ export default function Home() {
         <div className=" py-5">
           <Premium></Premium>
         </div>
+        <div className="py-10">
+          <Archive></Archive>
+        </div>
+        
+
 
         {/* Banner */}
 
