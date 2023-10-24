@@ -10,11 +10,7 @@ import Premium from "@/Components/Premium/Premium";
 // import Premium from "@/Components/Archive/Archive";
 import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
-<<<<<<< HEAD
 import Navbar from "@/Components/Navbar";
-=======
-import Archive from "@/Components/Archive/Archive";
->>>>>>> 740c6a143837c8fde29e5461cda43f7e2059030d
 
 
 
