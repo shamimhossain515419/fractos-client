@@ -31,7 +31,7 @@ export default function Home() {
           <Premium></Premium>
         </div>
         <div className="py-10">
-          <Archive></Archive>
+          {/* <Archive></Archive> */}
         </div>
         
 
