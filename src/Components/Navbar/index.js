@@ -8,7 +8,6 @@ import MenuBar from "./MenuBar";
 import { useContext, useState } from "react";
 import { GlobalContext } from "@/GlobalState";
 import CommonImage from "../CommonImage/CommonImage";
-import Image from "next/image";
 
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin } = useContext(GlobalContext);
@@ -20,7 +19,7 @@ const Navbar = () => {
 
 
      return (
-          <div>
+          <div className=" mb-12">
                <div>
 
                     <nav className='px-2 w-full fixed py-3 z-50 bg-[#ECF0F3]      top-0  left-0 right-0    shadow-lg'>
@@ -45,6 +44,11 @@ const Navbar = () => {
                                              <Link href={'/leader-board'}> Leader board</Link>
                                              <Link href={'/blogs'}> Blogs</Link>
                                              <Link href={'/contact'}> Contact Us</Link>
+
+                                             {
+                                                  user ? <Link href={'/dashboard'}> Dashboard</Link> : null
+                                             }
+
 
 
                                         </div>
