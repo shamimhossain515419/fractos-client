@@ -9,6 +9,7 @@ import Banner from "./Home/Banner/Banner";
 import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
+import Navbar from "@/Components/Navbar";
 
 
 
@@ -16,6 +17,9 @@ export default function Home() {
   return (
     <div>
       <Container>
+      
+          <Navbar></Navbar>
+       
         <Banner></Banner>
 
 
