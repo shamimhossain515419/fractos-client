@@ -1,6 +1,7 @@
 'use client'
 import AuthContainer from '@/Components/AuthContainer/AuthContainer';
 import { GlobalContext } from '@/GlobalState';
+import { registerNewUser } from '@/services/users';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -10,6 +11,7 @@ import Swal from 'sweetalert2';
 
 
 const Page = () => {
+    console.log(process.env.VITE_USER);
     const { createUser } = useContext(GlobalContext);
     const { register, handleSubmit, formState, watch } = useForm();
     const { errors } = formState;
@@ -19,17 +21,22 @@ const Page = () => {
     const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg bg-gray-200 outline-none w-full border-2 border-gray-200  focus:border-sky-400';
     const loginBtnCSS = 'w-full p-2 bg-green-500 font-bold text-white text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
 
-    const registrationHandler = (data) => {
+    const registrationHandler = async (data) => {
+        const fromData = { email: data?.email, name: data?.name ? data?.name : "", password: data?.password, role: "user", category:"student" }
+        console.log(fromData);
+        const result = await registerNewUser(fromData);
+
+        console.log(result);
 
         createUser(data.email, data.password)
-         .then(res => {
-            Swal.fire(
-                'successfull!',
-                'Your account has been created.',
-                'success'
-            )
-            router.push('/')
-        })
+            .then(res => {
+                Swal.fire(
+                    'successfull!',
+                    'Your account has been created.',
+                    'success'
+                )
+                router.push('/')
+            })
     }
 
 return (

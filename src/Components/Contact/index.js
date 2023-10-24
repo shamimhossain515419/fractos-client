@@ -15,7 +15,7 @@ const ContactSection = () => {
      const form = useRef();
 
      const pathName = usePathname();
-     console.log(pathName);
+    
      const sendEmail = (e) => {
           e.preventDefault();
           const from = e.target;
