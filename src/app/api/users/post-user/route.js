@@ -1,10 +1,10 @@
 import connectToDB from "@/database";
 import User from "@/models/Users";
+import Joi from "joi";
 import { NextResponse } from "next/server";
 
 
 const schema = Joi.object({
-     name: Joi.string().required(),
      email: Joi.string().email().required(),
      password: Joi.string().min(6).required(),
      role: Joi.string().required(),
@@ -15,9 +15,10 @@ export const dynamic = "force-dynamic";
 
 export async function POST(req) {
    await connectToDB();
-     const { name, email, password, role } = await req.json();
+     const { name, email, password, role,category } = await req.json();
+     console.log(name,email,password,role,category);
      //validate the schema
-     const { error } = schema.validate({ name, email, password, role,category });
+     const { error } = schema.validate({ email, password, role,category });
 
      if (error) {
           console.log(error);

@@ -8,7 +8,7 @@ const configOptions = {
 };
 
 const connectToDB = async () => {
-  const connectionUrl =`mongodb+srv://${process.env.VITE_USER}:${process.env.VITE_PASSWORD}@cluster0.dvvalm2.mongodb.net/`;
+  const connectionUrl = `mongodb+srv://FRACTOS123456:EyPk3F6vGG9DA3Ia@fractos.6n07rkt.mongodb.net/ `  
  
   mongoose
     .connect(connectionUrl, configOptions)

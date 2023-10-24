@@ -13,7 +13,7 @@ import Image from "next/image";
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin } = useContext(GlobalContext);
 
-
+  
      const [Open, setOpen] = useState(true);
 
 
@@ -52,7 +52,7 @@ const Navbar = () => {
 
 
                                         <div className=" hidden sm:block">
-                                             {user ? <div onClick={() => setOpenModal(true)} className=' cursor-pointer hidden md:block '>
+                                             {user ? <div  className=' cursor-pointer hidden md:block '>
                                                   <div className='   relative flex gap-2 items-center '>
 
                                                        <CommonImage data={user}></CommonImage>
