@@ -24,14 +24,14 @@ const Login = () => {
         loginUser(data.email, data.password)
             .then(res => {
                 Swal.fire(
-                    `Welcome, ${res.user.email}`,
+                    `Welcome, ${res.user?.email}`,
                 )
                 router.push('/')
             })
     }
     return (
         <AuthContainer>
-            <div className='h-[100vh] sm:mx-auto max-w-lg'>
+            <div className='h-[100vh] sm:mx-auto max-w-lg py-6'>
                 <Head>
                     <title>Login</title>
 

@@ -18,13 +18,14 @@ export default function RootLayout({ children }) {
         <GlobalState>
           <Navbar></Navbar>
 
-          <div className=' pt-[75px]'></div>
-        
-           <div className=''>
+          <div className=' pt-[75px]'>
+
             {children}
           </div>
+
+
         </GlobalState>
-   
+
       </body>
     </html>
   )
