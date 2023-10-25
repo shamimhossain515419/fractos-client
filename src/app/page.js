@@ -7,6 +7,7 @@ import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
 import Banner from "@/Home/Banner/Banner";
+import ExamModel from "@/Components/Shared/ExamModel";
 
 
 
@@ -21,9 +22,11 @@ export default function Home() {
        
 
         <Navbar></Navbar>
-
+        
         <Banner></Banner>
 
+        {/* exam question model */}
+        <ExamModel exam="Physics 2nd Paper - (Dhaka Board 2019)" >  </ExamModel>
 
         <div className=" my-3">
           <CounterSection> </CounterSection>
@@ -37,7 +40,6 @@ export default function Home() {
         <div className="py-10">
 
         </div>
-
 
 
         {/* Banner */}
