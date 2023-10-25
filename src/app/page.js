@@ -8,28 +8,23 @@ import Banner from "./Home/Banner/Banner";
 
 import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
-<<<<<<< HEAD
-=======
 import ContactSection from "@/Components/Contact";
 
 
->>>>>>> 844786665bfc6fb3997765df005ee41a396bba28
 
 
 export default function Home() {
   return (
     <div>
       <Container>
-<<<<<<< HEAD
-        
-          {/* Banner */}
-           <Banner></Banner>
 
-          <Premium></Premium>
-          <CounterSection> </CounterSection>
-    
-=======
-       <Banner></Banner>
+        {/* Banner */}
+        <Banner></Banner>
+
+        <Premium></Premium>
+        <CounterSection> </CounterSection>
+
+      
 
 
         <div className=" my-3">
@@ -47,7 +42,6 @@ export default function Home() {
         <ContactSection></ContactSection>
 
         <Footer></Footer>
->>>>>>> 844786665bfc6fb3997765df005ee41a396bba28
       </Container>
 
     </div>
