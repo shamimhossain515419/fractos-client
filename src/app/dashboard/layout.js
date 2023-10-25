@@ -22,6 +22,7 @@ const DashboardLayout = ({ children }) => {
                <div className=' md:hidden p-4 '>
                     <DashboardNavbar ></DashboardNavbar>
                </div>
+
                <div className=' hidden md:block'>
                     <div className='  my-2  p-4   flex items-center gap-5'>
                          <h1 className='text-lg  md:text-3xl font-bold my-4'> FRACTOS</h1>
@@ -31,8 +32,10 @@ const DashboardLayout = ({ children }) => {
 
 
 
-
                <div className=' p-2 sm:p-2 md:p-8 relative '>
+
+
+
                     {
                          openModal ? <div>
 
