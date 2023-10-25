@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import reChart from "../../assets/images/rechart.jpg";
+import reChart from "../../assets/images/r9Yvz.png"
 import "./Dashboard.css";
 
 const Dashboard = () => {
