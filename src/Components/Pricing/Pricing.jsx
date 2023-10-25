@@ -5,7 +5,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 
 const Pricing = () => {
     return (
-        <div className='py-10 primaryBg rounded'>
+        <div className='py-10  rounded'>
             <h1 className='text-4xl font-bold text-center'>Latest Price Of Our Classes</h1>
             <h3 className='text-1xl font-bold text-center mt-3 scroll-px-8'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam voluptate dolores quisquam maxime sed ut?</h3>
 
