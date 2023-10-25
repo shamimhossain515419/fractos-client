@@ -1,4 +1,5 @@
 import Container from "@/Components/Container/Container";
+import DashHome from "@/Components/Dashboard/DashHome";
 import Footer from "@/Components/Footer/Footer";
 import Pricing from "@/Components/Pricing/Pricing";
 import Banner from "./Home/Banner/Banner";
@@ -13,6 +14,10 @@ export default function Home() {
         <Banner></Banner>
         <Premium></Premium>
         <CounterSection> </CounterSection>
+        <DashHome></DashHome>
+          
+
+    
       </Container>
 
     </div>
