@@ -14,11 +14,11 @@ const schema = Joi.object({
 export const dynamic = "force-dynamic";
 
 export async function POST(req) {
-   await connectToDB();
-     const { name, email, password, role,category } = await req.json();
-     console.log(name,email,password,role,category);
+     await connectToDB();
+     const newUser = await req.json();
+     const { name, email, password, role, category } = newUser;
      //validate the schema
-     const { error } = schema.validate({ email, password, role,category });
+     const { error } = schema.validate({ email, password, role, category });
 
      if (error) {
           console.log(error);
@@ -27,7 +27,7 @@ export async function POST(req) {
                message: error.details[0].message,
           });
      }
-  
+
      try {
           //check if the user is exists or not
           const isUserAlreadyExists = await User.findOne({ email });
@@ -38,14 +38,8 @@ export async function POST(req) {
                     message: "User is already exists. Please try with different email.",
                });
           } else {
-          
-               const newlyCreatedUser = await User.create({
-                    name,
-                    email,
-                    password,
-                    role,
-                    category
-               });
+
+               const newlyCreatedUser = await User.create(newUser);
 
                if (newlyCreatedUser) {
                     return NextResponse.json({

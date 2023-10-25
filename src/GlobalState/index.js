@@ -22,6 +22,7 @@ const GlobalState = ({ children }) => {
      const [setIsAdmin, isAdmin] = useState(false)
      const [userinfo, setUserinfo] = useState(null)
 
+
      const [componentLevelLoader, setComponentLevelLoader] = useState({
           loading: false,
           id: "",
@@ -37,7 +38,12 @@ const GlobalState = ({ children }) => {
 
      const updateUserProfile = (name, photo) => {
           setLoading(true);
-          return updateProfile(auth.currentUser, { displayName: name, photoURL: photo });
+         return  updateProfile(auth.currentUser, {
+               displayName: name, photoURL:photo
+             })
+
+          
+         
      }
 
      const loginUser = (email, password) => {
