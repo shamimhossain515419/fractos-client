@@ -55,7 +55,10 @@ const SettingPage = () => {
           const newUser = { email: user?.email, name, phone, about, batch, collage, level }
 
           const result = await UpdateUser(newUser);
-          console.log(result);
+
+          toast.success(" user successfully update");
+          window.location.reload();
+
      }
 
 
