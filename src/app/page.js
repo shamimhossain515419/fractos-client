@@ -8,6 +8,8 @@ import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
+import Banner from "@/Home/Banner/Banner";
+
 
 
 
@@ -18,6 +20,9 @@ export default function Home() {
       
           <Navbar></Navbar>
        
+
+        <Navbar></Navbar>
+
         <Banner></Banner>
 
 
@@ -31,9 +36,9 @@ export default function Home() {
           <Premium></Premium>
         </div>
         <div className="py-10">
-         
+
         </div>
-        
+
 
 
         {/* Banner */}

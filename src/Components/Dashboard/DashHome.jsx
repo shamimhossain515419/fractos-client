@@ -3,8 +3,8 @@ import "./DashHome.css";
 
 const DashHome = () => {
   return (
-    <div className="py-10 bg-white mt-2">
-      <h2 className="text-4xl font-bold textColor">Dashboard</h2>
+    <div className="py-10 bg-white mt-2 p-2">
+      <h2 className="text-xl font-bold textColor">Dashboard</h2>
 
       <div className="mark-container grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2 mt-5">
         <div className="item w-full bg-white rounded  flex flex-row py-10 px-3 shadow-xl">

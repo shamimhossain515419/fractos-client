@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
-  background-color: #ECF0F3 !important;
+  background-color: #ECF0F3;
   color: black;
 }
 
@@ -26,4 +27,9 @@ body {
 
 .textColor {
   color: #000000b0;
+}
+
+
+.imageshodow {
+  box-shadow: rgba(234, 88, 219, 0.2) 10px 10px 15px 22px;
 }
