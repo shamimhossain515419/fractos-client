@@ -12,11 +12,12 @@ import ContactSection from "@/Components/Contact";
 
 
 
+
 export default function Home() {
   return (
     <div>
       <Container>
-        <Banner></Banner>
+       <Banner></Banner>
 
 
         <div className=" my-3">
