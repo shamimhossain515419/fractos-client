@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
-  background-color: #ECF0F3 !important;
+  background-color: #ECF0F3 ;
   color: black;
 }
 
