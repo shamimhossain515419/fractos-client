@@ -125,7 +125,6 @@ const Dashboard = () => {
             />
           </div>
           <div className="bottom-right  lg:w-70 w-full py-3 bg-white shadow-xl rounded px-2">
-            kaj korish na kn
             <div className="overflow-x-auto">
               <table className="table">
 
@@ -135,7 +134,6 @@ const Dashboard = () => {
                     <th>ID</th>
                     <th>Name</th>
                     <th>Marks</th>
-                    {/* <th></th> */}
                   </tr>
                 </thead>
                 <tbody className="bg-slate-200">
