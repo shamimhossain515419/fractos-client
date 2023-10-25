@@ -1,6 +1,7 @@
+import Archive from '@/Components/Archive/Archive';
 import React from 'react';
 
-const Archive = () => {
+const ArchivePage = () => {
      return (
           <div>
                <Archive></Archive>
@@ -8,4 +9,4 @@ const Archive = () => {
      );
 };
 
-export default Archive;
+export default ArchivePage;
