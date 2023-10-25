@@ -11,14 +11,8 @@ import CommonImage from "../CommonImage/CommonImage";
 
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin } = useContext(GlobalContext);
-
-  
-     const [Open, setOpen] = useState(true);
-
-
-
-
-     return (
+ const [Open, setOpen] = useState(true);
+ return (
           <div className=" mb-12">
                <div>
 

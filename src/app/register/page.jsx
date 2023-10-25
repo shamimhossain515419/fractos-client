@@ -11,8 +11,7 @@ import Swal from 'sweetalert2';
 
 
 const Page = () => {
-    console.log(process.env.VITE_USER);
-    const { createUser } = useContext(GlobalContext);
+  const { createUser } = useContext(GlobalContext);
     const { register, handleSubmit, formState, watch } = useForm();
     const { errors } = formState;
     const router = useRouter();

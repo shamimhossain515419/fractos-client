@@ -7,7 +7,6 @@ import Banner from "./Home/Banner/Banner";
 
 
 import Premium from "@/Components/Premium/Premium";
-// import Premium from "@/Components/Archive/Archive";
 import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
@@ -34,7 +33,7 @@ export default function Home() {
           <Premium></Premium>
         </div>
         <div className="py-10">
-          {/* <Archive></Archive> */}
+         
         </div>
         
 
