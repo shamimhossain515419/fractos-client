@@ -1,10 +1,11 @@
+import DashHome from "@/Components/Dashboard/DashHome";
 
 
 const page = () => {
-    
+
      return (
           <div>
-             <h1>  loemfa-rotate-180  </h1>
+               <DashHome></DashHome>
           </div>
      );
 };
