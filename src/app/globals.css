@@ -4,10 +4,11 @@
 
 
 
-.primaryBg {
-  background-color: #27895C;
-}
+.boxshadow {
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   }
 
+<<<<<<< HEAD
 .primary {
   color: #27895C;
 }
@@ -36,6 +37,14 @@
    }
    
 
+=======
+   body{
+      background-color: #ECF0F3;
+      color: black;
+   }
+   
+
+>>>>>>> 844786665bfc6fb3997765df005ee41a396bba28
    .primaryBg {
       background-color: #27895C;
     }
@@ -47,3 +56,11 @@
     .textColor {
       color: #000000b0;
     }
+<<<<<<< HEAD
+=======
+
+    /* .presetBtn{
+      font-size:small;
+      color: gray
+    } */
+>>>>>>> 844786665bfc6fb3997765df005ee41a396bba28

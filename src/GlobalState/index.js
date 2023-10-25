@@ -1,8 +1,16 @@
 
 'use client'
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
+import app from '../../firebase/firebase.config';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+
+
 export const GlobalContext = createContext(null);
-const GlobalState = ({children}) => {
+
+// abdur rahman code
+const auth = getAuth(app);
+//
+const GlobalState = ({ children }) => {
 
      const [openModal, setOpenModal] = useState(false);
      const [loading, setLoading] = useState(true)
@@ -16,6 +24,33 @@ const GlobalState = ({children}) => {
      const [pageLoader, setPageLoader] = useState(false)
 
 
+     //abdur rahman code
+     const createUser = (email, password) => {
+          setLoading(true)
+          return createUserWithEmailAndPassword(auth, email, password);
+     }
+
+     const updateUserProfile = (name, photo) => {
+          setLoading(true);
+          return updateProfile(auth.currentUser, { displayName: name, photoURL: photo });
+     }
+
+     const loginUser = (email, password) => {
+          setLoading(true)
+          return signInWithEmailAndPassword(auth, email, password);
+     }
+
+     const logOutUser = () => {
+          setLoading(true)
+          return signOut(auth);
+     }
+
+     const googleSignIn = () => {
+          return signInWithPopup(auth, googleProvider);
+     }
+     //
+
+
 
      const stateInfo = {
           openModal, setOpenModal,
@@ -25,13 +60,31 @@ const GlobalState = ({children}) => {
           userinfo, setUserinfo,
           componentLevelLoader,
           setComponentLevelLoader,
-          pageLoader, setPageLoader
+          pageLoader, setPageLoader,
+          createUser, updateUserProfile,
+          loginUser, logOutUser,
+          googleSignIn
+
      }
+
+
+
+     // abdur rahman code
+     useEffect(() => {
+          const unsubscribe = onAuthStateChanged(auth, currentUser => {
+               setUser(currentUser);
+               console.log('current User: ', currentUser)
+               setLoading(false)
+          })
+          return () => {
+               return unsubscribe();
+          }
+     }, [])
+     //
 
      return (
           <div>
                <GlobalContext.Provider value={stateInfo}> {children} </GlobalContext.Provider>
-
           </div>
      );
 };
