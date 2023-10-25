@@ -6,6 +6,7 @@
 body {
   background-color: #ECF0F3;
   color: black;
+ min-height: 100vh;
 }
 
 .boxshadow {

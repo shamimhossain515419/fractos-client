@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsSun } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
+import CommonImage from "../CommonImage/CommonImage";
 
 const DashboardNavbar = () => {
      const { user, openModal, setOpenModal } = useContext(GlobalContext)

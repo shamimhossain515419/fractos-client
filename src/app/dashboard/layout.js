@@ -5,7 +5,7 @@ import { GlobalContext } from '@/GlobalState';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useContext } from 'react';
-import { AiOutlineClose, AiOutlineHome } from 'react-icons/ai';
+import { AiOutlineHome } from 'react-icons/ai';
 import { FaRegCircleUser } from 'react-icons/fa';
 import { BsArchive } from 'react-icons/bs';
 import { PiExamBold } from 'react-icons/pi';

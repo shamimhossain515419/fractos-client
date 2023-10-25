@@ -68,3 +68,23 @@ export const jwtSingUp = async (formData) => {
     console.log(e);
   }
 } 
+export const UpdateUser = async (formData) => {
+
+ try {
+    const res = await fetch(`/api/users/update-user`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+   return data;
+} catch (e) {
+    console.log(e);
+}
+
+ 
+} 
