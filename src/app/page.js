@@ -7,6 +7,7 @@ import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
 import Banner from "@/Home/Banner/Banner";
+import Dashboard from "@/Components/Dashboard/Dashboard";
 
 
 
@@ -41,6 +42,7 @@ export default function Home() {
         <ContactSection></ContactSection>
 
         <Footer></Footer>
+        <Dashboard></Dashboard>
       </Container>
 
     </div>
