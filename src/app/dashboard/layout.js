@@ -8,6 +8,7 @@ import React, { useContext } from 'react';
 import { AiOutlineClose, AiOutlineHome } from 'react-icons/ai';
 import { FaRegCircleUser } from 'react-icons/fa';
 import { BsArchive } from 'react-icons/bs';
+import { PiExamBold } from 'react-icons/pi';
 import { MdOutlineLeaderboard } from 'react-icons/md';
 
 const DashboardLayout = ({ children }) => {
@@ -31,7 +32,7 @@ const DashboardLayout = ({ children }) => {
 
 
 
-               <div className=' p-1 sm:p-2 md:p-8 relative '>
+               <div className=' p-2 sm:p-2 md:p-8 relative '>
                     {
                          openModal ? <div>
 
@@ -47,6 +48,14 @@ const DashboardLayout = ({ children }) => {
                                         <h1 className=' text-base md:text-lg f font-normal '> Dashboard </h1>
                                    </Link>
 
+                                   <Link
+                                        href="/dashboard/mock-exam"
+                                        className={`${pathname == "/dashboard/mock-exam" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+
+                                   >
+                                        <PiExamBold size={24}></PiExamBold>
+                                        <h1 className=' text-base md:text-lg f font-normal '> Mock exam </h1>
+                                   </Link>
                                    <Link
                                         href="/dashboard/archive"
                                         className={`${pathname == "/dashboard/archive" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
@@ -97,6 +106,15 @@ const DashboardLayout = ({ children }) => {
                                    </Link>
 
                                    <Link
+                                        href="/dashboard/mock-exam"
+                                        className={`${pathname == "/dashboard/mock-exam" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+
+                                   >
+                                        <PiExamBold size={24}></PiExamBold>
+                                        <h1 className=' text-base md:text-lg f font-normal '> Mock exam </h1>
+                                   </Link>
+
+                                   <Link
                                         href="/dashboard/archive"
                                         className={`${pathname == "/dashboard/archive" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
 
@@ -105,8 +123,8 @@ const DashboardLayout = ({ children }) => {
                                         <h1 className=' text-base md:text-lg f font-normal '> Archive </h1>
                                    </Link>
                                    <Link
-                                        href="/dashboard/Leaderboard"
-                                        className={`${pathname == "/dashboard/Leaderboard" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
+                                        href="/dashboard/leaderboard"
+                                        className={`${pathname == "/dashboard/leaderboard" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
 
                                    >
                                         <MdOutlineLeaderboard size={24}></MdOutlineLeaderboard>
@@ -119,7 +137,7 @@ const DashboardLayout = ({ children }) => {
 
 
                                    <div className=' cursor-pointer hidden md:block '>
-                                        <Link href={'/dashboard/setting'}  className='    flex  items-center gap-3 '>
+                                        <Link href={'/dashboard/setting'} className='    flex  items-center gap-3 '>
 
                                              {
                                                   user?.photoURL ? <CommonImage data={user}></CommonImage> : <div className=' primaryBg rounded-full p-2 text-black  text-2xl font-bold uppercase'> {user?.email.slice(0, 2)} </div>
