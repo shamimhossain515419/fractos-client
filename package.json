@@ -20,14 +20,28 @@
     "mongoose": "^7.6.3",
     "next": "^13.5.6",
     "react": "^18.2.0",
+<<<<<<< HEAD
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
+    "react-spinners": "^0.13.8",
+    "react-spinners": "^0.13.8",
+    "react-icons": "^4.11.0",
+    "react-spinners": "^0.13.8",
+=======
+>>>>>>> fe7f9ea30e5ac0312316dc250c7266e7e21e3104
     "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-spinners": "^0.13.8",
+<<<<<<< HEAD
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0"
+=======
     "react-toastify": "^9.1.3",
     "firebase": "^10.5.0",
     "react-hook-form": "^7.47.0",
     "sweetalert2": "^11.7.32"
+>>>>>>> fe7f9ea30e5ac0312316dc250c7266e7e21e3104
   },
   "devDependencies": {
     "autoprefixer": "^10",
