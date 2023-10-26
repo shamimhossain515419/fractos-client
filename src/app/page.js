@@ -11,10 +11,8 @@ import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 
 // import Archive from "@/Components/Archive/Archive";
-
-
 import Banner from "@/Home/Banner/Banner";
-import Navbar from "@/Components/Navbar";
+
 
 
 
@@ -44,6 +42,7 @@ export default function Home() {
         <ContactSection></ContactSection>
 
         <Footer></Footer>
+        
       </Container>
 
     </div>

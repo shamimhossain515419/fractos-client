@@ -26,7 +26,7 @@ const Dashboard = () => {
 
               <div className=" flex justify-between gap-2 items-center  w-full">
                 <div>
-                  <h4 className="text-1xl font-bold textColor">Collage</h4>
+                  <h4 className="text-1xl font-bold textColor"> {userinfo?.collage ? userinfo?.collage : "collage"}</h4>
                   <p className="lg:text-5xl md:text-3xl sm:text-2xl font-bold text-orange-600">
                     {userinfo?.rank ? userinfo?.rank : null}
                   </p>
@@ -157,7 +157,6 @@ const Dashboard = () => {
                   </tr>
                 </thead>
                 <tbody className="bg-slate-200">
-
                   <tr>
                     <td>
                       <div className="flex items-center space-x-3">
@@ -218,7 +217,6 @@ const Dashboard = () => {
                     </td>
                     <td>
                       Abdur Rahman
-
                     </td>
                     <td>95.5</td>
 
