@@ -3,12 +3,9 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../../firebase/firebase.config';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
-<<<<<<< HEAD
-=======
 import jwt from "jsonwebtoken";
 import { GetSingleUser, jwtSingUp } from '@/services/users';
 import Cookies from 'js-cookie';
->>>>>>> 3dfa3cbf910decad1ef01fe0b37418f4ca7d8565
 
 
 export const GlobalContext = createContext(null);
@@ -41,9 +38,7 @@ const GlobalState = ({ children }) => {
 
      const updateUserProfile = (name, photo) => {
           setLoading(true);
-<<<<<<< HEAD
           return updateProfile(auth.currentUser, { displayName: name, photoURL: photo });
-=======
           return updateProfile(auth.currentUser, {
                displayName: name, photoURL: photo
           })
@@ -55,7 +50,6 @@ const GlobalState = ({ children }) => {
      const userCullaction = async (email) => {
           const result = await GetSingleUser(email)
           setUserinfo(result?.data)
->>>>>>> 3dfa3cbf910decad1ef01fe0b37418f4ca7d8565
      }
 
      const loginUser = (email, password) => {
@@ -73,8 +67,6 @@ const GlobalState = ({ children }) => {
      }
      //
 
-<<<<<<< HEAD
-=======
      const JWTAuthorization = async (email) => {
           const result = await jwtSingUp(email);
           Cookies.set("token", result?.data?.token);
@@ -100,7 +92,6 @@ const GlobalState = ({ children }) => {
           }
      }, [])
      //
->>>>>>> 3dfa3cbf910decad1ef01fe0b37418f4ca7d8565
 
 
      const stateInfo = {
@@ -114,33 +105,13 @@ const GlobalState = ({ children }) => {
           pageLoader, setPageLoader,
           createUser, updateUserProfile,
           loginUser, logOutUser,
-<<<<<<< HEAD
-          googleSignIn
-=======
-          googleSignIn,
-          setIsAdmin, isAdmin
->>>>>>> 3dfa3cbf910decad1ef01fe0b37418f4ca7d8565
+          googleSignIn,setIsAdmin, isAdmin
 
      }
 
 
 
-     // abdur rahman code
-<<<<<<< HEAD
-     useEffect(() => {
-          const unsubscribe = onAuthStateChanged(auth, currentUser => {
-               setUser(currentUser);
-               console.log('current User: ', currentUser)
-               setLoading(false)
-          })
-          return () => {
-               return unsubscribe();
-          }
-     }, [])
-     //
-=======
 
->>>>>>> 3dfa3cbf910decad1ef01fe0b37418f4ca7d8565
 
      return (
           <div>
