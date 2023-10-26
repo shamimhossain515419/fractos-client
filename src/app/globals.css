@@ -4,8 +4,9 @@
 
 
 body {
-  background-color: #ECF0F3 ;
+  background-color: #ECF0F3;
   color: black;
+ min-height: 100vh;
 }
 
 .boxshadow {
@@ -27,4 +28,9 @@ body {
 
 .textColor {
   color: #000000b0;
+}
+
+
+.imageshodow {
+  box-shadow: rgba(234, 88, 219, 0.2) 10px 10px 15px 22px;
 }

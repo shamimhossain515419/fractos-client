@@ -1,11 +1,14 @@
-import DashHome from "@/Components/Dashboard/DashHome";
+
+import Dashboard from "@/Components/Dashboard/Dashboard";
+
 
 
 const page = () => {
 
      return (
           <div>
-               <DashHome></DashHome>
+              
+               <Dashboard></Dashboard>
           </div>
      );
 };
