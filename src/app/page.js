@@ -22,9 +22,7 @@ export default function Home() {
         {/* Banner */}
       <Banner></Banner>
 
-        <Premium></Premium>
-        <CounterSection> </CounterSection>
-
+       
       
 
 
