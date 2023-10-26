@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "name":"DU-A"
+    },
+    {
+        "id":2,
+        "name":"JU-A"
+    },
+    {
+        "id":3,
+        "name":"BUET-Prili"
+    },
+    {
+        "id":4,
+        "name":"CU-A"
+    },
+    {
+        "id":5,
+        "name":"Agri Guccho"
+    },
+    {
+        "id":6,
+        "name":"Medical"
+    },
+    {
+        "id":7,
+        "name":"RU-C (Science)"
+    },
+    {
+        "id":8,
+        "name":"JU-D"
+    },
+    {
+        "id":9,
+        "name":"GST-A (Science)"
+    }
+]

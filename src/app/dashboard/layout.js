@@ -126,6 +126,14 @@ const DashboardLayout = ({ children }) => {
                                         <h1 className=' text-base md:text-lg f font-normal '> Archive </h1>
                                    </Link>
                                    <Link
+                                        href="/dashboard/performance-analysis"
+                                        className={`${pathname == "/dashboard/performance-analysis" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+
+                                   >
+                                        <BsArchive size={24}></BsArchive>
+                                        <h1 className=' text-base md:text-lg f font-normal '> performance-analysis </h1>
+                                   </Link>
+                                   <Link
                                         href="/dashboard/leaderboard"
                                         className={`${pathname == "/dashboard/leaderboard" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
 

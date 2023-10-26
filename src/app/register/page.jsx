@@ -4,6 +4,7 @@ import { GlobalContext } from '@/GlobalState';
 import { registerNewUser } from '@/services/users';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -11,11 +12,11 @@ import Swal from 'sweetalert2';
 
 
 const Page = () => {
-  const { createUser } = useContext(GlobalContext);
+  const { createUser,updateUserProfile } = useContext(GlobalContext);
     const { register, handleSubmit, formState, watch } = useForm();
     const { errors } = formState;
     const router = useRouter();
-    const [isHidden, setIsHidden] = useState(false)
+    const [isHidden, setIsHidden] = useState(true)
 
     const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg bg-gray-200 outline-none w-full border-2 border-gray-200  focus:border-sky-400';
     const loginBtnCSS = 'w-full p-2 bg-green-500 font-bold text-white text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
@@ -28,14 +29,17 @@ const Page = () => {
         console.log(result);
 
         createUser(data.email, data.password)
-            .then(res => {
-                Swal.fire(
-                    'successfull!',
-                    'Your account has been created.',
-                    'success'
-                )
-                router.push('/')
-            })
+                .then(result =>{
+                    updateUserProfile(data.name)
+                    .then(res => {
+                        Swal.fire(
+                            'successfull!',
+                            'Your account has been created.',
+                            'success'
+                        )
+                        router.push('/')
+                    })
+                })
     }
 
 return (
@@ -44,10 +48,19 @@ return (
             <Head>
                 <title>Create Account</title>
             </Head>
-            <Image className='mx-auto' src={'https://img.freepik.com/premium-vector/study-house-logo-template-design_316488-433.jpg'} height={150} width={250} alt='logo'></Image>
 
-            <form onSubmit={handleSubmit(registrationHandler)} className='flex justify-center flex-col gap-6 w-full'>
+            <form onSubmit={handleSubmit(registrationHandler)} className='flex justify-center flex-col gap-6 w-full mt-[100px]'>
                 <h1 className='font-bold text-2xl lg:text-4xl text-center'>Create Account</h1>
+                <div>
+                    <label className='text-xl font-semibold'>Full Name</label>
+                    <input className={`${inputFieldCommonCSS}`} {...register("name", {
+                        required: {
+                            value: true,
+                            message: 'Name is required'
+                        }
+                    })} type="text" name='name' placeholder='Enter Full Name' />
+                    <p className='text-sm ml-3 text-red-600'>{errors.email?.message}</p>
+                </div>
                 <div>
                     <label className='text-xl font-semibold'>Email Address</label>
                     <input className={`${inputFieldCommonCSS}`} {...register("email", {
@@ -113,6 +126,9 @@ return (
                 </div>
                 <button type='submit' className={`${loginBtnCSS}`}>Create</button>
             </form>
+            <p className='flex gap-1 items-center mt-3'>Already Have An Account? 
+                    <Link className='text-[#4A3AFF] hover:underline' href={'/login'}>Login</Link>
+                </p>
         </div>
     </AuthContainer>
 );

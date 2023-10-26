@@ -38,6 +38,7 @@ const GlobalState = ({ children }) => {
 
      const updateUserProfile = (name, photo) => {
           setLoading(true);
+          return updateProfile(auth.currentUser, { displayName: name, photoURL: photo });
           return updateProfile(auth.currentUser, {
                displayName: name, photoURL: photo
           })
@@ -104,14 +105,12 @@ const GlobalState = ({ children }) => {
           pageLoader, setPageLoader,
           createUser, updateUserProfile,
           loginUser, logOutUser,
-          googleSignIn,
-          setIsAdmin, isAdmin
+          googleSignIn,setIsAdmin, isAdmin
 
      }
 
 
 
-     // abdur rahman code
 
 
      return (
