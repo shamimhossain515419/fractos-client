@@ -14,6 +14,7 @@ import ContactSection from "@/Components/Contact";
 
 import UserProfile from "@/Components/UserProfile/UserProfile";
 import Banner from "@/Home/Banner/Banner";
+import Navbar from "@/Components/Navbar";
 
 
 
@@ -22,18 +23,12 @@ export default function Home() {
   return (
     <div>
       <Container>
-<<<<<<< HEAD
 
         <Navbar></Navbar>
 
         <Banner></Banner>
 
         {/* exam question model */}
-=======
-        <Banner></Banner>
-
-
->>>>>>> a7a19c30b42885f45144dc3112784c813d3946fc
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
@@ -43,12 +38,8 @@ export default function Home() {
         <div className=" py-5">
           <Premium></Premium>
         </div>
-        {/* <div className="py-10">
-          <Archive></Archive>
-        </div> */}
-        <div className="py-10">
-          <UserProfile></UserProfile>
-        </div>
+       
+        
         
 
 
