@@ -8,7 +8,7 @@ const Premium = () => {
         <div>
             <p className=" text-center py-8">Practice Premium</p>
 
-            <div className="grid md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-center ">
+            <div className="grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-5 bg-black">
             <div>
                 <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500
                 py-16 px-7 rounded-xl">
