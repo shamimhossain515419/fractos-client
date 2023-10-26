@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
   phone: Number,
   collage: String,
   about: String,
-   rank: Number,
+  rank: Number,
   mark: Number,
 });
 

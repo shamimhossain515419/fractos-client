@@ -38,8 +38,8 @@ export async function PUT(req) {
                     batch: extractData?.batch ? extractData?.batch : currentUser?.batch,
                     level: extractData?.level ? extractData?.level : currentUser?.level,
                     collage: extractData?.collage ? extractData?.collage : currentUser?.collage,
-                    rank: extractData?.rank ? extractData?.rank : currentUser?.rank,
-                    mark: extractData?.mark ? extractData?.mark : currentUser?.mark,
+                    rank: extractData?.rank ? extractData?.rank + currentUser?.rank : currentUser?.rank,
+                    mark: extractData?.mark ? extractData?.mark + currentUser?.mark : currentUser?.mark,
                },
                { new: true }
           );
