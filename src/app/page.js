@@ -17,17 +17,12 @@ export default function Home() {
   return (
     <div>
       <Container>
-      
-          <Navbar></Navbar>
-       
 
         <Navbar></Navbar>
-        
+
         <Banner></Banner>
 
         {/* exam question model */}
-        <ExamModel exam="Physics 2nd Paper - (Dhaka Board 2019)" >  </ExamModel>
-
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
