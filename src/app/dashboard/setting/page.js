@@ -1,6 +1,4 @@
 "use client"
-
-import CommonImage from '@/Components/CommonImage/CommonImage';
 import Notification from '@/Components/Notification/Notification';
 import { GlobalContext } from '@/GlobalState';
 import { UpdateUser } from '@/services/users';
