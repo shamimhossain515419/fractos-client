@@ -6,13 +6,13 @@ import { AiOutlineApi } from "react-icons/ai";
 const Premium = () => {
     return (
         <div>
-            <p className=" text-center py-8">Practice Premium</p>
+            <p className=" text-center py-8 font-bold text-2xl">Practice Premium</p>
 
-            <div className="grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-5 bg-black">
+            <div className="grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-5">
             <div>
                 <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500
-                py-16 px-7 rounded-xl">
-                    <div className="text-white bg-slate-900 rounded-xl">
+                py-14 h-72 px-7 rounded-xl">
+                    <div className="text-white bg-slate-900 rounded-xl ">
                         <p className="text-center">What is the true expression of
                          a-particle</p>
                         <div className="grid grid-cols-2">
@@ -26,7 +26,7 @@ const Premium = () => {
                 <h3 className="text-xl font-bold">Quickly Practice</h3>
             </div>
             <div>
-            <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-16 px-7 rounded-xl">
+            <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-14 h-72 px-7 rounded-xl">
                 <div className="overflow-x-auto bg-black  rounded-xl">
                     <table className="table w-full text-center text-white">
                         {/* head */}
@@ -63,7 +63,7 @@ const Premium = () => {
             <h3 className=" text-xl font-bold">Leader board</h3>
             </div>
             <div>
-            <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-14
+            <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-14 h-72
              px-14 rounded-xl">
                 <div className="overflow-x-auto bg-black text-white rounded-xl">
                     <table className="table w-full text-center">
@@ -94,7 +94,7 @@ const Premium = () => {
             <h3 className="font-bold  text-xl">Mock Exam</h3>
             </div>
             <div>
-            <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-16 px-7 rounded-xl">
+            <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-14 h-72 px-7 rounded-xl">
                 <div className="text-white bg-slate-900 rounded-xl">
                     <div className="ml-3">
                         <p>Which of the following has oxidation number of nitrogen +2?</p>
@@ -110,7 +110,7 @@ const Premium = () => {
             <h3 className="text-xl  font-bold">Review</h3>
             </div>
             <div>
-            <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-7 px-7 rounded-xl text-white">
+            <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-14 h-72 px-7 rounded-xl text-white">
                 <div className="m-2 p-2 gap-3 bg-black rounded-xl text-center">
                     <h3 className="text-xl font-bold">Special Quiz</h3>
                     <p>200 Q . 30 M</p>

@@ -12,7 +12,7 @@ import ContactSection from "@/Components/Contact";
 
 // import Archive from "@/Components/Archive/Archive";
 
-import UserProfile from "@/Components/UserProfile/UserProfile";
+
 import Banner from "@/Home/Banner/Banner";
 import Navbar from "@/Components/Navbar";
 
@@ -39,10 +39,6 @@ export default function Home() {
           <Premium></Premium>
         </div>
        
-        
-        
-
-
         {/* Banner */}
 
         <ContactSection></ContactSection>

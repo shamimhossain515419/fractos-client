@@ -5,7 +5,7 @@ const CommonImage = ({ data }) => {
      return (
           <div>
                <div className="image">
-                    <Image src={data?.photoURl ? data?.photoURl  : "https://i.ibb.co/9YBcnQB/profile-pic.png"} alt="" height={50} width={50} />
+                    <Image className=" rounded-full   object-fill w-[50px] h-[50px]" src={data?.photoURL ? data?.photoURL  : "https://i.ibb.co/9YBcnQB/profile-pic.png"} alt="" height={50} width={50} />
                </div>
           </div>
      );

@@ -40,6 +40,7 @@ export async function PUT(req) {
                     collage: extractData?.collage ? extractData?.collage : currentUser?.collage,
                     rank: extractData?.rank ? extractData?.rank + currentUser?.rank : currentUser?.rank,
                     mark: extractData?.mark ? extractData?.mark + currentUser?.mark : currentUser?.mark,
+                    exam: extractData?.exam ? extractData?.exam + currentUser?.exam : currentUser?.exam,
                },
                { new: true }
           );
