@@ -1,28 +1,81 @@
 import React, { useState, useEffect } from 'react';
 
 const MockPreset = () => {
-    const [qnNames, setQnNames] = useState([]);
+    const qnNames=[
+        {
+            "id":1,
+            "name":"DU-A"
+        },
+        {
+            "id":2,
+            "name":"JU-A"
+        },
+        {
+            "id":3,
+            "name":"BUET-Prili"
+        },
+        {
+            "id":4,
+            "name":"CU-A"
+        },
+        {
+            "id":5,
+            "name":"Agri Guccho"
+        },
+        {
+            "id":6,
+            "name":"Medical"
+        },
+        {
+            "id":7,
+            "name":"RU-C (Science)"
+        },
+        {
+            "id":8,
+            "name":"JU-D"
+        },
+        {
+            "id":9,
+            "name":"GST-A (Science)"
+        }
+    ];
 
 
-    useEffect(() => {
-        fetch('QpresetName.json')
-            .then(res => res.json())
-            .then(data => setQnNames(data))
-            .catch(error => console.error(error))
-    }, [])
-
-
-    const [subNames, setSubNames] = useState([]);
-
-
-    useEffect(() => {
-        fetch('subName.json')
-            .then(res => res.json())
-            .then(data => setSubNames(data))
-            .catch(error => console.error(error))
-    }, [])
-
-
+   const subNames=[
+    {
+        "id":1,
+        "name":"Physics"
+    },
+    {
+        "id":2,
+        "name":"Chemistry"
+    },
+    {
+        "id":3,
+        "name":"Bangla"
+    },
+    {
+        "id":4,
+        "name":"ICT"
+    },
+    {
+        "id":5,
+        "name":"Higher Math"
+    },
+    {
+        "id":6,
+        "name":"Biology"
+    },
+    {
+        "id":7,
+        "name":"English"
+    },
+    {
+        "id":8,
+        "name":"General Knowledge"
+    }
+    
+];
 
 
 
