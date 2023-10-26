@@ -7,6 +7,7 @@ import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import UserProfile from "@/Components/UserProfile/UserProfile";
 import Banner from "@/Home/Banner/Banner";
+import Navbar from "@/Components/Navbar";
 
 
 
@@ -18,7 +19,7 @@ export default function Home() {
 
         <Navbar></Navbar>
 
-        <Banner></Banner>
+        
 
         {/* exam question model */}
         <Banner></Banner>

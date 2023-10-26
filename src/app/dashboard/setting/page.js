@@ -12,6 +12,14 @@ import { toast } from 'react-toastify';
 const SettingPage = () => {
 
      const { user, updateUserProfile, setPageLoader } = useContext(GlobalContext);
+
+
+     const imageUpdate = async (image) => {
+          const photoupdate= {photo: image , email:user?.email}
+          const data = await UpdateUser(photoupdate)
+          console.log(data);
+     }
+
      const handleImage = (e) => {
           const file = e.target.files[0];
           console.log(file);
@@ -26,6 +34,7 @@ const SettingPage = () => {
                     const photo = data?.data?.display_url;
                     const name = user?.displayName;
                     console.log(photo, name);
+                    imageUpdate(photo)
                     updateUserProfile(name, photo).then((result) => {
                          console.log(result);
                          setPageLoader(true)
@@ -36,8 +45,10 @@ const SettingPage = () => {
                }
           }).catch(error => {
                toast.error("File Upload Not Working")
-          })
+          });
+
      };
+
 
 
 
@@ -78,7 +89,7 @@ const SettingPage = () => {
                               <div className=' relative'>
                                    {
                                         user?.photoURL ? <div className="image">
-                                             <Image className=" w-[100px] h-[100px]" src={user?.photoURl ? data?.photoURl : "https://i.ibb.co/9YBcnQB/profile-pic.png"} alt="" height={50} width={50} />
+                                             <Image className=" w-[100px] h-[100px]  rounded-full" src={user?.photoURL ? user?.photoURL : "https://i.ibb.co/9YBcnQB/profile-pic.png"} alt="" height={50} width={50} />
                                         </div> : <div className=' primaryBg rounded-full p-10 text-black  text-2xl font-bold uppercase'> {user?.email.slice(0, 2)} </div>
                                    }
                               </div>

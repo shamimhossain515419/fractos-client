@@ -46,7 +46,7 @@ const page = () => {
           return selectId.includes(id) ? 'cursor-none bg-[#27895b80]' : '';
      }
      const examSubmit = async () => {
-          const data = { rank: RightAns?.length * 50, mark: RightAns?.length, email: user?.email }
+          const data = { rank: RightAns?.length * 50, mark: RightAns?.length * 5 , exam: 1,  email: user?.email }
           const result = await UpdateUser(data);
           if (result.success == true) {
                setSuccess(true);
