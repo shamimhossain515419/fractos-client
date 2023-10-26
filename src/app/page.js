@@ -22,9 +22,18 @@ export default function Home() {
   return (
     <div>
       <Container>
+<<<<<<< HEAD
+
+        <Navbar></Navbar>
+
+        <Banner></Banner>
+
+        {/* exam question model */}
+=======
         <Banner></Banner>
 
 
+>>>>>>> a7a19c30b42885f45144dc3112784c813d3946fc
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
