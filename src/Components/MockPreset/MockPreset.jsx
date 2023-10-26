@@ -105,7 +105,7 @@ const MockPreset = () => {
 
     }, [subject])
 
- console.log(Question);
+ console.log(examName);
 
     return (
 

@@ -3,8 +3,6 @@ import { GlobalContext } from '@/GlobalState';
 import React, { useContext, useEffect, useState } from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { ImPointRight } from 'react-icons/im'
-
-
 import image1 from '../../../assets/a_5.svg'
 import image2 from '../../../assets/b_1.svg'
 import image3 from '../../../assets/l_5.svg'
@@ -115,7 +113,9 @@ const page = () => {
 
                     <div>
                          {
-                              allUser?.map((item, index) => <Link href={`/dashboard/${user?.email}`} className='  bg-[#E5E5E5] my-4 px-3 py-1 rounded flex justify-between items-center gap-2 max-w-[1200px] mx-auto'>
+                              allUser?.map((item, index) => 
+                              
+                              <Link key={index} href={`/dashboard/${user?.email}`} className='  bg-[#E5E5E5] my-4 px-3 py-1 rounded flex justify-between items-center gap-2 max-w-[1200px] mx-auto'>
                                    <div className=' flex  gap-4 items-center'>
                                         <div className='text-xl  md:text-xl font-bold '>
                                              {index + 3}
@@ -140,7 +140,8 @@ const page = () => {
                                    <div>
                                         <h1 className=' text-xl md:text-2xl font-medium my-3'> {item?.rank}K</h1>
                                    </div>
-                              </Link>)
+                              </Link>
+                               )
                          }
                     </div>
 
