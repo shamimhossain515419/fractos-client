@@ -1,10 +1,14 @@
 
+import Dashboard from "@/Components/Dashboard/Dashboard";
+
+
 
 const page = () => {
-    
+
      return (
           <div>
-             <h1>  loemfa-rotate-180  </h1>
+              
+          <Dashboard></Dashboard>
           </div>
      );
 };

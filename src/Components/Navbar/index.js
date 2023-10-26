@@ -24,7 +24,7 @@ const Navbar = () => {
 
                                              <div className=" md:hidden">
                                                   {
-                                                       user ? <Link href={'/'}>      <CommonImage data={user}></CommonImage></Link> : null
+                                                       user ? <Link href={'/'}>      <CommonImage data={user} className="w-[50px] h-[50px]"></CommonImage></Link> : null
                                                   }
                                              </div>
                                              <Link href="/"> <h1 className='  py-2 font-semibold  text-base md:text-2xl text-color   uppercase'> FRACTOS </h1></Link>
