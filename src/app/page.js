@@ -17,7 +17,14 @@ export default function Home() {
   return (
     <div>
       <Container>
-       <Banner></Banner>
+
+        {/* Banner */}
+        <Banner></Banner>
+
+        <Premium></Premium>
+        <CounterSection> </CounterSection>
+
+      
 
 
         <div className=" my-3">
