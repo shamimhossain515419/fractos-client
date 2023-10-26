@@ -1,6 +1,4 @@
 "use client"
-
-import CommonImage from '@/Components/CommonImage/CommonImage';
 import Notification from '@/Components/Notification/Notification';
 import { GlobalContext } from '@/GlobalState';
 import { UpdateUser } from '@/services/users';
@@ -66,10 +64,7 @@ const SettingPage = () => {
           const newUser = { email: user?.email, name, phone, about, batch, collage, level }
 
           const result = await UpdateUser(newUser);
-
-          toast.success(" user successfully update");
-          window.location.reload();
-
+      toast.success(" user successfully update");
      }
 
 
