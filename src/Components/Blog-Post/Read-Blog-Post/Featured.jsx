@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState,useEffect } from "react";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 
@@ -26,7 +27,7 @@ const Featured = () => {
         <>
         {blogs.map(blog=> <div key={blog.id} className="px-8 md:px-12   mx-12  bg-blue-300 card grid md:grid-cols-2 grid-cols-1 gap-1">
             <div className="col mt-8 md:mt-28 ">
-                <img src={blog.image} className="rounded md:w-11/12 my-auto"></img>
+                <Image width={200} height={200} src={blog.image} className="rounded md:w-11/12 my-auto" />
             </div>
             <div className="col">
                 <div className='flex my-4'>

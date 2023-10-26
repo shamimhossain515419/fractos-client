@@ -37,7 +37,7 @@ const Page = () => {
                             'Your account has been created.',
                             'success'
                         )
-                        router.push('/')
+                        router.push('/dashboard/setting')
                     })
                 })
     }
