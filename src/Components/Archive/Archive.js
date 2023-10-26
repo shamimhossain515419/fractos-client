@@ -15,7 +15,11 @@ const Archive = () => {
                 <button className='bg-purple-950 m-3 p-2 font-bold rounded'>Admission</button>
             </div>
 
+<<<<<<< HEAD
+            <div className='grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-14 '>
+=======
             <div className='grid md:grid-cols-3 gap-14 '>
+>>>>>>> 9d04ac86836c18137ff7bb2ed5ff94fdcf2a485a
                 <div className='rounded'>
                     <div className=' p-8 rounded text-center backgroundImage'>
                         <h1 className='text-2xl font-bold'>DU C UNIT</h1>

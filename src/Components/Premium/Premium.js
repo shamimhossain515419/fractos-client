@@ -6,11 +6,12 @@ import { AiOutlineApi } from "react-icons/ai";
 const Premium = () => {
     return (
         <div>
-            <p className="text-white text-center py-8">Practice Premium</p>
+            <p className=" text-center py-8">Practice Premium</p>
 
-            <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-5 ">
+            <div className="grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-5 bg-black">
             <div>
-                <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-16 px-7 rounded-xl">
+                <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500
+                py-16 px-7 rounded-xl">
                     <div className="text-white bg-slate-900 rounded-xl">
                         <p className="text-center">What is the true expression of
                          a-particle</p>
@@ -22,15 +23,15 @@ const Premium = () => {
                         </div>
                     </div>
                 </div>
-                <h3 className="text-white text-xl font-bold">Quickly Practice</h3>
+                <h3 className="text-xl font-bold">Quickly Practice</h3>
             </div>
             <div>
             <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-16 px-7 rounded-xl">
-                <div className="overflow-x-auto bg-black text-white rounded-xl">
-                    <table className="table w-full text-center">
+                <div className="overflow-x-auto bg-black  rounded-xl">
+                    <table className="table w-full text-center text-white">
                         {/* head */}
                         <thead>
-                            <tr className="border-b">
+                            <tr className="border-b text-white">
                                 <th className="p-2">Rank</th>
                                 <th className="p-2">Name</th>
                                 <th className="p-2">Point</th>
@@ -59,10 +60,10 @@ const Premium = () => {
                     </table>
                 </div>
             </div>
-            <h3 className="text-white text-xl font-bold">Leader board</h3>
+            <h3 className=" text-xl font-bold">Leader board</h3>
             </div>
             <div>
-            <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-16
+            <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-14
              px-14 rounded-xl">
                 <div className="overflow-x-auto bg-black text-white rounded-xl">
                     <table className="table w-full text-center">
@@ -90,7 +91,7 @@ const Premium = () => {
                     </table>
                 </div>
             </div>
-            <h3 className="font-bold text-white text-xl">Mock Exam</h3>
+            <h3 className="font-bold  text-xl">Mock Exam</h3>
             </div>
             <div>
             <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-16 px-7 rounded-xl">
@@ -106,7 +107,7 @@ const Premium = () => {
                 </div>
                 {/* <h3>Quickly Practice</h3> */}
             </div>
-            <h3 className="text-xl text-white font-bold">Review</h3>
+            <h3 className="text-xl  font-bold">Review</h3>
             </div>
             <div>
             <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 py-7 px-7 rounded-xl text-white">
@@ -122,7 +123,7 @@ const Premium = () => {
                 </div>
                 {/* <h3>Quickly Practice</h3> */}
             </div>
-            <h3 className="text-white font-bold text-xl">Live Exam</h3>
+            <h3 className=" font-bold text-xl">Live Exam</h3>
             </div>
         </div>
         </div>
