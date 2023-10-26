@@ -4,7 +4,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import app from '../../firebase/firebase.config';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import jwt from "jsonwebtoken";
-import { jwtSingUp } from '@/services/users';
+import { GetSingleUser, jwtSingUp } from '@/services/users';
 import Cookies from 'js-cookie';
 
 
@@ -22,6 +22,7 @@ const GlobalState = ({ children }) => {
      const [setIsAdmin, isAdmin] = useState(false)
      const [userinfo, setUserinfo] = useState(null)
 
+
      const [componentLevelLoader, setComponentLevelLoader] = useState({
           loading: false,
           id: "",
@@ -38,6 +39,17 @@ const GlobalState = ({ children }) => {
      const updateUserProfile = (name, photo) => {
           setLoading(true);
           return updateProfile(auth.currentUser, { displayName: name, photoURL: photo });
+          return updateProfile(auth.currentUser, {
+               displayName: name, photoURL: photo
+          })
+
+
+
+     };
+
+     const userCullaction = async (email) => {
+          const result = await GetSingleUser(email)
+          setUserinfo(result?.data)
      }
 
      const loginUser = (email, password) => {
@@ -70,6 +82,7 @@ const GlobalState = ({ children }) => {
                     setUser(currentUser);
                     setLoading(false);
                     JWTAuthorization(currentUser?.email)
+                    userCullaction(currentUser?.email)
                }
                console.log('current User: ', currentUser)
 
@@ -92,14 +105,12 @@ const GlobalState = ({ children }) => {
           pageLoader, setPageLoader,
           createUser, updateUserProfile,
           loginUser, logOutUser,
-          googleSignIn,
-          setIsAdmin, isAdmin
+          googleSignIn,setIsAdmin, isAdmin
 
      }
 
 
 
-     // abdur rahman code
 
 
      return (

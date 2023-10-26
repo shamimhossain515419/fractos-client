@@ -3,25 +3,37 @@
 @tailwind utilities;
 
 
+body {
+  background-color: #ECF0F3;
+  color: black;
+ min-height: 100vh;
+}
+
+.boxshadow {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.boxShadowNormal {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
 
 .boxshadow {
      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
    }
 
-   body{
-      background-color: #ECF0F3;
-      color: black;
-   }
-   
+.primary {
+  color: #27895C;
+}
+.primaryBg {
+  background-color: #27895C;
+}
 
-   .primaryBg {
-      background-color: #27895C;
-    }
-    
-    .primary {
-      color: #27895C;
-    }
-    
-    .textColor {
-      color: #000000b0;
-    }
+.textColor {
+  color: #000000b0;
+}
+
+
+.imageshodow {
+  box-shadow: rgba(234, 88, 219, 0.2) 10px 10px 15px 22px;
+}

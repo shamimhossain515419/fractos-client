@@ -8,19 +8,12 @@ import MenuBar from "./MenuBar";
 import { useContext, useState } from "react";
 import { GlobalContext } from "@/GlobalState";
 import CommonImage from "../CommonImage/CommonImage";
-import Image from "next/image";
 
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin } = useContext(GlobalContext);
-
-  
-     const [Open, setOpen] = useState(true);
-
-
-
-
-     return (
-          <div>
+ const [Open, setOpen] = useState(true);
+ return (
+          <div className=" mb-12">
                <div>
 
                     <nav className='px-2 w-full fixed py-3 z-50 bg-[#ECF0F3]      top-0  left-0 right-0    shadow-lg'>
@@ -31,7 +24,7 @@ const Navbar = () => {
 
                                              <div className=" md:hidden">
                                                   {
-                                                       user ? <Link href={'/'}>      <CommonImage data={user}></CommonImage></Link> : null
+                                                       user ? <Link href={'/'}>      <CommonImage data={user} className="w-[50px] h-[50px]"></CommonImage></Link> : null
                                                   }
                                              </div>
                                              <Link href="/"> <h1 className='  py-2 font-semibold  text-base md:text-2xl text-color   uppercase'> FRACTOS </h1></Link>
@@ -45,6 +38,11 @@ const Navbar = () => {
                                              <Link href={'/leader-board'}> Leader board</Link>
                                              <Link href={'/blogs'}> Blogs</Link>
                                              <Link href={'/contact'}> Contact Us</Link>
+
+                                             {
+                                                  user ? <Link href={'/dashboard'}> Dashboard</Link> : null
+                                             }
+
 
 
                                         </div>
