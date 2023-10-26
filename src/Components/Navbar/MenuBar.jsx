@@ -1,6 +1,7 @@
-import Image from 'next/image';
+import Image from "next/image";
 import Link from 'next/link';
 import React from 'react';
+import CommonImage from "../CommonImage/CommonImage";
 
 const MenuBar = ({ user }) => {
      return (
@@ -19,11 +20,10 @@ const MenuBar = ({ user }) => {
 
 
                               <div>
-                                   {
-                                        user ? <>   <div className="  flex items-center gap-1">
-                                             <Image className=" h-12 w-12 rounded-full object-cover" src={user?.photoURL} alt="" />
-                                             <p> {user ?? displayName} </p>
-                                        </div></> : <></>
+                                   { user ? <>   <div className="  flex items-center gap-1">
+                                            
+                                     <p> {user?.displayName} </p>
+                                       </div></> : <></>
                                    }
                               </div>
 
