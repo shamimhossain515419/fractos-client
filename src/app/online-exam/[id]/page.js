@@ -9,7 +9,7 @@ import { GetSubjectByData } from '@/services/exam';
 import { UpdateUser } from '@/services/users';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useState, useEffect, useContext } from "react";
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiUserCircle } from 'react-icons/bi';
 import { BsArchive } from 'react-icons/bs';
@@ -18,7 +18,9 @@ import { PiExamBold } from 'react-icons/pi';
 import { toast } from 'react-toastify';
 
 const page = () => {
-     const { user } = useContext(GlobalContext)
+
+
+     const { user } = useContext(GlobalContext);
      const router = useRouter();
      const prams = useParams();
      const [Question, setQuestion] = useState([])
