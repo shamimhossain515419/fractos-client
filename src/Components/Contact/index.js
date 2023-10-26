@@ -5,26 +5,17 @@ import emailjs from '@emailjs/browser';
 
 import { FaFacebook, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Notification from "../Notification/Notification";
-<<<<<<< HEAD
-import  {toast} from "react-toastify";
-=======
 import { toast } from "react-toastify";
->>>>>>> 844786665bfc6fb3997765df005ee41a396bba28
 import Image from "next/image";
 import Link from "next/link";
 
 import image from '../../../public/2912020.webp'
-<<<<<<< HEAD
-const Contact = () => {
-     const form = useRef();
-=======
 import { usePathname } from "next/navigation";
 const ContactSection = () => {
      const form = useRef();
 
      const pathName = usePathname();
-     console.log(pathName);
->>>>>>> 844786665bfc6fb3997765df005ee41a396bba28
+    
      const sendEmail = (e) => {
           e.preventDefault();
           const from = e.target;
@@ -32,11 +23,7 @@ const ContactSection = () => {
                .then((result) => {
                     if (result.text) {
                          toast.success("massage successfully send")
-<<<<<<< HEAD
-                       from.reset();
-=======
                          from.reset();
->>>>>>> 844786665bfc6fb3997765df005ee41a396bba28
                     }
 
                }, (error) => {
@@ -87,17 +74,6 @@ const ContactSection = () => {
                                    <form ref={form} onSubmit={sendEmail}>
                                         <div className=" w-full my-2">
                                              <label htmlFor="Name" className=" text-xl font-semibold  mt-3" > Name:</label>
-<<<<<<< HEAD
-                                             <input required className="mt-2 w-full  hover:outline-1   focus:outline rounded-lg focus:outline-[#582ad8] p-2 text-lg font-semibold " type="text" placeholder=" Your name " name="name" id="" />
-                                        </div>
-                                        <div className=" w-full my-2">
-                                             <label className="  mt-4  text-xl font-semibold " htmlFor="Email" > Email:</label>
-                                             <input required className="p-2    mt-2 w-full   hover:outline-1   focus:outline rounded-lg focus:outline-[#582ad8] " type="email" placeholder=" Your Email " name="email" id="email" />
-                                        </div>
-                                        <div className=" w-full my-2">
-                                             <label className="  mt-4  text-xl font-semibold " htmlFor="Email" > Message:</label>
-                                             <textarea required className="p-2    mt-2 w-full   hover:outline-1   focus:outline focus:outline-[#582ad8] " name="message" rows={8} ></textarea>
-=======
                                              <input required className="mt-2 bg-white w-full  hover:outline-1   focus:outline rounded-lg focus:outline-[#582ad8] p-2 text-lg font-semibold " type="text" placeholder=" Your name " name="name" id="" />
                                         </div>
                                         <div className=" w-full my-2">
@@ -107,7 +83,6 @@ const ContactSection = () => {
                                         <div className=" w-full my-2">
                                              <label className="  mt-4  text-xl font-semibold " htmlFor="Email" > Message:</label>
                                              <textarea required className="p-2   bg-white    mt-2 w-full   hover:outline-1   focus:outline focus:outline-[#582ad8] " name="message" rows={8} ></textarea>
->>>>>>> 844786665bfc6fb3997765df005ee41a396bba28
                                         </div>
                                         <div className=" w-full my-2">
                                              <button className="  hover:bg-[#27895C]  boxshadow outline-none border-none text-xl font-medium py-2 rounded-md text-center w-full " type="submit" >Send massage</button>
@@ -118,27 +93,9 @@ const ContactSection = () => {
 
                </div>
 
-<<<<<<< HEAD
 
 
-               <div className=" relative overflow-hidden w-full ">
-=======
-               {
-                    pathName == "/contact" ? <>  <div className=" relative overflow-hidden w-full ">
->>>>>>> 844786665bfc6fb3997765df005ee41a396bba28
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81925.7998703855!2d89.35380654982961!3d24.841878118908017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fc54968d3b5cdd%3A0xd5c89978703585d6!2sBogura%20Polytechnic%20Institute!5e0!3m2!1sen!2sbd!4v1689577655751!5m2!1sen!2sbd" className=" w-screen md:p-10" height="450" allowfullscreen="" loading="lazy" ></iframe>
-
-
-
-<<<<<<< HEAD
-               </div>
-=======
-               </div></> : <></>
-                        
-
-               }
-
->>>>>>> 844786665bfc6fb3997765df005ee41a396bba28
+              
                <Notification></Notification>
           </div>
 
@@ -146,8 +103,4 @@ const ContactSection = () => {
      );
 };
 
-<<<<<<< HEAD
-export default Contact;
-=======
 export default ContactSection;
->>>>>>> 844786665bfc6fb3997765df005ee41a396bba28
