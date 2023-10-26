@@ -9,7 +9,7 @@ import { GetSubjectByData } from '@/services/exam';
 import { UpdateUser } from '@/services/users';
 import { data } from 'autoprefixer';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiUserCircle } from 'react-icons/bi';
@@ -20,12 +20,15 @@ import { toast } from 'react-toastify';
 
 const page = () => {
      const { user } = useContext(GlobalContext)
-
+     const router = useRouter();
      const prams = useParams();
      const [Question, setQuestion] = useState([])
      const getData = async (subject) => {
 
-          const result = await GetSubjectByData(subject)
+          const result = await GetSubjectByData(subject);
+          if (!result?.data) {
+               router.push('/dashboard/mock-exam')
+          }
           setQuestion(result?.data)
 
      }
@@ -46,7 +49,7 @@ const page = () => {
           return selectId.includes(id) ? 'cursor-none bg-[#27895b80]' : '';
      }
      const examSubmit = async () => {
-          const data = { rank: RightAns?.length * 50, mark: RightAns?.length * 5 , exam: 1,  email: user?.email }
+          const data = { rank: RightAns?.length * 50, mark: RightAns?.length * 5, exam: 1, email: user?.email }
           const result = await UpdateUser(data);
           if (result.success == true) {
                setSuccess(true);
@@ -55,7 +58,7 @@ const page = () => {
 
 
      }
-   useEffect(() => {
+     useEffect(() => {
 
           console.log(select);
           if (select) {
@@ -70,6 +73,11 @@ const page = () => {
 
      }, [select]);
      const time = Question?.questions?.length * 60;
+
+
+
+
+
 
      return (
           <div>
