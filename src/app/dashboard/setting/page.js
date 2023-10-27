@@ -64,20 +64,9 @@ const SettingPage = () => {
           const newUser = { email: user?.email, name, phone, about, batch, collage, level }
 
           const result = await UpdateUser(newUser);
-<<<<<<< HEAD
+
            toast.success(" user successfully update");
-         
-=======
-<<<<<<< HEAD
-      toast.success(" user successfully update");
-=======
-
-          toast.success(" user successfully update");
-          
-
->>>>>>> 05ac57d015e2859016b9ddc84b87dc936b86c058
->>>>>>> 06269fe3a471fa465dac6982009af45ff19e3110
-     }
+      }
 
 
      return (
