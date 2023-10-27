@@ -6,8 +6,8 @@ import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
-import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
- 
+import Banner from "@/Home/Banner/Banner";
+
 
 
 
@@ -20,16 +20,16 @@ export default function Home() {
   return (
     <div>
       <Container>
-      
-          <Navbar></Navbar>
-       
 
-        
-        
-        <BannerSwiper></BannerSwiper>
-     
+        <Navbar></Navbar>
 
-       
+        <Banner></Banner>
+
+
+        {/* <BannerSwiper></BannerSwiper> */}
+
+
+
 
         <div className=" my-3">
           <CounterSection> </CounterSection>
@@ -40,15 +40,10 @@ export default function Home() {
         <div className=" py-5">
           <Premium></Premium>
         </div>
-        <div className="py-10">
 
-        </div>
-
-
-        {/* Banner */}
 
         <ContactSection></ContactSection>
-        
+
 
         <Footer></Footer>
       </Container>

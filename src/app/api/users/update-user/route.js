@@ -9,8 +9,7 @@ export async function PUT(req) {
 
      try {
           await connectToDB();
-          console.log("shmafdfd");
-          const extractData = await req.json();
+            const extractData = await req.json();
 
           const {
                email, name, phone, about, batch, collage, level
