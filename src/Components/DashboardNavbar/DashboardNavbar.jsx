@@ -6,12 +6,13 @@ import { BsSun } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import CommonImage from "../CommonImage/CommonImage";
 
+
 const DashboardNavbar = () => {
      const { user, openModal, setOpenModal } = useContext(GlobalContext)
      return (
-          <div className=" fixed top-0 w-full left-0 right-0  px-2 z-50 bg-[#ECF0F3]">
-               <div className=" flex   justify-between gap-3 items-center ">
-                    <div onClick={() => setOpenModal(!openModal)}>
+          <div className=" fixed top-0 w-full overflow-hidden left-0 right-0  px-2 z-50 bg-[#ECF0F3]">
+               <div className=" flex    justify-between gap-1 items-center ">
+                    <div className=" cursor-pointer" onClick={() => setOpenModal(!openModal)}>
                          {
                               openModal ? <AiOutlineClose size={24}></AiOutlineClose> : <FaBars size={24}></FaBars>
                          }

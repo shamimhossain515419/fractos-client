@@ -8,7 +8,7 @@ const page = () => {
      return (
           <div>
               
-               <Dashboard></Dashboard>
+          <Dashboard></Dashboard>
           </div>
      );
 };

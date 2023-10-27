@@ -72,7 +72,7 @@ const Login = () => {
                     {/* <button className={`${loginBtnCSS}`}>Next</button> */}
                     <button type='submit' className={`${loginBtnCSS}`}>Login</button>
                 </form>
-                <p className='flex gap-1 items-center mt-3'>Don't Have An Account? 
+                <p className='flex gap-1 items-center mt-3'>Don t Have An Account? 
                     <Link className='text-[#4A3AFF] hover:underline' href={'/register'}>Register</Link>
                 </p>
             </div>

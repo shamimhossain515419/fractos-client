@@ -11,6 +11,8 @@ import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
  
 
 
+// import Archive from "@/Components/Archive/Archive";
+import Navbar from "@/Components/Navbar";
 
 
 
@@ -20,9 +22,6 @@ export default function Home() {
   return (
     <div>
       <Container>
-      
-          <Navbar></Navbar>
-       
 
         <Navbar></Navbar>
         
@@ -31,8 +30,6 @@ export default function Home() {
      
 
         {/* exam question model */}
-        <ExamModel exam="Physics 2nd Paper - (Dhaka Board 2019)" >  </ExamModel>
-
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
@@ -42,16 +39,13 @@ export default function Home() {
         <div className=" py-5">
           <Premium></Premium>
         </div>
-        <div className="py-10">
-
-        </div>
-
-
+       
         {/* Banner */}
 
         <ContactSection></ContactSection>
 
         <Footer></Footer>
+        
       </Container>
 
     </div>

@@ -1,5 +1,5 @@
 'use client'
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { useContext } from 'react';
 import { AiOutlineUnlock } from 'react-icons/ai';
 import { FaRegUserCircle } from 'react-icons/fa';
@@ -12,10 +12,11 @@ import { toast } from 'react-toastify';
 const SettingLayout = ({ children }) => {
      const { logOutUser, pageLoader } = useContext(GlobalContext);
      const pathname = usePathname();
+     const router=useRouter();
      const handleSingout = () => {
           logOutUser().then(result => {
 
-               console.log(result);
+               router.push("/")
                if (result) {
                     toast.success("successfully logout user")
                }

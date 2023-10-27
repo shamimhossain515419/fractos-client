@@ -22,7 +22,7 @@ const Page = () => {
     const loginBtnCSS = 'w-full p-2 bg-green-500 font-bold text-white text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
 
     const registrationHandler = async (data) => {
-        const fromData = { email: data?.email, name: data?.name ? data?.name : "", password: data?.password, role: "user", category:"student" ,phone:0, about:"", batch:"", collage:"", level:"", rank:0, mark:0}
+        const fromData = { email: data?.email,exam:0, photo:"", name: data?.name ? data?.name : "", password: data?.password, role: "user", category:"student" ,phone:0, about:"", batch:"", collage:"", level:"", rank:0, mark:0}
         console.log(fromData);
         const result = await registerNewUser(fromData);
 
@@ -37,7 +37,7 @@ const Page = () => {
                             'Your account has been created.',
                             'success'
                         )
-                        router.push('/')
+                        router.push('/dashboard/setting')
                     })
                 })
     }
