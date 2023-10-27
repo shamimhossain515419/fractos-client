@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 function CountdownTimer({time}) {
-   console.log(time);
+  
 
   const [countdown, setCountdown] = useState(time); // 5 minutes in seconds
 

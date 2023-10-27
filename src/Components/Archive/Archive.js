@@ -1,12 +1,6 @@
 import React from 'react';
 import './Archive.css';
 
-{/* <style>
-    .rounded{
-        background-image:url('../../assets/versity.jfif');
-}
-</style> */}
-
 const Archive = () => {
     return (
         <div className='text-white'>
