@@ -5,8 +5,16 @@ const UserSchema = new mongoose.Schema({
   email: String,
   password: String,
   role: String,
-  category:String,
- });
+  category: String,
+  batch: String,
+  phone: Number,
+  photo: String,
+  collage: String,
+  about: String,
+  rank: Number,
+  mark: Number,
+  exam: Number,
+});
 
 const User = mongoose.models.User || mongoose.model("User", UserSchema);
 

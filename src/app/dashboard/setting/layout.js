@@ -1,5 +1,5 @@
 'use client'
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { useContext } from 'react';
 import { AiOutlineUnlock } from 'react-icons/ai';
 import { FaRegUserCircle } from 'react-icons/fa';
@@ -10,12 +10,13 @@ import Notification from '@/Components/Notification/Notification';
 import { toast } from 'react-toastify';
 
 const SettingLayout = ({ children }) => {
-     const { logOutUser } = useContext(GlobalContext);
+     const { logOutUser, pageLoader } = useContext(GlobalContext);
      const pathname = usePathname();
+     const router=useRouter();
      const handleSingout = () => {
           logOutUser().then(result => {
 
-               console.log(result);
+               router.push("/")
                if (result) {
                     toast.success("successfully logout user")
                }
@@ -25,6 +26,13 @@ const SettingLayout = ({ children }) => {
 
      return (
           <div>
+
+               <div>
+                    {
+                         pageLoader ? <div className='w-full  primaryBg px-3 text-center py-2  rounded-xl'> <h1>  profile successfully update  </h1>     </div> : null
+                    }
+               </div>
+
 
 
                <h1 className=' text-lg md:text-2xl font-medium mb-5  '> Setting </h1>

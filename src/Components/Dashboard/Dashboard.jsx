@@ -1,32 +1,52 @@
-import React from "react";
+'use client'
+import React, { useContext } from "react";
 import Image from "next/image";
 import reChart from "../../assets/images/r9Yvz.png"
 import "./Dashboard.css";
+import { GlobalContext } from "@/GlobalState";
+import CommonImage from "../CommonImage/CommonImage";
 
 const Dashboard = () => {
+
+
+  const { user, userinfo } = useContext(GlobalContext)
   return (
     <div>
       <div className="py-10 bg-white mt-2">
         <h2 className="text-4xl font-bold textColor ps-2">Dashboard</h2>
 
         <div className="mark-container grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2 mt-5 px-2">
-          <div className="item w-full bg-white rounded  flex flex-row py-10 px-3 shadow-xl">
-            <div className="py-12">
-              <h2 className="text-2xl font-bold">Mostafizur Rahman</h2>
-              <h4 className="text-1xl font-bold textColor">Collage</h4>
-              <p className="lg:text-5xl md:text-3xl sm:text-2xl font-bold text-orange-600">
-                1200th
-              </p>
+          <div className="item w-full  bg-white rounded  flex flex-row py-10 px-3 shadow-xl">
+            <div className="py-12 w-full">
+              <div className=" flex justify-between items-center gap-2 w-full">
+                <h2 className="text-2xl font-bold">{user?.displayName ? user?.displayName : null}</h2>
+
+                <CommonImage data={user}></CommonImage>
+              </div>
+
+              <div className=" flex justify-between gap-2 items-center  w-full">
+                <div>
+                  <h4 className="text-1xl font-bold textColor"> {userinfo?.collage ? userinfo?.collage : "collage"} </h4>
+                  <p className="lg:text-5xl md:text-3xl sm:text-2xl font-bold text-orange-600">
+                    {userinfo?.rank ? userinfo?.rank : null}
+                  </p>
+                </div>
+
+                <div className="text-right py-12">
+
+                  <p>
+                    <button className="block py-2 px-2 bg-orange-600 rounded text-white mt-10">
+                      Point:  {userinfo?.mark ? userinfo?.mark : null} .Exam-  {userinfo?.exam ? userinfo?.exam : null}
+                    </button>
+                  </p>
+                </div>
+              </div>
+
+
+
             </div>
 
-            <div className="text-right py-12">
-              <p>logo</p>
-              <p>
-                <button className="block py-2 px-2 bg-orange-600 rounded text-white mt-10">
-                  Point: 85.5 .Exam-1
-                </button>
-              </p>
-            </div>
+
           </div>
           <div className="item w-full bg-white shadow-xl rounded h-[300px] py-10 px-3">
             <h1 className="lg:text-4xl md:text-2xl sm:text-2xl font-bold textColor mt-7">
@@ -137,7 +157,6 @@ const Dashboard = () => {
                   </tr>
                 </thead>
                 <tbody className="bg-slate-200">
-                 
                   <tr>
                     <td>
                       <div className="flex items-center space-x-3">
@@ -198,7 +217,6 @@ const Dashboard = () => {
                     </td>
                     <td>
                       Abdur Rahman
- 
                     </td>
                     <td>95.5</td>
 

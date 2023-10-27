@@ -6,7 +6,11 @@ import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
-import Banner from "@/Home/Banner/Banner";
+import ExamModel from "@/Components/Shared/ExamModel";
+import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
+ 
+
+
 
 
 
@@ -21,10 +25,12 @@ export default function Home() {
           <Navbar></Navbar>
        
 
-        <Navbar></Navbar>
+        
+        
+        <BannerSwiper></BannerSwiper>
+     
 
-        <Banner></Banner>
-
+       
 
         <div className=" my-3">
           <CounterSection> </CounterSection>
@@ -38,7 +44,6 @@ export default function Home() {
         <div className="py-10">
 
         </div>
-
 
 
         {/* Banner */}

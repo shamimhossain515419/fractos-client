@@ -24,7 +24,7 @@ export const registerNewUser = async (formData) => {
 export const getAllUser = async () => {
 
   try {
-    const res = await fetch("http://localhost:3000/api/users/all-users", {
+    const res = await fetch("/api/users/all-users", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`,
@@ -67,4 +67,24 @@ export const jwtSingUp = async (formData) => {
   } catch (e) {
     console.log(e);
   }
+} 
+export const UpdateUser = async (formData) => {
+
+ try {
+    const res = await fetch(`/api/users/update-user`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+   return data;
+} catch (e) {
+    console.log(e);
+}
+
+ 
 } 

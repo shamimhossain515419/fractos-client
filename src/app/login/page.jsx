@@ -3,6 +3,7 @@ import AuthContainer from '@/Components/AuthContainer/AuthContainer';
 import { GlobalContext } from '@/GlobalState';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -13,7 +14,7 @@ const Login = () => {
 
     const { loginUser } = useContext(GlobalContext);
     const router = useRouter();
-    const [isHidden, setIsHidden] = useState(false)
+    const [isHidden, setIsHidden] = useState(true)
 
     const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg bg-gray-200 outline-none border-2 border-gray-200  focus:border-sky-400';
     const loginBtnCSS = 'w-full p-2 bg-green-500 text-white font-bold text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
@@ -36,9 +37,7 @@ const Login = () => {
                     <title>Login</title>
 
                 </Head>
-
-                <Image className='mx-auto' src={'https://img.freepik.com/premium-vector/study-house-logo-template-design_316488-433.jpg'} height={150} width={250} alt='logo'></Image>
-                <form className='flex justify-center flex-col gap-6 w-full' onSubmit={handleSubmit(loginHandler)}>
+                <form className='flex justify-center flex-col gap-6 w-full mt-[130px]' onSubmit={handleSubmit(loginHandler)}>
                     <h1 className='font-bold text-2xl lg:text-4xl text-center'>Login</h1>
                     <div className='flex flex-col'>
                         <label className='text-xl font-semibold'>Email Address</label>
@@ -47,7 +46,7 @@ const Login = () => {
                     <div>
                         <div className='flex justify-between'>
                             <label className='text-xl font-semibold'>Password</label>
-                            <button className='text-xl text-slate-500 font-medium hover:underline'>Forgot Password</button>
+                            <button className='text-xl text-[#4A3AFF] font-medium hover:underline'>Forgot Password</button>
                         </div>
                         <div className='relative'>
                             <input className={`${inputFieldCommonCSS} w-full`} {...register('password')} type={`${isHidden ? 'password' : 'text'}`} placeholder='XXXXXXXX' />
@@ -73,6 +72,9 @@ const Login = () => {
                     {/* <button className={`${loginBtnCSS}`}>Next</button> */}
                     <button type='submit' className={`${loginBtnCSS}`}>Login</button>
                 </form>
+                <p className='flex gap-1 items-center mt-3'>Don t Have An Account? 
+                    <Link className='text-[#4A3AFF] hover:underline' href={'/register'}>Register</Link>
+                </p>
             </div>
         </AuthContainer>
     );
