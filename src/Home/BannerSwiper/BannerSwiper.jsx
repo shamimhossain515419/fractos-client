@@ -46,7 +46,7 @@ const BannerSwiper = () => {
             </div>
 
           </div>
-          <div className="md:w-8/12 h-10/12 md:mt-20 mt-8">
+          <div className="md:w-8/12 h-10/12 md:mt-16 mt-8">
 
             <div className='font-bold text-4xl md:text-6xl h-28 md:h-52'>
 
@@ -97,7 +97,7 @@ const BannerSwiper = () => {
 
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mx-8 pb-20'>
         <div className="col">
-          <div className="card w-11/12 bg-base-100 shadow-xl hover:border-4 border-fuchsia-500">
+          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-4 border-fuchsia-500">
             <figure className="px-10 pt-10">
               <Image src={cdi} alt="Shoes" className="rounded-xl h-32" />
             </figure>
@@ -105,13 +105,13 @@ const BannerSwiper = () => {
               
               <p className='text-lg font-bold text-indigo-700'>Solve Any Question from Thousand of Questions.</p>
               <div className="card-actions">
-                <p className="mt-2 font-bold text-blue-700 hover:text-indigo-700 hover:border-2 border-indigo-500 px-4 py-2 rounded-lg">Solve Now</p>
+                <p className=" font-bold text-blue-700 hover:text-indigo-700 hover:border-2 border-indigo-500 px-4 rounded-lg">Solve Now</p>
               </div>
             </div>
           </div>
         </div>
         <div className="col">
-          <div className="card w-11/12 bg-base-100 shadow-xl hover:border-4 border-fuchsia-500">
+          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-4 border-fuchsia-500">
             <figure className="px-10 pt-10">
             <Image src={cdi3} alt="Shoes" className="rounded-xl h-32" />
             </figure>
@@ -119,13 +119,13 @@ const BannerSwiper = () => {
               
               <p className='text-lg font-bold text-indigo-700'>Attend Live Mock test to Check Your Preparation.</p>
               <div className="card-actions">
-              <p className="mt-2 font-bold text-blue-700 hover:text-indigo-700 hover:border-2 border-indigo-500 px-4 py-2 rounded-lg">Attend Now</p>
+              <p className="font-bold text-blue-700 hover:text-indigo-700 hover:border-2 border-indigo-500 px-4  rounded-lg">Attend Now</p>
               </div>
             </div>
           </div>
         </div>
         <div className="col">
-          <div className="card w-11/12 bg-base-100 shadow-xl hover:border-4 border-fuchsia-500">
+          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-4 border-fuchsia-500">
           <figure className="px-10 pt-10">
           <Image src={cdi2} alt="Shoes" className="rounded-xl h-32"  />
           </figure>
@@ -133,7 +133,7 @@ const BannerSwiper = () => {
            
             <p  className='text-lg font-bold text-indigo-700'>Read Blog Post And Enrich Your Knowledge.</p>
             <div className="card-actions">
-            <p className="mt-2 font-bold text-blue-700 hover:text-indigo-700 hover:border-2 border-indigo-500 px-4 py-2 rounded-lg">Read Now</p>
+            <p className=" font-bold text-blue-700 hover:text-indigo-700 hover:border-2 border-indigo-500 px-4 rounded-lg">Read Now</p>
             </div>
           </div>
         </div></div>
