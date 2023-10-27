@@ -49,9 +49,14 @@ const page = () => {
      const isActive = (id) => {
           return selectId.includes(id) ? 'cursor-none bg-[#27895b80]' : '';
      }
+
+   
      const examSubmit = async () => {
+   
           const data = { rank: RightAns?.length * 50, mark: RightAns?.length * 5, exam: 1, email: user?.email }
+          console.log(data);
           const result = await UpdateUser(data);
+          console.log(result);
           if (result.success == true) {
                setSuccess(true);
                toast.success(" Exam successfully ")

@@ -1,6 +1,5 @@
 "use client"
 import CommonImage from '@/Components/CommonImage/CommonImage';
-
 import { GlobalContext } from '@/GlobalState';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -28,7 +27,11 @@ const DashboardLayout = ({ children }) => {
 
                <div className=' hidden  fixed top-2 left-3 md:block'>
                     <div className='  my-2  p-4   flex items-center gap-5'>
+<<<<<<< HEAD
+                         <Link href={'/'} className='text-lg  cursor-pointer md:text-3xl font-bold my-4'> FRACTOS</Link>
+=======
                          <Link  href={'/'} className='text-lg  cursor-pointer md:text-3xl font-bold my-4'> FRACTOS</Link>
+>>>>>>> 06269fe3a471fa465dac6982009af45ff19e3110
                     </div>
                </div>
 
@@ -38,7 +41,7 @@ const DashboardLayout = ({ children }) => {
                     <div className=' md:hidden p-2'>
                          {
                               openModal == true ? <div>
-                                <div className=' md:hidden  bg-[#ECF0F3]  py-8   space-y-2'>
+                                   <div className=' md:hidden  bg-[#ECF0F3]  py-8   space-y-2'>
 
                                         <Link
                                              href="/dashboard"
@@ -153,21 +156,21 @@ const DashboardLayout = ({ children }) => {
                                    </Link>
 
                                    <Link
-                                             href="/dashboard/profile"
-                                             className={`${pathname == "/dashboard/profile" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
+                                        href="/dashboard/profile"
+                                        className={`${pathname == "/dashboard/profile" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
 
-                                        >
-                                             <BiUserCircle size={24}></BiUserCircle>
-                                             <h1 className=' text-base md:text-lg f font-normal '> Profile </h1>
-                                        </Link>
+                                   >
+                                        <BiUserCircle size={24}></BiUserCircle>
+                                        <h1 className=' text-base md:text-lg f font-normal '> Profile </h1>
+                                   </Link>
                                    <Link
-                                             href="/dashboard/setting"
-                                             className={`${pathname == "/dashboard/setting" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
+                                        href="/dashboard/setting"
+                                        className={`${pathname == "/dashboard/setting" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
 
-                                        >
-                                             <FiSettings size={24}></FiSettings>
-                                             <h1 className=' text-base md:text-lg f font-normal '> setting </h1>
-                                        </Link>
+                                   >
+                                        <FiSettings size={24}></FiSettings>
+                                        <h1 className=' text-base md:text-lg f font-normal '> setting </h1>
+                                   </Link>
 
 
 
