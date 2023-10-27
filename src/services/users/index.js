@@ -26,10 +26,7 @@ export const getAllUser = async () => {
   try {
     const res = await fetch("http://localhost:3000/api/users/all-users", {
       method: "GET",
-      headers: {
-        Authorization: `Bearer ${Cookies.get("token")}`,
-      },
-    });
+     });
     const data = await res.json();
     return data;
   } catch (error) {

@@ -1,5 +1,5 @@
 import connectToDB from "@/database";
-import AuthUser from "@/middleware/AuthUser";
+
 
 import User from "@/models/Users";
 import { NextResponse } from "next/server";
@@ -15,13 +15,13 @@ export async function GET(req) {
      try {
           //check if the user is exists or not
 
-          const isAuthUser = await AuthUser(req);
-          if (!isAuthUser) {
-               return NextResponse.json({
-                    success: false,
-                    message: "Authorization field",
-               });
-          }
+          // const isAuthUser = await AuthUser(req);
+          // if (!isAuthUser) {
+          //      return NextResponse.json({
+          //           success: false,
+          //           message: "Authorization field",
+          //      });
+          // }
 
           const allUser = await User.find({});
           console.log(allUser);
