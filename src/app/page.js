@@ -12,6 +12,7 @@ import Banner from "@/Home/Banner/Banner";
 
 
 
+
 export default function Home() {
   return (
     <div>
@@ -43,6 +44,7 @@ export default function Home() {
         {/* Banner */}
 
         <ContactSection></ContactSection>
+        
 
         <Footer></Footer>
       </Container>
