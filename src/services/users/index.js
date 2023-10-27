@@ -24,7 +24,7 @@ export const registerNewUser = async (formData) => {
 export const getAllUser = async () => {
 
   try {
-    const res = await fetch("/api/users/all-users", {
+    const res = await fetch("http://localhost:3000/api/users/all-users", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${Cookies.get("token")}`,
