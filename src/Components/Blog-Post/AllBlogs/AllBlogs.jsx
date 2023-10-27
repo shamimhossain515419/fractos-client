@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 
@@ -34,9 +35,9 @@ const AllBlogs = () => {
                 {
                     blogs.map(blog => <div key={blog.id} className="col" >
                         <div className="card w-96  shadow-xl bg-blue-300">
-                            <figure className="px-10 pt-10">
-                                <img src={blog.image} alt="" className="rounded-xl" />
-                            </figure>
+                            <div className="px-10 pt-10">
+                                <Image width={100} height={100} src={blog.image} alt="" className="rounded-xl" />
+                            </div>
                             <div className="card-body ">
                                 <div className='flex my-4'>
                                     <p className="text-blue-600  ">Date:{blog.date}</p>

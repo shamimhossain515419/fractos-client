@@ -27,7 +27,11 @@ const DashboardLayout = ({ children }) => {
 
                <div className=' hidden  fixed top-2 left-3 md:block'>
                     <div className='  my-2  p-4   flex items-center gap-5'>
+<<<<<<< HEAD
                          <Link href={'/'} className='text-lg  cursor-pointer md:text-3xl font-bold my-4'> FRACTOS</Link>
+=======
+                         <Link  href={'/'} className='text-lg  cursor-pointer md:text-3xl font-bold my-4'> FRACTOS</Link>
+>>>>>>> 06269fe3a471fa465dac6982009af45ff19e3110
                     </div>
                </div>
 
