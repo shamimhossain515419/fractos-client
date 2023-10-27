@@ -11,8 +11,6 @@ import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
  
 
 
-// import Archive from "@/Components/Archive/Archive";
-import Navbar from "@/Components/Navbar";
 
 
 
@@ -22,14 +20,17 @@ export default function Home() {
   return (
     <div>
       <Container>
+      
+          <Navbar></Navbar>
+       
 
-        <Navbar></Navbar>
         
         
         <BannerSwiper></BannerSwiper>
      
 
-        {/* exam question model */}
+       
+
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
@@ -39,13 +40,16 @@ export default function Home() {
         <div className=" py-5">
           <Premium></Premium>
         </div>
-       
+        <div className="py-10">
+
+        </div>
+
+
         {/* Banner */}
 
         <ContactSection></ContactSection>
 
         <Footer></Footer>
-        
       </Container>
 
     </div>
