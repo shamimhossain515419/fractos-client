@@ -3,14 +3,9 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../../firebase/firebase.config';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
-import jwt from "jsonwebtoken";
 import { GetSingleUser, jwtSingUp } from '@/services/users';
 import Cookies from 'js-cookie';
-
-
 export const GlobalContext = createContext(null);
-
-// abdur rahman code
 const auth = getAuth(app);
 //
 const GlobalState = ({ children }) => {
