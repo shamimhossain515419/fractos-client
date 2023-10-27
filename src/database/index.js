@@ -1,14 +1,11 @@
 import mongoose from "mongoose";
-
-
-
 const configOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
 
 const connectToDB = async () => {
-  const connectionUrl = `mongodb+srv://FRACTOS123456:EyPk3F6vGG9DA3Ia@fractos.6n07rkt.mongodb.net/ `  
+  const connectionUrl = `mongodb+srv://${process.env.VITE_USER}:${process.env.VITE_PASSWORD}@fractos.6n07rkt.mongodb.net/ `  
  
   mongoose
     .connect(connectionUrl, configOptions)

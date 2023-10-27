@@ -1,5 +1,5 @@
 export const GetSubjectByData = async (name) => {
-  console.log(name);
+ 
      try {
        const res = await fetch(`/api/exam/get-by-subject?subject=${name}`, {
          method: "GET",

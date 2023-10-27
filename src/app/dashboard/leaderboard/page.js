@@ -26,7 +26,7 @@ const page = () => {
           const sortData = result?.data.sort((a, b) => b?.rank - a?.rank);
           setAllUser(sortData)
 
-          console.log(result);
+          
      }
 
 

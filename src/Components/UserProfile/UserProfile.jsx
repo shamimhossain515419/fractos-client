@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const UserProfile = () => {
     const { user, userinfo} = useContext(GlobalContext);
-    console.log(user);
+    
     return (
         <div className='md:flex lg:flex items-center'>
             <div className='md:w-1/4 lg:1/4 flex flex-col items-center'>

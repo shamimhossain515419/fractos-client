@@ -23,10 +23,10 @@ const Page = () => {
 
     const registrationHandler = async (data) => {
         const fromData = { email: data?.email,exam:0, photo:"", name: data?.name ? data?.name : "", password: data?.password, role: "user", category:"student" ,phone:0, about:"", batch:"", collage:"", level:"", rank:0, mark:0}
-        console.log(fromData);
+        
         const result = await registerNewUser(fromData);
 
-        console.log(result);
+    
 
         createUser(data.email, data.password)
                 .then(result =>{

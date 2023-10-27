@@ -10,21 +10,13 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req) {
      await connectToDB();
-     //validate the schema
+  
 
      try {
-          //check if the user is exists or not
-
-          // const isAuthUser = await AuthUser(req);
-          // if (!isAuthUser) {
-          //      return NextResponse.json({
-          //           success: false,
-          //           message: "Authorization field",
-          //      });
-          // }
+         
 
           const allUser = await User.find({});
-          console.log(allUser);
+          
           if (allUser) {
                return NextResponse.json({
                     success: true,
