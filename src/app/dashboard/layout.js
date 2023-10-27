@@ -1,6 +1,5 @@
 "use client"
 import CommonImage from '@/Components/CommonImage/CommonImage';
-
 import { GlobalContext } from '@/GlobalState';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
