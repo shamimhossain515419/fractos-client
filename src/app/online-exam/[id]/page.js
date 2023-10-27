@@ -7,7 +7,6 @@ import ExamModel from '@/Components/Shared/ExamModel';
 import { GlobalContext } from '@/GlobalState';
 import { GetSubjectByData } from '@/services/exam';
 import { UpdateUser } from '@/services/users';
-import { data } from 'autoprefixer';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
