@@ -6,27 +6,26 @@ import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 
 export async function PUT(req) {
+
      try {
-
-          console.log("shamimdf");
           await connectToDB();
-
+          console.log("shmafdfd");
           const extractData = await req.json();
 
           const {
                email, name, phone, about, batch, collage, level
           } = extractData;
 
-
           const currentUser = await User.findOne({ email });
-          console.log(currentUser);
-          console.log(extractData);
+
           if (!currentUser) {
                return NextResponse.json({
                     success: false,
                     message: "User is not   found",
                });
           }
+
+
           const updatedProduct = await User.findOneAndUpdate(
                {
                     email: email,
@@ -45,6 +44,8 @@ export async function PUT(req) {
                { new: true }
           );
 
+
+
           if (updatedProduct) {
                return NextResponse.json({
                     success: true,
@@ -56,8 +57,6 @@ export async function PUT(req) {
                     message: "Failed to update the update user ! Please try again later",
                });
           }
-
-
 
 
 
