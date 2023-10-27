@@ -150,15 +150,6 @@ const DashboardLayout = ({ children }) => {
                                         <BiUserCircle size={24}></BiUserCircle>
                                         <h1 className=' text-base md:text-lg f font-normal '> Profile </h1>
                                    </Link>
-
-                                   <Link
-                                        href="/dashboard/profile"
-                                        className={`${pathname == "/dashboard/profile" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
-
-                                   >
-                                        <BiUserCircle size={24}></BiUserCircle>
-                                        <h1 className=' text-base md:text-lg f font-normal '> Profile </h1>
-                                   </Link>
                                    <Link
                                         href="/dashboard/setting"
                                         className={`${pathname == "/dashboard/setting" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
