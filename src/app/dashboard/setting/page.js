@@ -13,7 +13,7 @@ const SettingPage = () => {
 
 
      const imageUpdate = async (image) => {
-          const photoupdate= {photo: image , email:user?.email}
+          const photoupdate= { photo: image , email:user?.email}
           const data = await UpdateUser(photoupdate)
           console.log(data);
      }
