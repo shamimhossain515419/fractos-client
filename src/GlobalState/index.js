@@ -98,6 +98,7 @@ const GlobalState = ({ children }) => {
           componentLevelLoader,
           setComponentLevelLoader,
           pageLoader, setPageLoader,
+          componentLevelLoader, setComponentLevelLoader,
           createUser, updateUserProfile,
           loginUser, logOutUser,
           googleSignIn,setIsAdmin, isAdmin
