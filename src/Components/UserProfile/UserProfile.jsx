@@ -1,7 +1,6 @@
 'use client'
 import React, { useContext } from 'react';
-// import CommonImage from '../CommonImage/CommonImage';
-import { GlobalContext } from '@/GlobalState';
+ import { GlobalContext } from '@/GlobalState';
 import Image from 'next/image';
 
 const UserProfile = () => {

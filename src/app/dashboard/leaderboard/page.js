@@ -26,7 +26,7 @@ const page = () => {
           const sortData = result?.data.sort((a, b) => b?.rank - a?.rank);
           setAllUser(sortData)
 
-          
+          console.log(result);
      }
 
 
@@ -34,7 +34,7 @@ const page = () => {
           getAllData();
      }, [user])
 
-
+ console.log(allUser);
 
      return (
           <div>
@@ -44,21 +44,21 @@ const page = () => {
                     <div className=' flex justify-center  sm:gap-2  md:gap-14 '>
                          <div className=' flex flex-col items-center gap-2  mt-14'>
                               <div className='  '>
-                                   <Image className=' imageshodow w-[50px] h-[50px] rounded-full md:w-[100px] md:h-[100px] ' width={200} height={200} src={allUser[0]?.photo ? allUser[0]?.photo  :  "https://i.ibb.co/d6JQZk6/IMG-4039.jpg"} alt="" />
-                              </div><h1 className=' md:text-xl font-bold '>  {allUser[0]?.name ? allUser[0]?.name : " no name"} </h1>
+                                   <Image className=' imageshodow w-[50px] h-[50px] rounded-full md:w-[100px] md:h-[100px] ' width={200} height={200} src={allUser[1]?.photo ? allUser[1]?.photo : "https://i.ibb.co/d6JQZk6/IMG-4039.jpg"} alt="" />
+                              </div><h1 className=' md:text-xl font-bold '>  {allUser[1]?.name ? allUser[1]?.name : " no name"} </h1>
                               <div className=' flex justify-center items-center gap-2'>
                                    <ImPointRight size={24}></ImPointRight>
-                                   <p> {allUser[0]?.rank ? allUser[0]?.rank : 0} K </p>
+                                   <p> {allUser[1]?.rank ? allUser[1]?.rank : 0} K </p>
                               </div>
                          </div>
 
                          <div className=' flex flex-col items-center gap-2 '>
                               <div className='  '>
-                                   <Image className='imageshodow  w-[50px] h-[50px] rounded-full md:w-[100px] md:h-[100px] ' width={200} height={200} src={allUser[1]?.photo ? allUser[1]?.photo  :  "https://i.ibb.co/d6JQZk6/IMG-4039.jpg"} alt="" />
-                              </div><h1 className=' md:text-xl font-bold '>  {allUser[1]?.rank ? allUser[1]?.name : "no name"} K </h1>
+                                   <Image className='imageshodow  w-[50px] h-[50px] rounded-full md:w-[100px] md:h-[100px] ' width={200} height={200} src={allUser[0]?.photo ? allUser[0]?.photo  :  "https://i.ibb.co/d6JQZk6/IMG-4039.jpg"} alt="" />
+                              </div><h1 className='md:text-xl font-bold '>  {allUser[0]?.rank ? allUser[0]?.name : "no name"} K </h1>
                               <div className=' flex justify-center items-center gap-2'>
                                    <ImPointRight size={24}></ImPointRight>
-                                   <p> {allUser[1]?.rank ? allUser[1]?.rank : 0} K </p>
+                                   <p> {allUser[0]?.rank ? allUser[0]?.rank : 0} K </p>
                               </div>
                          </div>
                          <div className=' flex flex-col items-center gap-2 mt-14'>
@@ -113,7 +113,7 @@ const page = () => {
 
                     <div>
                          {
-                              allUser?.map((item, index) => 
+                              allUser?.slice(3).map((item, index) => 
                               
                               <Link key={index} href={`/dashboard/${user?.email}`} className='  bg-[#E5E5E5] my-4 px-3 py-1 rounded flex justify-between items-center gap-2 max-w-[1200px] mx-auto'>
                                    <div className=' flex  gap-4 items-center'>
