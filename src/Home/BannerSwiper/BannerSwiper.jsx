@@ -7,6 +7,7 @@ import Img2 from './Images/Untitled3.png'
 import Bn from './Images/banner2.jpg'
 import Bn2 from './Images/Banner3.jpg'
 import Bn3 from './Images/banner4.jpg'
+import Banner from './Images/banner.png'
 import Image from 'next/image';
 import cdi from './Images/images (3).jpeg'
 import cdi2 from './Images/images (4).jpeg'
@@ -16,39 +17,26 @@ import cdi3 from './Images/images (7).jpeg'
 const BannerSwiper = () => {
   const [typingStatus, setTypingStatus] = useState('Initializing');
   return (
-    <div className='bg-gradient-to-r from-indigo-700 to-indigo-400  my-16 text-white rounded-lg'>
+    // bg-gradient-to-r from-sky-300 to-sky-300
+    <div className='   my-16 text-white rounded-lg'>
       <div >
-        <div className="md:flex flex-row-reverse px-4 py-8 md:pt-20 md:pb-8 md:px-16 gap-3">
+        <div className="md:flex flex px-4 py-8 md:pt-20 md:pb-8 md:px-16 gap-3">
 
           <div className=" ">
-            <div className='flex '>
-              <div>
-                <Image
-                  src={Bn}
-                  height={200}
-                  width={200}
-                  alt="Picture of the author" />
-              </div>
-              <div>
-                <Image
-                  src={Bn2}
-                  height={200}
-                  width={200}
-                  alt="Picture of the author" />
-              </div>
-            </div>
+           
+          
             <div className='mt-1 px-3 md:pl-12'>
               <Image
-                src={Bn3}
-                height={300}
-                width={300}
+                src={Banner}
+                height={400}
+                width={500}
                 alt="Picture of the author" />
             </div>
 
           </div>
-          <div className="md:w-8/12 h-10/12 md:mt-16 mt-8">
+          <div className="md:w-8/12 h-10/12 md:mt-12 mt-8 md:ml-12">
 
-            <div className='font-bold text-4xl md:text-6xl h-28 md:h-52'>
+            <div className='font-bold text-3xl md:text-5xl h-28 md:h-48 text-indigo-500 '>
 
 
               <TypeAnimation
@@ -78,7 +66,7 @@ const BannerSwiper = () => {
                 repeat={Infinity}
               />
             </div>
-            <div className='flex my-8 mx-4'>
+            <div className='flex my-4 mx-4'>
               <Image
                 src={Img1}
                 className='h-12 w-28'
@@ -97,7 +85,7 @@ const BannerSwiper = () => {
 
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mx-8 pb-20'>
         <div className="col">
-          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-4 border-fuchsia-500">
+          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-2 border-indigo-700">
             <figure className="px-10 pt-10">
               <Image src={cdi} alt="Shoes" className="rounded-xl h-32" />
             </figure>
@@ -106,12 +94,12 @@ const BannerSwiper = () => {
               <p className='text-lg font-bold text-indigo-700'>Solve Any Question from Thousand of Questions.</p>
               <div className="card-actions">
                 <p className=" font-bold text-blue-700 hover:text-indigo-700 hover:border-2 border-indigo-500 px-4 rounded-lg">Solve Now</p>
-              </div>
+              </div> 
             </div>
           </div>
         </div>
         <div className="col">
-          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-4 border-fuchsia-500">
+          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-2 border-indigo-700">
             <figure className="px-10 pt-10">
             <Image src={cdi3} alt="Shoes" className="rounded-xl h-32" />
             </figure>
@@ -125,7 +113,7 @@ const BannerSwiper = () => {
           </div>
         </div>
         <div className="col">
-          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-4 border-fuchsia-500">
+          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-2 border-indigo-700">
           <figure className="px-10 pt-10">
           <Image src={cdi2} alt="Shoes" className="rounded-xl h-32"  />
           </figure>
