@@ -1,6 +1,7 @@
 
 import connectToDB from "@/database";
-import Users from "@/models/Users";
+import allUsers from "@/models/Users";
+
 import { NextResponse } from "next/server";
 
 
@@ -20,7 +21,7 @@ try {
           message: "User email is  found",
         });
 
-      const extractUser = await Users.findOne({email});
+      const extractUser = await allUsers.findOne({email});
 
       if (extractUser) {
         return NextResponse.json({

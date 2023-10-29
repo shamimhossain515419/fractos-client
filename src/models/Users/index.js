@@ -16,6 +16,6 @@ const UserSchema = new mongoose.Schema({
   exam: Number,
 });
 
-const Users = mongoose.models.Users || mongoose.model("Users", UserSchema);
+const allUsers = mongoose.models.allUsers || mongoose.model("allUsers", UserSchema);
 
-export default Users;
+export default allUsers;

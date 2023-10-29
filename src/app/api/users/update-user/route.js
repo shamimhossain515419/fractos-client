@@ -1,6 +1,7 @@
 
 import connectToDB from "@/database";
-import Users from "@/models/Users";
+import allUsers from "@/models/Users";
+
 import { NextResponse } from "next/server";
 
 
@@ -16,7 +17,7 @@ export async function PUT(req) {
                email, name, phone, about, batch, collage, level
           } = extractData;
 
-          const currentUser = await Users.findOne({ email });
+          const currentUser = await allUsers.findOne({ email });
 
           if (!currentUser) {
                return NextResponse.json({
@@ -26,7 +27,7 @@ export async function PUT(req) {
           }
 
 
-          const updatedProduct = await Users.findOneAndUpdate(
+          const updatedProduct = await allUsers.findOneAndUpdate(
                {
                     email: email,
                },

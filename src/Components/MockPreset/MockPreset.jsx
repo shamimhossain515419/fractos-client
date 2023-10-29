@@ -53,7 +53,7 @@ const MockPreset = () => {
         },
         {
             "id": 2,
-            "name": "Chemistry"
+            "name": "chemistry"
         },
         {
             "id": 3,
@@ -65,7 +65,7 @@ const MockPreset = () => {
         },
         {
             "id": 5,
-            "name": "Higher Math"
+            "name": "higherMath"
         },
         {
             "id": 6,
@@ -77,7 +77,7 @@ const MockPreset = () => {
         },
         {
             "id": 8,
-            "name": "General Knowledge"
+            "name": "generalknowledge"
         }
 
     ];

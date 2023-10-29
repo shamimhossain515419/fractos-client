@@ -7,95 +7,84 @@ const Page = () => {
 
 
 
-     const data ={
-          exam_name: " english ",
+     const higherMathData = {
+          exam_name: "higherMath",
           questions: [
             {
-              "question": "The courier ……… three days ago, but why haven’t you received it yet?",
-              "answer_a": "has been sent",
-              "answer_b": "has sent",
-              "answer_c": "was sent",
-              "answer_d": "sent",
-              "answer_right": "was sent"
+              question: "What is the derivative of y = x^2 with respect to x?",
+              answer_a: "2x",
+              answer_b: "x",
+              answer_c: "3x^2",
+              answer_d: "2",
+              answer_right: "2x"
             },
             {
-              "question": "One who doesn’t make mistakes is called:",
-              "answer_a": "Infallible",
-              "answer_b": "Blasphemy",
-              "answer_c": " Pantry",
-              "answer_d": "Lapidist",
-              "answer_right": "Infallible"
+              question: "What is the integral of ∫(3x^2 + 2x) dx?",
+              answer_a: "3x^3 + 2x^2 + C",
+              answer_b: "2x^3 + 3x^2 + C",
+              answer_c: "3x^3 + 2x + C",
+              answer_d: "x^3 + 2x^2 + C",
+              answer_right: "3x^3 + 2x^2 + C"
             },
             {
-              "question": "Radhe Lal ……… working twelve hours a day for five days.",
-              "answer_a": "was",
-              "answer_b": "will be",
-              "answer_c": "has been",
-              "answer_d": "is",
-              "answer_right": "has been"
+              question: "In a right triangle, what is the ratio of the length of the side opposite the angle θ to the length of the hypotenuse?",
+              answer_a: "Sine",
+              answer_b: "Cosine",
+              answer_c: "Tangent",
+              answer_d: "Cosecant",
+              answer_right: "Sine"
             },
             {
-              "question": "As soon as I pointed my gun towards the jackal, it jumped ……… the water.",
-              "answer_a": "in",
-              "answer_b": "into",
-              "answer_c": "on",
-              "answer_d": "at",
-              "answer_right": "into"
+              question: "What is the limit of (sin x) / x as x approaches 0?",
+              answer_a: "1",
+              answer_b: "0",
+              answer_c: "π",
+              answer_d: "∞",
+              answer_right: "1"
             },
-        {
-              "question": "He brought ……… information about the secretary.",
-              "answer_a": "a piece of",
-              "answer_b": "and",
-              "answer_c": "many",
-              "answer_d": "the",
-              "answer_right": "a piece of"
+            {
+              question: "What is the derivative of e^x with respect to x?",
+              answer_a: "e^x",
+              answer_b: "1",
+              answer_c: "0",
+              answer_d: "ln(x)",
+              answer_right: "e^x"
             },
-        {
-              "question": "Well, I eat one apple every day, but today I ……… two apples.",
-              "answer_a": "was eaten",
-              "answer_b": "eat",
-              "answer_c": "eaten",
-              "answer_d": "ate",
-              "answer_right": "ate"
+            {
+              question: "What is the area of a circle with radius 'r'?",
+              answer_a: "πr",
+              answer_b: "2πr",
+              answer_c: "πr^2",
+              answer_d: "2πr^2",
+              answer_right: "πr^2"
             },
-        {
-              "question": "Either of these two people is the CEO of this company.",
-              "answer_a": "have",
-              "answer_b": "has",
-              "answer_c": "is",
-              "answer_d": "has been",
-              "answer_right": "is"
+            {
+              question: "What is the value of sin(π/2)?",
+              answer_a: "0",
+              answer_b: "1",
+              answer_c: "-1",
+              answer_d: "π/2",
+              answer_right: "1"
             },
-        {
-              "question": "What is meant by bold words in the given sentence? Sentence – Major Karan Singh broke the ice regarding the security of the soldiers.",
-              "answer_a": "hid a matter",
-              "answer_b": "forbade",
-              "answer_c": "spoke",
-              "answer_d": "created a scene",
-              "answer_right": "spoke"
-            },
-        {
-              "question": "  If necessary, improve the bold words in the given sentence. Sentence – The broker promised that he will sell the plot to Kailash only.",
-              "answer_a": "shall sell the plot",
-              "answer_b": "would have been sold the plot",
-              "answer_c": "would sell the plot",
-              "answer_d": "No improvement",
-              "answer_right": "would sell the plot"
-            },
-        {
-              "question": "She will not meet you ……… to her office.",
-              "answer_a": "until you go",
-              "answer_b": " until you don't go",
-              "answer_c": " unless you don't go",
-              "answer_d": "until you hardly go",
-              "answer_right": "until you go"
+            {
+              question: "What is the square root of -1?",
+              answer_a: "0",
+              answer_b: "1",
+              answer_c: "i",
+              answer_d: "-i",
+              answer_right: "i"
             },
           ]
-        } 
+        };
+        
+        
+        
+        
+
         
 
      const hanleCloet = async () => {
-          const result = await QuestionPost(data)
+          const result = await QuestionPost(higherMathData)
           console.log(result);
      }
 
