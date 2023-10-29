@@ -7,14 +7,6 @@ import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
 import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
-// import Banner from "@/Home/Banner/Banner";
-// import Banner from "@/Home/Banner/Banner";
-
-
-
-
-
-
 
 
 
@@ -31,15 +23,6 @@ export default function Home() {
         <BannerSwiper></BannerSwiper>
 
 
-
-        {/* <Banner></Banner> */}
-
-
-        {/* <BannerSwiper></BannerSwiper> */}
-
-
-
-
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
@@ -52,9 +35,7 @@ export default function Home() {
 
 
         <ContactSection></ContactSection>
-
-
-        <Footer></Footer>
+      <Footer></Footer>
       </Container>
 
     </div>

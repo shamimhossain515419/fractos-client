@@ -32,7 +32,6 @@ export async function PUT(req) {
                     email: email,
                },
                {
-                    name: extractData?.name ? extractData?.name : currentUser?.name,
                     phone: extractData?.phone ? extractData?.phone : currentUser?.phone,
                     about: extractData?.about ? extractData?.about : currentUser?.about,
                     photo: extractData?.photo ? extractData?.photo : currentUser?.photo,

@@ -40,7 +40,7 @@ const Navbar = () => {
                                              <Link href={'/contact'}> Contact Us</Link>
 
                                              {
-                                                  user ? <Link href={'/dashboard'}> Dashboard</Link> : null
+                                              user ?<Link href={'/dashboard'}> Dashboard</Link> : null
                                              }
 
 
