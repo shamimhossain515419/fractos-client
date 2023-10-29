@@ -1,5 +1,5 @@
 
-import Cookies from "js-cookie";
+
 
 export const registerNewUser = async (formData) => {
   try {
