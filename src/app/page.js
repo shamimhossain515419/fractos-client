@@ -9,6 +9,7 @@ import Navbar from "@/Components/Navbar";
 import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
 
 
+
 export default function Home() {
   return (
     <div>
@@ -16,7 +17,10 @@ export default function Home() {
 
         <Navbar></Navbar>
 
-      <BannerSwiper></BannerSwiper>
+        {/* <Banner></Banner> */}
+
+
+        <BannerSwiper></BannerSwiper>
 
 
         <div className=" my-3">
