@@ -20,7 +20,7 @@ const BannerSwiper = () => {
     // bg-gradient-to-r from-sky-300 to-sky-300
     <div className='   my-16 text-white rounded-lg'>
       <div >
-        <div className="md:flex flex px-4 py-8 md:pt-20 md:pb-8 md:px-16 gap-3">
+        <div className="md:flex  px-4 py-8 md:pt-20 md:pb-8 md:px-16 gap-3">
 
           <div className=" ">
            
@@ -83,7 +83,7 @@ const BannerSwiper = () => {
         </div>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mx-8 pb-20'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-4  pb-12 ml-12'>
         <div className="col">
           <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-2 border-indigo-700">
             <figure className="px-10 pt-10">
