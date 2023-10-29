@@ -4,9 +4,6 @@ import { TypeAnimation } from 'react-type-animation';
 
 import Img1 from './Images/Untitled1.png'
 import Img2 from './Images/Untitled3.png'
-import Bn from './Images/banner2.jpg'
-import Bn2 from './Images/Banner3.jpg'
-import Bn3 from './Images/banner4.jpg'
 import Banner from './Images/banner.png'
 import Image from 'next/image';
 import cdi from './Images/images (3).jpeg'
@@ -34,9 +31,9 @@ const BannerSwiper = () => {
             </div>
 
           </div>
-          <div className="md:w-8/12 h-10/12 md:mt-12 mt-8 md:ml-12">
+          <div className="md:w-8/12 h-10/12 md:mt-12 mt-8 md:ml-12 flex justify-center items-center flex-col">
 
-            <div className='font-bold text-3xl md:text-5xl h-28 md:h-48 text-indigo-500 '>
+            <div className='font-bold text-2xl md:text-4xl  py-5 text-indigo-500 '>
 
 
               <TypeAnimation
@@ -83,9 +80,9 @@ const BannerSwiper = () => {
         </div>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-4  pb-12 ml-12'>
-        <div className="col">
-          <div className="card bg-white w-10/12 h-80  shadow-xl hover:border-2 border-indigo-700">
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-4  pb-12 ml-12  py-14'>
+        <div className="col ">
+          <div className="card p-3 bg-white w-10/12 h-80  shadow-xl hover:border-2 border-indigo-700">
             <figure className="px-10 pt-10">
               <Image src={cdi} alt="Shoes" className="rounded-xl h-32" />
             </figure>
