@@ -85,7 +85,7 @@ const BannerSwiper = () => {
 
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4  pb-12 ml-12'>
         <div className="col">
-          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-2 border-indigo-700">
+          <div className="card bg-white w-10/12 h-80  shadow-xl hover:border-2 border-indigo-700">
             <figure className="px-10 pt-10">
               <Image src={cdi} alt="Shoes" className="rounded-xl h-32" />
             </figure>
@@ -99,7 +99,7 @@ const BannerSwiper = () => {
           </div>
         </div>
         <div className="col">
-          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-2 border-indigo-700">
+          <div className="card w-10/12 h-80  bg-white shadow-xl hover:border-2 border-indigo-700">
             <figure className="px-10 pt-10">
             <Image src={cdi3} alt="Shoes" className="rounded-xl h-32" />
             </figure>
@@ -113,7 +113,7 @@ const BannerSwiper = () => {
           </div>
         </div>
         <div className="col">
-          <div className="card w-10/12 h-80 bg-base-100 shadow-xl hover:border-2 border-indigo-700">
+          <div className="card w-10/12 h-80 bg-white  shadow-xl hover:border-2 border-indigo-700">
           <figure className="px-10 pt-10">
           <Image src={cdi2} alt="Shoes" className="rounded-xl h-32"  />
           </figure>
