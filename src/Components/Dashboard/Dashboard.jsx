@@ -6,6 +6,7 @@ import "./Dashboard.css";
 import { GlobalContext } from "@/GlobalState";
 import CommonImage from "../CommonImage/CommonImage";
 import { getAllUser } from "@/services/users";
+import Link from "next/link";
 
 const Dashboard = async () => {
 
@@ -115,9 +116,9 @@ const Dashboard = async () => {
                 </select>
               </div>
             </div>
-            <button className="px-2 py-2 primaryBg rounded text-white font-bold mt-2 float-right">
+            <Link  href={'/dashboard/mock-exam'} className="px-2 py-2 primaryBg rounded text-white font-bold mt-2 float-right">
               Start Now
-            </button>
+            </Link>
           </div>
 
           <div className="item w-full bg-[#E2E8F0] shadow-md rounded  h-full     py-3 px-3">
@@ -158,9 +159,9 @@ const Dashboard = async () => {
                 </select>
               </div>
             </div>
-            <button className="px-2 py-2 primaryBg rounded text-white font-bold mt-2 float-right">
+            <Link href={'/dashboard/mock-exam'} className="px-2 py-2 primaryBg rounded text-white font-bold mt-2 float-right">
               Start Now
-            </button>
+            </Link>
           </div>
 
         </div>
@@ -206,7 +207,7 @@ const Dashboard = async () => {
                         {item?.name}
 
                       </td>
-                      <td className=" text-center">99</td>
+                      <td className=" text-center">{item?.mark}</td>
 
                     </tr>)
                   }
