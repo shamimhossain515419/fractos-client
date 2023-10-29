@@ -6,12 +6,9 @@ import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
-<<<<<<< HEAD
 import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
 // import Banner from "@/Home/Banner/Banner";
-=======
-import Banner from "@/Home/Banner/Banner";
->>>>>>> e35c20425cbd7d6c611fecea4c896ae2becea022
+// import Banner from "@/Home/Banner/Banner";
 
 
 
@@ -28,7 +25,6 @@ export default function Home() {
 
         <Navbar></Navbar>
 
-<<<<<<< HEAD
         {/* <Banner></Banner> */}
 
 
@@ -36,15 +32,13 @@ export default function Home() {
 
 
 
-=======
-        <Banner></Banner>
+        {/* <Banner></Banner> */}
 
 
         {/* <BannerSwiper></BannerSwiper> */}
 
 
 
->>>>>>> e35c20425cbd7d6c611fecea4c896ae2becea022
 
         <div className=" my-3">
           <CounterSection> </CounterSection>

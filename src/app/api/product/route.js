@@ -1,7 +1,5 @@
-
 import connectToDB from "@/database";
-import allUsers from "@/models/Users";
-
+import Product from "@/models/product";
 import { NextResponse } from "next/server";
 
 
@@ -9,33 +7,25 @@ import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 
 export async function GET(req) {
-try {
+  try {
     await connectToDB();
-  
-      const { searchParams } = new URL(req.url);
-      const email = searchParams.get("email");
 
-      if (!email)
-        return NextResponse.json({
-          success: false,
-          message: "User email is  found",
-        });
+      const extractAllproducts = await Product.find({});
 
-      const extractUser = await allUsers.findOne({email});
-
-      if (extractUser) {
+      if (extractAllproducts) {
         return NextResponse.json({
           success: true,
-          data: extractUser,
+          data: extractAllproducts,
         });
       } else {
         return NextResponse.json({
           success: false,
-          message: "Failed to get User  info ! Please try again",
+          status: 204,
+          message: "No Products found",
         });
       }
-    
-  } catch (e) {
+  } catch (error) {
+    console.log(error);
     return NextResponse.json({
       success: false,
       message: "Something went wrong ! Please try again later",
