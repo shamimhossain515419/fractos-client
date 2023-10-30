@@ -2,19 +2,12 @@ import Container from "@/Components/Container/Container";
 
 import Footer from "@/Components/Footer/Footer";
 import Pricing from "@/Components/Pricing/Pricing";
-
-
-
-
 import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
-
-// import Archive from "@/Components/Archive/Archive";
-import Banner from "@/Home/Banner/Banner";
 import Navbar from "@/Components/Navbar";
-
-
+import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
+import Feedback from "@/Components/Feedback";
 
 
 
@@ -25,9 +18,12 @@ export default function Home() {
 
         <Navbar></Navbar>
 
-        <Banner></Banner>
+        {/* <Banner></Banner> */}
 
-        {/* exam question model */}
+
+        <BannerSwiper></BannerSwiper>
+
+
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
@@ -37,13 +33,14 @@ export default function Home() {
         <div className=" py-5">
           <Premium></Premium>
         </div>
-       
-        {/* Banner */}
+
 
         <ContactSection></ContactSection>
 
+        <div className=" my-7">
+          <Feedback></Feedback>
+        </div>
         <Footer></Footer>
-        
       </Container>
 
     </div>

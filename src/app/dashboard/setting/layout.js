@@ -41,7 +41,7 @@ const SettingLayout = ({ children }) => {
                          <div className='   space-y-2    '>
 
                               <Link
-                                   href="/dashboard/setting/profile"
+                                   href="/dashboard/setting"
                                    className={`${pathname == "/dashboard/setting" ? " bg-[#8d9ddc69] border-l-2 border-[#a73131c5] text-[#a73131c5] " : "bg-[#8d9ddc2c]  "} flex   hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
 
                               >
@@ -55,7 +55,7 @@ const SettingLayout = ({ children }) => {
 
                               >
                                    <AiOutlineUnlock size={24}></AiOutlineUnlock>
-                                   <h1 className=' text-base md:text-lg f font-normal '> Archive </h1>
+                                   <h1 className=' text-base md:text-lg f font-normal '> Password </h1>
                               </Link>
                               <div onClick={handleSingout} className='  cursor-pointer flex  bg-[#8d9ddc2c] hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3'>
                                    <BiLogOut size={24}></BiLogOut>

@@ -3,11 +3,12 @@ import { AiOutlineAim } from "react-icons/ai";
 import { AiOutlineLeftCircle } from "react-icons/ai";
 import { AiOutlineExperiment } from "react-icons/ai";
 import { AiOutlineApi } from "react-icons/ai";
+import CommonTitle from "../CommonTitle/CommonTitle";
 const Premium = () => {
     return (
         <div>
-            <p className=" text-center py-8 font-bold text-2xl">Practice Premium</p>
-
+       
+            <CommonTitle title={"Practice Premium"}></CommonTitle>
             <div className="grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-5">
             <div>
                 <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500
