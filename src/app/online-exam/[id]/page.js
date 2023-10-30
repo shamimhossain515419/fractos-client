@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import Container from '@/Components/Container/Container';
 import CountdownTimer from '@/Components/CountdownTimer/CountdownTimer';
@@ -6,7 +6,9 @@ import Notification from '@/Components/Notification/Notification';
 import ExamModel from '@/Components/Shared/ExamModel';
 import { GlobalContext } from '@/GlobalState';
 import { GetSubjectByData } from '@/services/exam';
+import { PostExamReviews } from '@/services/exam-reviews';
 import { UpdateUser } from '@/services/users';
+import { date } from 'joi';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useState, useEffect, useContext } from "react";
@@ -18,14 +20,18 @@ import { PiExamBold } from 'react-icons/pi';
 import { toast } from 'react-toastify';
 
 const page = () => {
-
-
      const { user } = useContext(GlobalContext);
      const router = useRouter();
      const prams = useParams();
      const [Question, setQuestion] = useState([])
+     const [wrong, setWrong] = useState([]);
+     const [select, setSelect] = useState("");
+     const [countExamTime, setCountExamTime] = useState("00")
+     const [selectId, setSelectId] = useState([])
+     const [RightAns, setRightAns] = useState([])
+     const [success, setSuccess] = useState(false)
+     const currentDate = new Date();
      const getData = async (subject) => {
-
           const result = await GetSubjectByData(subject);
           if (!result?.data) {
                router.push('/dashboard/mock-exam')
@@ -41,49 +47,56 @@ const page = () => {
 
      }, [prams?.id])
 
-     const [select, setSelect] = useState("")
-     const [selectId, setSelectId] = useState([])
-     const [RightAns, setRightAns] = useState([])
-     const [success, setSuccess] = useState(false)
 
+     console.log(select);
      const isActive = (id) => {
           return selectId.includes(id) ? 'cursor-none bg-[#27895b80]' : '';
      }
 
-   
+
      const examSubmit = async () => {
-   
-          const data = { rank: RightAns?.length * 50, mark: RightAns?.length * 5, exam: 1, email: user?.email }
-          console.log(data);
-          const result = await UpdateUser(data);
-          console.log(result);
-          if (result.success == true) {
+          const exam_data = { email: user?.email,time:countExamTime, date:currentDate, exam_name: Question?.exam_name, wrong, right: RightAns }
+        const Userdata = { rank: RightAns?.length * 50, mark: RightAns?.length * 5, exam: 1, email: user?.email }
+          const result = await UpdateUser(Userdata);
+          const exam_reviews = await PostExamReviews(exam_data);
+          if (result?.success == true && exam_reviews?.success == true) {
+               setSuccess(true);
+               toast.success(" Exam successfully ")
+          }
+     }
+
+
+
+     const ReviewSubmit = async () => {
+
+          const exam_reviews = await PostExamReviews(data);
+          console.log(exam_reviews);
+          if (exam_reviews.success == true) {
                setSuccess(true);
                toast.success(" Exam successfully ")
           }
 
 
      }
+
+
      useEffect(() => {
 
           console.log(select);
           if (select) {
                const data = Question?.questions?.find(ans => ans?.answer_right === select);
+               const wrongData = Question?.questions?.find(ans => ans?.answer_right !== select);
                if (data) {
                     setRightAns([...RightAns, data]);
+               }
+               if (wrongData) {
+                    setWrong([...wrong, wrongData])
                }
 
           }
 
-
-
      }, [select]);
      const time = Question?.questions?.length * 60;
-
-
-
-
-
 
      return (
           <div>
@@ -172,7 +185,7 @@ const page = () => {
 
                                         <div>
                                              <h1 className='   text-xl font-bold md:text-2xl text-center text-red-500'>  {
-                                                  time ? <CountdownTimer time={time}></CountdownTimer> : null
+                                                  time ? <CountdownTimer  setCountExamTime={setCountExamTime} time={time}></CountdownTimer> : null
                                              }   </h1>
                                         </div>
 
@@ -205,7 +218,7 @@ const page = () => {
 
                                    <div className='  flex justify-center items-center gap-5'>
                                         <button onClick={examSubmit} className=' disabled:bg-[#27895b63]   text-xl text-center  text-white font-medium  my-3 py-2 px-3 rounded primaryBg capitalize'>Submit</button>
-                                        <button className='text-xl   text-center  text-white font-medium  my-3 py-2 px-3 rounded  capitalize bg-red-400'>cancel</button>
+                                        <Link href={'/dashboard/mock-exam'} className='text-xl   text-center  text-white font-medium  my-3 py-2 px-3 rounded  capitalize bg-red-400'>cancel</Link>
                                    </div>
                               </div>
 
