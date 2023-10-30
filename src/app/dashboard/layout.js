@@ -11,6 +11,7 @@ import { MdOutlineLeaderboard } from 'react-icons/md';
 import DashboardNavbar from '@/Components/DashboardNavbar/DashboardNavbar';
 import { BiUserCircle } from 'react-icons/bi';
 import { FiSettings } from 'react-icons/fi';
+import Image from 'next/image';
 
 const DashboardLayout = ({ children }) => {
      const { user, openModal } = useContext(GlobalContext)
@@ -84,13 +85,13 @@ const DashboardLayout = ({ children }) => {
                                              <h1 className=' text-base md:text-lg f font-normal '> Profile </h1>
                                         </Link>
                                         <Link
-                                        href="/dashboard/setting"
-                                        className={`${pathname == "/dashboard/setting" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
+                                             href="/dashboard/exam-review"
+                                             className={`${pathname == "/dashboard/exam-review" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
 
-                                   >
-                                        <FiSettings size={24}></FiSettings>
-                                        <h1 className=' text-base md:text-lg f font-normal '> setting </h1>
-                                   </Link>
+                                        >
+                                             <Image src={'/review-icon.png'} width={24} height={24}></Image>
+                                             <h1 className=' text-base md:text-lg f font-normal '> Review </h1>
+                                        </Link>
 
 
                                    </div>
@@ -158,7 +159,15 @@ const DashboardLayout = ({ children }) => {
                                         <BiUserCircle size={24}></BiUserCircle>
                                         <h1 className=' text-base md:text-lg f font-normal '> Profile </h1>
                                    </Link>
- 
+
+                                   <Link
+                                        href="/dashboard/exam-review"
+                                        className={`${pathname == "/dashboard/exam-review" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
+
+                                   >
+                                        <Image src={'/review-icon.png'} width={24} height={24}></Image>
+                                        <h1 className=' text-base md:text-lg f font-normal '> Review </h1>
+                                   </Link>
                                    <Link
                                         href="/dashboard/setting"
                                         className={`${pathname == "/dashboard/setting" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
