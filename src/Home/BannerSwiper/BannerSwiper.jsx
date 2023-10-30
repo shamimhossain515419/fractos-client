@@ -9,6 +9,7 @@ import Image from 'next/image';
 import cdi from './Images/images (3).jpeg'
 import cdi2 from './Images/images (4).jpeg'
 import cdi3 from './Images/images (7).jpeg'
+import Link from 'next/link';
 
 
 const BannerSwiper = () => {
@@ -20,8 +21,8 @@ const BannerSwiper = () => {
         <div className="md:flex  px-4 py-8 md:pt-20 md:pb-8 md:px-16 gap-3">
 
           <div className=" ">
-           
-          
+
+
             <div className='mt-1 px-3 md:pl-12'>
               <Image
                 src={Banner}
@@ -82,46 +83,46 @@ const BannerSwiper = () => {
 
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4  pb-12 ml-12  py-14'>
         <div className="col ">
-          <div className="card p-3 bg-white w-10/12 h-80  shadow-xl hover:border-2 border-indigo-700">
-            <figure className="px-10 pt-10">
+          <div className="card p-3 bg-white w-10/12 h-80  shadow-xl ">
+            <figure className="pt-10">
               <Image src={cdi} alt="Shoes" className="rounded-xl h-32" />
             </figure>
-            <div className="card-body items-center text-center">
-              
+            <div className="card-body items-center text-center mt-4">
               <p className='text-lg font-bold text-indigo-700'>Solve Any Question from Thousand of Questions.</p>
-              <div className="card-actions">
-                <p className=" font-bold text-blue-700 hover:text-indigo-700 hover:border-2 border-indigo-500 px-4 rounded-lg">Solve Now</p>
-              </div> 
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="card w-10/12 h-80  bg-white shadow-xl hover:border-2 border-indigo-700">
-            <figure className="px-10 pt-10">
-            <Image src={cdi3} alt="Shoes" className="rounded-xl h-32" />
-            </figure>
-            <div className="card-body items-center text-center">
-              
-              <p className='text-lg font-bold text-indigo-700'>Attend Live Mock test to Check Your Preparation.</p>
-              <div className="card-actions">
-              <p className="font-bold text-blue-700 hover:text-indigo-700 hover:border-2 border-indigo-500 px-4  rounded-lg">Attend Now</p>
+              <div className="mt-3">
+                <Link href={'/dashboard/mock-exam'} className=" py-2 primaryBg text-white px-4 font-bold  mt-3 rounded-lg">Solve Now</Link>
               </div>
             </div>
           </div>
         </div>
         <div className="col">
-          <div className="card w-10/12 h-80 bg-white  shadow-xl hover:border-2 border-indigo-700">
-          <figure className="px-10 pt-10">
-          <Image src={cdi2} alt="Shoes" className="rounded-xl h-32"  />
-          </figure>
-          <div className="card-body items-center text-center">
-           
-            <p  className='text-lg font-bold text-indigo-700'>Read Blog Post And Enrich Your Knowledge.</p>
-            <div className="card-actions">
-            <p className=" font-bold text-blue-700 hover:text-indigo-700 hover:border-2 border-indigo-500 px-4 rounded-lg">Read Now</p>
+          <div className="card w-10/12 h-80  bg-white shadow-xl ">
+            <figure className="px-10 pt-10">
+              <Image src={cdi3} alt="Shoes" className="rounded-xl h-32" />
+            </figure>
+            <div className="card-body items-center text-center mt-4">
+              <p className='text-lg font-bold text-indigo-700'>Attend Live Mock test to Check Your Preparation.</p>
+              <div className="mt-3">
+                <Link href={'/dashboard/mock-exam'} className=" py-2 mt-9 primaryBg text-white px-4 font-bold   rounded-lg">Attend Now</Link>
+              </div>
             </div>
           </div>
-        </div></div>
+        </div>
+        <div className="col">
+          <div className="card w-10/12 h-80 bg-white  shadow-xl ">
+            <figure className="px-10 pt-10">
+              <Image src={cdi2} alt="Shoes" className="rounded-xl h-32" />
+            </figure>
+            <div className="card-body items-center text-center mt-4">
+
+              <p className='text-lg font-bold text-indigo-700'>Read Blog Post And Enrich Your Knowledge.</p>
+              <div className=" mt-3">
+                <Link href={'/dashboard/mock-exam'} className=" py-2 mt-9 primaryBg text-white px-4 font-bold   rounded-lg">Read Now</Link>
+
+
+              </div>
+            </div>
+          </div></div>
       </div>
     </div>
   );

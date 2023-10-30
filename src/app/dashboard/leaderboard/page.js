@@ -53,7 +53,7 @@ const page = () => {
                          <div className=' flex justify-center  sm:gap-2  md:gap-14 '>
                               <div className=' flex flex-col items-center gap-2  mt-14'>
                                    <div className='  '>
-                                        <Image className=' imageshodow w-[50px] h-[50px] rounded-full md:w-[100px] md:h-[100px] ' width={200} height={200} src={allUser[1]?.photo ? allUser[1]?.photo : "https://i.ibb.co/d6JQZk6/IMG-4039.jpg"} alt="" />
+                                        <Image className=' imageshodow w-[50px] h-[50px] rounded-full md:w-[100px] md:h-[100px] ' width={200} height={200} src={allUser[1]?.photo ? allUser[1]?.photo : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="" />
                                    </div><h1 className=' md:text-xl font-bold '>  {allUser[1]?.name ? allUser[1]?.name : " no name"} </h1>
                                    <div className=' flex justify-center items-center gap-2'>
                                         <ImPointRight size={24}></ImPointRight>
@@ -63,7 +63,7 @@ const page = () => {
 
                               <div className=' flex flex-col items-center gap-2 '>
                                    <div className='  '>
-                                        <Image className='imageshodow  w-[50px] h-[50px] rounded-full md:w-[100px] md:h-[100px] ' width={200} height={200} src={allUser[0]?.photo ? allUser[0]?.photo : "https://i.ibb.co/d6JQZk6/IMG-4039.jpg"} alt="" />
+                                        <Image className='imageshodow  w-[50px] h-[50px] rounded-full md:w-[100px] md:h-[100px] ' width={200} height={200} src={allUser[0]?.photo ? allUser[0]?.photo : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="" />
                                    </div><h1 className='md:text-xl font-bold '>  {allUser[0]?.rank ? allUser[0]?.name : "no name"}  </h1>
                                    <div className=' flex justify-center items-center gap-2'>
                                         <ImPointRight size={24}></ImPointRight>
@@ -72,7 +72,7 @@ const page = () => {
                               </div>
                               <div className=' flex flex-col items-center gap-2 mt-14'>
                                    <div className='  '>
-                                        <Image className=' imageshodow rounded-full w-[50px] h-[50px] md:w-[100px] md:h-[100px] ' width={200} height={200} src={allUser[2]?.photo ? allUser[2]?.photo : "https://i.ibb.co/d6JQZk6/IMG-4039.jpg"} alt="" />
+                                        <Image className=' imageshodow rounded-full w-[50px] h-[50px] md:w-[100px] md:h-[100px] ' width={200} height={200} src={allUser[2]?.photo ? allUser[2]?.photo : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="" />
                                    </div><h1 className=' md:text-xl font-bold '>  {allUser[2]?.name ? allUser[2]?.name : " no name"} </h1>
                                    <div className=' flex justify-center items-center gap-2'>
                                         <ImPointRight size={24}></ImPointRight>
@@ -136,7 +136,7 @@ const page = () => {
                                                   <div className=' flex justify-center  items-center gap-2'>
                                                        <div>
                                                             {
-                                                                 user?.photoURL ? <Image className=' w-[50px] h-[50px] rounded ' width={100} height={100} src={item?.photo ? item?.photo : "https://i.ibb.co/d6JQZk6/IMG-4039.jpg"} alt='' /> : <div className=' primaryBg  p-2 text-black w-[50px] h-[50px] rounded  text-2xl font-bold uppercase'> {user?.email.slice(0, 2)} </div>
+                                                                 user?.photoURL ? <Image className=' w-[50px] h-[50px] rounded ' width={100} height={100} src={item?.photo ? item?.photo : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt='' /> : <div className=' primaryBg  p-2 text-black w-[50px] h-[50px] rounded  text-2xl font-bold uppercase'> {user?.email.slice(0, 2)} </div>
                                                             }
                                                        </div>
                                                        <div>

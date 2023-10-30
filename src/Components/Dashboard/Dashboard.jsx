@@ -57,7 +57,7 @@ const Dashboard = async () => {
                 <div>
                   <h4 className="text-1xl font-bold textColor"> {userinfo?.collage ? userinfo?.collage : "collage"} </h4>
                   <p className="lg:text-5xl md:text-3xl sm:text-2xl font-bold  primary">
-                    {userinfo?.rank ? userinfo?.rank : null}
+                    {userinfo?.rank ? userinfo?.rank :  "00"}
                   </p>
                 </div>
 
@@ -65,7 +65,7 @@ const Dashboard = async () => {
 
                   <p>
                     <button className="block py-2 px-2 text-xl   primaryBg rounded text-white mt-10">
-                      Point:  {userinfo?.mark ? userinfo?.mark : null}  Exam:  {userinfo?.exam ? userinfo?.exam : null}
+                      Point:  {userinfo?.mark ? userinfo?.mark : 0}  Exam:  {userinfo?.exam ? userinfo?.exam : 0}
                     </button>
                   </p>
                 </div>
