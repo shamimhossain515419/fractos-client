@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import Notification from '@/Components/Notification/Notification';
 import { GlobalContext } from '@/GlobalState';
 import { UpdateUser } from '@/services/users';
