@@ -7,13 +7,7 @@ import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
 import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
-// import Banner from "@/Home/Banner/Banner";
-
-
-
-
-
-
+import Feedback from "@/Components/Feedback";
 
 
 
@@ -30,8 +24,6 @@ export default function Home() {
         <BannerSwiper></BannerSwiper>
 
 
-
-
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
@@ -45,7 +37,9 @@ export default function Home() {
 
         <ContactSection></ContactSection>
 
-
+        <div className=" my-7">
+          <Feedback></Feedback>
+        </div>
         <Footer></Footer>
       </Container>
 

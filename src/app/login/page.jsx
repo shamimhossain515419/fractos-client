@@ -1,5 +1,6 @@
 'use client'
 import AuthContainer from '@/Components/AuthContainer/AuthContainer';
+import ComponentLevelLoader from '@/Components/DashboardNavbar/commonLoader/Commonloader';
 import { GlobalContext } from '@/GlobalState';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -12,7 +13,7 @@ import Swal from 'sweetalert2';
 
 const Login = () => {
 
-    const { loginUser } = useContext(GlobalContext);
+    const { loginUser,componentLevelLoader, setComponentLevelLoader  } = useContext(GlobalContext);
     const router = useRouter();
     const [isHidden, setIsHidden] = useState(true)
 
@@ -22,9 +23,18 @@ const Login = () => {
     const { register, handleSubmit } = useForm();
 
     const loginHandler = (data) => {
+
+        setComponentLevelLoader({
+            loading: true,
+            id: "",
+        })
         loginUser(data.email, data.password)
             .then(res => {
                 Swal.fire(
+                    setComponentLevelLoader({
+                        loading: false,
+                        id: "",
+                    })
                     `Welcome, ${res.user?.email}`,
                 )
                 router.push('/')
@@ -70,7 +80,14 @@ const Login = () => {
                         </div>
                     </div>
                     {/* <button className={`${loginBtnCSS}`}>Next</button> */}
-                    <button type='submit' className={`${loginBtnCSS}`}>Login</button>
+
+                    <div className={`${loginBtnCSS}  text-xl   flex justify-center items-center`}>
+                        {
+                            componentLevelLoader?.loading ? <><ComponentLevelLoader loading={componentLevelLoader.loading} text={'Login..'}></ComponentLevelLoader> </> : <button type='submit'> Login</button>
+                        }
+
+                    </div>
+             
                 </form>
                 <p className='flex gap-1 items-center mt-3'>Don t Have An Account? 
                     <Link className='text-[#4A3AFF] hover:underline' href={'/register'}>Register</Link>
