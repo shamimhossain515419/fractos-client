@@ -6,7 +6,7 @@
 body {
   background-color: #ECF0F3;
   color: black;
- min-height: 100vh;
+  min-height: 100vh;
 }
 
 .boxshadow {
@@ -19,12 +19,13 @@ body {
 
 
 .boxshadow {
-     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-   }
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
 .primary {
   color: #27895C;
 }
+
 .primaryBg {
   background-color: #27895C;
 }
@@ -36,4 +37,8 @@ body {
 
 .imageshodow {
   box-shadow: rgba(234, 88, 219, 0.2) 10px 10px 15px 22px;
+}
+
+.primaryBgColor {
+  background-color: #2d394b;
 }
