@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
   exam_name: String,
-  questions: Array
+  questions: Array,
   
 });
 
-const Question = mongoose.models.question || mongoose.model("question", UserSchema);
+const Questions = mongoose.models.questions || mongoose.model("questions", UserSchema);
 
-export default Question;
+export default Questions;

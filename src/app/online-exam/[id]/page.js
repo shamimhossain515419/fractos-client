@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import Container from '@/Components/Container/Container';
 import CountdownTimer from '@/Components/CountdownTimer/CountdownTimer';
@@ -6,6 +6,7 @@ import Notification from '@/Components/Notification/Notification';
 import ExamModel from '@/Components/Shared/ExamModel';
 import { GlobalContext } from '@/GlobalState';
 import { GetSubjectByData } from '@/services/exam';
+import { PostExamReviews } from '@/services/exam-reviews';
 import { UpdateUser } from '@/services/users';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
@@ -18,14 +19,20 @@ import { PiExamBold } from 'react-icons/pi';
 import { toast } from 'react-toastify';
 
 const page = () => {
-
-
      const { user } = useContext(GlobalContext);
      const router = useRouter();
      const prams = useParams();
-     const [Question, setQuestion] = useState([])
+     const [Question, setQuestion] = useState([]);
+     const [selectQuestion, setSelectQuestion] = useState(null);
+     const [wrong, setWrong] = useState([]);
+     const [countExamTime, setCountExamTime] = useState("00")
+     const [selectId, setSelectId] = useState([])
+     const [select, setSelect] = useState(null)
+     const [RightAns, setRightAns] = useState([])
+     const [success, setSuccess] = useState(false)
+     const currentDate = new Date();
+     const time = Question?.questions?.length * 60;
      const getData = async (subject) => {
-
           const result = await GetSubjectByData(subject);
           if (!result?.data) {
                router.push('/dashboard/mock-exam')
@@ -41,47 +48,51 @@ const page = () => {
 
      }, [prams?.id])
 
-     const [select, setSelect] = useState("")
-     const [selectId, setSelectId] = useState([])
-     const [RightAns, setRightAns] = useState([])
-     const [success, setSuccess] = useState(false)
 
      const isActive = (id) => {
-          return selectId.includes(id) ? 'cursor-none bg-[#27895b80]' : '';
+          return selectId.includes(id) ? 'cursor-none bg-[#27895b80]' : ' cursor-pointer';
      }
 
-   
+
      const examSubmit = async () => {
-   
-          const data = { rank: RightAns?.length * 50, mark: RightAns?.length * 5, exam: 1, email: user?.email }
-          console.log(data);
-          const result = await UpdateUser(data);
-          console.log(result);
-          if (result.success == true) {
+          const exam_data = { email: user?.email, time: countExamTime, date: currentDate, exam_name: Question?.exam_name, wrong, number: RightAns?.length, right: RightAns }
+          const Userdata = { rank: RightAns?.length * 50, mark: RightAns?.length * 5, exam: 1, email: user?.email }
+          const result = await UpdateUser(Userdata);
+          const exam_reviews = await PostExamReviews(exam_data);
+          if (result?.success == true && exam_reviews?.success == true) {
                setSuccess(true);
                toast.success(" Exam successfully ")
           }
-
-
      }
+
+
+
+
      useEffect(() => {
 
-          console.log(select);
-          if (select) {
-               const data = Question?.questions?.find(ans => ans?.answer_right === select);
-               if (data) {
-                    setRightAns([...RightAns, data]);
+          const data = Question?.questions?.find(ans => ans?.answer_right === select);
+          console.log(data, "shamimdf");
+          if (data) {
+               setRightAns([...RightAns, data]);
+          }
+          else {
+               console.log(select, "selclte");
+               console.log(selectQuestion, 'selectQuestion');
+               const wrongData = Question?.questions?.find(ans => ans?.question === selectQuestion);
+               if (wrongData) {
+                    setWrong([...wrong, wrongData])
                }
 
           }
+     }, [select && selectQuestion])
 
 
 
-     }, [select]);
-     const time = Question?.questions?.length * 60;
 
 
 
+     console.log(wrong);
+     console.log(RightAns);
 
 
 
@@ -172,7 +183,7 @@ const page = () => {
 
                                         <div>
                                              <h1 className='   text-xl font-bold md:text-2xl text-center text-red-500'>  {
-                                                  time ? <CountdownTimer time={time}></CountdownTimer> : null
+                                                  time ? <CountdownTimer setCountExamTime={setCountExamTime} time={time}></CountdownTimer> : null
                                              }   </h1>
                                         </div>
 
@@ -181,7 +192,7 @@ const page = () => {
 
                                    <div className=' '>
                                         {
-                                             Question?.questions?.map((item, index) => <div key={index} className={` ${isActive(index)} max-w-[800px] my-4 mx-auto  boxshadow p-4 rounded`}>
+                                             Question?.questions?.map((item, index) => <div key={index} className={` ${isActive(index)} max-w-[800px]   my-4 mx-auto  boxshadow p-4 rounded`}>
 
 
 
@@ -189,10 +200,10 @@ const page = () => {
                                                        <h1 className=' text-black text-sm md:text-lg  font-medium my-1'> {index + 1}  .  {item?.question}  </h1>
                                                   </div>
                                                   <div className={`   textColor grid sm:grid-cols-4 md:grid-cols-2  gap-2 md:gap-4`}>
-                                                       <div onClick={() => { setSelect(item?.answer_a), setSelectId([...selectId, index]) }} className='  cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 1.</span> {item?.answer_a} </div>
-                                                       <div onClick={() => { setSelect(item?.answer_b), setSelectId([...selectId, index]) }} className='  cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 2.</span> {item?.answer_b}</div>
-                                                       <div onClick={() => { setSelect(item?.answer_c), setSelectId([...selectId, index]) }} className=' cursor-pointer  bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 3.</span> {item?.answer_c} </div>
-                                                       <div onClick={() => { setSelect(item?.answer_d), setSelectId([...selectId, index]) }} className='  cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 4.</span> {item?.answer_d} </div>
+                                                       <div onClick={() => { setSelect(item?.answer_a), setSelectQuestion(item?.question), setSelectId([...selectId, index]) }} className='   bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 1.</span> {item?.answer_a} </div>
+                                                       <div onClick={() => { setSelect(item?.answer_b), setSelectQuestion(item?.question), setSelectId([...selectId, index]) }} className='   bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 2.</span> {item?.answer_b}</div>
+                                                       <div onClick={() => { setSelect(item?.answer_c), setSelectQuestion(item?.question), setSelectId([...selectId, index]) }} className='   bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 3.</span> {item?.answer_c} </div>
+                                                       <div onClick={() => { setSelect(item?.answer_d), setSelectQuestion(item?.question), setSelectId([...selectId, index]) }} className='   bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 4.</span> {item?.answer_d} </div>
 
                                                   </div>
                                              </div>)
@@ -205,7 +216,7 @@ const page = () => {
 
                                    <div className='  flex justify-center items-center gap-5'>
                                         <button onClick={examSubmit} className=' disabled:bg-[#27895b63]   text-xl text-center  text-white font-medium  my-3 py-2 px-3 rounded primaryBg capitalize'>Submit</button>
-                                        <button className='text-xl   text-center  text-white font-medium  my-3 py-2 px-3 rounded  capitalize bg-red-400'>cancel</button>
+                                        <Link href={'/dashboard/mock-exam'} className='text-xl   text-center  text-white font-medium  my-3 py-2 px-3 rounded  capitalize bg-red-400'>cancel</Link>
                                    </div>
                               </div>
 

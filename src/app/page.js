@@ -6,7 +6,9 @@ import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
-import Banner from "@/Home/Banner/Banner";
+import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
+import Feedback from "@/Components/Feedback";
+
 
 export default function Home() {
   return (
@@ -15,12 +17,10 @@ export default function Home() {
 
         <Navbar></Navbar>
 
-        <Banner></Banner>
+        {/* <Banner></Banner> */}
 
 
-        {/* <BannerSwiper></BannerSwiper> */}
-
-
+        <BannerSwiper></BannerSwiper>
 
 
         <div className=" my-3">
@@ -36,7 +36,9 @@ export default function Home() {
 
         <ContactSection></ContactSection>
 
-
+        <div className=" my-7">
+          <Feedback></Feedback>
+        </div>
         <Footer></Footer>
       </Container>
 
