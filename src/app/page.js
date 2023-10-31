@@ -8,14 +8,6 @@ import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
 import Banner from "@/Home/Banner/Banner";
 
-
-
-
-
-
-
-
-
 export default function Home() {
   return (
     <div>
