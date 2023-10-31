@@ -1,30 +1,19 @@
+
 import connectToDB from "@/database";
+import allUsers from "@/models/Users";
 
-
-import User from "@/models/Users";
 import { NextResponse } from "next/server";
-
-
-
 export const dynamic = "force-dynamic";
 
 export async function GET(req) {
      await connectToDB();
-     //validate the schema
+  
 
      try {
-          //check if the user is exists or not
+         
 
-          // const isAuthUser = await AuthUser(req);
-          // if (!isAuthUser) {
-          //      return NextResponse.json({
-          //           success: false,
-          //           message: "Authorization field",
-          //      });
-          // }
-
-          const allUser = await User.find({});
-          console.log(allUser);
+          const allUser = await allUsers.find({});
+          
           if (allUser) {
                return NextResponse.json({
                     success: true,

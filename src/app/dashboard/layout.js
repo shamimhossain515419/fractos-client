@@ -21,7 +21,7 @@ const DashboardLayout = ({ children }) => {
      return (
           <div>
 
-               <div className='md:hidden  w-full overflow-hidden  p-4 '>
+               <div className='md:hidden  w-full overflow-hidden   p-4 '>
                     <DashboardNavbar></DashboardNavbar>
                </div>
 

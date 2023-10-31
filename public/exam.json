@@ -29,10 +29,10 @@
                {
                     "question": "The addition of a rational number and an irrational number is equal to:",
                     "answer_a": "rational number",
-                    "answer_b": "Irrational numbe",
+                    "answer_b": "Irrational number",
                     "answer_c": "Both",
                     "answer_d": "None of the above",
-                    "answer_right": "Irrational numbe"
+                    "answer_right": "Irrational number"
                },
                {
                     "question": "If set A = {1, 2, 3, 4, 5,…} is given, then it represents:",
@@ -75,7 +75,7 @@
                     "answer_right": "0 ≤ r < b "
                },
                {
-                    "question": "The prime factorisation of 96 is",
+                    "question": "The prime factorization of 96 is",
                     "answer_a": "2^5 × 3",
                     "answer_b": "2^6",
                     "answer_c": "2^4 × 3",

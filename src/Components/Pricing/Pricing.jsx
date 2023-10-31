@@ -1,13 +1,14 @@
 import React from 'react';
 import "./Pricing.css"
 import { FaCheckCircle } from 'react-icons/fa';
+import CommonTitle from '../CommonTitle/CommonTitle';
 
 
 const Pricing = () => {
     return (
         <div className='py-10  rounded'>
-            <h1 className='text-4xl font-bold text-center'>Latest Price Of Our Classes</h1>
-            <h3 className='text-1xl font-bold text-center mt-3 scroll-px-8'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam voluptate dolores quisquam maxime sed ut?</h3>
+            <CommonTitle title={"Latest Price Of Our Classes"}>  </CommonTitle>
+            <h3 className='text-base md:text-lg  font-medium text-center '>Buy packages as per your needs</h3>
 
             <div className="pricing-card-container grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3 px-3 mt-5  ">
                 <div className="card-item w-full py-10 bg-white rounded px-5 scale-90 hover:scale-100 duration-75">
