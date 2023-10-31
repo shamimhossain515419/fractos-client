@@ -10,7 +10,6 @@ import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
 import Feedback from "@/Components/Feedback";
 
 
-
 export default function Home() {
   return (
     <div>
