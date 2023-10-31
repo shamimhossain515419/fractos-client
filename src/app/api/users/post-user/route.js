@@ -1,5 +1,8 @@
+
+
 import connectToDB from "@/database";
-import User from "@/models/Users";
+import allUsers from "@/models/Users";
+
 import Joi from "joi";
 import { NextResponse } from "next/server";
 
@@ -30,8 +33,8 @@ export async function POST(req) {
 
      try {
           //check if the user is exists or not
-          const isUserAlreadyExists = await User.findOne({ email });
-          console.log(isUserAlreadyExists);
+          const isUserAlreadyExists = await allUsers.findOne({ email });
+        
           if (isUserAlreadyExists) {
                return NextResponse.json({
                     success: false,
@@ -39,7 +42,7 @@ export async function POST(req) {
                });
           } else {
 
-               const newlyCreatedUser = await User.create(newUser);
+               const newlyCreatedUser = await allUsers.create(newUser);
 
                if (newlyCreatedUser) {
                     return NextResponse.json({

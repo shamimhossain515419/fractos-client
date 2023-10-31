@@ -1,10 +1,11 @@
 'use client'
 import { useState, useEffect } from 'react';
 
-function CountdownTimer({time}) {
-   console.log(time);
+function CountdownTimer({ time,setCountExamTime }) {
+
 
   const [countdown, setCountdown] = useState(time); // 5 minutes in seconds
+  const [running, setRunning] = useState(""); // 5 minutes in seconds
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -20,7 +21,8 @@ function CountdownTimer({time}) {
   const seconds = countdown % 60;
 
   const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-
+  
+  setCountExamTime(formattedTime);
   return (
     <div>
       <div>   Lost Time :  {formattedTime}  minutes</div>

@@ -1,8 +1,9 @@
-"use client"
+'use client'
 
 import { GetSubjectByData } from '@/services/exam';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import { BsCheckLg } from 'react-icons/bs';
 
 const MockPreset = () => {
     const qnNames = [
@@ -52,7 +53,7 @@ const MockPreset = () => {
         },
         {
             "id": 2,
-            "name": "Chemistry"
+            "name": "chemistry"
         },
         {
             "id": 3,
@@ -64,7 +65,7 @@ const MockPreset = () => {
         },
         {
             "id": 5,
-            "name": "Higher Math"
+            "name": "higherMath"
         },
         {
             "id": 6,
@@ -76,7 +77,7 @@ const MockPreset = () => {
         },
         {
             "id": 8,
-            "name": "General Knowledge"
+            "name": "generalknowledge"
         }
 
     ];
@@ -89,7 +90,7 @@ const MockPreset = () => {
     const [start, setStart] = useState(false);
     const [subject, setSubject] = useState("");
 
-
+ console.log(examName);
   const [Question,setQuestion]=useState([])
    const getData = async (subject) => {
 
@@ -105,7 +106,7 @@ const MockPreset = () => {
 
     }, [subject])
 
- console.log(examName);
+
 
     return (
 
@@ -120,7 +121,7 @@ const MockPreset = () => {
                             <p className='font-bold text-2xl'>Subject</p>
                             <div className='my-10  mx-4'>
                                 <div className='grid grid-cols-1 md:grid-cols-2  gap-2'>
-                                    {subNames.map(item => <button onClick={() => setSubject(item?.name)} key={item.id} className={` ${subject == item?.name ? "bg-slate-300 " : ""} col px-auto py-4 bg-white hover:bg-slate-300 border rounded-lg font-bold text-lg w-11/12 text-center  capitalize`}>{item.name}</button>)}
+                                    {subNames.map(item => <button onClick={() => setSubject(item?.name)} key={item.id} className={` ${subject == item?.name ? "bg-slate-300 " : "bg-white"} col px-auto py-4  hover:bg-slate-300 border rounded-lg font-bold text-lg w-11/12 text-center  capitalize`}>{item.name}</button>)}
                                 </div>
 
                             </div>
@@ -129,6 +130,8 @@ const MockPreset = () => {
 
 
                         <div className=' bg-[#27895b41]  capitalize w-full  px-2 md:px-10  py-3  md:py-5  '>
+                               
+                            <h1 className=' text-2xl  font-medium my-t' > * Exam Name {Question?.exam_name ? Question?.exam_name : " "}</h1>
                             <h1 className=' text-xl  font-medium my-2'>1. Number of questions:</h1>
                             <p className=' ml-3 text-xl font-normal'> Number: {Question?.questions?.length} </p>
                             <h1 className=' text-xl  font-medium my-2'>2. Time:  </h1>
@@ -139,7 +142,8 @@ const MockPreset = () => {
 
                         <div  className=' pt-12'>
                             <Link href={`/online-exam/${subject}`} disabled={!subject} className=' disabled:bg-[#27895b38]  block w-full text-xl text-center  text-white font-medium  my-3 py-2 px-3 rounded primaryBg capitalize'>Start</Link>
-                            <button className='text-xl block w-full text-center  text-white font-medium  my-3 py-2 px-3 rounded  capitalize bg-red-400'>cancel</button>
+                            <Link href={`/dashboard`} disabled={!subject} className=' bg-red-400 block w-full text-xl text-center  text-white font-medium  my-3 py-2 px-3 rounded  capitalize'>cancel</Link>
+                            
                         </div>
 
                     </div>
@@ -150,7 +154,7 @@ const MockPreset = () => {
                         <p className='font-bold text-2xl'>Preset</p>
                         <div className='my-10 grid justify-items-center '>
                             <div className='grid grid-cols-3 md:grid-cols-9  gap-2'>
-                                {qnNames.map(item => <button onClick={() => setExamName(item?.name)} key={item.id} className={` ${examName == item?.name ? "bg-slate-300 " : ""} col px-auto py-4 bg-white hover:bg-slate-300 border rounded-lg font-bold text-lg w-11/12 text-center`}>{item.name}</button>)}
+                                {qnNames?.map(item => <button onClick={() => setExamName(item?.id)} key={item.id} className={` ${examName === item?.id ? "bg-slate-300 " : " bg-white"} col px-auto py-4  hover:bg-slate-300 border rounded-lg font-bold text-lg w-11/12 text-center`}>{item.name}</button>)}
                             </div>
                             <button className="my-4 px-8 py-4 bg-white hover:bg-slate-300 border rounded-lg font-bold text-lg">CKRUET</button>
                         </div>
@@ -167,7 +171,7 @@ const MockPreset = () => {
                         <p className='font-bold text-2xl'>Subject</p>
                         <div className='my-10  mx-4'>
                             <div className='grid grid-cols-1 md:grid-cols-2  gap-2'>
-                                {subNames.map(item => <button onClick={() => setSubject(item?.name)} key={item.id} className={` ${subject == item?.name ? "bg-slate-300 " : ""} col px-auto py-4 bg-white hover:bg-slate-300 border rounded-lg font-bold capitalize text-lg w-11/12 text-center`}>{item.name}</button>)}
+                                {subNames.map(item => <button onClick={() => setSubject(item?.name)} key={item.id} className={` ${subject == item?.name ? "bg-slate-300 " : "bg-white"} col px-auto py-4  hover:bg-slate-300 border rounded-lg font-bold capitalize text-lg w-11/12 text-center`}>{item.name}</button>)}
                             </div>
 
                         </div>
@@ -177,7 +181,7 @@ const MockPreset = () => {
 
                     <div className=' '>
                         <button onClick={() => setSelect(true)} disabled={!subject} className=' disabled:bg-[#27895b38]  block w-full text-xl text-center  text-white font-medium  my-3 py-2 px-3 rounded primaryBg capitalize'>continue</button>
-                        <button className='text-xl block w-full text-center  text-white font-medium  my-3 py-2 px-3 rounded  capitalize bg-red-400'>cancel</button>
+                       
                     </div>
                 </div>
 

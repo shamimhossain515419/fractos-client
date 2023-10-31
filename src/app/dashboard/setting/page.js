@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import Notification from '@/Components/Notification/Notification';
 import { GlobalContext } from '@/GlobalState';
 import { UpdateUser } from '@/services/users';
@@ -13,7 +13,7 @@ const SettingPage = () => {
 
 
      const imageUpdate = async (image) => {
-          const photoupdate= {photo: image , email:user?.email}
+          const photoupdate= { photo: image , email:user?.email}
           const data = await UpdateUser(photoupdate)
           console.log(data);
      }
@@ -67,6 +67,9 @@ const SettingPage = () => {
 
            toast.success(" user successfully update");
       }
+         
+
+     
 
 
      return (
@@ -85,7 +88,7 @@ const SettingPage = () => {
                               <div className=' relative'>
                                    {
                                         user?.photoURL ? <div className="image">
-                                             <Image className=" w-[100px] h-[100px]  rounded-full" src={user?.photoURL ? user?.photoURL : "https://i.ibb.co/9YBcnQB/profile-pic.png"} alt="" height={50} width={50} />
+                                             <Image className=" w-[100px] h-[100px]  rounded-full" src={user?.photoURL ? user?.photoURL : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="" height={50} width={50} />
                                         </div> : <div className=' primaryBg rounded-full p-10 text-black  text-2xl font-bold uppercase'> {user?.email.slice(0, 2)} </div>
                                    }
                               </div>

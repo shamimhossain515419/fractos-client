@@ -1,40 +1,40 @@
+
 import connectToDB from "@/database";
-import User from "@/models/Users";
+import allUsers from "@/models/Users";
+
 import { NextResponse } from "next/server";
 
 
 export const dynamic = "force-dynamic";
 
 export async function PUT(req) {
+
      try {
-
-          console.log("shamimdf");
           await connectToDB();
-
-          const extractData = await req.json();
+         const extractData = await req.json();
 
           const {
                email, name, phone, about, batch, collage, level
           } = extractData;
 
+          const currentUser = await allUsers.findOne({ email });
 
-          const currentUser = await User.findOne({ email });
-          console.log(currentUser);
-          console.log(extractData);
           if (!currentUser) {
                return NextResponse.json({
                     success: false,
                     message: "User is not   found",
                });
           }
-          const updatedProduct = await User.findOneAndUpdate(
+
+
+          const updatedProduct = await allUsers.findOneAndUpdate(
                {
                     email: email,
                },
                {
-                    name: extractData?.name ? extractData?.name : currentUser?.name,
                     phone: extractData?.phone ? extractData?.phone : currentUser?.phone,
                     about: extractData?.about ? extractData?.about : currentUser?.about,
+                    photo: extractData?.photo ? extractData?.photo : currentUser?.photo,
                     batch: extractData?.batch ? extractData?.batch : currentUser?.batch,
                     level: extractData?.level ? extractData?.level : currentUser?.level,
                     collage: extractData?.collage ? extractData?.collage : currentUser?.collage,
@@ -44,6 +44,8 @@ export async function PUT(req) {
                },
                { new: true }
           );
+
+
 
           if (updatedProduct) {
                return NextResponse.json({
@@ -56,8 +58,6 @@ export async function PUT(req) {
                     message: "Failed to update the update user ! Please try again later",
                });
           }
-
-
 
 
 

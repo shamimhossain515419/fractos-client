@@ -1,5 +1,5 @@
 
-import Cookies from "js-cookie";
+
 
 export const registerNewUser = async (formData) => {
   try {
@@ -26,10 +26,7 @@ export const getAllUser = async () => {
   try {
     const res = await fetch("/api/users/all-users", {
       method: "GET",
-      headers: {
-        Authorization: `Bearer ${Cookies.get("token")}`,
-      },
-    });
+     });
     const data = await res.json();
     return data;
   } catch (error) {

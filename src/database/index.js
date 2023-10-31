@@ -1,6 +1,5 @@
+
 import mongoose from "mongoose";
-
-
 
 const configOptions = {
   useNewUrlParser: true,
@@ -8,14 +7,16 @@ const configOptions = {
 };
 
 const connectToDB = async () => {
-  const connectionUrl = `mongodb+srv://FRACTOS123456:EyPk3F6vGG9DA3Ia@fractos.6n07rkt.mongodb.net/ `  
+  const connectionUrl ="mongodb+srv://shamimhossain01617:bVULenbLIEZN9WgZ@cluster0.dvvalm2.mongodb.net/";
  
   mongoose
     .connect(connectionUrl, configOptions)
-    .then(() => console.log("Leading  database connected successfully!"))
+    .then(() => console.log("Ecommerce database connected successfully!"))
     .catch((err) =>
       console.log(`Getting Error from DB connection ${err.message}`)
     );
 };
 
 export default connectToDB;
+
+

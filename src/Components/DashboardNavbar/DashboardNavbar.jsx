@@ -10,7 +10,7 @@ import CommonImage from "../CommonImage/CommonImage";
 const DashboardNavbar = () => {
      const { user, openModal, setOpenModal } = useContext(GlobalContext)
      return (
-          <div className=" fixed top-0 w-full overflow-hidden left-0 right-0  px-2 z-50 bg-[#ECF0F3]">
+          <div className=" fixed top-0 w-full shadow-md overflow-hidden left-0 right-0  px-2 z-50 bg-[#ECF0F3]">
                <div className=" flex    justify-between gap-1 items-center ">
                     <div className=" cursor-pointer" onClick={() => setOpenModal(!openModal)}>
                          {
