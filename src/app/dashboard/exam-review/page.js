@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import CommonTitle from '@/Components/CommonTitle/CommonTitle';
 import NotFoundData from '@/Components/NotFoundData/NotFoundData';
 import { GlobalContext } from '@/GlobalState';
@@ -86,8 +86,8 @@ const page = async () => {
                                         <td className=' p-2 border-x border-[#27895C]  capitalize'> {item?.exam_name} </td>
                                         <td className='border-x border-[#27895C]'>
                                             <div className='flex  gap-4 justify-around items-center'>
-                                                <span>  {(item?.right?.length / item?.wrong?.length) * 100}% </span>
-                                                <span> {item?.right?.length}/{item?.wrong?.length} </span>
+                                                <span>  {((item?.right?.length / item?.wrong?.length) * 100).toFixed(2)}% </span>
+                                                <span> {item?.right?.length}/{(item?.wrong?.length + item?.right?.length)} </span>
                                             </div>
                                         </td>
 

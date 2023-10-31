@@ -34,21 +34,21 @@ const page = () => {
 
                <CommonTitle title={"Question Reviews "} ></CommonTitle>
                <div className='  flex justify-center items-center md:gap-5 gap-2 flex-wrap '>
-                    <div className=' text-xl md:text-2xl font-thin my-4  capitalize '  >Subject :  {examData?.exam_name}  </div>
+                    <div className=' text-xl md:text-2xl  font-medium my-4  text-black capitalize '  >Subject :  {examData?.exam_name}  </div>
 
                     <p className=' text-xl primary font-medium my-2'>Right Ans: {examData?.right?.length ? examData?.right?.length : 0} </p>
                     <p className=' text-red-500  text-xl font-medium my-2'>Wrong Ans: {examData?.wrong?.length ? examData?.wrong?.length : 0} </p>
 
                </div>
 
-               <div className=' my-3'>
+               <div className=' mt-10'>
 
                     <CommonTitle title={"Right  Answer"} ></CommonTitle>
 
 
                     <div className=' '>
                          {
-                              examData?.wrong?.map((item, index) => <div key={index} className={`  max-w-[800px] my-4 mx-auto  boxshadow p-4 rounded`}>
+                              examData?.right?.map((item, index) => <div key={index} className={`  bg-[#27895b50] max-w-[800px] my-4 mx-auto  boxshadow p-4 rounded`}>
                                    <div>
                                         <h1 className=' text-black text-sm md:text-lg  font-medium my-1'> {index + 1}  .  {item?.question}  </h1>
                                    </div>
@@ -63,6 +63,30 @@ const page = () => {
                          }
                     </div>
                </div>
+               <div className=' my-3'>
+
+                    <CommonTitle color={"text-red-500"} title={"Wrong   Answer"} ></CommonTitle>
+                    <h1 className=' text-xl md:text-2xl font-medium my-3 text-center capitalize'> mark right answer </h1>
+
+
+                    <div className=' '>
+                         {
+                              examData?.wrong?.map((item, index) => <div key={index} className={`  bg-[#89272750] max-w-[800px] my-4 mx-auto  boxshadow p-4 rounded`}>
+                                   <div>
+                                        <h1 className=' text-black text-sm md:text-lg  font-medium my-1'> {index + 1}  .  {item?.question}  </h1>
+                                   </div>
+                                   <div className={`  textColor grid sm:grid-cols-4 md:grid-cols-2  gap-2 md:gap-4`}>
+                                        <div className={` ${item?.answer_right == item?.answer_a ? " text-[#27895C] p-1" : " text-black"}  cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2`}  >   <span className='text-lg font-bold'> 1.</span> {item?.answer_a} </div>
+                                        <div className={` ${item?.answer_right == item?.answer_b ? " text-[#27895C] p-1" : "text-black"}  cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2`} >    {item?.answer_b}</div>
+                                        <div className={` ${item?.answer_right == item?.answer_c ? " text-[#27895C] p-1" : "text-black"}  cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2`} > <span className='text-lg font-bold'> 3.</span> {item?.answer_c}</div>
+                                        <div className={` ${item?.answer_right == item?.answer_d ? " text-[#27895C] p-1" : " text-black"}  cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2`} >   <span className='text-lg font-bold'> 4.</span> {item?.answer_d} </div>
+
+                                   </div>
+                              </div>)
+                         }
+                    </div>
+               </div>
+
           </div>
      );
 };

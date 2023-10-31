@@ -1,3 +1,4 @@
+import { number } from "joi";
 import mongoose from "mongoose";
 
 
@@ -5,9 +6,10 @@ const UserSchema = new mongoose.Schema({
       email: String,
       exam_name: String,
       right: Array,
+      number: Number,
       wrong: Array,
       date: String,
-      time: String
+      time: String,
 
 });
 

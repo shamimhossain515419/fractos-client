@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { GetSubjectByData } from '@/services/exam';
 import Link from 'next/link';

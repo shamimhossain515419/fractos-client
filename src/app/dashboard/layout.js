@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import CommonImage from '@/Components/CommonImage/CommonImage';
 import { GlobalContext } from '@/GlobalState';
 import Link from 'next/link';
