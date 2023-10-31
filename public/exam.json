@@ -1,6 +1,6 @@
 [
      {
-          "exam_name": "biology",
+       "exam_name": "biology",
           "questions": [
                {
                     "question": "The hormone Erythropoietin is produced in______",
@@ -81,7 +81,18 @@
                     "answer_c": "2^4 × 3",
                     "answer_d": "2^4 × 32",
                     "answer_right": "2^5 × 3"
+               },
+
+               {
+                    "question": "The prime factorization of 96 is",
+                    "subject_name": "name  name diben ",
+                    "answer_a": "2^5 × 3",
+                    "answer_b": "2^6",
+                    "answer_c": "2^4 × 3",
+                    "answer_d": "2^4 × 32",
+                    "answer_right": "2^5 × 3"
                }
+
           ]
      },
      { "exam_name": "networking",

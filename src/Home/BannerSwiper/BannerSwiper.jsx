@@ -10,6 +10,7 @@ import cdi from './Images/images (3).jpeg'
 import cdi2 from './Images/images (4).jpeg'
 import cdi3 from './Images/images (7).jpeg'
 import Link from 'next/link';
+import Link from 'next/link';
 
 
 const BannerSwiper = () => {
@@ -23,6 +24,8 @@ const BannerSwiper = () => {
           <div className=" ">
 
 
+
+
             <div className='mt-1 px-3 md:pl-12'>
               <Image
                 src={Banner}
@@ -34,6 +37,7 @@ const BannerSwiper = () => {
           </div>
           <div className="md:w-8/12 h-10/12 md:mt-12 mt-8 md:ml-12 flex justify-center items-center flex-col">
 
+            <div className='font-bold text-2xl md:text-4xl  py-5 text-indigo-500 '>
             <div className='font-bold text-2xl md:text-4xl  py-5 text-indigo-500 '>
 
 
@@ -85,6 +89,10 @@ const BannerSwiper = () => {
         <div className="col ">
           <div className=" p-3 bg-white w-10/12 h-80  shadow-xl ">
             <figure className="pt-10">
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-4  pb-12 ml-12  py-14'>
+        <div className="col ">
+          <div className="card p-3 bg-white w-10/12 h-80  shadow-xl ">
+            <figure className="pt-10">
               <Image src={cdi} alt="Shoes" className="rounded-xl h-32" />
             </figure>
             <div className=" items-center text-center mt-4">
@@ -96,6 +104,7 @@ const BannerSwiper = () => {
           </div>
         </div>
         <div className="col">
+          <div className="card w-10/12 h-80  bg-white shadow-xl ">
           <div className="card w-10/12 h-80  bg-white shadow-xl ">
             <figure className="px-10 pt-10">
               <Image src={cdi3} alt="Shoes" className="rounded-xl h-32" />
