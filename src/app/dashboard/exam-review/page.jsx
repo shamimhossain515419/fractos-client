@@ -8,7 +8,7 @@ const page = () => {
 
             <div>
                 <div className="overflow-x-auto mt-[80px]">
-                    <table className="table border-2 border-[#4A3AFF]">
+                    <table className="table border-2 border-[#4A3AFF] w-full">
                         {/* head */}
                         <thead>
                             <tr className='border-2 border-[#4A3AFF] text-center'>
