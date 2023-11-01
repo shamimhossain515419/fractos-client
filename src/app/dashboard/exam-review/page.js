@@ -9,9 +9,7 @@ import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
 import { FcRefresh } from 'react-icons/fc'
 const page = async () => {
-
-
-    const { user } = useContext(GlobalContext)
+const { user } = useContext(GlobalContext)
     const [examReviews, setExamReviews] = useState([])
 
     const GetExamData = async (email) => {
@@ -86,7 +84,7 @@ const page = async () => {
                                         <td className=' p-2 border-x border-[#27895C]  capitalize'> {item?.exam_name} </td>
                                         <td className='border-x border-[#27895C]'>
                                             <div className='flex  gap-4 justify-around items-center'>
-                                                <span>  {((item?.right?.length / item?.wrong?.length) * 100).toFixed(2)}% </span>
+                                                <span>  {((item?.right?.length / (item?.wrong?.length + item?.right?.length)) * 100).toFixed(2)}% </span>
                                                 <span> {item?.right?.length}/{(item?.wrong?.length + item?.right?.length)} </span>
                                             </div>
                                         </td>

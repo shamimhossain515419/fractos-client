@@ -1,13 +1,14 @@
 import Container from "@/Components/Container/Container";
 
-import Footer from "@/Components/Footer/Footer";
+
 import Pricing from "@/Components/Pricing/Pricing";
 import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
-import Navbar from "@/Components/Navbar";
+
 import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
 import Feedback from "@/Components/Feedback";
+import Subscribe from "@/Components/Subscribe/Subscribe";
 
 
 export default function Home() {
@@ -15,9 +16,9 @@ export default function Home() {
     <div>
       <Container>
 
-        <Navbar></Navbar>
 
-        {/* <Banner></Banner> */}
+
+
 
 
         <BannerSwiper></BannerSwiper>
@@ -32,15 +33,12 @@ export default function Home() {
         <div className=" py-5">
           <Premium></Premium>
         </div>
-
-
-        <ContactSection></ContactSection>
-
-        <div className=" my-7">
-          <Feedback></Feedback>
-        </div>
-        <Footer></Footer>
       </Container>
+
+      <Subscribe></Subscribe>
+      <div className="">
+        <Feedback></Feedback>
+      </div>
 
     </div>
   )
