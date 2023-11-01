@@ -1,0 +1,44 @@
+[
+     {
+         "_id": "1",
+         "subject": "Bangla",
+         "paper":"1st Paper",
+         "exam": "20",
+         "ongoing": 30
+     },
+     {
+         "_id": "2",
+         "subject": "English",
+         "paper":"1st Paper",
+         "exam": "22",
+         "ongoing": 30
+     },
+     {
+         "_id": "3",
+         "subject": "ICT",
+         "paper":"1st Paper",
+         "exam": "19",
+         "ongoing": 30
+     },
+     {
+         "_id": "4",
+         "subject": "Physics",
+         "paper":"1st Paper",
+         "exam": "25",
+         "ongoing": 30
+     },
+     {
+         "_id": "5",
+         "subject": "Chemistry",
+         "paper":"1st Paper",
+         "exam": "20",
+         "ongoing": 30
+     },
+     {
+         "_id": "6",
+         "subject": "Biology",
+         "paper":"1st Paper",
+         "exam": "18",
+         "ongoing": 30
+     }
+ ]
