@@ -8,10 +8,12 @@ import MenuBar from "./MenuBar";
 import { useContext, useState } from "react";
 import { GlobalContext } from "@/GlobalState";
 import CommonImage from "../CommonImage/CommonImage";
+import UserModal from "../UserModal/UserModal";
 
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin } = useContext(GlobalContext);
      const [Open, setOpen] = useState(true);
+     const [isUserModalOpen, setIsUserModalOpen] = useState(false);
      return (
           <div className=" mb-12">
                <div>
@@ -19,7 +21,7 @@ const Navbar = () => {
                     <nav className='px-2 w-full fixed py-3 z-50 bg-[#ECF0F3]      top-0  left-0 right-0    shadow-lg'>
                          <Container>
                               <div className=' '>
-                                   <div className=' flex    justify-between items-center'>
+                                   <div className='flex justify-between items-center'>
                                         <div className=' flex  items-center gap-4'>
 
                                              <div className=" md:hidden">
@@ -46,11 +48,19 @@ const Navbar = () => {
                                         <div className=" hidden sm:block">
                                              {
                                                   user ?
-                                                       <div className=' cursor-pointer hidden md:block '>
-                                                            <div className='flex gap-2 items-center  p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all'>
+                                                       <div className='relative cursor-pointer hidden md:block '>
+                                                            <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className='flex gap-2 items-center  p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all'>
                                                                  <CommonImage data={user}></CommonImage>
                                                                  <h1 className='relative  text-base'>{user?.displayName}</h1>
                                                             </div>
+                                                            {
+                                                                 isUserModalOpen ?
+                                                                      <div className="absolute top-[100%]">
+                                                                           <UserModal></UserModal>
+                                                                      </div>
+                                                                      :
+                                                                      <></>
+                                                            }
                                                        </div>
                                                        :
                                                        <div className="flex gap-2 items-center">
