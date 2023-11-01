@@ -11,8 +11,8 @@ import CommonImage from "../CommonImage/CommonImage";
 
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin } = useContext(GlobalContext);
- const [Open, setOpen] = useState(true);
- return (
+     const [Open, setOpen] = useState(true);
+     return (
           <div className=" mb-12">
                <div>
 
@@ -33,35 +33,35 @@ const Navbar = () => {
                                         <div className=' hidden md:flex items-center gap-3  space-x-5'>
 
 
-                                             <Link href={'/'}> Home</Link>
-                                             <Link href={'/teacher'}>Teacher </Link>
-                                             <Link href={'/leader-board'}> Leader board</Link>
-                                             <Link href={'/blogs'}> Blogs</Link>
-                                             <Link href={'/contact'}> Contact Us</Link>
+                                             <Link href={'/'}>Home</Link>
+                                             <Link href={'/teacher'}>Teacher</Link>
+                                             <Link href={'/leader-board'}>Leader board</Link>
+                                             <Link href={'/blogs'}>Blogs</Link>
+                                             <Link href={'/contact'}>Contact Us</Link>
 
                                              {
-                                              user ?<Link href={'/dashboard'}> Dashboard</Link> : null
+                                                  user ? <Link href={'/dashboard'}>Dashboard</Link> : null
                                              }
 
 
 
                                         </div>
 
-
-
+                                        {/* desktop navigation right side */}
                                         <div className=" hidden sm:block">
-                                             {user ? <div  className=' cursor-pointer hidden md:block '>
-                                                  <div className='   relative flex gap-2 items-center '>
-
-                                                       <CommonImage data={user}></CommonImage>
-                                                       <div className=' absolute w-3 h-3  left-8 -top-1  bg-[rgb(1,179,31)] rounded-full '></div>
-                                                       <div className=' relative  space-y-0'>
-                                                            <h1 className='relative  text-base'>{user?.displayName}</h1>
-                                                            <span className=' absolute -bottom-3 text-xs mt-4'> Active now</span>
+                                             {
+                                                  user ?
+                                                       <div className=' cursor-pointer hidden md:block '>
+                                                            <div className='flex gap-2 items-center  p-2 rounded-lg hover:bg-[#ddebff]'>
+                                                                 <CommonImage data={user}></CommonImage>
+                                                                 <h1 className='relative  text-base'>{user?.displayName}</h1>
+                                                            </div>
                                                        </div>
-
-                                                  </div>
-                                             </div> : <Link href={'/login'} className={'text-[#298742]'}> Login/Register</Link>
+                                                       :
+                                                       <div className="flex gap-2 items-center">
+                                                            <Link href={'/login'} className="px-3 py-2 text-white bg-[#4A3AFF] rounded-lg hover:shadow-lg">Login</Link>
+                                                            <Link href={'/register'} className="px-3 py-2 bg-gray-100 hover:bg-slate-600 hover:text-white rounded-lg hover:shadow-lg">Register</Link>
+                                                       </div>
                                              }
                                         </div>
 
