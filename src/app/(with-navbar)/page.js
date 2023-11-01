@@ -1,6 +1,4 @@
 import Container from "@/Components/Container/Container";
-
-
 import Pricing from "@/Components/Pricing/Pricing";
 import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
