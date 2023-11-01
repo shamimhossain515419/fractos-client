@@ -39,7 +39,7 @@ const Pricing = () => {
                             <span className='text-xl font-semibold'>Read & Write Blogs</span>
                         </li>
                     </ul>
-                    <button className='w-full rounded-lg bg-[#4A3AFF] text-white hover:bg-[#4a3affdf] text-xl mt-10 transition-all hover:bg-white font-bold py-5'>Get Started</button>
+                    <button className='w-full rounded-lg bg-[#4A3AFF] text-white hover:bg-[#4a3affdf] text-xl mt-10 transition-all font-bold py-5'>Get Started</button>
                 </div>
                 {/* premium price card */}
                 <div className='bg-white rounded-lg p-5 w-full md:min-w-[400px]'>

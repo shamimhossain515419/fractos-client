@@ -1,39 +1,41 @@
+"use client"
 
-import Img from './Images/Untitled1.png'
-import Img2 from './Images/Untitled3.png'
+import Image from 'next/image';
+import React from 'react';
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
-import Image from 'next/image'
-import banner from '../../../public/banner.png'
-export default function Banner() {
+
+const Banner = () => {
+
   return (
-    <div className="grid grid-cols-1 items-center md:grid-cols-2 gap-3 py-10 ">
-      <div className="col p-2 md:p-8 ">
-      
-          <Image  className='  w-full object-fill'
-            src={banner}
-            height={400}
-            width={500}
-            alt="Picture of the author" />
-      
-
-      </div>
-      <div className='col py-10 flex justify-center  items-center flex-col '>
-        <h1 className="text-4xl font-bold text-blue-700 text-center">Solve Q-Bank & Prepare You</h1>
-        <p className="py-6 text-2xl text-center text-blue-500 md:p-2">Attend live test on any question from thousands of questions of your choice and prepare for any exam</p>
-        <div className="flex text-center gap-2">
-          <div className='ml-14 md:ml-24'><Image
-            src={Img}
-            className='h-12 w-36'
-            alt="Picture of the author"
-          /></div>
-          <div> <Image
-            src={Img2}
-            className='h-12 w-36'
-            alt="Picture of the author"
-          /></div>
+    <div className='pt-[80px] lg:pt-[130px] pb-[80px] mb-[130px]'>
+      <div className='grid grid-cols-12 gap-10 px-2 lg:px-10'>
+        <div className='col-span-12 lg:col-span-6 mx-auto'>
+          <Player
+            autoplay
+            loop
+            src="/banner image.json"
+            className='max-w-xs md:max-w-[500px] overflow-hidden'
+          >
+            <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+          </Player>
+          {/* <Image src={'/banner img.png'} height={500} width={500}></Image> */}
+        </div>
+        <div className='col-span-12 lg:col-span-6'>
+          <h1 className='text-2xl md:text-3xl font-extrabold mb-10 lg:mt-32 mx-auto text-center'>
+            Now Prepare For Your Exams With <span>Fractos</span>
+          </h1>
+          <h2 className='text-lg mb-5'>
+            Say Good Bye To Test-Papers And Come To Fractos. Here You Can Give Live Exams, Topic And Subject Wise Exams, Review Your Exams Many More Thing.
+          </h2>
+          <div className='flex items-center justify-center gap-10'>
+            <Image className='cursor-pointer w-[200px] h-[66px]' width={200} height={66} src={'/googlePlay.png'}></Image>
+            <Image className='cursor-pointer w-[200px] h-[66px]' width={200} height={66} src={'/appleStore.png'}></Image>
+          </div>
         </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
+
+export default Banner;

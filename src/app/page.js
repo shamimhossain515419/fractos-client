@@ -8,6 +8,7 @@ import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
 import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
 import Feedback from "@/Components/Feedback";
+import Banner from "@/Home/Banner/Banner";
 
 
 
@@ -18,10 +19,10 @@ export default function Home() {
 
         <Navbar></Navbar>
 
-        {/* <Banner></Banner> */}
+        <Banner></Banner>
 
 
-        <BannerSwiper></BannerSwiper>
+        {/* <BannerSwiper></BannerSwiper> */}
 
 
         <div className=" my-3">
