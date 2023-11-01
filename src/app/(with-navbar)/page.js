@@ -6,6 +6,10 @@ import CounterSection from "@/Components/CounterSection/CounterSection";
 import ContactSection from "@/Components/Contact";
 import Navbar from "@/Components/Navbar";
 import BannerSwiper from "@/Home/BannerSwiper/BannerSwiper";
+<<<<<<< HEAD:src/app/(with-navbar)/page.js
+=======
+import Feedback from "@/Components/Feedback";
+>>>>>>> 22b9ae36a400081132e451dcafb1de3ed514777f:src/app/page.js
 // import Banner from "@/Home/Banner/Banner";
 
 
@@ -38,11 +42,14 @@ export default function Home() {
         <BannerSwiper></BannerSwiper>
 
 
+<<<<<<< HEAD:src/app/(with-navbar)/page.js
 <<<<<<< HEAD:src/app/page.js
 
 
 =======
 >>>>>>> e2a8ea55485fb33725700b45c4f63fdaf23c4a43:src/app/(with-navbar)/page.js
+=======
+>>>>>>> 22b9ae36a400081132e451dcafb1de3ed514777f:src/app/page.js
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
