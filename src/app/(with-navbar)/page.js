@@ -7,7 +7,6 @@ import Feedback from "@/Components/Feedback";
 import Subscribe from "@/Components/Subscribe/Subscribe";
 
 
-
 export default function Home() {
   return (
     <div>
