@@ -30,21 +30,16 @@ const Navbar = () => {
                                              <Link href="/"> <h1 className=' primary py-2 font-semibold  text-base md:text-2xl text-color   uppercase'> FRACTOS </h1></Link>
                                         </div>
 
+                                        {/* desktop navigation links */}
                                         <div className=' hidden md:flex items-center gap-3  space-x-5'>
-
-
-                                             <Link href={'/'}>Home</Link>
-                                             <Link href={'/teacher'}>Teacher</Link>
-                                             <Link href={'/leader-board'}>Leader board</Link>
-                                             <Link href={'/blogs'}>Blogs</Link>
-                                             <Link href={'/contact'}>Contact Us</Link>
-
+                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/'}>Home</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/teacher'}>Teacher</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/leader-board'}>Leader board</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/blogs'}>Blogs</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/contact'}>Contact Us</Link>
                                              {
                                                   user ? <Link href={'/dashboard'}>Dashboard</Link> : null
                                              }
-
-
-
                                         </div>
 
                                         {/* desktop navigation right side */}
@@ -52,7 +47,7 @@ const Navbar = () => {
                                              {
                                                   user ?
                                                        <div className=' cursor-pointer hidden md:block '>
-                                                            <div className='flex gap-2 items-center  p-2 rounded-lg hover:bg-[#ddebff]'>
+                                                            <div className='flex gap-2 items-center  p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all'>
                                                                  <CommonImage data={user}></CommonImage>
                                                                  <h1 className='relative  text-base'>{user?.displayName}</h1>
                                                             </div>
