@@ -11,6 +11,12 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
+
+  if (typeof window !== 'undefined') {
+    // Your client-side code here
+  }
+  
   return (
     <html lang="en">
       <body   className={inter.className}>

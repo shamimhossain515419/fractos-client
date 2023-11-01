@@ -1,5 +1,7 @@
+
 import connectToDB from "@/database";
-import User from "@/models/Users";
+import allUsers from "@/models/Users";
+
 import { NextResponse } from "next/server";
 
 
@@ -9,13 +11,13 @@ export async function PUT(req) {
 
      try {
           await connectToDB();
-            const extractData = await req.json();
+         const extractData = await req.json();
 
           const {
                email, name, phone, about, batch, collage, level
           } = extractData;
 
-          const currentUser = await User.findOne({ email });
+          const currentUser = await allUsers.findOne({ email });
 
           if (!currentUser) {
                return NextResponse.json({
@@ -25,14 +27,14 @@ export async function PUT(req) {
           }
 
 
-          const updatedProduct = await User.findOneAndUpdate(
+          const updatedProduct = await allUsers.findOneAndUpdate(
                {
                     email: email,
                },
                {
-                    name: extractData?.name ? extractData?.name : currentUser?.name,
                     phone: extractData?.phone ? extractData?.phone : currentUser?.phone,
                     about: extractData?.about ? extractData?.about : currentUser?.about,
+                    photo: extractData?.photo ? extractData?.photo : currentUser?.photo,
                     batch: extractData?.batch ? extractData?.batch : currentUser?.batch,
                     level: extractData?.level ? extractData?.level : currentUser?.level,
                     collage: extractData?.collage ? extractData?.collage : currentUser?.collage,

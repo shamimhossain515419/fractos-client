@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import CommonImage from '@/Components/CommonImage/CommonImage';
 import { GlobalContext } from '@/GlobalState';
 import Link from 'next/link';
@@ -11,6 +11,7 @@ import { MdOutlineLeaderboard } from 'react-icons/md';
 import DashboardNavbar from '@/Components/DashboardNavbar/DashboardNavbar';
 import { BiUserCircle } from 'react-icons/bi';
 import { FiSettings } from 'react-icons/fi';
+import Image from 'next/image';
 
 const DashboardLayout = ({ children }) => {
      const { user, openModal } = useContext(GlobalContext)
@@ -20,16 +21,12 @@ const DashboardLayout = ({ children }) => {
      return (
           <div>
 
-               <div className='md:hidden  w-full overflow-hidden  p-4 '>
+               <div className='md:hidden  w-full overflow-hidden   p-4 '>
                     <DashboardNavbar></DashboardNavbar>
                </div>
 
 
-               <div className=' hidden  fixed top-2 left-3 md:block'>
-                    <div className='  my-2  p-4   flex items-center gap-5'>
-                         <Link href={'/'} className='text-lg  cursor-pointer md:text-3xl font-bold my-4'> FRACTOS</Link>
-                    </div>
-               </div>
+
 
 
                <div className=' p-2 sm:p-2 md:p-8 relative '>
@@ -83,6 +80,14 @@ const DashboardLayout = ({ children }) => {
                                              <BiUserCircle size={24}></BiUserCircle>
                                              <h1 className=' text-base md:text-lg f font-normal '> Profile </h1>
                                         </Link>
+                                        <Link
+                                             href="/dashboard/exam-review"
+                                             className={`${pathname == "/dashboard/exam-review" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
+
+                                        >
+                                             <Image src={'/review-icon.png'} width={24} height={24}></Image>
+                                             <h1 className=' text-base md:text-lg f font-normal '> Review </h1>
+                                        </Link>
 
 
                                    </div>
@@ -94,12 +99,18 @@ const DashboardLayout = ({ children }) => {
 
 
 
-                    <div className='   hidden md:block  fixed top-[150px] w-[300px] left-3 '>
+                    <div className='   hidden md:block top-0  fixed  w-[300px] left-3 '>
 
 
-                         <div className=' max-w-[300px]   flex flex-col justify-between gap-2 absolute top-1 bottom-2 left-2 h-[80vh] '>
+                         <div className=' max-w-[300px]  shadow-xl px-2     flex flex-col justify-between gap-2 absolute top-1 bottom-2 left-2    h-screen pb-6 '>
+
+
                               <div className='   space-y-2'>
-
+                                   <div className='    md:block'>
+                                        <div className='  my-2  p-4   flex items-center gap-5'>
+                                             <Link href={'/'} className='text-lg  cursor-pointer md:text-3xl font-bold my-4'> FRACTOS</Link>
+                                        </div>
+                                   </div>
                                    <Link
                                         href="/dashboard"
                                         className={`${pathname == "/dashboard" ? " bg-[#8d9ddc69] " : "bg-[#8d9ddc2c]  "} flex   hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
@@ -152,12 +163,12 @@ const DashboardLayout = ({ children }) => {
                                    </Link>
 
                                    <Link
-                                        href="/dashboard/profile"
-                                        className={`${pathname == "/dashboard/profile" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
+                                        href="/dashboard/exam-review"
+                                        className={`${pathname == "/dashboard/exam-review" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
 
                                    >
-                                        <BiUserCircle size={24}></BiUserCircle>
-                                        <h1 className=' text-base md:text-lg f font-normal '> Profile </h1>
+                                        <Image src={'/review-icon.png'} width={24} height={24}></Image>
+                                        <h1 className=' text-base md:text-lg f font-normal '> Review </h1>
                                    </Link>
                                    <Link
                                         href="/dashboard/setting"

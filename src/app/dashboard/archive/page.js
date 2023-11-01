@@ -1,10 +1,15 @@
-import Archive from '@/Components/Archive/Archive';
+
+import ArchiveCollege from '@/Components/ArchiveDUCUnit/ArchiveCollege';
+import DUCUnit from '@/Components/ArchiveDUCUnit/DUCUnit';
 import React from 'react';
 
 const ArchivePage = () => {
      return (
           <div>
-               <Archive></Archive>
+               <ArchiveCollege></ArchiveCollege>
+
+               <DUCUnit></DUCUnit>
+               <ArchiveCollege></ArchiveCollege>
           </div>
      );
 };

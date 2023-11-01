@@ -7,95 +7,84 @@ const Page = () => {
 
 
 
-     const data ={
-          exam_name: "mathematics ",
+     const higherMathData = {
+          exam_name: "higherMath",
           questions: [
             {
-              "question": "The hormone Erythropoietin is produced in______",
-              "answer_a": "Liver",
-              "answer_b": "Spleen",
-              "answer_c": "Kidney",
-              "answer_d": "Thyroid gland",
-              "answer_right": "Kidney"
+              question: "What is the derivative of y = x^2 with respect to x?",
+              answer_a: "2x",
+              answer_b: "x",
+              answer_c: "3x^2",
+              answer_d: "2",
+              answer_right: "2x"
             },
             {
-              "question": "For some integer n, the odd integer is represented in the form of:",
-              "answer_a": "n",
-              "answer_b": "n + 1",
-              "answer_c": "2n + 1",
-              "answer_d": "2n",
-              "answer_right": "2n + 1"
+              question: "What is the integral of ∫(3x^2 + 2x) dx?",
+              answer_a: "3x^3 + 2x^2 + C",
+              answer_b: "2x^3 + 3x^2 + C",
+              answer_c: "3x^3 + 2x + C",
+              answer_d: "x^3 + 2x^2 + C",
+              answer_right: "3x^3 + 2x^2 + C"
             },
             {
-              "question": "Which of the following is not irrational?",
-              "answer_a": "(3 + √7)",
-              "answer_b": "(3 – √7)",
-              "answer_c": "(3 + √7) (3 – √7)",
-              "answer_d": "3√7",
-              "answer_right": "(3 + √7) (3 – √7)"
+              question: "In a right triangle, what is the ratio of the length of the side opposite the angle θ to the length of the hypotenuse?",
+              answer_a: "Sine",
+              answer_b: "Cosine",
+              answer_c: "Tangent",
+              answer_d: "Cosecant",
+              answer_right: "Sine"
             },
             {
-              "question": "The addition of a rational number and an irrational number is equal to:",
-              "answer_a": "rational number",
-              "answer_b": "Irrational numbe",
-              "answer_c": "Both",
-              "answer_d": "None of the above",
-              "answer_right": "Irrational numbe"
+              question: "What is the limit of (sin x) / x as x approaches 0?",
+              answer_a: "1",
+              answer_b: "0",
+              answer_c: "π",
+              answer_d: "∞",
+              answer_right: "1"
             },
-        {
-              "question": "If set A = {1, 2, 3, 4, 5,…} is given, then it represents:",
-              "answer_a": "Whole numbers",
-              "answer_b": "Rational Numbers",
-              "answer_c": "Natural numbers",
-              "answer_d": " Complex numbers",
-              "answer_right": "Natural numbers"
+            {
+              question: "What is the derivative of e^x with respect to x?",
+              answer_a: "e^x",
+              answer_b: "1",
+              answer_c: "0",
+              answer_d: "ln(x)",
+              answer_right: "e^x"
             },
-        {
-              "question": "If p and q are integers and is represented in the form of p/q, then it is a:",
-              "answer_a": "Whole number",
-              "answer_b": "Rational number",
-              "answer_c": "Natural number",
-              "answer_d": "Even number",
-              "answer_right": "Rational number"
+            {
+              question: "What is the area of a circle with radius 'r'?",
+              answer_a: "πr",
+              answer_b: "2πr",
+              answer_c: "πr^2",
+              answer_d: "2πr^2",
+              answer_right: "πr^2"
             },
-        {
-              "question": "The largest number that divides 70 and 125, which leaves the remainders 5 and 8, is:",
-              "answer_a": "65",
-              "answer_b": "15",
-              "answer_c": "13",
-              "answer_d": "25",
-              "answer_right": "13"
+            {
+              question: "What is the value of sin(π/2)?",
+              answer_a: "0",
+              answer_b: "1",
+              answer_c: "-1",
+              answer_d: "π/2",
+              answer_right: "1"
             },
-        {
-              "question": "The decimal expansion of the rational number 23/(22 . 5) will terminate after",
-              "answer_a": "one decimal place",
-              "answer_b": "two decimal places",
-              "answer_c": "three decimal places",
-              "answer_d": "more than 3 decimal places",
-              "answer_right": "two decimal places"
-            },
-        {
-              "question": " Euclid’s division lemma states that for two positive integers a and b, there exist unique integers q and r such that a = bq + r, where r must satisfy",
-              "answer_a": "1 < r < b ",
-              "answer_b": "0 < r ≤ b",
-              "answer_c": "0 ≤ r < b ",
-              "answer_d": "0 < r < b",
-              "answer_right": "0 ≤ r < b "
-            },
-        {
-              "question": "The prime factorisation of 96 is",
-              "answer_a": "2^5 × 3",
-              "answer_b": "2^6",
-              "answer_c": "2^4 × 3",
-              "answer_d": "2^4 × 32",
-              "answer_right": "2^5 × 3"
+            {
+              question: "What is the square root of -1?",
+              answer_a: "0",
+              answer_b: "1",
+              answer_c: "i",
+              answer_d: "-i",
+              answer_right: "i"
             },
           ]
-        }
+        };
+        
+        
+        
+        
+
         
 
      const hanleCloet = async () => {
-          const result = await QuestionPost(data)
+          const result = await QuestionPost(higherMathData)
           console.log(result);
      }
 

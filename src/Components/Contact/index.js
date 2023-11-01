@@ -11,11 +11,12 @@ import Link from "next/link";
 
 import image from '../../../public/2912020.webp'
 import { usePathname } from "next/navigation";
+import CommonTitle from "../CommonTitle/CommonTitle";
 const ContactSection = () => {
      const form = useRef();
 
      const pathName = usePathname();
-    
+
      const sendEmail = (e) => {
           e.preventDefault();
           const from = e.target;
@@ -36,7 +37,9 @@ const ContactSection = () => {
           <div className=" relative py-10">
                <div>
                     <div className=" my-8  text-center">
-                         <p className="text-color mb-3 text-lx md:text-xl xl:text-3xl font-semibold "> Contact</p>
+
+                         <CommonTitle title={"Contact"}></CommonTitle>
+
                          <h1 className=" text-xl  uppercase   "> Contact With  Compony </h1>
                     </div>
                </div>
@@ -44,7 +47,7 @@ const ContactSection = () => {
 
 
 
-               <div className="  boxshadow  rounded-lg  mx-auto  px-6 py-3">
+               <div className="    rounded-lg  mx-auto  px-6 py-3">
 
                     <div className="  md:grid md:grid-cols-2 md:gap-20">
                          <div className="   p-1 md:p-4 ">
@@ -95,7 +98,7 @@ const ContactSection = () => {
 
 
 
-              
+
                <Notification></Notification>
           </div>
 

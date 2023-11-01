@@ -1,10 +1,16 @@
 import React from 'react';
 import './Archive.css';
 
+
 const Archive = () => {
     return (
-        <div className='text-white'>
-           <div className=''>
+        <div className=''>
+      
+
+
+
+
+            <div className=''>
                 <button className='bg-purple-950 m-3 p-2 font-bold rounded'>Academic</button>
                 <button className='bg-purple-950 m-3 p-2 font-bold rounded'>Admission</button>
             </div>

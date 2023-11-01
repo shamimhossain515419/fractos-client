@@ -1,7 +1,7 @@
 import MockPreset from '@/Components/MockPreset/MockPreset';
 import React from 'react';
 
-const MockExam = ({ children }) => {
+const MockExam = () => {
      return (
           <div>
               <MockPreset></MockPreset>

@@ -16,7 +16,7 @@ const Navbar = () => {
           <div className=" mb-12">
                <div>
 
-                    <nav className='px-2 w-full fixed py-3 z-50 bg-[#ECF0F3]      top-0  left-0 right-0    shadow-lg'>
+                    <nav className='px-2 w-full fixed py-3 z-50 primaryBgColor text-white     top-0  left-0 right-0    shadow-lg'>
                          <Container>
                               <div className=' '>
                                    <div className=' flex    justify-between items-center'>
@@ -27,7 +27,7 @@ const Navbar = () => {
                                                        user ? <Link href={'/'}>      <CommonImage data={user} className="w-[50px] h-[50px]"></CommonImage></Link> : null
                                                   }
                                              </div>
-                                             <Link href="/"> <h1 className='  py-2 font-semibold  text-base md:text-2xl text-color   uppercase'> FRACTOS </h1></Link>
+                                             <Link href="/"> <h1 className=' primary py-2 font-semibold  text-base md:text-2xl text-color   uppercase'> FRACTOS </h1></Link>
                                         </div>
 
                                         <div className=' hidden md:flex items-center gap-3  space-x-5'>
@@ -40,7 +40,7 @@ const Navbar = () => {
                                              <Link href={'/contact'}> Contact Us</Link>
 
                                              {
-                                                  user ? <Link href={'/dashboard'}> Dashboard</Link> : null
+                                              user ?<Link href={'/dashboard'}> Dashboard</Link> : null
                                              }
 
 
