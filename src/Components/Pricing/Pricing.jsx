@@ -12,56 +12,64 @@ const Pricing = () => {
             {/* pricing section */}
             <div className='flex gap-y-5 gap-x-20 justify-center items-start w-full'>
                 {/* basic price card */}
-                <div className='bg-white rounded-lg p-5'>
+                <div className='bg-white rounded-lg p-5 w-full md:min-w-[400px]'>
                     <div className='flex items-center justify-between mb-5'>
-                        <h3 className='text-xl'>Basic</h3>
-                        <p>Free</p>
+                        <h3 className='text-2xl md:text-4xl text-[#0C0094] font-bold'>Basic</h3>
+                        <p className='font-semibold text-xl'>Free</p>
                     </div>
                     <ul className='space-y-5'>
-                    <li className='flex items-center gap-2'>
+                        <li className='flex items-center gap-2'>
                             <Image src={'/warning.png'} height={20} width={20}></Image>
-                            <span>Mock Exam (8 Times)</span>
+                            <span className='text-xl font-semibold'>Mock Exam (8 Times)</span>
                         </li>
-                    <li className='flex items-center gap-2'>
+                        <li className='flex items-center gap-2'>
                             <Image src={'/correct.png'} height={20} width={20}></Image>
-                            <span>Exam Review</span>
+                            <span className='text-xl font-semibold'>Exam Review</span>
                         </li>
-                    <li className='flex items-center gap-2'>
+                        <li className='flex items-center gap-2'>
                             <Image src={'/wrong.png'} height={20} width={20}></Image>
-                            <span>Live Exam</span>
+                            <span className='text-xl font-semibold'>Live Exam</span>
                         </li>
-                    <li className='flex items-center gap-2'>
+                        <li className='flex items-center gap-2'>
                             <Image src={'/wrong.png'} height={20} width={20}></Image>
-                            <span>Feedback & Support</span>
+                            <span className='text-xl font-semibold'>Feedback & Support</span>
+                        </li>
+                        <li className='flex items-center gap-2'>
+                            <Image src={'/correct.png'} height={20} width={20}></Image>
+                            <span className='text-xl font-semibold'>Read & Write Blogs</span>
                         </li>
                     </ul>
-                    <button className='w-full rounded-lg bg-[#4A3AFF] text-white text-xl mt-5 py-2'>Get Started</button>
+                    <button className='w-full rounded-lg bg-[#4A3AFF] text-white hover:bg-[#4a3affdf] text-xl mt-10 transition-all hover:bg-white font-bold py-5'>Get Started</button>
                 </div>
                 {/* premium price card */}
-                <div className='bg-white rounded-lg p-5'>
+                <div className='bg-white rounded-lg p-5 w-full md:min-w-[400px]'>
                     <div className='flex items-center justify-between mb-5'>
-                        <h3 className='text-xl'>Premium</h3>
-                        <p>$25</p>
+                        <h3 className='text-2xl md:text-4xl text-[#0C0094] font-bold'>Premium</h3>
+                        <p className='font-semibold text-xl'>$25</p>
                     </div>
                     <ul className='space-y-5'>
                         <li className='flex items-center gap-2'>
                             <Image src={'/correct.png'} height={20} width={20}></Image>
-                            <span>Mock Exam</span>
+                            <span className='text-xl font-semibold'>Mock Exam</span>
                         </li>
                         <li className='flex items-center gap-2'>
                             <Image src={'/correct.png'} height={20} width={20}></Image>
-                            <span>Exam Review</span>
+                            <span className='text-xl font-semibold'>Exam Review</span>
                         </li>
                         <li className='flex items-center gap-2'>
                             <Image src={'/correct.png'} height={20} width={20}></Image>
-                            <span>Live Exam</span>
+                            <span className='text-xl font-semibold'>Live Exam</span>
                         </li>
                         <li className='flex items-center gap-2'>
                             <Image src={'/correct.png'} height={20} width={20}></Image>
-                            <span>Feedback & Support</span>
+                            <span className='text-xl font-semibold'>Feedback & Support</span>
+                        </li>
+                        <li className='flex items-center gap-2'>
+                            <Image src={'/correct.png'} height={20} width={20}></Image>
+                            <span className='text-xl font-semibold'>Read & Write Blogs</span>
                         </li>
                     </ul>
-                    <button className='w-full rounded-lg bg-[#4A3AFF] text-white text-xl mt-5 py-2'>Buy Now</button>
+                    <button className='w-full rounded-lg bg-[#4A3AFF] text-white text-xl mt-10 transition-all hover:bg-[#4a3affdf] font-bold py-5'>Buy Now</button>
                 </div>
             </div>
         </div>
