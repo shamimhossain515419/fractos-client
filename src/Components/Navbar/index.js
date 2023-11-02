@@ -11,39 +11,30 @@ import CommonImage from "../CommonImage/CommonImage";
 import UserModal from "../UserModal/UserModal";
 
 const Navbar = () => {
-     const [isShrink, setIsShrink] = useState(false);
      const { userinfo, user, setIsAdmin, isAdmin } = useContext(GlobalContext);
      const [Open, setOpen] = useState(true);
      const [isUserModalOpen, setIsUserModalOpen] = useState(false);
 
-     useEffect(() => {
-          const handleScroll = () => {
-               if (window.scrollY > 500) {
-                    setIsShrink(true);
-               } else {
-                    setIsShrink(false);
-               }
-          };
-
-          window.addEventListener('scroll', handleScroll);
-
-          return () => {
-               window.removeEventListener('scroll', handleScroll);
-          };
-     }, []);
      return (
           <div className=" mb-12">
                <div>
-                    <nav className={`px-2 py-2 z-50 bg-[#ECF0F3] shadow-lg fixed top-0 left-0 w-full transition-transform ${isShrink ? 'h-[66px] bg-slate-300' : 'h-[74px]'
-                         } transition-all`}>
+                    <nav className={`px-2 py-2 z-50 bg-[#ECF0F3] shadow-lg fixed top-0 left-0 w-full transition-transform`}>
                          <Container>
                               <div className=' '>
                                    <div className='flex justify-between items-center'>
                                         <div className=' flex  items-center gap-4'>
 
-                                             <div className=" md:hidden">
+                                             <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className=" md:hidden relative cursor-pointer">
                                                   {
-                                                       user ? <Link href={'/'}>      <CommonImage data={user} className="w-[50px] h-[50px]"></CommonImage></Link> : null
+                                                       user ? <CommonImage data={user} className="w-[50px] h-[50px]"></CommonImage> : null
+                                                  }
+                                                  {
+                                                       isUserModalOpen ?
+                                                            <div className="absolute top-[105%]">
+                                                                 <UserModal></UserModal>
+                                                            </div>
+                                                            :
+                                                            <></>
                                                   }
                                              </div>
                                              <Link href="/"> <h1 className=' primary py-2 font-semibold  text-base md:text-2xl text-color   uppercase'> FRACTOS </h1></Link>
