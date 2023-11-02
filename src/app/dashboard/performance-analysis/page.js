@@ -2,6 +2,7 @@
 // import { useState } from 'react';
 // import { Chart } from 'react-apexcharts';
 
+
 import React from 'react';
 import { Bar, Doughnut } from 'react-chartjs-2';
 
@@ -27,6 +28,12 @@ ChartJS.register(
     Legend,
     ArcElement
 );
+
+
+
+
+
+
 const page = () => {
 
 
