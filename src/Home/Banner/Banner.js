@@ -23,7 +23,7 @@ const Banner = () => {
         </div>
         <div className='col-span-12 lg:col-span-6'>
           <h1 className='text-2xl md:text-3xl font-extrabold mb-10 lg:mt-32 mx-auto text-center'>
-            Now Prepare For Your Exams With <span>Fractos</span>
+            Now Prepare   For  Your Exams With <span>Fractos</span>
           </h1>
           <h2 className='text-lg mb-5'>
             Say Good Bye To Test-Papers And Come To Fractos. Here You Can Give Live Exams, Topic And Subject Wise Exams, Review Your Exams Many More Thing.
