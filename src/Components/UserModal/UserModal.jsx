@@ -10,7 +10,7 @@ const UserModal = () => {
         logOutUser()
             .then(
                 Swal.fire(
-                    'Logged Out',
+                    'Logged Out'
                 )
             )
             location.reload()
