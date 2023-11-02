@@ -1,11 +1,5 @@
-"use client"
-// import { FaBeer } from 'react-icons/fa';
-import { AiOutlineAim } from "react-icons/ai";
-import { AiOutlineLeftCircle } from "react-icons/ai";
-import { AiOutlineExperiment } from "react-icons/ai";
-import { AiOutlineApi } from "react-icons/ai";
 import CommonTitle from "../CommonTitle/CommonTitle";
-import { Controls, Player } from "@lottiefiles/react-lottie-player";
+import Image from "next/image";
 const Premium = () => {
     return (
         <div>
@@ -15,14 +9,7 @@ const Premium = () => {
 
                 <div className="grid grid-cols-12 gap-10 rounded-xl bg-white shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0c009455]">
                     <div className="col-span-4">
-                        <Player
-                            autoplay
-                            loop
-                            src="/mock-exam-icon.json"
-                            className='w-full h-[300px]'
-                        >
-                            <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-                        </Player>
+                    <Image src={'/mock-exam-img.jpg'} width={320} height={300} className="mx-auto"></Image>
                     </div>
                     <div className="col-span-8">
                         <h3 className="text-xl md:text-2xl mb-10 text-[#0C0094] font-bold">Mock Exam</h3>
@@ -32,14 +19,7 @@ const Premium = () => {
 
                 <div className="grid grid-cols-12 gap-10 rounded-xl bg-white shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0c009455]">
                     <div className="col-span-4">
-                        <Player
-                            autoplay
-                            loop
-                            src="/live-exam-icon.json"
-                            className='w-full h-[300px]'
-                        >
-                            <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-                        </Player>
+                    <Image src={'/live-exam-img.jpg'} width={320} height={300} className="mx-auto" ></Image>
                     </div>
                     <div className="col-span-8">
                         <h3 className="text-xl md:text-2xl mb-10 text-[#0C0094] font-bold">Live Exam</h3>
@@ -51,14 +31,7 @@ const Premium = () => {
 
                 <div className="grid grid-cols-12 gap-10 rounded-xl bg-white shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0c009455]">
                     <div className="col-span-4">
-                        <Player
-                            autoplay
-                            loop
-                            src="/feedback-support-icon.json"
-                            className='w-full h-[300px]'
-                        >
-                            <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-                        </Player>
+                    <Image src={'/feedback-support-img.jpg'} width={320} height={300} className="mx-auto" ></Image>
                     </div>
                     <div className="col-span-8">
                         <h3 className="text-xl md:text-2xl mb-10 text-[#0C0094] font-bold">Feedback & Support</h3>
@@ -70,14 +43,7 @@ const Premium = () => {
 
                 <div className="grid grid-cols-12 gap-10 rounded-xl bg-white shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0c009455]">
                     <div className="col-span-4">
-                        <Player
-                            autoplay
-                            loop
-                            src="/performance-analysis-icon.json"
-                            className='w-full h-[300px]'
-                        >
-                            <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-                        </Player>
+                    <Image src={'/analysis-img.jpg'} width={320} height={300} className="mx-auto" ></Image>
                     </div>
                     <div className="col-span-8">
                         <h3 className="text-xl md:text-2xl mb-10 text-[#0C0094] font-bold">Perfomance Analysis</h3>
