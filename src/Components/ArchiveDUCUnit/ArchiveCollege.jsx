@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { Parallax } from 'react-parallax';
 
@@ -18,21 +19,15 @@ const ArchiveCollege = () => {
     console.log(colleges);
     return (
         <>
-            
+
             <div className='grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-14'>
                 {
                     colleges.map(college =>
-                        <div key={college._id}>
+                        <Link href={`/dashboard/question-bank/${college._id}`} key={college._id}>
                             <div className='rounded'>
-                                {/* className="w-[50px] h-[50px]" */}
-                                {/* <Parallax
-                                 bgImage="https://i.ibb.co/y6LsMs5/versity.jpg" 
-                                 bgImageAlt="the cat" 
-                                 strength={200}
-                                 className="bg-cover bg-fixed h-36"> */}
-                                 <div className='backgroundImage h-32'>
-                                    <div  className='p-8 rounded text-center'>
-                                    <h1 className='text-2xl font-bold text-white'>{college.CollegeName}</h1>
+                              <div className='backgroundImage h-32'>
+                                    <div className='p-8 rounded text-center'>
+                                        <h1 className='text-2xl font-bold text-white'>{college.CollegeName}</h1>
                                     </div></div>
                                 {/* </Parallax> */}
                                 <div className='bg-blue-50 rounded text-black font-bold p-3'>
@@ -43,7 +38,7 @@ const ArchiveCollege = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>)
+                        </Link>)
                 }
             </div>
 
