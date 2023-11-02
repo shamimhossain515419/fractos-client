@@ -1,20 +1,20 @@
-export const GetSubjectByData = async (name) => {
- 
-     try {
-       const res = await fetch(`/api/exam/get-by-subject?subject=${name}`, {
-         method: "GET",
-         cache: "no-store"
-       });
-       const data = await res.json();
-       return data;
-     } catch (error) {
-       console.log(error);
-     }
-   
-   }
+export const GetSubjectByData = async (name,category) => {
+
+  try {
+    const res = await fetch(`/api/exam/get-by-subject?subject=${name}&category=${category?category:null}`, {
+      method: "GET",
+      cache: "no-store"
+    });
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+
+}
 
 
-   
+
 export const QuestionPost = async (formData) => {
   try {
     const response = await fetch("/api/exam/post-questions", {
@@ -28,6 +28,18 @@ export const QuestionPost = async (formData) => {
     const finalData = await response.json();
 
     return finalData;
+  } catch (e) {
+    console.log("error", e);
+  }
+};
+export const GetQuestion = async () => {
+  try {
+    const response = await fetch("/api/exam/get-questions", {
+      method: "GET",
+    });
+
+    const finalData = await response.json();
+   return finalData?.data;
   } catch (e) {
     console.log("error", e);
   }

@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import { Parallax } from 'react-parallax';
-import './Archive.css';
+
 
 const ArchiveCollege = () => {
     const [colleges, setColleges] = useState([]);
@@ -18,10 +18,7 @@ const ArchiveCollege = () => {
     console.log(colleges);
     return (
         <>
-            <div className=''>
-                <button className='bg-purple-950 m-3 p-2 font-bold rounded text-white'>Academic</button>
-                <button className='bg-purple-950 m-3 p-2 font-bold rounded text-white'>Admission</button>
-            </div>
+            
             <div className='grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-14'>
                 {
                     colleges.map(college =>

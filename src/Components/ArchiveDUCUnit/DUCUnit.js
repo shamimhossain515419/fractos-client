@@ -1,8 +1,8 @@
 import React from 'react';
-import './DUCUnit.css';
+
 import Link from 'next/link';
 
-
+import './DUCUnit.css'
 const DUCUnit = () => {
 
 const adQns=[

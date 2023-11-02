@@ -29,12 +29,12 @@ const SearchBar = () => {
          
         </div>
 
-        <button className="px-2 py-3 bg-green-500 text-white rounded text-bold hover:bg-green-400 transition-colors">Banlga</button>
-        <button className="px-2 py-3 mx-2 bg-green-500 text-white rounded text-bold hover:bg-green-400 transition-colors">English</button>
-        <button className="px-2 py-3 bg-green-500 text-white rounded text-bold hover:bg-green-400 transition-colors">Mathmatics</button>
-        <button className="px-2 py-3 mx-2 bg-green-500 text-white rounded text-bold hover:bg-green-400 transition-colors">Physics</button>
-        <button className="px-2 py-3 bg-green-500 text-white rounded text-bold hover:bg-green-400 transition-colors">Chemistry</button>
-        <button className="px-2 py-3 mx-2 bg-green-500 text-white rounded text-bold hover:bg-green-400 transition-colors">Biology</button>
+        <button className="px-2 py-3 primaryBg text-white rounded text-bold hover:bg-green-400 transition-colors">Banlga</button>
+        <button className="px-2 py-3 mx-2 primaryBg text-white rounded text-bold hover:bg-green-400 transition-colors">English</button>
+        <button className="px-2 py-3 primaryBg text-white rounded text-bold hover:bg-green-400 transition-colors">Mathmatics</button>
+        <button className="px-2 py-3 mx-2 primaryBg text-white rounded text-bold hover:bg-green-400 transition-colors">Physics</button>
+        <button className="px-2 py-3 primaryBg text-white rounded text-bold hover:bg-green-400 transition-colors">Chemistry</button>
+        <button className="px-2 py-3 mx-2 primaryBg text-white rounded text-bold hover:bg-green-400 transition-colors">Biology</button>
 
       </Container>
     </div>

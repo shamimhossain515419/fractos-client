@@ -35,7 +35,6 @@ const page = () => {
                <CommonTitle title={"Question Reviews "} ></CommonTitle>
                <div className='  flex justify-center items-center md:gap-5 gap-2 flex-wrap '>
                     <div className=' text-xl md:text-2xl  font-medium my-4  text-black capitalize '  >Subject :  {examData?.exam_name}  </div>
-
                     <p className=' text-xl primary font-medium my-2'>Right Ans: {examData?.right?.length ? examData?.right?.length : 0} </p>
                     <p className=' text-red-500  text-xl font-medium my-2'>Wrong Ans: {examData?.wrong?.length ? examData?.wrong?.length : 0} </p>
 
