@@ -67,12 +67,10 @@ const SettingPage = () => {
           const result = await UpdateUser(newUser);
 
            toast.success(" user successfully update");
+      }
          
 
-          
-
-
-     }
+     
 
 
      return (
