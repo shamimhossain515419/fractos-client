@@ -8,7 +8,7 @@ import { Player, Controls } from '@lottiefiles/react-lottie-player';
 const Banner = () => {
 
   return (
-    <div className='pt-[80px] lg:pt-[130px] pb-[80px] mb-[130px]'>
+    <div className='pt-[80px] lg:pt-[130px] pb-[80px]'>
       <div className='grid grid-cols-12 gap-10 px-2 lg:px-10'>
         <div className='col-span-12 lg:col-span-6 mx-auto'>
           <Player
