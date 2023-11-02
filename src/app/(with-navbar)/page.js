@@ -22,7 +22,7 @@ export default function Home() {
 
         <Navbar></Navbar>
 
-        {/* <Banner></Banner> */}
+        <Banner></Banner>
 
 
         {/* <BannerSwiper></BannerSwiper> */}
