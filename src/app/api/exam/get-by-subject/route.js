@@ -1,6 +1,7 @@
 
 import connectToDB from "@/database";
 import Questions from "@/models/question";
+
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
@@ -12,7 +13,9 @@ export async function GET(req) {
 
     const { searchParams } = new URL(req.url);
     const subject = searchParams.get("subject");
-    const extractUser = await Questions.findOne({ exam_name: subject })
+    const category = searchParams.get("category");
+  const extractUser = await Questions.findOne({ exam_name:subject,category});
+  console.log(extractUser);
     if (extractUser) {
       return NextResponse.json({
         success: true,
