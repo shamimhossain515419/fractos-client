@@ -20,8 +20,13 @@ import { toast } from 'react-toastify';
 
 const page = () => {
      const { user } = useContext(GlobalContext);
-     const router = useRouter();
      const prams = useParams();
+     console.log(prams);
+     const name = prams?.id?.[0];
+     const category = prams?.id?.[1];
+     
+
+     console.log(name,category);
      const [Question, setQuestion] = useState([]);
      const [selectQuestion, setSelectQuestion] = useState(null);
      const [wrong, setWrong] = useState([]);
@@ -32,21 +37,21 @@ const page = () => {
      const [success, setSuccess] = useState(false)
      const currentDate = new Date();
      const time = Question?.questions?.length * 60;
-     const getData = async (subject) => {
-          const result = await GetSubjectByData(subject);
+     const getData = async (subject,category) => {
+          const result = await GetSubjectByData(subject,category);
           if (!result?.data) {
-               router.push('/dashboard/mock-exam')
+
           }
           setQuestion(result?.data)
 
      }
      useEffect(() => {
-          if (prams?.id) {
-               getData(prams?.id);
+          if (name,category) {
+               getData(name,category);
           }
 
 
-     }, [prams?.id])
+     }, [name,category])
 
 
      const isActive = (id) => {

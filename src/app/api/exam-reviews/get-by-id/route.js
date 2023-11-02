@@ -8,10 +8,9 @@ export async function GET(req) {
 
      await connectToDB();
      try {
-
           const { searchParams } = new URL(req.url);
           const id = searchParams.get("id");
-      console.log(id,"shmnadfdd");
+
 
           const extractUser = await Exam_review.findById(id);
 

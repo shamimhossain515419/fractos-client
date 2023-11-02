@@ -85,7 +85,7 @@ const DashboardLayout = ({ children }) => {
                                              className={`${pathname == "/dashboard/exam-review" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
 
                                         >
-                                             <Image src={'/review-icon.png'} width={24} height={24}></Image>
+                                             <Image src={'/review-icon.png'} width={24} height={24} alt='image'></Image>
                                              <h1 className=' text-base md:text-lg f font-normal '> Review </h1>
                                         </Link>
 
@@ -167,7 +167,7 @@ const DashboardLayout = ({ children }) => {
                                         className={`${pathname == "/dashboard/exam-review" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
 
                                    >
-                                        <Image src={'/review-icon.png'} width={24} height={24}></Image>
+                                        <Image src={'/review-icon.png'} width={24} height={24} alt='image'></Image>
                                         <h1 className=' text-base md:text-lg f font-normal '> Review </h1>
                                    </Link>
                                    <Link
