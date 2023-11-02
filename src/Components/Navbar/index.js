@@ -15,12 +15,12 @@ const Navbar = () => {
      const [Open, setOpen] = useState(true);
      const [isUserModalOpen, setIsUserModalOpen] = useState(false);
 
-<<<<<<< HEAD
+     // <<<<<<< HEAD
      return (
           <div className=" mb-12">
                <div>
                     <nav className={`px-2 py-2 z-50 bg-[#ECF0F3] shadow-lg fixed top-0 left-0 w-full transition-transform`}>
-=======
+                         {/* =======
      useEffect(() => {
           const handleScroll = () => {
                if (window.scrollY > 500) {
@@ -45,7 +45,7 @@ const Navbar = () => {
                          } transition-all`}>
 
                     <nav className='px-2 w-full fixed py-3 z-50 primaryBgColor text-white     top-0  left-0 right-0    shadow-lg'>
->>>>>>> 38b3a6f21add2d7416186108a6be19b86d3b441a
+>>>>>>> 38b3a6f21add2d7416186108a6be19b86d3b441a */}
                          <Container>
                               <div className=' '>
                                    <div className='flex justify-between items-center'>
@@ -67,7 +67,7 @@ const Navbar = () => {
                                              <Link href="/"> <h1 className=' primary py-2 font-semibold  text-base md:text-2xl text-color   uppercase'> FRACTOS </h1></Link>
                                         </div>
 
-                                        
+
                                         <div className=' hidden md:flex items-center gap-3  space-x-5'>
                                              <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/'}>Home</Link>
                                              <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/teacher'}>Teacher</Link>
@@ -76,7 +76,7 @@ const Navbar = () => {
 
                                         </div>
 
-                                       
+
                                         <div className=" hidden sm:block">
                                              {
                                                   user ?
@@ -126,10 +126,9 @@ const Navbar = () => {
                          </Container>
 
                     </nav>
-                    </div>
+               </div>
 
-                    <Notification></Notification>
-               </div >
+               <Notification></Notification>
           </div>
      );
 };
