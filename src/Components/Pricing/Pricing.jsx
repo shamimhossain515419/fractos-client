@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Pricing.css"
-import { FaCheckCircle } from 'react-icons/fa';
 import CommonTitle from '../CommonTitle/CommonTitle';
 import Image from 'next/image';
 
