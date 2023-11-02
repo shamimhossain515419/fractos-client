@@ -7,6 +7,7 @@ import React, { useContext, useState } from 'react';
 import { GrEdit } from 'react-icons/gr'
 import { toast } from 'react-toastify';
 
+
 const SettingPage = () => {
 
      const { user, updateUserProfile, setPageLoader } = useContext(GlobalContext);
@@ -66,12 +67,10 @@ const SettingPage = () => {
           const result = await UpdateUser(newUser);
 
            toast.success(" user successfully update");
+      }
          
 
-          
-
-
-     }
+     
 
 
      return (

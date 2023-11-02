@@ -64,7 +64,7 @@ const Navbar = () => {
                                                             <></>
                                                   }
                                              </div>
-                                             <Link href="/"> <h1 className=' primary py-2 font-semibold  text-base md:text-2xl text-color   uppercase'> FRACTOS </h1></Link>
+                                             <Link href="/"> <h1 className='  py-2 font-semibold  text-base md:text-2xl uppercase'> FRACTOS </h1></Link>
                                         </div>
 
 
