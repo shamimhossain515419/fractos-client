@@ -10,9 +10,7 @@ export const metadata = {
    
 const Contact = async () => {
 
-
-
-     return (
+  return (
           <div>
 
                <Container>

@@ -1,6 +1,9 @@
 "use client"
+<<<<<<< HEAD
+=======
 // import { useState } from 'react';
 // import { Chart } from 'react-apexcharts';
+>>>>>>> 9a2e2d3fb3fa5b92d8962f929054d0c8e2214bbd
 
 
 import React from 'react';
