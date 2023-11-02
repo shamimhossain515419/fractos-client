@@ -1,6 +1,7 @@
 'use client'
 import AuthContainer from '@/Components/AuthContainer/AuthContainer';
 import ComponentLevelLoader from '@/Components/DashboardNavbar/commonLoader/Commonloader';
+import GoogleSignIn from '@/Components/GoogleSignIn/GoogleSignIn';
 import { GlobalContext } from '@/GlobalState';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -13,7 +14,7 @@ import Swal from 'sweetalert2';
 
 const Login = () => {
 
-    const { loginUser,componentLevelLoader, setComponentLevelLoader  } = useContext(GlobalContext);
+    const { loginUser, componentLevelLoader, setComponentLevelLoader } = useContext(GlobalContext);
     const router = useRouter();
     const [isHidden, setIsHidden] = useState(true)
 
@@ -35,7 +36,7 @@ const Login = () => {
                         loading: false,
                         id: "",
                     })
-                    `Welcome, ${res.user?.email}`,
+                        `Welcome, ${res.user?.email}`,
                 )
                 router.push('/')
             })
@@ -87,11 +88,12 @@ const Login = () => {
                         }
 
                     </div>
-             
+
                 </form>
-                <p className='flex gap-1 items-center mt-3'>Don t Have An Account? 
+                <p className='flex gap-1 items-center mt-3'>Don t Have An Account?
                     <Link className='text-[#4A3AFF] hover:underline' href={'/register'}>Register</Link>
                 </p>
+                <GoogleSignIn></GoogleSignIn>
             </div>
         </AuthContainer>
     );

@@ -5,20 +5,37 @@ import Notification from "../Notification/Notification";
 import { FaBars } from 'react-icons/fa'
 import Container from "../Container/Container";
 import MenuBar from "./MenuBar";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "@/GlobalState";
 import CommonImage from "../CommonImage/CommonImage";
 import UserModal from "../UserModal/UserModal";
 
 const Navbar = () => {
+     const [isShrink, setIsShrink] = useState(false);
      const { userinfo, user, setIsAdmin, isAdmin } = useContext(GlobalContext);
      const [Open, setOpen] = useState(true);
      const [isUserModalOpen, setIsUserModalOpen] = useState(false);
+
+     useEffect(() => {
+          const handleScroll = () => {
+               if (window.scrollY > 500) {
+                    setIsShrink(true);
+               } else {
+                    setIsShrink(false);
+               }
+          };
+
+          window.addEventListener('scroll', handleScroll);
+
+          return () => {
+               window.removeEventListener('scroll', handleScroll);
+          };
+     }, []);
      return (
           <div className=" mb-12">
                <div>
-
-                    <nav className='px-2 w-full fixed py-3 z-50 bg-[#ECF0F3]      top-0  left-0 right-0    shadow-lg'>
+                    <nav className={`px-2 z-50 bg-[#ECF0F3] shadow-lg fixed top-0 left-0 w-full transition-transform ${isShrink ? 'h-[66px]' : 'h-20'
+                         } transition-all`}>
                          <Container>
                               <div className=' '>
                                    <div className='flex justify-between items-center'>

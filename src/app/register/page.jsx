@@ -1,6 +1,7 @@
 'use client'
 import AuthContainer from '@/Components/AuthContainer/AuthContainer';
 import ComponentLevelLoader from '@/Components/DashboardNavbar/commonLoader/Commonloader';
+import GoogleSignIn from '@/Components/GoogleSignIn/GoogleSignIn';
 import { GlobalContext } from '@/GlobalState';
 import { registerNewUser } from '@/services/users';
 import Head from 'next/head';
@@ -18,6 +19,7 @@ const Page = () => {
     const { errors } = formState;
     const router = useRouter();
     const [isHidden, setIsHidden] = useState(true)
+    const [isHidden2, setIsHidden2] = useState(true)
 
     const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg bg-gray-200 outline-none w-full border-2 border-gray-200  focus:border-sky-400';
     const loginBtnCSS = 'w-full p-2 bg-green-500 font-bold text-white text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
@@ -58,7 +60,7 @@ const Page = () => {
                     <title>Create Account</title>
                 </Head>
 
-                <form onSubmit={handleSubmit(registrationHandler)} className='flex justify-center flex-col gap-6 w-full mt-[100px]'>
+                <form onSubmit={handleSubmit(registrationHandler)} className='flex justify-center flex-col gap-6 w-full mt-[50px]'>
                     <h1 className='font-bold text-2xl lg:text-4xl text-center'>Create Account</h1>
                     <div>
                         <label className='text-xl font-semibold'>Full Name</label>
@@ -119,18 +121,37 @@ const Page = () => {
                     </div>
                     <div>
                         <label className='text-xl font-semibold'>Confirm Password</label>
-                        <input className={`${inputFieldCommonCSS} w-full`} type="password" {...register("confirmPassword", {
-                            required: {
-                                value: true,
-                                message: 'Confirm Password'
-                            },
-                            validate: (value) => {
-                                if (watch("password") !== value) {
-                                    return 'Password did not match'
-                                }
+                        <div className="relative">
+                            <input className={`${inputFieldCommonCSS} w-full`} type={`${isHidden2 ? 'password' : 'text'}`} {...register("confirmPassword", {
+                                required: {
+                                    value: true,
+                                    message: 'Confirm Password'
+                                },
+                                validate: (value) => {
+                                    if (watch("password") !== value) {
+                                        return 'Password did not match'
+                                    }
 
-                            }
-                        })} name='confirmPassword' placeholder='Confirm Password' />
+                                }
+                            })} name='confirmPassword' placeholder='Confirm Password' />
+                            <div onClick={() => setIsHidden2(!isHidden2)} className='absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer'>
+                                {isHidden2 ?
+                                    <Image
+                                        src={'/eyeClose.png'}
+                                        width={30}
+                                        height={30}
+                                        alt='eye-close'
+                                    ></Image>
+                                    :
+                                    <Image
+                                        src={'/eyeOpen.png'}
+                                        width={30}
+                                        height={30}
+                                        alt='eye-open'
+                                    ></Image>
+                                }
+                            </div>
+                        </div>
                         <p className='text-sm ml-3 text-red-600'>{errors.confirmPassword?.message === 'Confirm Password' ? '' : errors.confirmPassword?.message}</p>
                     </div>
 
@@ -146,6 +167,7 @@ const Page = () => {
                 <p className='flex gap-1 items-center mt-3'>Already Have An Account?
                     <Link className='text-[#4A3AFF] hover:underline' href={'/login'}>Login</Link>
                 </p>
+                <GoogleSignIn></GoogleSignIn>
             </div>
         </AuthContainer>
     );
