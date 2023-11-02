@@ -38,8 +38,12 @@ const Pricing = () => {
                             <Image src={'/correct.png'} height={20} width={20}></Image>
                             <span className='text-xl font-semibold'>Read & Write Blogs</span>
                         </li>
+                        <li className='flex items-center gap-2'>
+                            <Image src={'/wrong.png'} height={20} width={20}></Image>
+                            <span className='text-xl font-semibold'>Performance Analysis</span>
+                        </li>
                     </ul>
-                    <button className='w-full rounded-lg bg-[#4A3AFF] text-white hover:bg-[#4a3affdf] text-xl mt-10 transition-all font-bold py-5'>Get Started</button>
+                    <button className='w-full rounded-lg outline-slate-500 outline-4 hover:bg-[#4A3AFF] hover:text-white text-xl mt-10 transition-all font-bold py-5'>Get Started</button>
                 </div>
                 {/* premium price card */}
                 <div className='bg-white rounded-lg p-5 w-full md:min-w-[400px]'>
@@ -67,6 +71,10 @@ const Pricing = () => {
                         <li className='flex items-center gap-2'>
                             <Image src={'/correct.png'} height={20} width={20}></Image>
                             <span className='text-xl font-semibold'>Read & Write Blogs</span>
+                        </li>
+                        <li className='flex items-center gap-2'>
+                            <Image src={'/correct.png'} height={20} width={20}></Image>
+                            <span className='text-xl font-semibold'>Performance Analysis</span>
                         </li>
                     </ul>
                     <button className='w-full rounded-lg bg-[#4A3AFF] text-white text-xl mt-10 transition-all hover:bg-[#4a3affdf] font-bold py-5'>Buy Now</button>

@@ -1,6 +1,4 @@
-// "use client"
-// import { useState } from 'react';
-// import { Chart } from 'react-apexcharts';
+"use client"
 
 import React from 'react';
 import { Bar, Doughnut } from 'react-chartjs-2';
