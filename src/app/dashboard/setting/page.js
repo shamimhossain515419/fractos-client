@@ -7,6 +7,7 @@ import React, { useContext, useState } from 'react';
 import { GrEdit } from 'react-icons/gr'
 import { toast } from 'react-toastify';
 
+
 const SettingPage = () => {
 
      const { user, updateUserProfile, setPageLoader } = useContext(GlobalContext);

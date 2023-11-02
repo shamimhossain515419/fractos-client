@@ -47,7 +47,7 @@ const ContactSection = () => {
 
 
 
-               <div className="  boxshadow  rounded-lg  mx-auto  px-6 py-3">
+               <div className="    rounded-lg  mx-auto  px-6 py-3">
 
                     <div className="  md:grid md:grid-cols-2 md:gap-20">
                          <div className="   p-1 md:p-4 ">

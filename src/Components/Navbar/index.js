@@ -5,21 +5,44 @@ import Notification from "../Notification/Notification";
 import { FaBars } from 'react-icons/fa'
 import Container from "../Container/Container";
 import MenuBar from "./MenuBar";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "@/GlobalState";
 import CommonImage from "../CommonImage/CommonImage";
+import UserModal from "../UserModal/UserModal";
 
 const Navbar = () => {
+     const [isShrink, setIsShrink] = useState(false);
      const { userinfo, user, setIsAdmin, isAdmin } = useContext(GlobalContext);
- const [Open, setOpen] = useState(true);
- return (
+     const [Open, setOpen] = useState(true);
+     const [isUserModalOpen, setIsUserModalOpen] = useState(false);
+
+     useEffect(() => {
+          const handleScroll = () => {
+               if (window.scrollY > 500) {
+                    setIsShrink(true);
+               } else {
+                    setIsShrink(false);
+               }
+          };
+
+          window.addEventListener('scroll', handleScroll);
+
+          return () => {
+               window.removeEventListener('scroll', handleScroll);
+          };
+     }, []);
+
+
+     return (
           <div className=" mb-12">
                <div>
+                    <div className={`px-2 py-2 z-50 bg-[#ECF0F3] shadow-lg fixed top-0 left-0 w-full transition-transform ${isShrink ? 'h-[66px] bg-slate-300' : 'h-[74px]'
+                         } transition-all`}>
 
-                    <nav className='px-2 w-full fixed py-3 z-50 bg-[#ECF0F3]      top-0  left-0 right-0    shadow-lg'>
+                    <nav className='px-2 w-full fixed py-3 z-50 primaryBgColor text-white     top-0  left-0 right-0    shadow-lg'>
                          <Container>
                               <div className=' '>
-                                   <div className=' flex    justify-between items-center'>
+                                   <div className='flex justify-between items-center'>
                                         <div className=' flex  items-center gap-4'>
 
                                              <div className=" md:hidden">
@@ -27,41 +50,41 @@ const Navbar = () => {
                                                        user ? <Link href={'/'}>      <CommonImage data={user} className="w-[50px] h-[50px]"></CommonImage></Link> : null
                                                   }
                                              </div>
-                                             <Link href="/"> <h1 className=' primary py-2 font-semibold  text-base md:text-2xl text-color   uppercase'> FRACTOS </h1></Link>
+                                             <Link href="/"> <h1 className='  py-2 font-semibold  text-base md:text-2xl uppercase'> FRACTOS </h1></Link>
                                         </div>
 
+                                        
                                         <div className=' hidden md:flex items-center gap-3  space-x-5'>
-
-
-                                             <Link href={'/'}> Home</Link>
-                                             <Link href={'/teacher'}>Teacher </Link>
-                                             <Link href={'/leader-board'}> Leader board</Link>
-                                             <Link href={'/blogs'}> Blogs</Link>
-                                             <Link href={'/contact'}> Contact Us</Link>
-
-                                             {
-                                              user ?<Link href={'/dashboard'}> Dashboard</Link> : null
-                                             }
-
-
+                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/'}>Home</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/teacher'}>Teacher</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/blogs'}>Blogs</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/contact'}>Contact Us</Link>
 
                                         </div>
 
-
-
+                                       
                                         <div className=" hidden sm:block">
-                                             {user ? <div  className=' cursor-pointer hidden md:block '>
-                                                  <div className='   relative flex gap-2 items-center '>
-
-                                                       <CommonImage data={user}></CommonImage>
-                                                       <div className=' absolute w-3 h-3  left-8 -top-1  bg-[rgb(1,179,31)] rounded-full '></div>
-                                                       <div className=' relative  space-y-0'>
-                                                            <h1 className='relative  text-base'>{user?.displayName}</h1>
-                                                            <span className=' absolute -bottom-3 text-xs mt-4'> Active now</span>
+                                             {
+                                                  user ?
+                                                       <div className='relative cursor-pointer hidden md:block '>
+                                                            <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className='flex gap-2 items-center  p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all'>
+                                                                 <CommonImage data={user}></CommonImage>
+                                                                 <h1 className='relative  text-base'>{user?.displayName}</h1>
+                                                            </div>
+                                                            {
+                                                                 isUserModalOpen ?
+                                                                      <div className="absolute top-[100%]">
+                                                                           <UserModal></UserModal>
+                                                                      </div>
+                                                                      :
+                                                                      <></>
+                                                            }
                                                        </div>
-
-                                                  </div>
-                                             </div> : <Link href={'/login'} className={'text-[#298742]'}> Login/Register</Link>
+                                                       :
+                                                       <div className="flex gap-2 items-center">
+                                                            <Link href={'/login'} className="px-3 py-2 text-white bg-[#4A3AFF] rounded-lg hover:shadow-lg">Login</Link>
+                                                            <Link href={'/register'} className="px-3 py-2 bg-gray-100 hover:bg-slate-600 hover:text-white rounded-lg hover:shadow-lg">Register</Link>
+                                                       </div>
                                              }
                                         </div>
 
@@ -89,6 +112,7 @@ const Navbar = () => {
                          </Container>
 
                     </nav>
+                    </div>
 
                     <Notification></Notification>
                </div >

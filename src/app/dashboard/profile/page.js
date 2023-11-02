@@ -1,5 +1,11 @@
 import UserProfile from '@/Components/UserProfile/UserProfile';
 import React from 'react';
+export const generateMetadata = async () => {
+
+     return {
+          title: ` Profile `
+     }
+}
 
 const Profile = () => {
      return (
