@@ -64,7 +64,7 @@ const Premium = () => {
                         </p>
                     </div>
                 </div>
-
+                      <h1> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, fugiat.</h1>
                 <div className="grid grid-cols-12 gap-10 rounded-xl bg-white shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0c009455]">
                     <div className="col-span-4">
                         <Player
