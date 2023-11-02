@@ -2,8 +2,6 @@
 
 import Image from 'next/image';
 import React from 'react';
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
-
 
 const Banner = () => {
 
@@ -11,15 +9,8 @@ const Banner = () => {
     <div className='pt-[80px] lg:pt-[130px] pb-[80px]'>
       <div className='grid grid-cols-12 gap-10 px-2 lg:px-10'>
         <div className='col-span-12 lg:col-span-6 mx-auto'>
-          <Player
-            autoplay
-            loop
-            src="/banner image.json"
-            className='max-w-xs md:max-w-[500px] overflow-hidden'
-          >
-            <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-          </Player>
-          {/* <Image src={'/banner img.png'} height={500} width={500}></Image> */}
+
+          <Image src={'/banner-img.jpg'} height={500} width={500}></Image>
         </div>
         <div className='col-span-12 lg:col-span-6'>
           <h1 className='text-2xl md:text-3xl font-extrabold mb-10 lg:mt-32 mx-auto text-center'>
