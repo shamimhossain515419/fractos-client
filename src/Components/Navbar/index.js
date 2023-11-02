@@ -34,7 +34,7 @@ const Navbar = () => {
      return (
           <div className=" mb-12">
                <div>
-                    <nav className={`px-2 z-50 bg-[#ECF0F3] shadow-lg fixed top-0 left-0 w-full transition-transform ${isShrink ? 'h-[66px]' : 'h-20'
+                    <nav className={`px-2 py-2 z-50 bg-[#ECF0F3] shadow-lg fixed top-0 left-0 w-full transition-transform ${isShrink ? 'h-[66px] bg-slate-300' : 'h-[74px]'
                          } transition-all`}>
                          <Container>
                               <div className=' '>
@@ -53,12 +53,9 @@ const Navbar = () => {
                                         <div className=' hidden md:flex items-center gap-3  space-x-5'>
                                              <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/'}>Home</Link>
                                              <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/teacher'}>Teacher</Link>
-                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/leader-board'}>Leader board</Link>
                                              <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/blogs'}>Blogs</Link>
                                              <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/contact'}>Contact Us</Link>
-                                             {
-                                                  user ? <Link href={'/dashboard'}>Dashboard</Link> : null
-                                             }
+
                                         </div>
 
                                         {/* desktop navigation right side */}

@@ -2,6 +2,7 @@
 import AuthContainer from '@/Components/AuthContainer/AuthContainer';
 import ComponentLevelLoader from '@/Components/DashboardNavbar/commonLoader/Commonloader';
 import GoogleSignIn from '@/Components/GoogleSignIn/GoogleSignIn';
+import Navbar from '@/Components/Navbar';
 import { GlobalContext } from '@/GlobalState';
 import { registerNewUser } from '@/services/users';
 import Head from 'next/head';
@@ -54,122 +55,125 @@ const Page = () => {
     }
 
     return (
-        <AuthContainer>
-            <div className='pb-[130px] sm:mx-auto max-w-lg  py-4'>
-                <Head>
-                    <title>Create Account</title>
-                </Head>
+        <>
+            <Navbar></Navbar>
+            <AuthContainer>
+                <div className='pb-[130px] sm:mx-auto max-w-lg  py-4'>
+                    <Head>
+                        <title>Create Account</title>
+                    </Head>
 
-                <form onSubmit={handleSubmit(registrationHandler)} className='flex justify-center flex-col gap-6 w-full mt-[50px]'>
-                    <h1 className='font-bold text-2xl lg:text-4xl text-center'>Create Account</h1>
-                    <div>
-                        <label className='text-xl font-semibold'>Full Name</label>
-                        <input className={`${inputFieldCommonCSS}`} {...register("name", {
-                            required: {
-                                value: true,
-                                message: 'Name is required'
-                            }
-                        })} type="text" name='name' placeholder='Enter Full Name' />
-                        <p className='text-sm ml-3 text-red-600'>{errors.email?.message}</p>
-                    </div>
-                    <div>
-                        <label className='text-xl font-semibold'>Email Address</label>
-                        <input className={`${inputFieldCommonCSS}`} {...register("email", {
-                            required: {
-                                value: true,
-                                message: 'Email is required'
-                            }
-                        })} type="email" name='email' placeholder='example@gmail.com' />
-                        <p className='text-sm ml-3 text-red-600'>{errors.email?.message}</p>
-                    </div>
-                    <div>
-                        <label className='text-xl font-semibold'>Password</label>
-                        <div className='relative'>
-                            <input className={`${inputFieldCommonCSS} w-full`} {...register("password", {
+                    <form onSubmit={handleSubmit(registrationHandler)} className='flex justify-center flex-col gap-6 w-full mt-[32px]'>
+                        <h1 className='font-bold text-2xl lg:text-4xl text-center'>Create Account</h1>
+                        <div>
+                            <label className='text-xl font-semibold'>Full Name</label>
+                            <input className={`${inputFieldCommonCSS}`} {...register("name", {
                                 required: {
                                     value: true,
-                                    message: 'Password is required'
-                                },
-                                minLength: {
-                                    value: 6,
-                                    message: 'Password should have at least 6 characters'
-                                },
-                                pattern: {
-                                    value: /(?=.*[A-Z])(?=.*[!@#$&*])/,
-                                    message: 'At least one special character and one uppercase letter is required'
+                                    message: 'Name is required'
                                 }
-                            })} type={`${isHidden ? 'password' : 'text'}`} name='password' placeholder='Enter Password' />
-                            <div onClick={() => setIsHidden(!isHidden)} className='absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer'>
-                                {isHidden ?
-                                    <Image
-                                        src={'/eyeClose.png'}
-                                        width={30}
-                                        height={30}
-                                        alt='eye-close'
-                                    ></Image>
-                                    :
-                                    <Image
-                                        src={'/eyeOpen.png'}
-                                        width={30}
-                                        height={30}
-                                        alt='eye-open'
-                                    ></Image>
-                                }
-                            </div>
+                            })} type="text" name='name' placeholder='Enter Full Name' />
+                            <p className='text-sm ml-3 text-red-600'>{errors.email?.message}</p>
                         </div>
-                        <p className='text-sm ml-3 text-red-600'>{errors.password?.message === 'Password is required' ? '' : errors.password?.message}</p>
-                    </div>
-                    <div>
-                        <label className='text-xl font-semibold'>Confirm Password</label>
-                        <div className="relative">
-                            <input className={`${inputFieldCommonCSS} w-full`} type={`${isHidden2 ? 'password' : 'text'}`} {...register("confirmPassword", {
+                        <div>
+                            <label className='text-xl font-semibold'>Email Address</label>
+                            <input className={`${inputFieldCommonCSS}`} {...register("email", {
                                 required: {
                                     value: true,
-                                    message: 'Confirm Password'
-                                },
-                                validate: (value) => {
-                                    if (watch("password") !== value) {
-                                        return 'Password did not match'
+                                    message: 'Email is required'
+                                }
+                            })} type="email" name='email' placeholder='example@gmail.com' />
+                            <p className='text-sm ml-3 text-red-600'>{errors.email?.message}</p>
+                        </div>
+                        <div>
+                            <label className='text-xl font-semibold'>Password</label>
+                            <div className='relative'>
+                                <input className={`${inputFieldCommonCSS} w-full`} {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: 'Password is required'
+                                    },
+                                    minLength: {
+                                        value: 6,
+                                        message: 'Password should have at least 6 characters'
+                                    },
+                                    pattern: {
+                                        value: /(?=.*[A-Z])(?=.*[!@#$&*])/,
+                                        message: 'At least one special character and one uppercase letter is required'
                                     }
-
-                                }
-                            })} name='confirmPassword' placeholder='Confirm Password' />
-                            <div onClick={() => setIsHidden2(!isHidden2)} className='absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer'>
-                                {isHidden2 ?
-                                    <Image
-                                        src={'/eyeClose.png'}
-                                        width={30}
-                                        height={30}
-                                        alt='eye-close'
-                                    ></Image>
-                                    :
-                                    <Image
-                                        src={'/eyeOpen.png'}
-                                        width={30}
-                                        height={30}
-                                        alt='eye-open'
-                                    ></Image>
-                                }
+                                })} type={`${isHidden ? 'password' : 'text'}`} name='password' placeholder='Enter Password' />
+                                <div onClick={() => setIsHidden(!isHidden)} className='absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer'>
+                                    {isHidden ?
+                                        <Image
+                                            src={'/eyeClose.png'}
+                                            width={30}
+                                            height={30}
+                                            alt='eye-close'
+                                        ></Image>
+                                        :
+                                        <Image
+                                            src={'/eyeOpen.png'}
+                                            width={30}
+                                            height={30}
+                                            alt='eye-open'
+                                        ></Image>
+                                    }
+                                </div>
                             </div>
+                            <p className='text-sm ml-3 text-red-600'>{errors.password?.message === 'Password is required' ? '' : errors.password?.message}</p>
                         </div>
-                        <p className='text-sm ml-3 text-red-600'>{errors.confirmPassword?.message === 'Confirm Password' ? '' : errors.confirmPassword?.message}</p>
-                    </div>
+                        <div>
+                            <label className='text-xl font-semibold'>Confirm Password</label>
+                            <div className="relative">
+                                <input className={`${inputFieldCommonCSS} w-full`} type={`${isHidden2 ? 'password' : 'text'}`} {...register("confirmPassword", {
+                                    required: {
+                                        value: true,
+                                        message: 'Confirm Password'
+                                    },
+                                    validate: (value) => {
+                                        if (watch("password") !== value) {
+                                            return 'Password did not match'
+                                        }
 
-                    <div className={`${loginBtnCSS}  text-xl   flex justify-center items-center`}>
-                        {
-                            componentLevelLoader?.loading ? <><ComponentLevelLoader loading={componentLevelLoader.loading} text={'create..'}></ComponentLevelLoader> </> : <button type='submit'>  Create</button>
-                        }
+                                    }
+                                })} name='confirmPassword' placeholder='Confirm Password' />
+                                <div onClick={() => setIsHidden2(!isHidden2)} className='absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer'>
+                                    {isHidden2 ?
+                                        <Image
+                                            src={'/eyeClose.png'}
+                                            width={30}
+                                            height={30}
+                                            alt='eye-close'
+                                        ></Image>
+                                        :
+                                        <Image
+                                            src={'/eyeOpen.png'}
+                                            width={30}
+                                            height={30}
+                                            alt='eye-open'
+                                        ></Image>
+                                    }
+                                </div>
+                            </div>
+                            <p className='text-sm ml-3 text-red-600'>{errors.confirmPassword?.message === 'Confirm Password' ? '' : errors.confirmPassword?.message}</p>
+                        </div>
 
-                    </div>
+                        <div className={`${loginBtnCSS}  text-xl   flex justify-center items-center`}>
+                            {
+                                componentLevelLoader?.loading ? <><ComponentLevelLoader loading={componentLevelLoader.loading} text={'create..'}></ComponentLevelLoader> </> : <button type='submit'>  Create</button>
+                            }
 
-                </form>
+                        </div>
 
-                <p className='flex gap-1 items-center mt-3'>Already Have An Account?
-                    <Link className='text-[#4A3AFF] hover:underline' href={'/login'}>Login</Link>
-                </p>
-                <GoogleSignIn></GoogleSignIn>
-            </div>
-        </AuthContainer>
+                    </form>
+
+                    <p className='flex gap-1 items-center mt-3'>Already Have An Account?
+                        <Link className='text-[#4A3AFF] hover:underline' href={'/login'}>Login</Link>
+                    </p>
+                    <GoogleSignIn></GoogleSignIn>
+                </div>
+            </AuthContainer>
+        </>
     );
 };
 
