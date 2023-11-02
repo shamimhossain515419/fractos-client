@@ -39,7 +39,6 @@ export default function Home() {
         <Feedback></Feedback>
       </div>
 
-      <SearchBar></SearchBar>
 
     </div>
   )

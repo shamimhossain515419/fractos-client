@@ -1,9 +1,6 @@
 "use client"
 // import { FaBeer } from 'react-icons/fa';
-import { AiOutlineAim } from "react-icons/ai";
-import { AiOutlineLeftCircle } from "react-icons/ai";
-import { AiOutlineExperiment } from "react-icons/ai";
-import { AiOutlineApi } from "react-icons/ai";
+
 import CommonTitle from "../CommonTitle/CommonTitle";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
 const Premium = () => {
