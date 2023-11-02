@@ -1,9 +1,9 @@
-import Archive from '@/Components/Archive/Archive';
-import React from 'react';
-export const metadata = {
-     title: 'Archive-fractos',
-    
-  }
+"use client"
+
+import AcademicQuestion from '@/Components/AcademicQuestion/AcademicQuestion';
+import ArchiveCollege from '@/Components/ArchiveDUCUnit/ArchiveCollege';
+import React, { useState } from 'react';
+
 const ArchivePage = () => {
 
      const [Open, setOpen] = useState(false)
@@ -12,20 +12,19 @@ const ArchivePage = () => {
 
                <div>
                     <div className=''>
-                         <button onClick={() => setOpen(true)} className='bg-purple-950 m-3 p-2 font-bold rounded text-white'>Academic</button>
-                         <button onClick={() => setOpen(false)} className='bg-purple-950 m-3 p-2 font-bold rounded text-white'>Admission</button>
+                         <button onClick={() => setOpen(true)} className={` m-3 p-2 font-bold rounded text-white`}>Academic</button>
+                         <button onClick={() => setOpen(false)} className={`${Open  ? "bg-purple-950 ":" primaryBg"} m-3 p-2 font-bold rounded text-white`}>Admission</button>
                     </div>
                </div>
 
                <div className=' mt-11'>
                     {
-                         Open ? <> <AcademicQuestion></AcademicQuestion>  </> : <> <ArchiveCollege></ArchiveCollege>   </>
+                         Open ? <> <ArchiveCollege></ArchiveCollege>      </> : <><AcademicQuestion></AcademicQuestion>  </>
                     }
                </div>
 
 
-               {/* <DUCUnit></DUCUnit> */}
-              
+
           </div>
      );
 };
