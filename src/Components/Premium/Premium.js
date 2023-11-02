@@ -1,5 +1,6 @@
 "use client"
 // import { FaBeer } from 'react-icons/fa';
+
 import CommonTitle from "../CommonTitle/CommonTitle";
 import { Controls, Player } from "@lottiefiles/react-lottie-player";
 const Premium = () => {
