@@ -96,8 +96,8 @@ const Navbar = () => {
                                                        </div>
                                                        :
                                                        <div className="flex gap-2 items-center">
-                                                            <Link href={'/login'} className="px-3 py-2 text-white bg-[#4A3AFF] rounded-lg hover:shadow-lg">Login</Link>
-                                                            <Link href={'/register'} className="px-3 py-2 bg-gray-100 hover:bg-slate-600 hover:text-white rounded-lg hover:shadow-lg">Register</Link>
+                                                            <Link href={'/login'} className="px-3 py-2 text-white bg-[#4A3AFF] hover:bg-[#4a3affe1] rounded-lg hover:shadow-lg">Login</Link>
+                                                            <Link href={'/register'} className="px-3 py-2 bg-white hover:bg-slate-600 hover:text-white rounded-lg hover:shadow-lg">Register</Link>
                                                        </div>
                                              }
                                         </div>
