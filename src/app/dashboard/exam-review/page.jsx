@@ -14,19 +14,19 @@ const page = () => {
                             <tr className='border-2 border-[#4A3AFF] text-center'>
                                 <th className='font-bold text-black'>
                                     <div className='flex items-center justify-center gap-1'>
-                                        <Image width={24} height={24} src={'/topic-icon.png'}></Image>
+                                        <Image width={24} height={24} src={'/topic-icon.png'} alt='image'></Image>
                                         <span>Topic</span>
                                     </div>
                                 </th>
                                 <th className='font-bold text-black border-x border-[#4A3AFF]'>
                                     <div className='flex items-center justify-center gap-1'>
-                                        <Image width={24} height={24} src={'/marks-icon.png'}></Image>
+                                        <Image width={24} height={24} src={'/marks-icon.png'} alt='image'></Image>
                                         <span>Marks</span>
                                     </div>
                                 </th>
                                 <th className='font-bold text-black'>
                                     <div className='flex items-center justify-center gap-1'>
-                                        <Image width={24} height={24} src={'/calendar-icon.png'}></Image>
+                                        <Image width={24} height={24} src={'/calendar-icon.png'} alt='image'></Image>
                                         <span>Date</span>
                                     </div>
                                 </th>

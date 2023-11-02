@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { GetSubjectByData } from '@/services/exam';
 import Link from 'next/link';
@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { BsCheckLg } from 'react-icons/bs';
 
 const MockPreset = () => {
+    const category="mock"
     const qnNames = [
         {
             "id": 1,
@@ -92,19 +93,19 @@ const MockPreset = () => {
 
  console.log(examName);
   const [Question,setQuestion]=useState([])
-   const getData = async (subject) => {
+   const getData = async (subject,category) => {
 
-        const result = await GetSubjectByData(subject)
+        const result = await GetSubjectByData(subject,category)
         setQuestion(result?.data)
 
     }
     useEffect(() => {
         if (subject) {
-           getData(subject);
+           getData(subject,category);
         }
 
 
-    }, [subject])
+    }, [subject,category])
 
 
 
@@ -141,7 +142,7 @@ const MockPreset = () => {
                         </div>
 
                         <div  className=' pt-12'>
-                            <Link href={`/online-exam/${subject}`} disabled={!subject} className=' disabled:bg-[#27895b38]  block w-full text-xl text-center  text-white font-medium  my-3 py-2 px-3 rounded primaryBg capitalize'>Start</Link>
+                            <Link href={`/online-exam/${subject}/${category}`} disabled={!subject} className=' disabled:bg-[#27895b38]  block w-full text-xl text-center  text-white font-medium  my-3 py-2 px-3 rounded primaryBg capitalize'>Start</Link>
                             <Link href={`/dashboard`} disabled={!subject} className=' bg-red-400 block w-full text-xl text-center  text-white font-medium  my-3 py-2 px-3 rounded  capitalize'>cancel</Link>
                             
                         </div>

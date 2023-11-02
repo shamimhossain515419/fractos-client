@@ -19,27 +19,27 @@ const Pricing = () => {
                     </div>
                     <ul className='space-y-5'>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/warning.png'} height={20} width={20}></Image>
+                            <Image src={'/warning.png'} height={20} width={20} alt='image'></Image>
                             <span className='text-xl font-semibold'>Mock Exam (8 Times)</span>
                         </li>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/correct.png'} height={20} width={20}></Image>
+                            <Image src={'/correct.png'} height={20} width={20}alt='image'></Image>
                             <span className='text-xl font-semibold'>Exam Review</span>
                         </li>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/wrong.png'} height={20} width={20}></Image>
+                            <Image src={'/wrong.png'} height={20} width={20}alt='image'></Image>
                             <span className='text-xl font-semibold'>Live Exam</span>
                         </li>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/wrong.png'} height={20} width={20}></Image>
+                            <Image src={'/wrong.png'} height={20} width={20}alt='image'></Image>
                             <span className='text-xl font-semibold'>Feedback & Support</span>
                         </li>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/correct.png'} height={20} width={20}></Image>
+                            <Image src={'/correct.png'} height={20} width={20}alt='image'></Image>
                             <span className='text-xl font-semibold'>Read & Write Blogs</span>
                         </li>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/wrong.png'} height={20} width={20}></Image>
+                            <Image src={'/wrong.png'} height={20} width={20} alt='image'></Image>
                             <span className='text-xl font-semibold'>Performance Analysis</span>
                         </li>
                     </ul>
@@ -53,27 +53,27 @@ const Pricing = () => {
                     </div>
                     <ul className='space-y-5'>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/correct.png'} height={20} width={20}></Image>
+                            <Image src={'/correct.png'} height={20} width={20} alt='image'></Image>
                             <span className='text-xl font-semibold'>Mock Exam</span>
                         </li>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/correct.png'} height={20} width={20}></Image>
+                            <Image src={'/correct.png'} height={20} width={20} alt='image'></Image>
                             <span className='text-xl font-semibold'>Exam Review</span>
                         </li>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/correct.png'} height={20} width={20}></Image>
+                            <Image src={'/correct.png'} height={20} width={20} alt='image'></Image>
                             <span className='text-xl font-semibold'>Live Exam</span>
                         </li>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/correct.png'} height={20} width={20}></Image>
+                            <Image src={'/correct.png'} height={20} width={20} alt='image'></Image>
                             <span className='text-xl font-semibold'>Feedback & Support</span>
                         </li>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/correct.png'} height={20} width={20}></Image>
+                            <Image src={'/correct.png'} height={20} width={20} alt='image'></Image>
                             <span className='text-xl font-semibold'>Read & Write Blogs</span>
                         </li>
                         <li className='flex items-center gap-2'>
-                            <Image src={'/correct.png'} height={20} width={20}></Image>
+                            <Image src={'/correct.png'} height={20} width={20} alt='image'></Image>
                             <span className='text-xl font-semibold'>Performance Analysis</span>
                         </li>
                     </ul>
