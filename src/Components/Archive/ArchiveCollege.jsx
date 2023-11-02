@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import { Parallax } from 'react-parallax';
+// import { Parallax } from 'react-parallax';
 import './Archive.css';
 
 const ArchiveCollege = () => {
@@ -27,12 +27,6 @@ const ArchiveCollege = () => {
                     colleges.map(college =>
                         <div key={college._id}>
                             <div className='rounded'>
-                                {/* className="w-[50px] h-[50px]" */}
-                                {/* <Parallax
-                                 bgImage="https://i.ibb.co/y6LsMs5/versity.jpg" 
-                                 bgImageAlt="the cat" 
-                                 strength={200}
-                                 className="bg-cover bg-fixed h-36"> */}
                                  <div className='backgroundImage h-32'>
                                     <div  className='p-8 rounded text-center'>
                                     <h1 className='text-2xl font-bold text-white'>{college.CollegeName}</h1>

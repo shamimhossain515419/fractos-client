@@ -1,7 +1,7 @@
 [
     {
         "_id": "643010e0f5a7e52ce1e8fa61",
-        "CollegeName": "Dhaka College",
+        "CollegeName": "Dhaka University",
         "image": "https://i.ibb.co/V9JskBD/dhaka-Collage.jpg",
         "exam": "20",
         "date":"15 ongoing",
@@ -9,7 +9,7 @@
     },
     {
         "_id": "643010f9f5a7e52ce1e8fa62",
-        "CollegeName": "Notre Dame College",
+        "CollegeName": "Rajshahi University",
         "image": "https://i.ibb.co/WxKZXjf/Notre-Dame-Collage.jpg",
         "exam": "20",
         "date":"15 ongoing",
@@ -17,7 +17,7 @@
     },
     {
         "_id": "6430110af5a7e52ce1e8fa63",
-        "CollegeName": "Rajuk Uttara Model College",
+        "CollegeName": "Chittagong University",
         "image": "https://i.ibb.co/X2NNY1m/Rajuk-Collage.jpg",
         "exam": "20",
         "date":"15 ongoing",
@@ -25,7 +25,7 @@
     },
     {
         "_id": "64301123f5a7e52ce1e8fa64",
-        "CollegeName": "Adamjee Cantonment College",
+        "CollegeName": "Khulna University",
         "image": "https://i.ibb.co/RCrrQ13/adomji-Collage.jpg",
         "exam": "20",
         "date":"15 ongoing",
@@ -33,7 +33,7 @@
     },
     {
         "_id": "6430113af5a7e52ce1e8fa65",
-        "CollegeName": "Chittagong College",
+        "CollegeName": "Barishal University",
         "image": "https://i.ibb.co/qssxkP2/chittagong-Collage.jpg",
         "exam": "20",
         "date":"15 ongoing",
@@ -41,7 +41,7 @@
     },
     {
         "_id": "6430113af5a7e52ce1e8fa66",
-        "CollegeName": "Comilla Victoria Government College",
+        "CollegeName": "Jagannath University",
         "image": "https://i.ibb.co/WvHWpML/comilla-Collage.jpg",
         "exam": "20",
         "date":"15 ongoing",
@@ -49,7 +49,7 @@
     },
     {
         "_id": "6430113af5a7e52ce1e8fa67",
-        "CollegeName": "Jagannath University College",
+        "CollegeName": "Comilla University",
         "image": "https://i.ibb.co/hsjmdCy/jagannath-Collage.jpg",
         "exam": "20",
         "date":"15 ongoing",
@@ -57,7 +57,7 @@
     },
     {
         "_id": "6430113af5a7e52ce1e8fa68",
-        "CollegeName": "Mymensingh Medical College",
+        "CollegeName": "Jahangirnagar University",
         "image": "https://i.ibb.co/6WBYmqW/mymenshign-Collage.jpg",
         "exam": "20",
         "date":"15 ongoing",
@@ -65,7 +65,7 @@
     },
     {
         "_id": "6430113af5a7e52ce1e8fa69",
-        "CollegeName": "Sylhet Government College",
+        "CollegeName": "BRAC University",
         "image": "https://i.ibb.co/R3TyD8g/sylhet-College.jpg",
         "exam": "20",
         "date":"15 ongoing",
