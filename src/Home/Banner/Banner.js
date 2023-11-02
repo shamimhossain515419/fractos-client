@@ -29,8 +29,8 @@ const Banner = () => {
             Say Good Bye To Test-Papers And Come To Fractos. Here You Can Give Live Exams, Topic And Subject Wise Exams, Review Your Exams Many More Thing.
           </h2>
           <div className='flex items-center justify-center gap-10'>
-            <Image className='cursor-pointer w-[200px] h-[66px]' width={200} height={66} src={'/googlePlay.png'}></Image>
-            <Image className='cursor-pointer w-[200px] h-[66px]' width={200} height={66} src={'/appleStore.png'}></Image>
+            <Image className='cursor-pointer w-[200px] h-[66px]' width={200} height={66} src={'/googlePlay.png'} alt=''></Image>
+            <Image className='cursor-pointer w-[200px] h-[66px]' width={200} height={66} src={'/appleStore.png'} alt=''></Image>
           </div>
         </div>
       </div>
