@@ -4,7 +4,7 @@
 
 
 body {
-  background-color: #ECF0F3;
+  background-color: white;
   color: black;
   min-height: 100vh;
 }
@@ -41,4 +41,28 @@ body {
 
 .primaryBgColor {
   background-color: #2d394b;
+}
+
+
+
+.backgroundImage {
+  background-image: url('../assets/versity.jpg');
+  background-color: black;
+
+}
+
+.bgBox {
+  background-color: #0C0094;
+}
+
+
+
+.backgrounDSubject {
+
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.179), rgba(0, 0, 0, 0.279)),
+    url('../../public//banner1image.jpg');
+
+  color: white; 
+  padding: 10px;
 }

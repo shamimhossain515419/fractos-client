@@ -8,8 +8,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
 import { FcRefresh } from 'react-icons/fc'
+
 const page = async () => {
-const { user } = useContext(GlobalContext)
+    const { user } = useContext(GlobalContext)
     const [examReviews, setExamReviews] = useState([])
 
     const GetExamData = async (email) => {

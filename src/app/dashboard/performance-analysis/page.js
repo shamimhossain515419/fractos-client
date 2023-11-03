@@ -1,6 +1,10 @@
 "use client"
-// import { useState } from 'react';
-// import { Chart } from 'react-apexcharts';
+// <<<<<<< HEAD
+// =======
+// // import { useState } from 'react';
+// // import { Chart } from 'react-apexcharts';
+// >>>>>>> 9a2e2d3fb3fa5b92d8962f929054d0c8e2214bbd
+
 
 import React from 'react';
 import { Bar, Doughnut } from 'react-chartjs-2';
@@ -27,6 +31,12 @@ ChartJS.register(
     Legend,
     ArcElement
 );
+
+
+
+
+
+
 const page = () => {
 
 

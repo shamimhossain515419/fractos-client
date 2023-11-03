@@ -14,8 +14,6 @@ import Link from 'next/link';
 import { getAllUser } from '@/services/users';
 import Loading from '@/Components/Loading/Loading';
 
-
-
 const page = () => {
      const { user, userinfo } = useContext(GlobalContext);
      const [allUser, setAllUser] = useState([]);

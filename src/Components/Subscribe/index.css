@@ -4,7 +4,7 @@
 
      background-image:
           linear-gradient(to bottom, rgba(0, 0, 0, 0.456), rgba(0, 0, 0, 0.522)),
-          url('https://i.ibb.co/mJ9H7zr/parallax-img-3.jpg');
+          url('/parallax-img-3.jpg');
 
      background-repeat: no-repeat;
      background-size: calc(1);

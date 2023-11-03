@@ -5,6 +5,7 @@ import CountdownTimer from '@/Components/CountdownTimer/CountdownTimer';
 import Notification from '@/Components/Notification/Notification';
 import ExamModel from '@/Components/Shared/ExamModel';
 import { GlobalContext } from '@/GlobalState';
+import { GetAdmissionYear } from '@/services/admission';
 import { GetSubjectByData } from '@/services/exam';
 import { PostExamReviews } from '@/services/exam-reviews';
 import { UpdateUser } from '@/services/users';
@@ -20,8 +21,14 @@ import { toast } from 'react-toastify';
 
 const page = () => {
      const { user } = useContext(GlobalContext);
-     const router = useRouter();
      const prams = useParams();
+     console.log(prams);
+     const name = prams?.id?.[0];
+     const category = prams?.id?.[1];
+     const admission = prams?.id?.[2];
+
+
+
      const [Question, setQuestion] = useState([]);
      const [selectQuestion, setSelectQuestion] = useState(null);
      const [wrong, setWrong] = useState([]);
@@ -32,21 +39,30 @@ const page = () => {
      const [success, setSuccess] = useState(false)
      const currentDate = new Date();
      const time = Question?.questions?.length * 60;
-     const getData = async (subject) => {
-          const result = await GetSubjectByData(subject);
-          if (!result?.data) {
-               router.push('/dashboard/mock-exam')
+     const getData = async (subject, category, admission) => {
+          console.log(subject, category, admission, "shamim");
+          if (admission === "admission") {
+               const result = await GetAdmissionYear(subject, category);
+               setQuestion(result)
+               console.log(result);
+
+          } else {
+               const result = await GetSubjectByData(subject, category);
+               setQuestion(result?.data)
+               console.log(result);
           }
-          setQuestion(result?.data)
+
+
+
 
      }
      useEffect(() => {
-          if (prams?.id) {
-               getData(prams?.id);
+          if (name, category, admission) {
+               getData(name, category, admission);
           }
 
 
-     }, [prams?.id])
+     }, [name, category, admission])
 
 
      const isActive = (id) => {
