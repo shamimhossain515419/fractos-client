@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import Image from "next/image";
 import Link from "next/link";
 
-import image from '../../../public/2912020.webp'
+import image from '../../../public/banner.webp'
 import { usePathname } from "next/navigation";
 import CommonTitle from "../CommonTitle/CommonTitle";
 const ContactSection = () => {

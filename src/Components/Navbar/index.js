@@ -11,9 +11,8 @@ import CommonImage from "../CommonImage/CommonImage";
 import UserModal from "../UserModal/UserModal";
 
 const Navbar = () => {
-     const { userinfo, user, setIsAdmin, isAdmin } = useContext(GlobalContext);
+     const { userinfo, user, setIsAdmin, isAdmin, setIsUserModalOpen, isUserModalOpen } = useContext(GlobalContext);
      const [Open, setOpen] = useState(true);
-     const [isUserModalOpen, setIsUserModalOpen] = useState(false);
 
      // <<<<<<< HEAD
      return (

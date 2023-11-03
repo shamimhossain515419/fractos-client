@@ -17,6 +17,8 @@ const GlobalState = ({ children }) => {
      const [Error, setError] = useState(false)
      const [setIsAdmin, isAdmin] = useState(false)
      const [userinfo, setUserinfo] = useState(null)
+     const [isUserModalOpen, setIsUserModalOpen] = useState(false);
+
 
 
      const [componentLevelLoader, setComponentLevelLoader] = useState({
@@ -102,7 +104,8 @@ const GlobalState = ({ children }) => {
           componentLevelLoader, setComponentLevelLoader,
           createUser, updateUserProfile,
           loginUser, logOutUser,
-          googleSignIn,setIsAdmin, isAdmin
+          googleSignIn, setIsAdmin, isAdmin,
+          setIsUserModalOpen, isUserModalOpen,
 
      }
 

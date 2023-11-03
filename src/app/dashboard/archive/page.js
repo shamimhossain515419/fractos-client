@@ -1,4 +1,5 @@
-"use client"
+'use client'
+
 import AcademicQuestion from '@/Components/AcademicQuestion/AcademicQuestion';
 import ArchiveCollege from '@/Components/ArchiveDUCUnit/ArchiveCollege';
 import React, { useState } from 'react';
