@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "@lottiefiles/lottie-player": "^2.0.2",
-    "@lottiefiles/react-lottie-player": "^3.5.3",
     "bcryptjs": "^2.4.3",
     "chart.js": "^4.4.0",
     "config": "^3.3.9",
@@ -34,7 +32,6 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",
     "react-icons": "^4.11.0",
-    "react-lottie": "^1.2.3",
     "react-parallax": "^3.5.1",
     "react-read-more-read-less": "^1.0.7",
     "react-responsive-carousel": "^3.2.23",

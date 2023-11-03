@@ -11,7 +11,7 @@ import logo from '../../../public/logo.png'
 const DashboardNavbar = () => {
      const { user, openModal, setOpenModal } = useContext(GlobalContext)
      return (
-          <div className=" fixed top-0 w-full shadow-md overflow-hidden left-0 right-0  px-2 z-50 bg-[#ECF0F3]">
+          <div className=" fixed top-0 w-full shadow-md overflow-hidden left-0 right-0  px-2 z-50 primaryBg">
                <div className=" flex    justify-between gap-1 items-center ">
                     <div className=" cursor-pointer" onClick={() => setOpenModal(!openModal)}>
                          {
@@ -20,7 +20,7 @@ const DashboardNavbar = () => {
 
                     </div>
                     <div>
-                          <Image src={logo} alt="image"></Image>
+                          <Image className=" w-[100px] " src={logo} alt="image"></Image>
                     </div>
                     <div>
                          <BsSun size={24}></BsSun>

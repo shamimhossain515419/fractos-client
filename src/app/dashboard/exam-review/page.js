@@ -39,7 +39,7 @@ const page = async () => {
             {
                 examReviews?.length > 0 ? <div>
                     <div className="overflow-x-auto mt-[80px]">
-                        <table className="table border-2 border-[#27895C] w-full ">
+                        <table className="table overflow-x-auto  border-2 border-[#27895C] w-full ">
                             {/* head */}
                             <thead>
                                 <tr className='border-2 border-[#27895C]  '>

@@ -12,6 +12,7 @@ import DashboardNavbar from '@/Components/DashboardNavbar/DashboardNavbar';
 import { BiUserCircle } from 'react-icons/bi';
 import { FiSettings } from 'react-icons/fi';
 import Image from 'next/image';
+import logo from '../../../public/logo.png'
 
 const DashboardLayout = ({ children }) => {
      const { user, openModal } = useContext(GlobalContext)
@@ -34,7 +35,7 @@ const DashboardLayout = ({ children }) => {
                     <div className=' md:hidden p-2'>
                          {
                               openModal == true ? <div>
-                                   <div className=' md:hidden  bg-[#ECF0F3]  py-8   space-y-2'>
+                                   <div className=' md:hidden    primaryBg py-8   space-y-2'>
 
                                         <Link
                                              href="/dashboard"
@@ -108,7 +109,8 @@ const DashboardLayout = ({ children }) => {
                               <div className='   space-y-2'>
                                    <div className='    md:block'>
                                         <div className='  my-2  p-4   flex items-center gap-5'>
-                                             <Link href={'/'} className='text-lg  cursor-pointer primary md:text-3xl font-bold my-4'> FRACTOS</Link>
+                                      
+                                             <Link href={'/'} >   <Image className=" w-[150px] object-fill " src={logo} alt="image"></Image></Link>
                                         </div>
                                    </div>
                                    <Link
@@ -197,7 +199,7 @@ const DashboardLayout = ({ children }) => {
                                              <div className='   space-y-0'>
 
 
-                                                  <h1 className=' font-medium  text-base'>{user?.displayName ? user?.displayName : user?.email.slice(0, 6)}</h1>
+                                                  <h1 className=' font-medium primary   uppercase  text-base'>{user?.displayName ? user?.displayName : user?.email.slice(0, 6)}</h1>
 
                                              </div>
 
@@ -208,7 +210,7 @@ const DashboardLayout = ({ children }) => {
 
                     </div>
 
-                    <div className=' md:ml-[300px] p-3'>
+                    <div className=' md:ml-[300px] mt-10 p-3'>
                          {children}
                     </div>
 

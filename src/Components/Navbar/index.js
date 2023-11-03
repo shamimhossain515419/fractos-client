@@ -9,7 +9,8 @@ import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "@/GlobalState";
 import CommonImage from "../CommonImage/CommonImage";
 import UserModal from "../UserModal/UserModal";
-
+import Image from "next/image";
+import logo from '../../../public/logo.png'
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin, setIsUserModalOpen, isUserModalOpen } = useContext(GlobalContext);
      const [Open, setOpen] = useState(true);
@@ -63,7 +64,10 @@ const Navbar = () => {
                                                             <></>
                                                   }
                                              </div>
-                                             <Link href="/"> <h1 className='  py-2 font-semibold primary  text-base md:text-2xl uppercase'> FRACTOS </h1></Link>
+                                             <Link href="/">  <Image className="    w-[100px]   md:max-w-[200px]"   src={logo} alt="image" /> </Link>
+
+                                          
+
                                         </div>
 
 

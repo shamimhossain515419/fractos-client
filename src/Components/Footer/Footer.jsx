@@ -8,7 +8,7 @@ import Container from "../Container/Container";
 
 const Footer = () => {
   return (
-    <div className="w-full  py-10 rounded  primaryBg  primaryBgColor  ">
+    <div className="w-full  py-10 rounded    primaryBg  primaryBgColor  ">
 
       <Container>
 
@@ -17,7 +17,7 @@ const Footer = () => {
 
         <div className="footer-container grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 px-2 mt-10">
           <div className="footer-item w-full ">
-            <Image className=" w-[200px] " src={logo} width={50} height={50} alt="footerLogo"></Image>
+            <Image className=" w-[200px] " src={logo}  alt="footerLogo"></Image>
 
             <h4 className="text-1xl font-bold  mt-2">
               Making the world a better place through constructing elegant
