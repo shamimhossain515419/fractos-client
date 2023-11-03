@@ -11,9 +11,8 @@ export async function GET(req) {
           const { searchParams } = new URL(req.url);
           const exam_name = searchParams.get("subject");
           const university = searchParams.get("university");
-          console.log(university);
+        
           const extractUser = await Admission.findOne({ exam_name, university });
-          console.log(extractUser);
           if (extractUser) {
                return NextResponse.json({
                     success: true,

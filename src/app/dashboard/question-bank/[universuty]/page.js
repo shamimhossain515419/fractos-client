@@ -17,7 +17,7 @@ const page = () => {
      useEffect(() => {
           GetAllQuestion()
      }, [2000]);
-     console.log(subjects);
+  
 
      return (
           <div>

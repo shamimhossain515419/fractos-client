@@ -29,7 +29,7 @@ const DashboardLayout = ({ children }) => {
 
 
 
-               <div className=' p-2 sm:p-2 md:p-8 relative '>
+               <div className='  relative '>
 
                     <div className=' md:hidden p-2'>
                          {
@@ -99,16 +99,16 @@ const DashboardLayout = ({ children }) => {
 
 
 
-                    <div className='   hidden md:block top-0  fixed  w-[300px] left-3 '>
+                    <div className='    hidden md:block top-0  fixed  w-[350px]  '>
 
 
-                         <div className=' max-w-[300px]  shadow-xl px-2     flex flex-col justify-between gap-2 absolute top-1 bottom-2 left-2    h-screen pb-6 '>
+                         <div className=' max-w-[350px]  secondBg  shadow-xl   px-5    flex flex-col justify-between gap-2 absolute top-1 bottom-2     h-screen pb-6 '>
 
 
                               <div className='   space-y-2'>
                                    <div className='    md:block'>
                                         <div className='  my-2  p-4   flex items-center gap-5'>
-                                             <Link href={'/'} className='text-lg  cursor-pointer md:text-3xl font-bold my-4'> FRACTOS</Link>
+                                             <Link href={'/'} className='text-lg  cursor-pointer primary md:text-3xl font-bold my-4'> FRACTOS</Link>
                                         </div>
                                    </div>
                                    <Link

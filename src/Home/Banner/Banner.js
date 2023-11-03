@@ -2,18 +2,17 @@
 
 import Image from 'next/image';
 import React from 'react';
-
-
+ import banner from '../../../public/banner.webp'
 const Banner = () => {
 
   return (
     <div className='pt-[80px] pb-[80px]'>
       <div className='grid grid-cols-12 gap-10 px-2 lg:px-10'>
         <div className='col-span-12 lg:col-span-6 mx-auto'>
-          <Image src={'/banner-img.jpg'} height={500} width={500}></Image>
+          <Image src={banner} height={600} width={500}></Image>
         </div>
         <div className='col-span-12 lg:col-span-6'>
-          <h1 className='text-2xl md:text-3xl font-extrabold mb-10 lg:mt-32 mx-auto text-center'>
+          <h1 className='text-2xl   primary md:text-3xl font-extrabold mb-10 lg:mt-32 mx-auto text-center'>
             Now Prepare For Your Exams With <span>Fractos</span>
           </h1>
           <h2 className='text-lg mb-5'>

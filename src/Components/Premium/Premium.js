@@ -1,6 +1,9 @@
 "use client"
 import Image from "next/image";
 import CommonTitle from "../CommonTitle/CommonTitle";
+import  mockImage from "./../../../public/liveexsm.png"
+import LiveImage from "./../../../public/mock.png"
+import SupportImage from "./../../../public/supportpng.png"
 const Premium = () => {
     return (
         <div>
@@ -8,9 +11,9 @@ const Premium = () => {
             <CommonTitle title={"Premium Features"}></CommonTitle>
             <div className="grid grid-cols-1 gap-y-10 w-full">
 
-                <div className="grid grid-cols-12 gap-10 rounded-xl bg-white shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0c009455]">
+                <div className="grid grid-cols-12 gap-10 rounded-xl  primaryBg  shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0EE6B8]">
                     <div className="col-span-4">
-                        <Image src={'/mock-exam-img.jpg'} width={320} height={300} className="mx-auto"></Image>
+                        <Image src={mockImage} width={320} height={300} className="mx-auto"></Image>
                     </div>
                     <div className="col-span-8">
                         <h3 className="text-xl md:text-2xl mb-10  primary font-bold">Mock Exam</h3>
@@ -18,9 +21,9 @@ const Premium = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-12 gap-10 rounded-xl bg-white shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0c009455]">
+                <div className="grid grid-cols-12 gap-10 rounded-xl  primaryBg  shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0EE6B8]">
                     <div className="col-span-4">
-                        <Image src={'/live-exam-img.jpg'} width={320} height={300} className="mx-auto"></Image>
+                        <Image src={LiveImage} width={320} height={300} className="mx-auto"></Image>
                     </div>
                     <div className="col-span-8">
                         <h3 className="text-xl md:text-2xl mb-10  primary font-bold">Live Exam</h3>
@@ -30,7 +33,7 @@ const Premium = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-12 gap-10 rounded-xl bg-white shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0c009455]">
+                <div className="grid grid-cols-12 gap-10 rounded-xl  primaryBg  shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0EE6B8]">
                     <div className="col-span-4">
                         <Image src={'/feedback-support-img.jpg'} width={320} height={300} className="mx-auto"></Image>
                     </div>
@@ -41,7 +44,7 @@ const Premium = () => {
                         </p>
                     </div>
                 </div>
-                <div className="grid grid-cols-12 gap-10 rounded-xl bg-white shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0c009455]">
+                <div className="grid grid-cols-12 gap-10 rounded-xl  primaryBg  shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0EE6B8]">
                     <div className="col-span-4">
                         <Image src={'/analysis-img.jpg'} width={320} height={300} className="mx-auto"></Image>
                     </div>

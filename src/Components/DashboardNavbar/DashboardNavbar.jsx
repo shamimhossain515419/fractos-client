@@ -5,7 +5,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BsSun } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import CommonImage from "../CommonImage/CommonImage";
-
+import Image from "next/image";
+import logo from '../../../public/logo.png'
 
 const DashboardNavbar = () => {
      const { user, openModal, setOpenModal } = useContext(GlobalContext)
@@ -19,7 +20,7 @@ const DashboardNavbar = () => {
 
                     </div>
                     <div>
-                         <h1 className=" text-2xl font-semibold my-4 "> Fractors</h1>
+                          <Image src={logo} alt="image"></Image>
                     </div>
                     <div>
                          <BsSun size={24}></BsSun>

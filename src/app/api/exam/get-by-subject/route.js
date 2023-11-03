@@ -12,10 +12,11 @@ export async function GET(req) {
 
 
     const { searchParams } = new URL(req.url);
-    const subject = searchParams.get("subject");
+    const exam_name = searchParams.get("subject");
     const category = searchParams.get("category");
-  const extractUser = await Questions.findOne({ exam_name:subject,category});
-  console.log(extractUser);
+    console.log(category, exam_name, "shmimadfd");
+    const extractUser = await Questions.findOne({ exam_name, category });
+    console.log(extractUser);
     if (extractUser) {
       return NextResponse.json({
         success: true,

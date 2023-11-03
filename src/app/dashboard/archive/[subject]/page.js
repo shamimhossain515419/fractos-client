@@ -17,9 +17,9 @@ const page = () => {
           setExamData(result)
      }
      useEffect(() => {
-          console.log(prams?.subject);
+         
           if (prams?.subject) {
-               console.log(prams?.subject);
+               
                getData(prams?.subject);
           }
 

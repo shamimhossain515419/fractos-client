@@ -8,7 +8,7 @@ import Container from "../Container/Container";
 
 const Footer = () => {
   return (
-    <div className="w-full  py-10 rounded text-white  primaryBgColor  ">
+    <div className="w-full  py-10 rounded  primaryBg  primaryBgColor  ">
 
       <Container>
 

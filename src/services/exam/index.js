@@ -1,7 +1,7 @@
 export const GetSubjectByData = async (name,category) => {
 
   try {
-    const res = await fetch(`/api/exam/get-by-subject?subject=${name}&category=${category?category:null}`, {
+    const res = await fetch(`/api/exam/get-by-subject?subject=${name}&category=${category}`, {
       method: "GET",
       cache: "no-store"
     });
