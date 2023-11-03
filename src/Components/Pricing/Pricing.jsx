@@ -9,7 +9,7 @@ const Pricing = () => {
         <div className='py-[130px]'>
             <CommonTitle title={"PLANS"}></CommonTitle>
             {/* pricing section */}
-            <div className='flex gap-y-5 gap-x-20 justify-center items-start w-full mt-10'>
+            <div className=' grid  md:grid-cols-2 gap-y-5 gap-x-20 justify-center items-start w-full mt-10'>
                 {/* basic price card */}
                 <div className=' secondBg rounded-lg p-5 w-full md:min-w-[400px] shadow-lg border border-[#0EE6B8]'>
                     <div className='flex items-center justify-between mb-5'>
