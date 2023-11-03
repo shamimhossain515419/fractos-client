@@ -1,3 +1,6 @@
+
+import ArchiveCollege from '@/Components/Archive/ArchiveCollege';
+import React from 'react';
 "use client"
 import AcademicQuestion from '@/Components/AcademicQuestion/AcademicQuestion';
 import ArchiveCollege from '@/Components/ArchiveDUCUnit/ArchiveCollege';
