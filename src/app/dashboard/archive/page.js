@@ -12,8 +12,8 @@ const ArchivePage = () => {
 
                <div>
                     <div className=''>
-                         <button onClick={() => setOpen(true)} className={`${Open ? " primaryBg text-white" : "border border-[#27895C]  text-black "}   m-3 p-2 font-bold rounded `}> Admission</button>
-                         <button onClick={() => setOpen(false)} className={`${Open ? "border border-[#27895C] text-black " : "primaryBg text-white"}  m-3 p-2 font-bold rounded `}>Academic</button>
+                         <button onClick={() => setOpen(true)} className={`${Open ? " buttonColor text-black" : "border border-[#0EE6B8]  text-white "}   m-3 p-2 font-bold rounded `}> Admission</button>
+                         <button onClick={() => setOpen(false)} className={`${Open ? "border border-[#0EE6B8] text-white " : "buttonColor text-black"}  m-3 p-2 font-bold rounded `}>Academic</button>
                     </div>
                </div>
 

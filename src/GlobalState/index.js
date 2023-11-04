@@ -1,10 +1,11 @@
 
 'use client'
 import React, { createContext, useEffect, useState } from 'react';
-import app from '../../firebase/firebase.config';
+
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { GetSingleUser, jwtSingUp } from '@/services/users';
 import Cookies from 'js-cookie';
+import app from '../../firebase/firebase.config';
 export const GlobalContext = createContext(null);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();

@@ -41,11 +41,11 @@ const Dashboard = async () => {
   return (
     <div>
       <div className="py-10  mt-2">
-        <h2 className=" text-xl   md:text-xl  xl:text-3xl font-bold textColor ps-2">Dashboard</h2>
+        <h2 className=" text-xl   md:text-xl   primary  xl:text-3xl font-bold  ps-2">Dashboard</h2>
 
         <div className="mark-container py-3 grid lg:grid-cols-3  md:grid-cols-2 items-center gap-3 sm:grid-cols-1  mt-5 px-2">
 
-          <div className="item w-full  bg-[#E2E8F0] rounded h-full  flex flex-row  px-3 shadow-md">
+          <div className="item w-full   primaryBg rounded h-full  flex flex-row  p-3 shadow-xl">
             <div className="  w-full">
               <div className=" flex justify-between items-center gap-2 w-full">
                 <h2 className="text-2xl font-bold  capitalize">{user?.displayName ? user?.displayName : null}</h2>
@@ -55,7 +55,7 @@ const Dashboard = async () => {
 
               <div className=" flex justify-between gap-2 items-center  w-full">
                 <div>
-                  <h4 className="text-1xl font-bold textColor"> {userinfo?.collage ? userinfo?.collage : "collage"} </h4>
+                  <h4 className="text-1xl font-bold  secondColor "> {userinfo?.collage ? userinfo?.collage : "collage"} </h4>
                   <p className="lg:text-5xl md:text-3xl sm:text-2xl font-bold  primary">
                     {userinfo?.rank ? userinfo?.rank :  "00"}
                   </p>
@@ -78,11 +78,11 @@ const Dashboard = async () => {
 
           </div>
 
-          <div className="item w-full bg-[#E2E8F0] shadow-md rounded h-full   py-2 px-3">
-            <h1 className="lg:text-3xl md:text-2xl sm:text-xl font-bold textColor ">
+          <div className="item w-full primaryBg shadow-md rounded h-full  primaryBg  py-2 px-3">
+            <h1 className="lg:text-3xl md:text-2xl sm:text-xl font-bold primary ">
               Practice Fast{" "}
             </h1>
-            <h4 className="lg:text-xl md:text-lg  font-bold textColor mt-2">
+            <h4 className="lg:text-xl md:text-lg  font-bold secondColor mt-2">
               Save Your Time
             </h4>
 
@@ -105,7 +105,7 @@ const Dashboard = async () => {
                 <select
                   id="currency"
                   name="currency"
-                  className="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+                  className="h-full rounded-md border-0 bg-transparent primaryBg py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
                 >
                   <option>Physics</option>
                   <option>Chemistry</option>
@@ -121,11 +121,11 @@ const Dashboard = async () => {
             </Link>
           </div>
 
-          <div className="item w-full bg-[#E2E8F0] shadow-md rounded  h-full     py-3 px-3">
-            <h1 className="lg:text-3xl md:text-2xl sm:text-xl font-bold textColor ">
+          <div className="item w-full primaryBg shadow-md rounded  h-full   primary    py-3 px-3">
+            <h1 className="lg:text-3xl md:text-2xl sm:text-xl font-bold  primary ">
               Mock Test{" "}
             </h1>
-            <h4 className="lg:text-xl md:text-lg  font-bold textColor mt-2">
+            <h4 className="lg:text-xl md:text-lg  secondColor  font-bold  mt-2">
               Topic,Chapter and choose subject
             </h4>
 
@@ -148,7 +148,7 @@ const Dashboard = async () => {
                 <select
                   id="currency"
                   name="currency"
-                  className="h-full rounded-md border-0  py-0 pl-2 pr-7 bg-transparent  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+                  className="h-full primaryBg  rounded-md border-0  py-0 pl-2 pr-7 bg-transparent  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
                 >
                   <option>Physics</option>
                   <option>Chemistry</option>
@@ -176,7 +176,7 @@ const Dashboard = async () => {
               alt=""
             />
           </div>
-          <div className="bottom-right  lg:w-70 w-full h-full  bg-white shadow-xl rounded ">
+          <div className="bottom-right  lg:w-70 w-full h-full  primaryBg shadow-xl rounded ">
             <div className="overflow-x-auto">
               <table className="table w-full h-full">
 
@@ -189,7 +189,7 @@ const Dashboard = async () => {
                     <th>Marks</th>
                   </tr>
                 </thead>
-                <tbody className="bg-slate-200 w-full  ">
+                <tbody className="primaryBg w-full  ">
                   {
                     allUser?.slice(rank, rank + 4)?.map((item, index) => <tr key={item?._id} className={` ${item?.email===user?.email ?  "bg-[#0202021e]" : "  bg-transparent  rounded p-[2px] "} my-2 px-2 w-full `}  >
                       <td>

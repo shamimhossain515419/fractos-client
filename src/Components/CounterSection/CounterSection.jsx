@@ -5,7 +5,7 @@ import Counter from '.';
 
 const CounterSection = () => {
    return (
-      <container className="grid lg:grid-cols-4 lg:py-10 py-5 grid-cols-1 gap-1 lg:gap-0 text-center lg:text-start" >
+      <container className="grid lg:grid-cols-4 lg:py-10 py-5 grid-cols-1 gap-4 lg:gap-0 text-center lg:text-start w-full  overflow-hidden" >
 
          <div className='border primaryBg p-8 lg:rounded-s-md rounded-md lg:rounded-none primaryBg2 text-3xl text-lime-200 font-bold'>
             <Counter end={110000} duration={10} />

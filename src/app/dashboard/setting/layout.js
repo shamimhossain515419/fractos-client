@@ -42,7 +42,7 @@ const SettingLayout = ({ children }) => {
 
                               <Link
                                    href="/dashboard/setting"
-                                   className={`${pathname == "/dashboard/setting" ? " bg-[#8d9ddc69] border-l-2 border-[#a73131c5] text-[#a73131c5] " : "bg-[#8d9ddc2c]  "} flex   hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+                                   className={`${pathname == "/dashboard/setting" ? " bg-[#8d9ddc69] border-l-2   border-[#0EE6B8]  primary" : "bg-[#8d9ddc2c]   "} flex   hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
 
                               >
                                    <FaRegUserCircle size={24}></FaRegUserCircle>
@@ -51,7 +51,7 @@ const SettingLayout = ({ children }) => {
 
                               <Link
                                    href="/dashboard/setting/password"
-                                   className={`${pathname == "/dashboard/setting/password" ? " bg-[#8d9ddc85]  text-[#a73131c5]" : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+                                   className={`${pathname == "/dashboard/setting/password" ? " bg-[#8d9ddc69] border-l-2   border-[#0EE6B8]  primary" : "bg-[#8d9ddc2c]   "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
 
                               >
                                    <AiOutlineUnlock size={24}></AiOutlineUnlock>

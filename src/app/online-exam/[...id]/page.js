@@ -9,6 +9,7 @@ import { GetAdmissionYear } from '@/services/admission';
 import { GetSubjectByData } from '@/services/exam';
 import { PostExamReviews } from '@/services/exam-reviews';
 import { UpdateUser } from '@/services/users';
+import { fail } from 'assert';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useState, useEffect, useContext } from "react";
@@ -40,13 +41,15 @@ const page = () => {
      const currentDate = new Date();
      const time = Question?.questions?.length * 60;
      const getData = async (subject, category, admission) => {
-          console.log(subject, category, admission, "shamim");
+         
           if (admission === "admission") {
-               const result = await GetAdmissionYear(subject, category);
+               
+            const result = await GetAdmissionYear(subject, category);
                setQuestion(result)
-               console.log(result);
+               
 
-          } else {
+          }else{
+              
                const result = await GetSubjectByData(subject, category);
                setQuestion(result?.data)
                console.log(result);
@@ -57,16 +60,16 @@ const page = () => {
 
      }
      useEffect(() => {
-          if (name, category, admission) {
+          if (name,category) {
                getData(name, category, admission);
           }
 
 
      }, [name, category, admission])
 
-
+    
      const isActive = (id) => {
-          return selectId.includes(id) ? 'cursor-none bg-[#27895b80]' : ' cursor-pointer';
+          return selectId.includes(id) ? 'cursor-none bg-[#0ee6b753]  ' : ' secondBg cursor-pointer ';
      }
 
 
@@ -107,8 +110,7 @@ const page = () => {
 
 
 
-     console.log(wrong);
-     console.log(RightAns);
+
 
 
 
@@ -117,7 +119,7 @@ const page = () => {
 
 
                <div>
-                    <div className='   bg-[#ECF0F3] flex justify-center py-3  shadow-md items-center gap-5 fixed top-0 w-full z-50   '>
+                    <div className='   primaryBg  flex justify-center py-3  shadow-md items-center gap-5 fixed top-0 w-full z-50   '>
 
                          <Link
                               href="/dashboard"
@@ -187,7 +189,7 @@ const page = () => {
                                         </div>
 
                                         <div className='  my-7 flex   justify-center items-center gap-1'>
-                                             <Link className=' text-white text-xl font-normal md:text-2xl  primaryBg py-2 px-4 ' href={'/dashboard'}> Go to Home page </Link>
+                                             <Link className=' text-black text-xl font-normal md:text-2xl  buttonColor py-2 px-4 ' href={'/dashboard'}> Go to Home page </Link>
                                         </div>
                                    </div>
                               </div> : <div>
@@ -198,7 +200,7 @@ const page = () => {
 
 
                                         <div>
-                                             <h1 className='   text-xl font-bold md:text-2xl text-center text-red-500'>  {
+                                             <h1 className='   text-xl font-bold md:text-2xl text-center text-red-600'>  {
                                                   time ? <CountdownTimer setCountExamTime={setCountExamTime} time={time}></CountdownTimer> : null
                                              }   </h1>
                                         </div>
@@ -208,14 +210,14 @@ const page = () => {
 
                                    <div className=' '>
                                         {
-                                             Question?.questions?.map((item, index) => <div key={index} className={` ${isActive(index)} max-w-[800px]   my-4 mx-auto  boxshadow p-4 rounded`}>
+                                             Question?.questions?.map((item, index) => <div key={index} className={` ${isActive(index)} max-w-[800px]   text-white   my-4 mx-auto  boxshadow p-4 rounded`}>
 
 
 
                                                   <div>
-                                                       <h1 className=' text-black text-sm md:text-lg  font-medium my-1'> {index + 1}  .  {item?.question}  </h1>
+                                                       <h1 className=' text-sm md:text-lg  font-medium my-1'> {index + 1}  .  {item?.question}  </h1>
                                                   </div>
-                                                  <div className={`   textColor grid sm:grid-cols-4 md:grid-cols-2  gap-2 md:gap-4`}>
+                                                  <div className={`    grid sm:grid-cols-4 md:grid-cols-2  gap-2 md:gap-4`}>
                                                        <div onClick={() => { setSelect(item?.answer_a), setSelectQuestion(item?.question), setSelectId([...selectId, index]) }} className='   bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 1.</span> {item?.answer_a} </div>
                                                        <div onClick={() => { setSelect(item?.answer_b), setSelectQuestion(item?.question), setSelectId([...selectId, index]) }} className='   bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 2.</span> {item?.answer_b}</div>
                                                        <div onClick={() => { setSelect(item?.answer_c), setSelectQuestion(item?.question), setSelectId([...selectId, index]) }} className='   bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 3.</span> {item?.answer_c} </div>
@@ -231,8 +233,8 @@ const page = () => {
 
 
                                    <div className='  flex justify-center items-center gap-5'>
-                                        <button onClick={examSubmit} className=' disabled:bg-[#27895b63]   text-xl text-center  text-white font-medium  my-3 py-2 px-3 rounded primaryBg capitalize'>Submit</button>
-                                        <Link href={'/dashboard/mock-exam'} className='text-xl   text-center  text-white font-medium  my-3 py-2 px-3 rounded  capitalize bg-red-400'>cancel</Link>
+                                        <button onClick={examSubmit} className=' disabled:bg-[#27895b63]   text-xl text-center  text-black font-medium  my-3 py-2 px-3 rounded buttonColor capitalize'>Submit</button>
+                                        <Link href={'/dashboard/mock-exam'} className='text-xl   text-center  text-white font-medium  my-3 py-2 px-3 rounded  capitalize bg-red-600'>cancel</Link>
                                    </div>
                               </div>
 

@@ -9,7 +9,8 @@ import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "@/GlobalState";
 import CommonImage from "../CommonImage/CommonImage";
 import UserModal from "../UserModal/UserModal";
-
+import Image from "next/image";
+import logo from '../../../public/logo.png'
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin, setIsUserModalOpen, isUserModalOpen } = useContext(GlobalContext);
      const [Open, setOpen] = useState(true);
@@ -18,7 +19,7 @@ const Navbar = () => {
      return (
           <div className=" mb-12">
                <div>
-                    <nav className={`px-2 py-2 z-50 bg-[#ECF0F3] shadow-lg fixed top-0 left-0 w-full transition-transform`}>
+                    <nav className={`px-2 py-2 z-50   primaryBg shadow-lg fixed top-0 left-0 w-full transition-transform`}>
                          {/* =======
      useEffect(() => {
           const handleScroll = () => {
@@ -63,15 +64,18 @@ const Navbar = () => {
                                                             <></>
                                                   }
                                              </div>
-                                             <Link href="/"> <h1 className='  py-2 font-semibold  text-base md:text-2xl uppercase'> FRACTOS </h1></Link>
+                                             <Link href="/">  <Image className="    w-[100px]   md:max-w-[200px]"   src={logo} alt="image" /> </Link>
+
+                                          
+
                                         </div>
 
 
                                         <div className=' hidden md:flex items-center gap-3  space-x-5'>
-                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/'}>Home</Link>
-                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/teacher'}>Teacher</Link>
-                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/blogs'}>Blogs</Link>
-                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/contact'}>Contact Us</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#27895C] hover:text-black font-medium transition-all" href={'/'}>Home</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#27895C] hover:text-black font-medium transition-all" href={'/teacher'}>Teacher</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#27895C] hover:text-black font-medium transition-all" href={'/blogs'}>Blogs</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#27895C] hover:text-black font-medium transition-all" href={'/contact'}>Contact Us</Link>
 
                                         </div>
 
@@ -80,7 +84,7 @@ const Navbar = () => {
                                              {
                                                   user ?
                                                        <div className='relative cursor-pointer hidden md:block '>
-                                                            <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className='flex gap-2 items-center  p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all'>
+                                                            <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className='flex gap-2 items-center  p-2 rounded-lg hover:bg-[#27895C] hover:text-black font-medium transition-all'>
                                                                  <CommonImage data={user}></CommonImage>
                                                                  <h1 className='relative  text-base'>{user?.displayName}</h1>
                                                             </div>
@@ -95,7 +99,7 @@ const Navbar = () => {
                                                        </div>
                                                        :
                                                        <div className="flex gap-2 items-center">
-                                                            <Link href={'/login'} className="px-3 py-2 text-white bg-[#4A3AFF] hover:bg-[#4a3affe1] rounded-lg hover:shadow-lg">Login</Link>
+                                                            <Link href={'/login'} className="px-3 py-2 text-white bg-[#27895C] hover:bg-[#black font-mediumFe1] rounded-lblack font-mediumer:shadow-lg">Login</Link>
                                                             <Link href={'/register'} className="px-3 py-2 bg-white hover:bg-slate-600 hover:text-white rounded-lg hover:shadow-lg">Register</Link>
                                                        </div>
                                              }

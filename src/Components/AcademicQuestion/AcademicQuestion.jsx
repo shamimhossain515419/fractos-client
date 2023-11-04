@@ -31,7 +31,7 @@ const AcademicQuestion = () => {
                     subjects?.length > 0 ? <>  <div className='grid md:grid-cols-3 px-4 lg:grid-cols-3 sm:grid-cols-2 gap-5'>
                         {
                             subjects.map(subject =>
-                                <Link href={`/dashboard/archive/${subject?.exam_name}`} key={subject._id} className=' shadow-md   rounded '>
+                                <Link href={`/dashboard/archive/${subject?.exam_name}`} key={subject._id} className=' shadow-md  secondBg  rounded '>
 
                                     <div className=''>
 
@@ -46,14 +46,16 @@ const AcademicQuestion = () => {
                                                 <h3 className='text-3xl font-bold '>ACADEMIC</h3>
                                             </div>
                                         </Parallax>
-                                        <div className='rounded text-black p-2'>
-                                            <p className='text-xl capitalize'>{subject.exam_name}
+                                        <div className='rounded text-white  p-2'>
+                                            <p className='text-xl primary capitalize'>{subject.exam_name}
                                             </p>
-                                            <div className='flex '>
-                                                <small > {subject?.questions?.length} </small>
-                                                <small>exams .</small>
-                                                <small> {subject?.questions?.length}  </small>
-                                                <small>ongoing</small>
+                                            <div className='flex gap-2 '>
+                                                <div>
+                                                    <small > {subject?.questions?.length} </small>
+                                                    <small>exams </small>
+                                                </div>
+                                                <div><small> {subject?.questions?.length}  </small>
+                                                    <small> Time</small></div>
                                             </div>
                                         </div>
                                     </div>

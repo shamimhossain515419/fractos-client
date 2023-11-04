@@ -64,7 +64,7 @@ export default function Feedback() {
                               modules={[Autoplay, Pagination, Navigation]}
                               className="mySwiper   md:px-10"
                          >
-                              <SwiperSlide className=' shadow-xl px-2'>
+                              <SwiperSlide className=' secondBg shadow-xl px-2'>
                                    <div className=' flex justify-center items-center flex-col gap-2'>
                                         <div>
                                              <ReactStars
@@ -75,15 +75,15 @@ export default function Feedback() {
                                         </div>
 
                                         <h1 className=' text-xl  max-w-[600px] text-center  mx-auto font-normal my-2'> “Very cute dress and fun color. I am also very impressed by the quality of the linen. Excited to wear this dress in the summer!” </h1>
-                                        <p className=' my-2'>Best learning website</p>
-                                        <div className=' bg-[#000000b8] h-[1px] w-[200px]'></div>
+                                        <p className=' my-2 secondColor'>Best learning website</p>
+                                        <div className=' bg-white h-[1px] w-[200px]'></div>
                                         <div className=' flex items-center my-4  gap-4'>
                                              <Image width={67} height={64} className=' w-16 h-16 rounded-full  border border-blue-400   object-fill ' src="https://img.freepik.com/free-psd/portrait-woman-using-tablet-device_23-2150116768.jpg?size=626&ext=jpg&ga=GA1.1.1266374889.1691075921&semt=ais" alt="" />
-                                             <h1 className=' text-xl  font-normal '> Lachlan Simonds </h1>
+                                             <h1 className=' text-xl  font-normal   primary'> Lachlan Simonds </h1>
                                         </div>
                                    </div>
                               </SwiperSlide>
-                              <SwiperSlide className=' shadow-xl px-2'>
+                              <SwiperSlide className=' secondBg  shadow-xl px-2'>
                                    <div className=' flex justify-center items-center flex-col gap-2'>
                                         <div>
                                              <ReactStars
@@ -94,15 +94,15 @@ export default function Feedback() {
                                         </div>
 
                                         <h1 className=' text-xl  max-w-[600px] text-center   mx-auto font-normal my-2'> “Very cute dress and fun color. I am also very impressed by the quality of the linen. Excited to wear this dress in the summer!” </h1>
-                                        <p className=' my-2'> Best learning website</p>
-                                        <div className=' bg-[#000000b8] h-[1px] w-[200px]'></div>
+                                        <p className=' my-2 secondColor'> Best learning website</p>
+                                        <div className=' bg-white h-[1px] w-[200px]'></div>
                                         <div className=' flex items-center my-4  gap-4'>
                                              <Image width={67} height={64} className=' w-16 h-16 rounded-full  border border-blue-400   object-fill ' src="https://img.freepik.com/free-photo/portrait-beautiful-young-happy-woman-with-thumbs-up-sign-white-background_186202-5425.jpg?size=626&ext=jpg&ga=GA1.1.1266374889.1691075921&semt=ais" alt="" />
-                                             <h1 className=' text-xl  font-normal '> Archie Sunderland </h1>
+                                             <h1 className=' text-xl  font-normal   primary'> Archie Sunderland </h1>
                                         </div>
                                    </div>
                               </SwiperSlide>
-                              <SwiperSlide className=' shadow-xl  px-2'>
+                              <SwiperSlide className=' secondBg shadow-xl  px-2'>
                                    <div className=' flex justify-center items-center flex-col gap-2'>
                                         <div>
                                              <ReactStars
@@ -113,15 +113,15 @@ export default function Feedback() {
                                         </div>
 
                                         <h1 className=' text-xl  max-w-[600px] text-center  mx-auto font-normal my-2'> “Very cute dress and fun color. I am also very impressed by the quality of the linen. Excited to wear this dress in the summer!” </h1>
-                                        <p className=' my-2'> Best learning website</p>
-                                        <div className=' bg-[#000000b8] h-[1px] w-[200px]'></div>
+                                        <p className=' my-2 secondColor'> Best learning website</p>
+                                        <div className=' bg-white h-[1px] w-[200px]'></div>
                                         <div className=' flex items-center my-4  gap-4'>
                                              <Image width={67} height={64} className=' w-16 h-16 rounded-full  border border-blue-400   object-fill ' src="https://img.freepik.com/premium-photo/pretty-businesswoman-smiling-camera_13339-78104.jpg?size=626&ext=jpg&ga=GA1.1.1266374889.1691075921&semt=ais" alt="" />
-                                             <h1 className=' text-xl  font-normal '> Timothy Winston </h1>
+                                             <h1 className=' text-xl  font-normal  primary'> Timothy Winston </h1>
                                         </div>
                                    </div>
                               </SwiperSlide>
-                              <SwiperSlide className=' shadow-xl px-2'>
+                              <SwiperSlide className=' secondBg shadow-xl px-2'>
                                    <div className=' flex justify-center items-center flex-col gap-2'>
                                         <div>
                                              <ReactStars
@@ -132,16 +132,16 @@ export default function Feedback() {
                                         </div>
 
                                         <h1 className=' text-xl  max-w-[600px] text-center  mx-auto font-normal my-2'> “Very cute dress and fun color. I am also very impressed by the quality of the linen. Excited to wear this dress in the summer!” </h1>
-                                        <p className=' my-2'> Best learning website </p>
-                                        <div className=' bg-[#000000b8] h-[1px] w-[200px]'></div>
+                                        <p className=' my-2 secondColor'> Best learning website </p>
+                                        <div className=' bg-white h-[1px] w-[200px]'></div>
                                         <div className=' flex items-center my-4  gap-4'>
                                              <Image width={67} height={64} className=' w-16 h-16 rounded-full  border border-blue-400   object-fill ' src="https://img.freepik.com/free-photo/smart-looking-teacher_53876-23045.jpg?size=626&ext=jpg&ga=GA1.2.1266374889.1691075921&semt=ais" alt="" />
-                                             <h1 className=' text-xl  font-normal '> Jack Hoad
+                                             <h1 className=' text-xl  font-normal   primary'> Jack Hoad
                                              </h1>
                                         </div>
                                    </div>
                               </SwiperSlide>
-                              <SwiperSlide className='  shadow-xl px-2'>
+                              <SwiperSlide className=' secondBg  shadow-xl px-2'>
                                    <div className=' flex justify-center items-center flex-col gap-2'>
                                         <div>
                                              <ReactStars
@@ -152,11 +152,11 @@ export default function Feedback() {
                                         </div>
 
                                         <h1 className=' text-xl  max-w-[600px] text-center  mx-auto font-normal my-2'> “Very cute dress and fun color. I am also very impressed by the quality of the linen. Excited to wear this dress in the summer!” </h1>
-                                        <p className=' my-2'> Best learning website</p>
-                                        <div className=' bg-[#000000b8] h-[1px] w-[200px]'></div>
+                                        <p className=' my-2 secondColor'> Best learning website</p>
+                                        <div className=' bg-white h-[1px] w-[200px]'></div>
                                         <div className=' flex items-center my-4  gap-4'>
                                              <Image width={67} height={64} className=' w-16 h-16 rounded-full  border border-blue-400   object-fill ' src="https://img.freepik.com/free-photo/portrait-beautiful-young-happy-woman-with-thumbs-up-sign-white-background_186202-5425.jpg?size=626&ext=jpg&ga=GA1.1.1266374889.1691075921&semt=ais" alt="" />
-                                             <h1 className=' text-xl  font-normal '> Archie Sunderland </h1>
+                                             <h1 className=' text-xl  font-normal  primary '> Archie Sunderland </h1>
                                         </div>
                                    </div>
                               </SwiperSlide>

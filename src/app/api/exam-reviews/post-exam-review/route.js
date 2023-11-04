@@ -7,12 +7,12 @@ import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 export async function POST(req) {
 
- console.log("shmiamdf");
+
      await connectToDB();
      try {
           const data = await req.json()
           const extendData = await Exam_review.create(data)
-    console.log(extendData);
+   
           if (extendData){
                return  NextResponse.json({
                     success: true,

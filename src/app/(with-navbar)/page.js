@@ -26,7 +26,7 @@ export default function Home() {
           <Premium></Premium>
         </div>
       </Container>
-
+        
       <div className=" py-10">
         <Subscribe></Subscribe>
       </div>

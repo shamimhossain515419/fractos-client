@@ -30,10 +30,10 @@ const ArchiveCollege = () => {
                                         <h1 className='text-2xl font-bold text-white'>{college.CollegeName}</h1>
                                     </div></div>
                                 {/* </Parallax> */}
-                                <div className='bg-blue-50 rounded text-black font-bold p-3'>
-                                    <p>{college.department}</p>
+                                <div className=' secondBg rounded text-white font-bold p-3'>
+                                    <p className=' capitalize secondColor'>{college.department}</p>
                                     <div className='flex justify-between mt-3'>
-                                        <p>{college.exam}</p>
+                                        <p>  {college.exam} Exam</p>
                                         <p>{college.date}</p>
                                     </div>
                                 </div>
