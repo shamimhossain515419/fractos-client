@@ -1,174 +1,413 @@
-[
+{
+    
+     "exam_name": "Jahangirnagar-admission-22-23",
+     "title": "Jahangirnagar  University Admission Test",
+     "university": "JU",
+     "questions": [
+          {
+               "subject_name": "Math",
+               "question": "What is the value of 6² - 3² ?",
+               "answer_a": "27",
+               "answer_b": "27",
+               "answer_c": "33",
+               "answer_d": "9",
+               "answer_right": "27"
+          },
+          {
+               "question": "If 4x + 8 = 24, what is the value of x ?",
+               "answer_a": "4",
+               "answer_b": "6",
+               "answer_c": "5",
+               "answer_d": "3",
+               "answer_right": "4"
+          },
+          {
+               "question": "Solve for x: 3x + 7 = 22",
+               "answer_a": "5",
+               "answer_b": "6",
+               "answer_c": "8",
+               "answer_d": "15",
+               "answer_right": "5"
+          },
+          {
+               "question": "The product of two consecutive integers is 132. What are the integers ?",
+               "answer_a": "11, 12",
+               "answer_b": "13, 14",
+               "answer_c": "10, 11",
+               "answer_d": "14, 15",
+               "answer_right": "11, 12"
+          },
+          {
+               "question": "What is the area of a rectangle with a length of 9 units and width of 5 units ?",
+               "answer_a": "40 sq. units",
+               "answer_b": "45 sq. units",
+               "answer_c": "54 sq. units",
+               "answer_d": "14 sq. units",
+               "answer_right": "45 sq. units"
+          },
+          {
+               "question": "If 2y + 5 = 17, what is the value of y ?",
+               "answer_a": "6",
+               "answer_b": "7",
+               "answer_c": "5",
+               "answer_d": "8",
+               "answer_right": "6"
+          },
+          {
+               "question": "What is the square root of 144 ?",
+               "answer_a": "11",
+               "answer_b": "12",
+               "answer_c": "13",
+               "answer_d": "14",
+               "answer_right": "12"
+          },
+          {
+               "question": "If 3(x - 4) = 15, what is the value of x ?",
+               "answer_a": "9",
+               "answer_b": "7",
+               "answer_c": "8",
+               "answer_d": "6",
+               "answer_right": "9"
+          },
+          {
+               "question": "What is the sum of the first 20 natural numbers ?",
+               "answer_a": "200",
+               "answer_b": "210",
+               "answer_c": "190",
+               "answer_d": "220",
+               "answer_right": "210"
+          },
+          {
+               "question": "What is the value of 5! (5 factorial) ?",
+               "answer_a": "120",
+               "answer_b": "60",
+               "answer_c": "20",
+               "answer_d": "30",
+               "answer_right": "120"
+          },
+         {
+               "subject_name":"English",
+               "question": "Select the correct form of the verb: 'She _______ her homework every day.'",
+               "answer_a": "doing",
+               "answer_b": "do",
+               "answer_c": "does",
+               "answer_d": "did",
+               "answer_right": "does"
+          },
+          {
+               "question": "Identify the synonym for 'meticulous':",
+               "answer_a": "Careless",
+               "answer_b": "Precise",
+               "answer_c": "Hasty",
+               "answer_d": "Sloppy",
+               "answer_right": "Precise"
+          },
+          {
+               "question": "The meaning of the idiom 'Cut to the chase' is:",
+               "answer_a": "Stop talking",
+               "answer_b": "Get to the point",
+               "answer_c": "Go around the issue",
+               "answer_d": "Move slowly",
+               "answer_right": "Get to the point"
+          },
+          {
+               "question": "Choose the correct sentence: 'The birds _______ in the trees.'",
+               "answer_a": "is singing",
+               "answer_b": "was sing",
+               "answer_c": "are singing",
+               "answer_d": "were sing",
+               "answer_right": "are singing"
+          },
+          {
+               "question": "Which word is a homophone for 'write'?",
+               "answer_a": "Right",
+               "answer_b": "Rite",
+               "answer_c": "Wright",
+               "answer_d": "Rit",
+               "answer_right": "Right"
+          },
+          {
+               "question": "Identify the antonym for 'vivid':",
+               "answer_a": "Lively",
+               "answer_b": "Dull",
+               "answer_c": "Bright",
+               "answer_d": "Colorful",
+               "answer_right": "Dull"
+          },
+          {
+               "question": "Choose the appropriate synonym for 'profound':",
+               "answer_a": "Shallow",
+               "answer_b": "Deep",
+               "answer_c": "Superficial",
+               "answer_d": "Basic",
+               "answer_right": "Deep"
+          },
+          {
+               "question": "Select the correct word that fits in the blank: 'The train arrives _______ 5 o'clock.'",
+               "answer_a": "at",
+               "answer_b": "on",
+               "answer_c": "in",
+               "answer_d": "for",
+               "answer_right": "at"
+          },
+          {
+               "question": "Identify the meaning of the idiom 'Hit the nail on the head':",
+               "answer_a": "Be precise",
+               "answer_b": "Miss the target",
+               "answer_c": "Make a mistake",
+               "answer_d": "Avoid the issue",
+               "answer_right": "Be precise"
+          },
+          {
+               "question": "Choose the correct word to complete the sentence: 'He seemed _______ by the unexpected news.'",
+               "answer_a": "surprised",
+               "answer_b": "surprising",
+               "answer_c": "surprise",
+               "answer_d": "surprisingly",
+               "answer_right": "surprised"
+          }, {
+               "subject_name": "General Knowledge",
+               "question": "Who is the first woman to win a Nobel Prize?",
+               "answer_a": "Marie Curie",
+               "answer_b": "Rosa Parks",
+               "answer_c": "Mother Teresa",
+               "answer_d": "Malala Yousafzai",
+               "answer_right": "Marie Curie"
+          },
+          {
+               "question": "Which country is known as the 'Land of the Rising Sun'?",
+               "answer_a": "China",
+               "answer_b": "India",
+               "answer_c": "Japan",
+               "answer_d": "South Korea",
+               "answer_right": "Japan"
+          },
+          {
+               "question": "Who painted the famous artwork 'Starry Night'?",
+               "answer_a": "Pablo Picasso",
+               "answer_b": "Vincent van Gogh",
+               "answer_c": "Leonardo da Vinci",
+               "answer_d": "Claude Monet",
+               "answer_right": "Vincent van Gogh"
+          },
+          {
+               "question": "Which planet is known as the 'Jewel of the Solar System'?",
+               "answer_a": "Venus",
+               "answer_b": "Saturn",
+               "answer_c": "Mars",
+               "answer_d": "Jupiter",
+               "answer_right": "Saturn"
+          },
+          {
+               "question": "What is the largest ocean in the world?",
+               "answer_a": "Atlantic Ocean",
+               "answer_b": "Indian Ocean",
+               "answer_c": "Arctic Ocean",
+               "answer_d": "Pacific Ocean",
+               "answer_right": "Pacific Ocean"
+          },
+          {
+               "question": "Which city is home to the headquarters of the United Nations?",
+               "answer_a": "London",
+               "answer_b": "Paris",
+               "answer_c": "New York City",
+               "answer_d": "Geneva",
+               "answer_right": "New York City"
+          },
+          {
+               "question": "Who is the author of the Harry Potter book series?",
+               "answer_a": "J.R.R. Tolkien",
+               "answer_b": "J.K. Rowling",
+               "answer_c": "Stephen King",
+               "answer_d": "George R.R. Martin",
+               "answer_right": "J.K. Rowling"
+          },
+          {
+               "question": "Which language is widely spoken in Brazil?",
+               "answer_a": "Spanish",
+               "answer_b": "Portuguese",
+               "answer_c": "Italian",
+               "answer_d": "Dutch",
+               "answer_right": "Portuguese"
+          },
+          {
+               "question": "What is the capital city of Canada?",
+               "answer_a": "Toronto",
+               "answer_b": "Vancouver",
+               "answer_c": "Montreal",
+               "answer_d": "Ottawa",
+               "answer_right": "Ottawa"
+          },
+          {
+               "question": "Who wrote the famous play 'Romeo and Juliet'?",
+               "answer_a": "Charles Dickens",
+               "answer_b": "William Shakespeare",
+               "answer_c": "Jane Austen",
+               "answer_d": "Mark Twain",
+               "answer_right": "William Shakespeare"
+          },
+{
+               "subject_name": "Biology",
+               "question": "What is the role of the ribosomes in a cell?",
+               "answer_a": "Energy production",
+               "answer_b": "Protein synthesis",
+               "answer_c": "Cell division",
+               "answer_d": "Waste elimination",
+               "answer_right": "Protein synthesis"
+          },
+          {
+               "question": "Which organ in the human body produces insulin?",
+               "answer_a": "Pancreas",
+               "answer_b": "Liver",
+               "answer_c": "Kidneys",
+               "answer_d": "Spleen",
+               "answer_right": "Pancreas"
+          },
+          {
+               "question": "What is the function of the mitochondria in a cell?",
+               "answer_a": "Storing genetic information",
+               "answer_b": "Cell division",
+               "answer_c": "Respiration and energy production",
+               "answer_d": "Protein synthesis",
+               "answer_right": "Respiration and energy production"
+          },
+          {
+               "question": "Which system in the human body is responsible for regulating and producing hormones?",
+               "answer_a": "Nervous system",
+               "answer_b": "Circulatory system",
+               "answer_c": "Endocrine system",
+               "answer_d": "Skeletal system",
+               "answer_right": "Endocrine system"
+          },
+          {
+               "question": "What is the main function of the red blood cells?",
+               "answer_a": "Carrying oxygen",
+               "answer_b": "Digestion of food",
+               "answer_c": "Producing antibodies",
+               "answer_d": "Circulating hormones",
+               "answer_right": "Carrying oxygen"
+          },
+          {
+               "question": "Which part of the plant is responsible for photosynthesis?",
+               "answer_a": "Roots",
+               "answer_b": "Leaves",
+               "answer_c": "Stem",
+               "answer_d": "Flowers",
+               "answer_right": "Leaves"
+          },
+          {
+               "question": "What is the smallest bone in the human body?",
+               "answer_a": "Stapes",
+               "answer_b": "Femur",
+               "answer_c": "Tibia",
+               "answer_d": "Radius",
+               "answer_right": "Stapes"
+          },
+          {
+               "question": "What is the process by which plants convert light energy into chemical energy?",
+               "answer_a": "Transpiration",
+               "answer_b": "Respiration",
+               "answer_c": "Photosynthesis",
+               "answer_d": "Digestion",
+               "answer_right": "Photosynthesis"
+          },
+          {
+               "question": "Which organ is primarily responsible for detoxifying the blood?",
+               "answer_a": "Liver",
+               "answer_b": "Lungs",
+               "answer_c": "Heart",
+               "answer_d": "Spleen",
+               "answer_right": "Liver"
+          },
+          {
+               "question": "What is the function of white blood cells in the human body?",
+               "answer_a": "Carrying oxygen",
+               "answer_b": "Fighting infections",
+               "answer_c": "Digesting food",
+               "answer_d": "Producing insulin",
+               "answer_right": "Fighting infections"
+          },
      {
-          "exam_name": "biology",
-          
-          "questions": [
-               {
-                    "question": "The hormone Erythropoietin is produced in______",
-                    "answer_a": "Liver",
-                    "answer_b": "Spleen",
-                    "answer_c": "Kidney",
-                    "answer_d": "Thyroid gland",
-                    "answer_right": "Kidney"
-               },
-               {
-                    "question": "For some integer n, the odd integer is represented in the form of:",
-                    "answer_a": "n",
-                    "answer_b": "n + 1",
-                    "answer_c": "2n + 1",
-                    "answer_d": "2n",
-                    "answer_right": "2n + 1"
-               },
-               {
-                    "question": "Which of the following is not irrational?",
-                    "answer_a": "(3 + √7)",
-                    "answer_b": "(3 – √7)",
-                    "answer_c": "(3 + √7) (3 – √7)",
-                    "answer_d": "3√7",
-                    "answer_right": "(3 + √7) (3 – √7)"
-               },
-               {
-                    "question": "The addition of a rational number and an irrational number is equal to:",
-                    "answer_a": "rational number",
-                    "answer_b": "Irrational number",
-                    "answer_c": "Both",
-                    "answer_d": "None of the above",
-                    "answer_right": "Irrational number"
-               },
-               {
-                    "question": "If set A = {1, 2, 3, 4, 5,…} is given, then it represents:",
-                    "answer_a": "Whole numbers",
-                    "answer_b": "Rational Numbers",
-                    "answer_c": "Natural numbers",
-                    "answer_d": " Complex numbers",
-                    "answer_right": "Natural numbers"
-               },
-               {
-                    "question": "If p and q are integers and is represented in the form of p/q, then it is a:",
-                    "answer_a": "Whole number",
-                    "answer_b": "Rational number",
-                    "answer_c": "Natural number",
-                    "answer_d": "Even number",
-                    "answer_right": "Rational number"
-               },
-               {
-                    "question": "The largest number that divides 70 and 125, which leaves the remainders 5 and 8, is:",
-                    "answer_a": "65",
-                    "answer_b": "15",
-                    "answer_c": "13",
-                    "answer_d": "25",
-                    "answer_right": "13"
-               },
-               {
-                    "question": "The decimal expansion of the rational number 23/(22 . 5) will terminate after",
-                    "answer_a": "one decimal place",
-                    "answer_b": "two decimal places",
-                    "answer_c": "three decimal places",
-                    "answer_d": "more than 3 decimal places",
-                    "answer_right": "two decimal places"
-               },
-               {
-                    "question": " Euclid’s division lemma states that for two positive integers a and b, there exist unique integers q and r such that a = bq + r, where r must satisfy",
-                    "answer_a": "1 < r < b ",
-                    "answer_b": "0 < r ≤ b",
-                    "answer_c": "0 ≤ r < b ",
-                    "answer_d": "0 < r < b",
-                    "answer_right": "0 ≤ r < b "
-               },
-               {
-                    "question": "The prime factorization of 96 is",
-                    "answer_a": "2^5 × 3",
-                    "answer_b": "2^6",
-                    "answer_c": "2^4 × 3",
-                    "answer_d": "2^4 × 32",
-                    "answer_right": "2^5 × 3"
-               }
-          ]
-     },
-     { "exam_name": "networking",
-          "questions": [
-            {
-              "question": "Which Rapid Spanning Tree Protocol port state is a combination of standard 802.1D STP's disabled, blocking and listening states?",
-              "answer_a": "Blocking",
-              "answer_b": "Discarding",
-              "answer_c": "Learning",
-              "answer_d": "Forwarding",
-              "answer_right": "Discarding"
-            },
-            {
-              "question": "Host A receives a frame and discards it after determining it is corrupt. Which OSI layer checks frames for errors?",
-              "answer_a": "Physical",
-              "answer_b": "Data-link",
-              "answer_c": "Application",
-              "answer_d": "Network",
-              "answer_right": "Data-link"
-            },
-            {
-              "question": "No matter how it's configured, a single switch port is considered what?",
-              "answer_a": "A separate unicast domain",
-              "answer_b": "A separate broadcast domain",
-              "answer_c": "A separate multicast domain",
-              "answer_d": "A separate collision domain",
-              "answer_right": "A separate collision domain"
-            },
-            {
-              "question": "Identify which of the services below uses both TCP and UDP ports.",
-              "answer_a": "FTP",
-              "answer_b": "TFTP",
-              "answer_c": "DNS",
-              "answer_d": "Telnet",
-              "answer_right": "DNS"
-            },
-        {
-              "question": "A router with a BGP autonomous system number of 65001 is peered with another router with the same BGP AS. Which of the following is true?",
-              "answer_a": "The ebgp multihop command must be configured to reach an established state.",
-              "answer_b": "The routers are considered iBGP neighbors.",
-              "answer_c": "A BGP establishment error will occur because of the AS conflict.",
-              "answer_d": "The routers are considered eBGP neighbors.",
-              "answer_right": "The routers are considered iBGP neighbors."
-            },
-        {
-              "question": "No matter how it's configured, a single switch port is considered what?",
-              "answer_a": "A separate unicast domain",
-              "answer_b": "A separate broadcast domain",
-              "answer_c": "A separate multicast domain",
-              "answer_d": "A separate collision domain",
-              "answer_right": "A separate collision domain"
-            },
-        {
-              "question": "What is the default 802.1D short spanning tree port cost of a 10 Gbps Ethernet link?",
-              "answer_a": "10",
-              "answer_b": "4",
-              "answer_c": "2",
-              "answer_d": "2000",
-              "answer_right": "2"
-            },
-        {
-              "question": "Which of the following is the correct syntax to configure a switch port as a standard user port on VLAN 10 for data and VLAN 50 for VoIP?",
-              "answer_a": "TechTarget-SW1(config-if)#switchport mode trunk TechTarget-SW1(config-if)#switchport access vlan 10 TechTarget-SW1(config-if)#switchport voice vlan 50",
-              "answer_b": "TechTarget-SW1(config-if)#switchport mode access TechTarget-SW1(config-if)#switchport access vlan 10 TechTarget-SW1(config-if)#switchport voice vlan 50",
-              "answer_c": "TechTarget-SW1(config-if)#switchport mode access TechTarget-SW1(config-if)#switchport access vlan 10 TechTarget-SW1(config-if)#switchport voip vlan 50",
-              "answer_d": "TechTarget-SW1(config-if)#switchport mode access TechTarget-SW1(config-if)#switchport access vlan 50 TechTarget-SW1(config-if)#switchport voice vlan 10",
-              "answer_right": "TechTarget-SW1(config-if)#switchport mode access TechTarget-SW1(config-if)#switchport access vlan 10 TechTarget-SW1(config-if)#switchport voice vlan 50"
-            },
-        {
-              "question": "Your manager has requested you indicate which of the above ports will be Spanning Tree Protocol-designated ports.",
-              "answer_a": "Switch V1, Port Fa0/0; Switch V3, Port Fa0/0; Switch V3, Port Fa0/24",
-              "answer_b": "Switch V1, Port Fa0/24; Switch V0, Port Fa0/0; Switch V1, Port Fa0/24",
-              "answer_c": "Switch V1, Port Fa0/24; Switch V1, Port Fa0/0; Switch V2, Port Fa0/24",
-              "answer_d": "Switch V1, Port Fa0/24; Switch V2, Port Fa0/0; Switch V2, Port Fa0/24",
-              "answer_right": "Switch V1, Port Fa0/24; Switch V2, Port Fa0/0; Switch V2, Port Fa0/24"
-            },
-        {
-              "question": "Which of the following EXEC commands will reset LLDP traffic error counters?",
-              "answer_a": "clear lldp",
-              "answer_b": "clear lldp counters",
-              "answer_c": "clear table lldp",
-              "answer_d": "clear lldp table",
-              "answer_right": "clear lldp counters"
-            }
-          ]
-        }
-        
-        
-]
+               "subject_name":"Chemistry",
+               "question": "What is the process by which a substance changes directly from a solid to a gas without becoming a liquid first?",
+               "answer_a": "Deposition",
+               "answer_b": "Condensation",
+               "answer_c": "Sublimation",
+               "answer_d": "Evaporation",
+               "answer_right": "Sublimation"
+          },
+          {
+               "question": "What is the term for the minimum amount of energy required to start a chemical reaction?",
+               "answer_a": "Catalyst",
+               "answer_b": "Activation energy",
+               "answer_c": "Substrate",
+               "answer_d": "Inhibitor",
+               "answer_right": "Activation energy"
+          },
+          {
+               "question": "Which gas is produced during the process of photosynthesis?",
+               "answer_a": "Oxygen",
+               "answer_b": "Carbon dioxide",
+               "answer_c": "Hydrogen",
+               "answer_d": "Methane",
+               "answer_right": "Oxygen"
+          },
+          {
+               "question": "What is the term for a substance that speeds up a chemical reaction without being consumed itself?",
+               "answer_a": "Reactant",
+               "answer_b": "Inhibitor",
+               "answer_c": "Catalyst",
+               "answer_d": "Precipitate",
+               "answer_right": "Catalyst"
+          },
+          {
+               "question": "Which of the following is a noble gas?",
+               "answer_a": "Neon",
+               "answer_b": "Fluorine",
+               "answer_c": "Sulfur",
+               "answer_d": "Chlorine",
+               "answer_right": "Neon"
+          },
+          {
+               "question": "What is the term for the bond formed by the attraction between positively and negatively charged ions?",
+               "answer_a": "Covalent bond",
+               "answer_b": "Ionic bond",
+               "answer_c": "Hydrogen bond",
+               "answer_d": "Metallic bond",
+               "answer_right": "Ionic bond"
+          },
+          {
+               "question": "What is the chemical formula for hydrogen peroxide?",
+               "answer_a": "H2O",
+               "answer_b": "HO",
+               "answer_c": "H2O2",
+               "answer_d": "H2",
+               "answer_right": "H2O2"
+          },
+          {
+               "question": "What is the most common isotope of hydrogen?",
+               "answer_a": "Deuterium",
+               "answer_b": "Protium",
+               "answer_c": "Tritium",
+               "answer_d": "Quadium",
+               "answer_right": "Protium"
+          },
+          {
+               "question": "Which element has the highest electronegativity on the periodic table?",
+               "answer_a": "Fluorine",
+               "answer_b": "Oxygen",
+               "answer_c": "Chlorine",
+               "answer_d": "Nitrogen",
+               "answer_right": "Fluorine"
+          },
+          {
+               "question": "What is the process by which a substance changes from a gas to a liquid called?",
+               "answer_a": "Condensation",
+               "answer_b": "Vaporization",
+               "answer_c": "Sublimation",
+               "answer_d": "Deposition",
+               "answer_right": "Condensation"
+          }
+     ]
+}
+
