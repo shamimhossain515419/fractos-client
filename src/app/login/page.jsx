@@ -87,7 +87,7 @@ const Login = () => {
 
                         <div className={`${loginBtnCSS}  text-xl    buttonColor text-black  flex justify-center items-center`}>
                             {
-                                componentLevelLoader?.loading ? <><ComponentLevelLoader loading={componentLevelLoader.loading} text={'Login..'}></ComponentLevelLoader> </> : <button type='submit'> Login</button>
+                                componentLevelLoader?.loading ? <><ComponentLevelLoader loading={componentLevelLoader.loading} text={'Login...'}></ComponentLevelLoader> </> : <button type='submit'> Login</button>
                             }
 
                         </div>

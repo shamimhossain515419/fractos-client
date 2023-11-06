@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import DUCUnit from '@/Components/ArchiveDUCUnit/DUCUnit';
 import { GetAdmission } from '@/services/admission';

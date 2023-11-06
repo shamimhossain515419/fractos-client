@@ -11,7 +11,7 @@ const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 //
 const GlobalState = ({ children }) => {
-      const [openModal, setOpenModal] = useState(false);
+     const [openModal, setOpenModal] = useState(false);
      const [loading, setLoading] = useState(true)
      const [user, setUser] = useState(null);
      const [Error, setError] = useState(false)
@@ -60,8 +60,9 @@ const GlobalState = ({ children }) => {
           return signOut(auth);
      }
 
-     const googleSignIn = () => {
-          return signInWithPopup(auth, googleProvider);
+     const googleSignIn = async () => {
+          const data = await signInWithPopup(auth, googleProvider);
+          return data;
      }
      //
 

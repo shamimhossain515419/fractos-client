@@ -4,7 +4,7 @@ import { GlobalContext } from '@/GlobalState';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useContext } from 'react';
-import { AiOutlineHome } from 'react-icons/ai';
+import { AiFillFolderAdd, AiOutlineHome } from 'react-icons/ai';
 import { BsArchive } from 'react-icons/bs';
 import { PiExamBold } from 'react-icons/pi';
 import { MdOutlineLeaderboard } from 'react-icons/md';
@@ -46,6 +46,14 @@ const DashboardLayout = ({ children }) => {
                                              <h1 className=' text-base md:text-lg f font-normal '> Dashboard </h1>
                                         </Link>
 
+                                        <Link
+                                             href="/dashboard/academic"
+                                             className={`${pathname == "/dashboard/mock-exam" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+
+                                        >
+                                             <AiFillFolderAdd size={24}></AiFillFolderAdd>
+                                             <h1 className=' text-base md:text-lg f font-normal '>Academic </h1>
+                                        </Link>
                                         <Link
                                              href="/dashboard/mock-exam"
                                              className={`${pathname == "/dashboard/mock-exam" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
@@ -109,7 +117,7 @@ const DashboardLayout = ({ children }) => {
                               <div className='   space-y-2'>
                                    <div className='    md:block'>
                                         <div className='  my-2  p-4   flex items-center gap-5'>
-                                      
+
                                              <Link href={'/'} >   <Image className=" w-[150px] object-fill " src={logo} alt="image"></Image></Link>
                                         </div>
                                    </div>
@@ -131,6 +139,15 @@ const DashboardLayout = ({ children }) => {
                                         <h1 className=' text-base md:text-lg f font-normal '> Mock exam </h1>
                                    </Link>
 
+
+                                   <Link
+                                        href="/dashboard/academic"
+                                        className={`${pathname == "/dashboard/mock-exam" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+
+                                   >
+                                        <AiFillFolderAdd size={24}></AiFillFolderAdd>
+                                        <h1 className=' text-base md:text-lg f font-normal '>Academic </h1>
+                                   </Link>
                                    <Link
                                         href="/dashboard/archive"
                                         className={`${pathname == "/dashboard/archive" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
