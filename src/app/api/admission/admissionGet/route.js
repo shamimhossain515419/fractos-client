@@ -1,5 +1,7 @@
+
+
 import connectToDB from "@/database";
-import Questions from "@/models/question";
+import admissionBlog from "@/models/admissionblog";
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
@@ -8,10 +10,8 @@ export async function GET(req) {
      try {
           await connectToDB();
           const { searchParams } = new URL(req.url);
-          const subject = searchParams.get("subject");
-
-
-          const extractUser = await Questions.find({ exam_name: { $regex: subject, $options: "i" } });
+          const exam_name = searchParams.get("subject");
+         const extractUser = await admissionBlog.find({CollegeName: { $regex: exam_name, $options: "i" }});
           if (extractUser) {
                return NextResponse.json({
                     success: true,

@@ -1,31 +1,34 @@
+
+
 import connectToDB from "@/database";
-import Questions from "@/models/question";
+import admissionBlog from "@/models/admissionblog";
 import { NextResponse } from "next/server";
-
 export const dynamic = "force-dynamic";
-
 export async function GET(req) {
+
      try {
           await connectToDB();
           const { searchParams } = new URL(req.url);
-          const subject = searchParams.get("subject");
+          const path = searchParams.get("university");
 
+          const SingleData = await admissionBlog.findOne({ path });
 
-          const extractUser = await Questions.find({ exam_name: { $regex: subject, $options: "i" } });
-          if (extractUser) {
+          if (SingleData) {
                return NextResponse.json({
                     success: true,
-                    data: extractUser,
+                    data: SingleData
                });
           } else {
                return NextResponse.json({
                     success: false,
-                    message: "Failed to get question not found  info ! Please try again",
+                    message: "failed to  Blog data ! Please try again later",
                });
           }
 
 
+
      } catch (e) {
+          console.log(e);
           return NextResponse.json({
                success: false,
                message: "Something went wrong ! Please try again later",

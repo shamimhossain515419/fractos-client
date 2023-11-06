@@ -11,8 +11,7 @@ const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 //
 const GlobalState = ({ children }) => {
-
-     const [openModal, setOpenModal] = useState(false);
+      const [openModal, setOpenModal] = useState(false);
      const [loading, setLoading] = useState(true)
      const [user, setUser] = useState(null);
      const [Error, setError] = useState(false)
@@ -20,7 +19,7 @@ const GlobalState = ({ children }) => {
      const [userinfo, setUserinfo] = useState(null)
      const [isUserModalOpen, setIsUserModalOpen] = useState(false);
 
-
+     const [Open, setOpen] = useState(false);
 
      const [componentLevelLoader, setComponentLevelLoader] = useState({
           loading: false,
@@ -107,6 +106,7 @@ const GlobalState = ({ children }) => {
           loginUser, logOutUser,
           googleSignIn, setIsAdmin, isAdmin,
           setIsUserModalOpen, isUserModalOpen,
+          Open, setOpen
 
      }
 
