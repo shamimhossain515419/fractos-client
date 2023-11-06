@@ -12,18 +12,23 @@ const latoFont = Lato({
 const page = () => {
 
     return (
-        <div className='relative'>
+        <div className='relative min-h-screen bg-cover bg-center bg-teacher-hero-bg'>
             {/* HERO SECTION */}
-            <div class={`max-h-screen bg-cover bg-center px-5  ${latoFont.className} absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-full `}>
+            <div class={` px-5  ${latoFont.className} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 `}>
                 <h1 className={`text-6xl md:text-5xl font-black`}>Unlock Your Teaching Potential</h1>
                 <br className='mb-2' />
                 <p className='text-4xl md:text-3xl text-[#3498DB]'>Discover Our Tailored Services to Empower Educators</p>
                 <br className='mb-16' />
                 {/* CTA BTN GROUP */}
                 <div className='flex items-center gap-8 justify-center'>
-                    <Link href={'/login'} className="px-5 py-2 border-2 hover:border-white transition-all border-[#27895C] text-white bg-[#27895C] hover:bg-[#black font-mediumFe1] rounded-full font-mediumer:shadow-lg font-bold">GET STARTED</Link>
+                    <Link href={'/teacher/apply'} className="px-5 py-2 border-2 hover:border-white transition-all border-[#27895C] text-white bg-[#27895C] hover:bg-[#black font-mediumFe1] rounded-full font-mediumer:shadow-lg font-bold">GET STARTED</Link>
                     <Link href={'/register'} className="px-3 py-2 bg-transparent text-white border-2 border-slate-600 hover:bg-slate-600 rounded-full hover:shadow-lg transition-all font-medium">Learn More</Link>
                 </div>
+            </div>
+
+            {/* SERVICES SECTION */}
+            <div>
+
             </div>
         </div>
     );

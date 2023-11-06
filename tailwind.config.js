@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'teacher-hero-bg': "url('/teacher-landing-page/hero-bg.jpg')",
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
