@@ -28,7 +28,7 @@ const Premium = () => {
                     <div className="md:col-span-8 w-full">
                         <h3 className="text-xl md:text-2xl mb-10  primary font-bold">Live Exam</h3>
                         <p className="font-semibold text-lg">
-                            Our  feature offers users the opportunity to take real-time, proctored exams in a secure and controlled environment, simulating the actual exam experience. It includes timed examinations to help users practice effective time management and receive instant performance feedback. Real-time peer comparison enables users to gauge their performance relative to others, enhancing their preparation for the actual exam.
+                            Our "Live Exam" feature offers users the opportunity to take real-time, proctored exams in a secure and controlled environment, simulating the actual exam experience. It includes timed examinations to help users practice effective time management and receive instant performance feedback. Real-time peer comparison enables users to gauge their performance relative to others, enhancing their preparation for the actual exam.
                         </p>
                     </div>
                 </div>
