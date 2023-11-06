@@ -79,6 +79,20 @@ const page = () => {
                     </div>
                 </div>
             </div>
+
+            {/* CTA SECTION */}
+            <section className="bg-blue-500 text-white py-12">
+                <div className="max-w-3xl mx-auto text-center">
+                    <h2 className="text-3xl font-semibold mb-4">Ready to join our team?</h2>
+                    <p className="text-lg mb-6">Apply now to start your teaching journey with us.</p>
+                    <Link
+                        href={'/teacher/apply'} // Replace with the actual link to your teacher application page
+                        className="bg-white text-blue-500 hover:bg-blue-100 hover:text-blue-600 py-2 px-4 rounded-full text-lg font-semibold transition duration-300"
+                    >
+                        Apply Now
+                    </Link>
+                </div>
+            </section>
         </div>
     );
 };
