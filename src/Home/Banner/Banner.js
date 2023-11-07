@@ -12,7 +12,7 @@ const Banner = () => {
           <Image src={banner} height={600} width={500}></Image>
         </div>
         <div className=' lg:col-span-6'>
-          <h1 className='text-2xl    primary md:text-3xl font-extrabold mb-10 lg:mt-32 mx-auto text-center'>
+          <h1 className='text-2xl primary md:text-3xl font-extrabold mb-10 mt-10 mx-auto text-center'>
             Now Prepare For Your Exams With <span>Fractos</span>
           </h1>
           <h2 className='text-lg mb-5 text-center'>
