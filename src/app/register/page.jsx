@@ -22,7 +22,7 @@ const Page = () => {
     const [isHidden, setIsHidden] = useState(true)
     const [isHidden2, setIsHidden2] = useState(true)
 
-    const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg  outline-none w-full border-2 border-gray-200  focus:border-sky-400 bg-white';
+    const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg primaryBg outline-none w-full border-2 border-gray-200  focus:border-sky-400';
     const loginBtnCSS = 'w-full p-2 font-bold text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
 
     const registrationHandler = async (data) => {
