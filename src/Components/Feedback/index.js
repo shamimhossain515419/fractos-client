@@ -29,7 +29,7 @@ export default function Feedback() {
 
 
 
-               <div className='   py-8'>
+               {/* <div className='   py-8'>
                     <Container>
                          <Swiper
                               spaceBetween={30}
@@ -163,7 +163,7 @@ export default function Feedback() {
 
                          </Swiper>
                     </Container>
-               </div>
+               </div> */}
 
 
 
