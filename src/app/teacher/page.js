@@ -16,6 +16,13 @@ const page = () => {
         <div className=''>
             {/* HERO SECTION */}
             <div class={` min-h-screen px-5  bg-cover bg-center bg-teacher-hero-bg ${latoFont.className} relative`}>
+            <Link
+                    href={'/'}
+                    className='ml-5 mt-5 inline-block rounded-full bg-blue-500 p-3'
+                >
+                    <Image src={'/arrow.png'} width={32} height={32}></Image>
+                </Link>
+               
                 <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
                     <h1 className={`text-6xl md:text-5xl font-black`}>Unlock Your Teaching Potential</h1>
                     <br className='mb-2' />
