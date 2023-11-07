@@ -1,11 +1,48 @@
+"use client"
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
 const page = () => {
+    const {register, handleSubmit} = useForm();
+
+    const handleTeacherApplicationForm = (data) =>{
+
+    }
     return (
-        <div className='grid grid-cols-2 max-h-screen min-h-screen overflow-y-scroll text-black'>
-            {/* LEFT SIDE */}
-            <div className="col-span-2 w-full lg:col-span-1 p-6 bg-gray-100">
-                {/* terms and conditions content here */}
+        <div className='min-h-screen overflow-y-scroll text-black'>
+            <div className="p-6 bg-white shadow-2xl">
+                {/*teacher application form here */}
+                <h2 className='text-center text-2xl font-black mb-5'>Teacher Application Form</h2>
+                <form onSubmit={handleSubmit(handleTeacherApplicationForm)}>
+                    {/* FIRST AND LAST NAME */}
+                    <div className='grid grid-cols-2 gap-3'>
+                        <div className='col-span-2 lg:col-span-1 flex flex-col'>
+                            <label htmlFor="firstName" className='font-medium' >First Name</label>
+                            <input {...register('firstName')} type="text" name="firstName" className='py-2 px-3 rounded-md border border-gray-300 active:border-blue-500' />
+                        </div>
+                        <div className='col-span-2 lg:col-span-1 flex flex-col'>
+                            <label htmlFor="firstName" className='font-medium'>Last Name</label>
+                            <input {...register('lastName')} type="text" name="firstName" className='py-2 px-3 rounded-md border border-gray-300 active:border-blue-500' />
+                        </div>
+                    </div>
+                    {/* EMAIL */}
+                    <div className='flex flex-col mt-5'>
+                        <label htmlFor="firstName" className='font-medium'>Email Address</label>
+                        <input {...register('email')} type="text" name="firstName" className='py-2 px-3 rounded-md border border-gray-300 active:border-blue-500' />
+                    </div>
+                    {/* PHONE NUMBER */}
+                    <div className='flex flex-col mt-5'>
+                        <label htmlFor="firstName" className='font-medium'>Phone Number</label>
+                        <input {...register('phoneNumber')} type="text" name="firstName" className='py-2 px-3 rounded-md border border-gray-300 active:border-blue-500' />
+                    </div>
+                    {/* ADD CV */}
+                    <div className='flex flex-col gap-2 mt-5'>
+                        <label htmlFor="firstName" className='font-medium'>CV/RESUME</label>
+                        <input {...register('cvFile')} type="file" name="firstName" className='py-2 px-3 rounded-md border border-gray-300 active:border-blue-500' />
+                    </div>
+
+                    {/* TERMS AND CONDITIONS */}
+                    <div className=" p-6 bg-gray-100 mt-5 rounded-md shadow-lg">
                 <h1 className='text-xl lg:text-2xl font-bold mb-5'>Terms & Conditions:</h1>
                 <ol className='space-y-3'>
                     <li className='font-semibold'>
@@ -40,41 +77,10 @@ const page = () => {
                     </li>
                 </ol>
             </div>
-            {/* RIGHT SIDE */}
-            <div className="col-span-2 w-full lg:col-span-1 p-6 bg-white shadow-2xl">
-                {/*teacher application form here */}
-                <h2 className='text-center text-2xl font-black mb-5'>Application Form</h2>
-                <form>
-                    {/* FIRST AND LAST NAME */}
-                    <div className='grid grid-cols-2 gap-3'>
-                        <div className='col-span-2 lg:col-span-1 flex flex-col'>
-                            <label htmlFor="firstName" className='font-medium'>First Name</label>
-                            <input type="text" name="firstName" className='py-2 px-3 rounded-md border border-gray-300 active:border-blue-500' />
-                        </div>
-                        <div className='col-span-2 lg:col-span-1 flex flex-col'>
-                            <label htmlFor="firstName" className='font-medium'>First Name</label>
-                            <input type="text" name="firstName" className='py-2 px-3 rounded-md border border-gray-300 active:border-blue-500' />
-                        </div>
-                    </div>
-                    {/* EMAIL */}
-                    <div className='flex flex-col mt-5'>
-                        <label htmlFor="firstName" className='font-medium'>Email Address</label>
-                        <input type="text" name="firstName" className='py-2 px-3 rounded-md border border-gray-300 active:border-blue-500' />
-                    </div>
-                    {/* PHONE NUMBER */}
-                    <div className='flex flex-col mt-5'>
-                        <label htmlFor="firstName" className='font-medium'>Phone Number</label>
-                        <input type="text" name="firstName" className='py-2 px-3 rounded-md border border-gray-300 active:border-blue-500' />
-                    </div>
-                    {/* ADD CV */}
-                    <div className='flex flex-col gap-2 mt-5'>
-                        <label htmlFor="firstName" className='font-medium'>CV/RESUME</label>
-                        <input type="file" name="firstName" className='py-2 px-3 rounded-md border border-gray-300 active:border-blue-500' />
-                    </div>
                     <button
                         type='submit'
                         href={'/teacher/apply'} // Replace with the actual link to your teacher application page
-                        className="text-blue-500 hover:text-white mt-5 bg-blue-100 hover:text-blue-600 py-2 px-4 rounded-full text-lg font-semibold transition duration-100 w-full hover:bg-blue-500"
+                        className="text-blue-500 hover:text-white mt-5 bg-blue-100 py-2 px-4 rounded-full text-lg font-semibold transition duration-100 w-full hover:bg-blue-500"
                     >
                         Submit Application
                     </button>
