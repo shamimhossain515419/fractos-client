@@ -2,6 +2,7 @@ import React from 'react';
 import img from './Images/teacherImage.png'
 import Image from 'next/image';
 import './TeacherProfile.css'
+import TeachersProfile from '@/app/teachers-profile/page';
 const TeacherProfile = () => {
 
   const data =
@@ -130,6 +131,7 @@ const TeacherProfile = () => {
           }
 
         </div>
+       
 
               <div className='text-center'>
               <button className='font-bold text-xl border-2 border-[#27deb7] rounded-lg  p-4 hover:bg-blue-700 text-[#0EE6B8]'>Create Batch</button>

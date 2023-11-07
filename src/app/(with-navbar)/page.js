@@ -8,14 +8,19 @@ import Container from "@/Components/Container/Container";
 
 import Subscribe from "@/Components/Subscribe/Subscribe";
 
+import TeacherProfile from "@/Components/TeacherProfile/TeacherProfile";
+import DisplayPage from "@/Components/Class Page/DisplayPage";
+
+
 export default function Home() {
   return (
     <div>
       <Container>
         <Banner></Banner>
+        <DisplayPage> </DisplayPage>
 
         {/* <BannerSwiper></BannerSwiper> */}
-  
+
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
@@ -26,10 +31,16 @@ export default function Home() {
           <Premium></Premium>
         </div>
       </Container>
-        
+
       <div className=" py-10">
         <Subscribe></Subscribe>
       </div>
+      
+
+      <TeacherProfile> </TeacherProfile>
+
+      
+
       <div className="">
         <Feedback></Feedback>
       </div>
