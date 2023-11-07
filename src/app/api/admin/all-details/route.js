@@ -1,7 +1,8 @@
 
 
 import connectToDB from "@/database";
-import Order from "@/models/Order";
+import OrdersPrice from "@/models/Order";
+
 import allUsers from "@/models/Users";
 import Admission from "@/models/admission";
 import Exam_review from "@/models/exam-reviews";
@@ -15,7 +16,7 @@ export async function GET(req) {
           await connectToDB();
 
 
-          const order = await Order.find({})
+          const order = await OrdersPrice.find({})
           const admission = await Admission.find({})
           const exam_reviews = await Exam_review.find({})
           const allUser = await allUsers.find({})
