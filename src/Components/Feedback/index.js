@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -15,7 +15,23 @@ import Image from 'next/image';
 import CommonTitle from '../CommonTitle/CommonTitle';
 
 import Container from '../Container/Container';
+import { FeedbackGet } from '@/services/Feedback';
 export default function Feedback() {
+
+     const [Feedback, setFeedback] = useState([])
+     const Get = async () => {
+          const result = await FeedbackGet();
+          console.log(result, "shamimadffd");
+          setFeedback(result)
+
+     }
+
+     useEffect(() => {
+          Get()
+     }, [1000])
+
+
+     console.log(Feedback);
      return (
           <div className=' w-full'>
 
@@ -64,25 +80,29 @@ export default function Feedback() {
                               modules={[Autoplay, Pagination, Navigation]}
                               className="mySwiper   md:px-10"
                          >
-                              <SwiperSlide className=' secondBg shadow-xl px-2'>
-                                   <div className=' flex justify-center items-center flex-col gap-2'>
-                                        <div>
-                                             <ReactStars
-                                                  value={5}
-                                                  count={5}
-                                                  size={24}
-                                                  color2={'#FACA51'} />
-                                        </div>
 
-                                        <h1 className=' text-xl  max-w-[600px] text-center  mx-auto font-normal my-2'> “Very cute dress and fun color. I am also very impressed by the quality of the linen. Excited to wear this dress in the summer!” </h1>
-                                        <p className=' my-2 secondColor'>Best learning website</p>
-                                        <div className=' bg-white h-[1px] w-[200px]'></div>
-                                        <div className=' flex items-center my-4  gap-4'>
-                                             <Image width={67} height={64} className=' w-16 h-16 rounded-full  border border-blue-400   object-fill ' src="https://img.freepik.com/free-psd/portrait-woman-using-tablet-device_23-2150116768.jpg?size=626&ext=jpg&ga=GA1.1.1266374889.1691075921&semt=ais" alt="" />
-                                             <h1 className=' text-xl  font-normal   primary'> Lachlan Simonds </h1>
+                              {
+                                   Feedback?.map(item => <SwiperSlide key={item?._id} className=' secondBg shadow-xl px-2'>
+                                        <div className=' flex justify-center items-center flex-col gap-2'>
+                                             <div>
+                                                  <ReactStars
+                                                       value={item?.rating}
+                                                       count={5}
+                                                       size={24}
+                                                       color2={'#FACA51'} />
+                                             </div>
+
+                                             <h1 className=' text-xl  max-w-[600px] text-center  mx-auto font-normal my-2'> “{item?.comment?.slice(0,100)}... </h1>
+                                             <p className=' my-2 secondColor'> {item?.title} </p>
+                                             <div className=' bg-white h-[1px] w-[200px]'></div>
+                                             <div className=' flex items-center my-4  gap-4'>
+                                                  <Image width={67} height={64} className=' w-16 h-16 rounded-full  border border-blue-400   object-fill ' src= {item?.photo ?item?.photo  :  "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"}   alt="" />
+                                                  <h1 className=' text-xl  font-normal  capitalize  primary'> {item?.name} </h1>
+                                             </div>
                                         </div>
-                                   </div>
-                              </SwiperSlide>
+                                   </SwiperSlide>)
+                              }
+
                               <SwiperSlide className=' secondBg  shadow-xl px-2'>
                                    <div className=' flex justify-center items-center flex-col gap-2'>
                                         <div>
