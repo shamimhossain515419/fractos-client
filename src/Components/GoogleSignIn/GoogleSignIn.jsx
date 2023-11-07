@@ -1,4 +1,5 @@
 import { GlobalContext } from '@/GlobalState';
+import { registerNewUser } from '@/services/users';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useContext } from 'react';
@@ -6,16 +7,28 @@ import Swal from 'sweetalert2';
 
 const GoogleSignIn = () => {
     const router = useRouter();
-    const {googleSignIn} = useContext(GlobalContext);
-    const googleSignInHandler = () =>{
-     
-            googleSignIn()
-            .then((result)=>{
-                Swal.fire(
-                    `Welcome, ${result.user.displayName}`
-                );
-                    router.push('/')
-            })
+    const { googleSignIn, componentLevelLoader, setComponentLevelLoader } = useContext(GlobalContext);
+    const googleSignInHandler = async () => {
+
+        const result = await googleSignIn();
+        const user = result?.user
+
+        const fromData = { email: user?.email, exam: 0, photo: user?.photoURL, name: user?.displayName, password: "", role: "user", category: "student", phone: 0, about: "", batch: "", collage: "", level: "", rank: 0, mark: 0 }
+
+        const data = await registerNewUser(fromData);
+
+        if (data?.massage) {
+            Swal.fire(
+                `Welcome, ${user.displayName}`
+            );
+            router.push('/dashboard/archive')
+        }
+
+
+
+
+
+
     }
     return (
         <div>

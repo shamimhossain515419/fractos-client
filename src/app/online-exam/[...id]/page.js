@@ -217,7 +217,7 @@ const page = () => {
                                                   <div>
                                                        <h1 className=' text-sm md:text-lg  font-medium my-1'> {index + 1}  .  {item?.question}  </h1>
                                                   </div>
-                                                  <div className={`    grid sm:grid-cols-4 md:grid-cols-2  gap-2 md:gap-4`}>
+                                                  <div className={`grid sm:grid-cols-4 md:grid-cols-2  gap-2 md:gap-4`}>
                                                        <div onClick={() => { setSelect(item?.answer_a), setSelectQuestion(item?.question), setSelectId([...selectId, index]) }} className='   bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 1.</span> {item?.answer_a} </div>
                                                        <div onClick={() => { setSelect(item?.answer_b), setSelectQuestion(item?.question), setSelectId([...selectId, index]) }} className='   bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 2.</span> {item?.answer_b}</div>
                                                        <div onClick={() => { setSelect(item?.answer_c), setSelectQuestion(item?.question), setSelectId([...selectId, index]) }} className='   bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 3.</span> {item?.answer_c} </div>

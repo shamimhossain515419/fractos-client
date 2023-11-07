@@ -22,8 +22,8 @@ const TeacherProfile = () => {
         "batch_no": "1",
         "enrolled_student": "200",
         "fees": "1500",
-        "class_time": "7am-8am",
-        "day": "Saturday,Monday,Wednesday"
+        "class_time":"7am-8am",
+        "day":"Saturday,Monday,Wednesday"
       },
       {
         "id": 2,
@@ -31,8 +31,8 @@ const TeacherProfile = () => {
         "batch_no": "2",
         "enrolled_student": "200",
         "fees": "1500",
-        "class_time": "8am-9am",
-        "day": "Saturday,Monday,Wednesday"
+        "class_time":"8am-9am",
+        "day":"Saturday,Monday,Wednesday"
       },
       {
         "id": 3,
@@ -40,8 +40,8 @@ const TeacherProfile = () => {
         "batch_no": "1",
         "enrolled_student": "200",
         "fees": "1500",
-        "class_time": "7am-8am",
-        "day": "Sunday,Tuesday,Thursday"
+        "class_time":"7am-8am",
+        "day":"Sunday,Tuesday,Thursday"
       },
       {
         "id": 4,
@@ -49,8 +49,8 @@ const TeacherProfile = () => {
         "batch_no": "1",
         "enrolled_student": "200",
         "fees": "1000",
-        "class_time": "8am-9am",
-        "day": "Sunday,Tuesday,Thursday"
+        "class_time":"8am-9am",
+        "day":"Sunday,Tuesday,Thursday"
       },
       {
         "id": 5,
@@ -58,8 +58,8 @@ const TeacherProfile = () => {
         "batch_no": "1",
         "enrolled_student": "200",
         "fees": "1000",
-        "class_time": "4.30pm-5.30pm",
-        "day": "Sunday,Tuesday,Thursday"
+        "class_time":"4.30pm-5.30pm",
+        "day":"Sunday,Tuesday,Thursday"
       },
       {
         "id": 6,
@@ -67,8 +67,8 @@ const TeacherProfile = () => {
         "batch_no": "2",
         "enrolled_student": "200",
         "fees": "1000",
-        "class_time": "4.30pm-5.30pm",
-        "day": "Saturday,Monday,Wednesday"
+        "class_time":"4.30pm-5.30pm",
+        "day":"Saturday,Monday,Wednesday"
       },
     ]
   }
@@ -99,7 +99,7 @@ const TeacherProfile = () => {
       </div>
       <div className='border rounded-lg border-[#0EE6B8] p-8 mx-4 my-8'>
 
-        <p className='font-bold text-3xl text-[#0EE6B8] text-center'>Batches</p>
+      <p className='font-bold text-3xl text-[#0EE6B8] text-center'>Batches</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
 
           {
@@ -108,8 +108,8 @@ const TeacherProfile = () => {
 
                 <div className='backgroundImage p-8 rounded-lg text-center'>
 
-                  <h1 className='text-2xl font-bold'>{batch.subject_name}</h1>
-                  <h1 className='text-2xl font-bold'>Batch: {batch.batch_no}</h1>
+                <h1 className='text-2xl font-bold'>{batch.subject_name}</h1>
+                <h1 className='text-2xl font-bold'>Batch: {batch.batch_no}</h1>
                 </div>
 
                 <div className='mx-4 mt-8  text-[#0EE6B8]'>
@@ -117,9 +117,9 @@ const TeacherProfile = () => {
                   <p >Payment: {batch.fees}</p>
                   <p>Class Time: {batch.class_time}</p>
                   <p>{batch.day}</p>
-                  <div className=''>
-                    <button className='font-bold  border border-indigo-500 rounded-lg  p-2 hover:bg-indigo-700 text-[#0EE6B8] my-4'>Details</button>
-                  </div>
+                 <div className=''>
+                 <button className='font-bold  border border-indigo-500 rounded-lg  p-2 hover:bg-indigo-700 text-[#0EE6B8] my-4'>Details</button>
+                 </div>
 
                 </div>
 
@@ -131,9 +131,11 @@ const TeacherProfile = () => {
           }
 
         </div>
-        <div className='text-center'>
-          <button className='font-bold text-xl border-2 border-[#27deb7] rounded-lg  p-4 hover:bg-blue-700 text-[#0EE6B8]'>Create Batch</button>
-        </div>
+       
+
+              <div className='text-center'>
+              <button className='font-bold text-xl border-2 border-[#27deb7] rounded-lg  p-4 hover:bg-blue-700 text-[#0EE6B8]'>Create Batch</button>
+              </div>
       </div>
 
 
