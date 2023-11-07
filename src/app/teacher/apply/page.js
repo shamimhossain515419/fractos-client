@@ -1,4 +1,6 @@
 "use client"
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -11,6 +13,12 @@ const page = () => {
     return (
         <div className='min-h-screen overflow-y-scroll text-black'>
             <div className="p-6 bg-white shadow-2xl">
+                {/* BACK TO PREVIOUS PAGE */}
+                <Link
+                href={'/teacher'}
+                >
+                    <Image src={'/arrow.png'} width={32} height={32}></Image>
+                </Link>
                 {/*teacher application form here */}
                 <h2 className='text-center text-2xl font-black mb-5'>Teacher Application Form</h2>
                 <form onSubmit={handleSubmit(handleTeacherApplicationForm)}>
