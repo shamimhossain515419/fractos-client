@@ -7,6 +7,7 @@ import Banner from "@/Home/Banner/Banner";
 import Container from "@/Components/Container/Container";
 
 import Subscribe from "@/Components/Subscribe/Subscribe";
+import TeacherProfile from "@/Components/TeacherProfile/TeacherProfile";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       <div className=" py-10">
         <Subscribe></Subscribe>
       </div>
+      <TeacherProfile></TeacherProfile>
       <div className="">
         <Feedback></Feedback>
       </div>
