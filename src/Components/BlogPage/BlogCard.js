@@ -18,14 +18,14 @@ const BlogCard = () => {
                         <p className='flex items-center gap-1 text-xs'>
                             <span className={`${accentColor}`}>Others</span>
                             <span className='font-black pb-2'>.</span>
-                            <span>2 November 2023</span>
+                            <span className='text-[#E8EAED]'>2 November 2023</span>
                         </p>
                         <p className={`${accentColor} text-xs`}>3min read</p>
                     </div>
                     {/* TITLE AND FEATURED TEXT */}
                     <div>
-                        <h2 className=' text-base lg:text-lg font-semibold leading-[1.2] lg:leading-[1.4] mb-5 text-gray-200'>Higher Studies After HSC? Know the Top 10 Tips and Tricks part4</h2>
-                        <p className={`${bodyText} text-gray-200 `}>Arts Background: For Arts students, LAW is a very demanding subject. There are many more lucrative subjects such as Economics, International Relationship (IR), Journalism, and Communication. Arts students generally. </p>
+                        <h2 className=' text-base lg:text-lg font-semibold leading-[1.2] lg:leading-[1.4] mb-5 text-[#E8EAED]'>Higher Studies After HSC? Know the Top 10 Tips and Tricks part4</h2>
+                        <p className={`${bodyText} text-[#E8EAED]`}>Arts Background: For Arts students, LAW is a very demanding subject. There are many more lucrative subjects such as Economics, International Relationship (IR), Journalism, and Communication. Arts students generally. </p>
                     </div>
                     {/* READ FULL BTN */}
                     <div className='flex justify-end'>
