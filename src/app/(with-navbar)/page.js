@@ -1,4 +1,4 @@
-
+'use client'
 import Pricing from "@/Components/Pricing/Pricing";
 import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
@@ -8,8 +8,6 @@ import Container from "@/Components/Container/Container";
 
 import Subscribe from "@/Components/Subscribe/Subscribe";
 
-import TeacherProfile from "@/Components/TeacherProfile/TeacherProfile";
-import DisplayPage from "@/Components/Class Page/DisplayPage";
 
 
 export default function Home() {
@@ -17,9 +15,8 @@ export default function Home() {
     <div>
       <Container>
         <Banner></Banner>
-        <DisplayPage> </DisplayPage>
+        
 
-        {/* <BannerSwiper></BannerSwiper> */}
 
         <div className=" my-3">
           <CounterSection> </CounterSection>
@@ -37,7 +34,7 @@ export default function Home() {
       </div>
       
 
-      <TeacherProfile> </TeacherProfile>
+     
 
       
 

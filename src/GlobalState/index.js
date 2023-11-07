@@ -6,6 +6,7 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import { GetSingleUser, jwtSingUp } from '@/services/users';
 import Cookies from 'js-cookie';
 import app from '../../firebase/firebase.config';
+import { GetAllDetails } from '@/services/admin';
 export const GlobalContext = createContext(null);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -17,6 +18,7 @@ const GlobalState = ({ children }) => {
      const [Error, setError] = useState(false)
      const [setIsAdmin, isAdmin] = useState(false)
      const [userinfo, setUserinfo] = useState(null)
+ 
      const [isUserModalOpen, setIsUserModalOpen] = useState(false);
 
      const [Open, setOpen] = useState(false);
@@ -37,12 +39,6 @@ const GlobalState = ({ children }) => {
      const updateUserProfile = (name, photo) => {
           setLoading(true);
           return updateProfile(auth.currentUser, { displayName: name, photoURL: photo });
-          return updateProfile(auth.currentUser, {
-               displayName: name, photoURL: photo
-          })
-
-
-
      };
 
      const userCullaction = async (email) => {
@@ -72,11 +68,10 @@ const GlobalState = ({ children }) => {
 
      }
 
+ 
 
      useEffect(() => {
           const unsubscribe = onAuthStateChanged(auth, currentUser => {
-
-
                if (currentUser) {
                     setUser(currentUser);
                     setLoading(false);
@@ -107,7 +102,8 @@ const GlobalState = ({ children }) => {
           loginUser, logOutUser,
           googleSignIn, setIsAdmin, isAdmin,
           setIsUserModalOpen, isUserModalOpen,
-          Open, setOpen
+          Open, setOpen,
+       
 
      }
 

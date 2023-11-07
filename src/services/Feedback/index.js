@@ -21,3 +21,20 @@ export const FeedbackPost = async (fromDate) => {
 
 
 }
+export const FeedbackGet = async () => {
+
+     try {
+          const res = await fetch("/api/getFeedback", {
+               method: "GET",
+
+          });
+
+          const data = await res.json();
+
+          return data?.data;
+     } catch (e) {
+          console.log(e);
+     }
+
+
+}
