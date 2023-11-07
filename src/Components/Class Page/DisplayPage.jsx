@@ -1,5 +1,7 @@
 "use client"
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { MdOutlineAddCircle } from 'react-icons/md';
 
 const DisplayPage = () => {
     const [data, setData] = useState([]);
@@ -44,6 +46,12 @@ const DisplayPage = () => {
             
           </div> ))
         }
+        <Link href="/class">
+        <div className='w-80 pb-40 pt-40 rounded-2xl text-red text-gray-600 bg-white flex items-center justify-center flex-col'>
+          <MdOutlineAddCircle className='text-6xl '> </MdOutlineAddCircle> 
+         <p className='pt-5 text-xl'> Create a New Class </p>
+        </div>
+        </Link>
         
     </div>
   );

@@ -18,7 +18,6 @@ export default function Home() {
       <Container>
         <Banner></Banner>
         <DisplayPage> </DisplayPage>
-        <CreateClass> </CreateClass>
 
         {/* <BannerSwiper></BannerSwiper> */}
 
