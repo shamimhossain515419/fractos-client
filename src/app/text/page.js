@@ -20,11 +20,6 @@ const Page = () => {
   }
 
 
-
-
-
-
-
   const hanleCloet = async () => {
     const result = await admissionPost(higherMathData)
     console.log(result);
