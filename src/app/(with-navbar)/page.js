@@ -8,6 +8,8 @@ import Container from "@/Components/Container/Container";
 
 import Subscribe from "@/Components/Subscribe/Subscribe";
 
+import TeacherProfile from "@/Components/TeacherProfile/TeacherProfile";
+import DisplayPage from "@/Components/Class Page/DisplayPage";
 
 
 export default function Home() {
@@ -15,6 +17,7 @@ export default function Home() {
     <div>
       <Container>
         <Banner></Banner>
+        <DisplayPage> </DisplayPage>
 
         {/* <BannerSwiper></BannerSwiper> */}
 
@@ -33,6 +36,11 @@ export default function Home() {
         <Subscribe></Subscribe>
       </div>
       
+
+      <TeacherProfile> </TeacherProfile>
+
+      
+
       <div className="">
         <Feedback></Feedback>
       </div>
