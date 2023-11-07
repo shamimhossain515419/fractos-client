@@ -10,20 +10,6 @@ const latoFont = Lato({
 })
 
 
-// Color Palette:
-
-// Primary Color:
-
-// Deep Blue: #102B3A (Background)
-// Accent Colors:
-
-// Teal Blue: #3498DB (Highlight for active elements, links, and buttons)
-// White: #FFFFFF (For text and backgrounds)
-// Secondary Text Color:
-
-// Light Gray: #CCCCCC (For less prominent text)
-
-// THIS IS LANDING PAGE OF TEACHER FEATURES.
 const page = () => {
 
     return (

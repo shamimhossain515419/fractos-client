@@ -8,6 +8,7 @@ import Container from "@/Components/Container/Container";
 
 import Subscribe from "@/Components/Subscribe/Subscribe";
 
+
 export default function Home() {
   return (
     <div>
@@ -15,7 +16,7 @@ export default function Home() {
         <Banner></Banner>
 
         {/* <BannerSwiper></BannerSwiper> */}
-  
+
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
@@ -26,10 +27,11 @@ export default function Home() {
           <Premium></Premium>
         </div>
       </Container>
-        
+
       <div className=" py-10">
         <Subscribe></Subscribe>
       </div>
+      
       <div className="">
         <Feedback></Feedback>
       </div>
