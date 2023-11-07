@@ -7,6 +7,7 @@ import Banner from "@/Home/Banner/Banner";
 import Container from "@/Components/Container/Container";
 
 import Subscribe from "@/Components/Subscribe/Subscribe";
+import TeacherProfile from "@/Components/TeacherProfile/TeacherProfile";
 
 
 export default function Home() {
@@ -31,7 +32,11 @@ export default function Home() {
       <div className=" py-10">
         <Subscribe></Subscribe>
       </div>
+<<<<<<< HEAD
+      <TeacherProfile></TeacherProfile>
+=======
       
+>>>>>>> 34895640d78238a64d89731b70f6cdbf022b5333
       <div className="">
         <Feedback></Feedback>
       </div>
