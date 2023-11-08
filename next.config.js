@@ -30,7 +30,7 @@ module.exports = {
                     protocol: "https",
                     hostname: "poralekha.info"
                }
-               
+
           ],
      },
 };
