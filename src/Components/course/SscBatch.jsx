@@ -52,7 +52,7 @@ const SscBatch = () => {
 
     return (
         <div className='pb-8 pt-4'>
-        <div className='border border-sky-400 '>
+        <div className=''>
             <div className="grid grid-cols-1 lg:grid-cols-2 ">
             {
                 data.map(course=><div className='col ' key={course.id}>
