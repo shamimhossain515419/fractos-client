@@ -65,7 +65,7 @@ const Page = () => {
                             <h1 className='font-bold text-2xl lg:text-4xl text-center primary '>Create Account</h1>
                             <div>
                                 <label className='text-xl font-semibold mb-2 secondColor'>Full Name</label>
-                                <input className={`${inputFieldCommonCSS} bg-transparent text-black`} {...register("name", {
+                                <input className={`${inputFieldCommonCSS} bg-transparent `} {...register("name", {
                                     required: {
                                         value: true,
                                         message: 'Name is required'
@@ -75,7 +75,7 @@ const Page = () => {
                             </div>
                             <div>
                                 <label className='text-xl font-semibold mb-2 secondColor'>Email Address</label>
-                                <input className={`${inputFieldCommonCSS} bg-transparent text-black`} {...register("email", {
+                                <input className={`${inputFieldCommonCSS} bg-transparent `} {...register("email", {
                                     required: {
                                         value: true,
                                         message: 'Email is required'
@@ -86,7 +86,7 @@ const Page = () => {
                             <div>
                                 <label className='text-xl font-semibold mb-2 secondColor'>Password</label>
                                 <div className='relative'>
-                                    <input className={`${inputFieldCommonCSS} w-full bg-transparent text-black `} {...register("password", {
+                                    <input className={`${inputFieldCommonCSS} w-full bg-transparent  `} {...register("password", {
                                         required: {
                                             value: true,
                                             message: 'Password is required'
@@ -123,7 +123,7 @@ const Page = () => {
                             <div>
                                 <label className='text-xl font-semibold mb-2 secondColor'>Confirm Password</label>
                                 <div className="relative">
-                                    <input className={`${inputFieldCommonCSS} w-full bg-transparent text-black`} type={`${isHidden2 ? 'password' : 'text'}`} {...register("confirmPassword", {
+                                    <input className={`${inputFieldCommonCSS} w-full bg-transparent `} type={`${isHidden2 ? 'password' : 'text'}`} {...register("confirmPassword", {
                                         required: {
                                             value: true,
                                             message: 'Confirm Password'
@@ -156,7 +156,7 @@ const Page = () => {
                                 <p className='text-sm ml-3 text-red-600'>{errors.confirmPassword?.message === 'Confirm Password' ? '' : errors.confirmPassword?.message}</p>
                             </div>
 
-                            <div className={`${loginBtnCSS}  text-xl   buttonColor text-black  flex justify-center items-center`}>
+                            <div className={`${loginBtnCSS}  text-xl   buttonColor  text-white  flex justify-center items-center`}>
                                 {
                                     componentLevelLoader?.loading ? <><ComponentLevelLoader loading={componentLevelLoader.loading} text={'create..'}></ComponentLevelLoader> </> : <button type='submit'>  Create</button>
                                 }

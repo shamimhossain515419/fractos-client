@@ -52,10 +52,10 @@ const page = () => {
                                         <h1 className=' text-sm md:text-lg  font-medium my-1'> {index + 1}  .  {item?.question}  </h1>
                                    </div>
                                    <div className={`    grid sm:grid-cols-4 md:grid-cols-2  gap-2 md:gap-4`}>
-                                        <div className='  cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 1.</span> {item?.answer_a} </div>
-                                        <div className='  cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 2.</span> {item?.answer_b}</div>
-                                        <div className=' cursor-pointer  bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 3.</span> {item?.answer_c} </div>
-                                        <div className='  cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2'>   <span className='text-lg font-bold'> 4.</span> {item?.answer_d} </div>
+                                        <div className={` ${item?.answer_right == item?.answer_a  ? "primary" : ""} cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2`}>   <span className='text-lg font-bold'> 1.</span> {item?.answer_a} </div>
+                                        <div className={`${item?.answer_right == item?.answer_b  ? "primary" : ""} cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2`}>   <span className='text-lg font-bold'> 2.</span> {item?.answer_b}</div>
+                                        <div className={`${item?.answer_right == item?.answer_c  ? "primary" : ""} cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2`}>   <span className='text-lg font-bold'> 3.</span> {item?.answer_c} </div>
+                                        <div className={`${item?.answer_right == item?.answer_d  ? "primary" : ""} cursor-pointer bg-[#00000043]  px-4 py-[4px] rounded-2xl flex  gap-2`}>   <span className='text-lg font-bold'> 4.</span> {item?.answer_d} </div>
 
                                    </div>
                               </div>)

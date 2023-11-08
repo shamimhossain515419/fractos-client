@@ -24,14 +24,15 @@ const DisplayPage = () => {
 
   }, []);
   return (
-    <div className='grid lg:grid-cols-3 grid-cols-1 lg:gap-8 gap-8 py-10 lg:px-8 px-10'>
+    <div className='grid lg:grid-cols-4 text-white grid-cols-1 lg:gap-8 gap-8 py-10 lg:px-8 px-10'>
       {
-        data.map((item) => (<div className="card w-80 bg-base-100 shadow-2xl">
+        data.map((item) => (<div className="card  bg-base-100 shadow-2xl">
           <figure>
             <img
-              src={item.pic}
+              src={item?.pic}
               alt="Shoes"
               className='h-48 w-full'
+              
             />
           </figure>
           <div className="card-body">
