@@ -65,6 +65,8 @@ body {
 
 
 
+
+
 .backgrounDSubject {
 
   background-image:
@@ -74,3 +76,9 @@ body {
   color: white;
   padding: 10px;
 }
+
+#searchBar-part input {
+  border-bottom: 2px solid black;
+}
+
+
