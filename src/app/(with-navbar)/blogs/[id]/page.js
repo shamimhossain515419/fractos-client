@@ -12,6 +12,7 @@ const page = ({ params }) => {
             .then(data => {
                 setMyBlog(data.find(blog => blog.id = parseInt(id)))
             })
+            window.scrollTo(0, 0);
     }, [])
     return (
         <div>
