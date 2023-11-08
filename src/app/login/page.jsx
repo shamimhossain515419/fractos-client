@@ -19,7 +19,7 @@ const Login = () => {
     const router = useRouter();
     const [isHidden, setIsHidden] = useState(true)
 
-    const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg outline-none border-2 border-gray-200  focus:border-sky-400 bg-white';
+    const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg primaryBg outline-none border-2 border-gray-200  focus:border-sky-400';
     const loginBtnCSS = 'w-full p-2 font-bold text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
 
     const { register, handleSubmit } = useForm();
@@ -32,12 +32,13 @@ const Login = () => {
         })
         loginUser(data.email, data.password)
             .then(res => {
+
+                setComponentLevelLoader({
+                    loading: false,
+                    id: "",
+                })
                 Swal.fire(
-                    setComponentLevelLoader({
-                        loading: false,
-                        id: "",
-                    })
-                        `Welcome, ${res.user?.email}`,
+                    `Welcome, ${res.user?.email}`,
                 )
                 router.push('/')
             })
@@ -55,7 +56,7 @@ const Login = () => {
                         <h1 className='font-bold text-2xl lg:text-4xl primary text-center'>Login</h1>
                         <div className='flex flex-col'>
                             <label className='text-xl secondColor font-semibold mb-2'>Email Address</label>
-                            <input className={`${inputFieldCommonCSS}`} {...register('email')} type="email" placeholder='example@gmail.com' />
+                            <input className={`${inputFieldCommonCSS} text-black`} {...register('email')} type="email" placeholder='example@gmail.com' />
                         </div>
                         <div>
                             <div className='flex justify-between'>
@@ -63,7 +64,7 @@ const Login = () => {
                                 <button className='text-xl    font-medium hover:underline'>Forgot Password</button>
                             </div>
                             <div className='relative mt-2'>
-                                <input className={`${inputFieldCommonCSS} w-full`} {...register('password')} type={`${isHidden ? 'password' : 'text'}`} placeholder='XXXXXXXX' />
+                                <input className={`${inputFieldCommonCSS} w-full text-black`} {...register('password')} type={`${isHidden ? 'password' : 'text'}`} placeholder='XXXXXXXX' />
                                 <div onClick={() => setIsHidden(!isHidden)} className='absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer'>
                                     {isHidden ?
                                         <Image

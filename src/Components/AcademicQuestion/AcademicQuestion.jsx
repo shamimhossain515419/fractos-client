@@ -32,12 +32,12 @@ const AcademicQuestion = () => {
     return (
         <>
 
-            <div className=' flex justify-start items-center'>
-                <div className=''>
+            <div className=' md:flex justify-start items-center'>
+                <div className='text-center'>
                     <button onClick={() => setOpen(true)} className={`${Open ? " buttonColor text-black" : "border border-[#0EE6B8]  text-white "}   m-3 p-2 font-bold rounded `}> Admission</button>
                     <button onClick={() => setOpen(false)} className={`${Open ? "border border-[#0EE6B8] text-white " : "buttonColor text-black"}  m-3 p-2 font-bold rounded `}>Academic</button>
                 </div>
-                <div>
+                <div className=' my-3 '>
                     <div id="searchBar-part">
                         <Container>
 

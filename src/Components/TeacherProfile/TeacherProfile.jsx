@@ -2,7 +2,7 @@ import React from 'react';
 import img from './Images/teacherImage.png'
 import Image from 'next/image';
 import './TeacherProfile.css'
-import TeachersProfile from '@/app/teachers-profile/page';
+
 const TeacherProfile = () => {
 
   const data =

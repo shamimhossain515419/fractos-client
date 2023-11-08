@@ -7,12 +7,6 @@ import Joi from "joi";
 import { NextResponse } from "next/server";
 
 
-const schema = Joi.object({
-     email: Joi.string().email().required(),
-     password: Joi.string().min(6).required(),
-     role: Joi.string().required(),
-     category: Joi.string().required(),
-});
 
 export const dynamic = "force-dynamic";
 
@@ -21,15 +15,7 @@ export async function POST(req) {
      const newUser = await req.json();
      const { name, email, password, role, category } = newUser;
      //validate the schema
-     const { error } = schema.validate({ email, password, role, category });
-
-     if (error) {
-          console.log(error);
-          return NextResponse.json({
-               success: false,
-               message: error.details[0].message,
-          });
-     }
+  
 
      try {
           //check if the user is exists or not
