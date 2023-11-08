@@ -25,14 +25,32 @@ export const TeacherGet = async () => {
           const res = await fetch("/api/teacher/teacher-get", {
                method: "GET",
                headers: {
+                    "Content-Type": "application/json",
                     Authorization: `Bearer ${Cookies.get("token")}`,
                },
+         });
 
+          const data = await res.json();
+
+          console.log(data);
+
+          return data?.data;
+
+     } catch (e) {
+          console.log(e);
+     }
+
+}
+export const Teacherupdate = async (fromDate) => {
+     try {
+          const res = await fetch("/api/teacher/teacher-update", {
+               method: "PUT",
+               body: JSON.stringify(fromDate),
           });
 
           const data = await res.json();
 
-          return data?.data;
+          return data;
 
      } catch (e) {
           console.log(e);
