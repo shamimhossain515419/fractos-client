@@ -112,7 +112,7 @@ const TeacherProfile = () => {
                 <h1 className='text-2xl font-bold'>Batch: {batch.batch_no}</h1>
                 </div>
 
-                <div className='mx-4 mt-8  text-[#0EE6B8]'>
+                <div className='mx-4 mt-8 text-sm text-[#0EE6B8]'>
                   <p>Total Enrolled Students : {batch.enrolled_student}</p>
                   <p >Payment: {batch.fees}</p>
                   <p>Class Time: {batch.class_time}</p>
