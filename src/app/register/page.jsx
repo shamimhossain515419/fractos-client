@@ -22,7 +22,7 @@ const Page = () => {
     const [isHidden, setIsHidden] = useState(true)
     const [isHidden2, setIsHidden2] = useState(true)
 
-    const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg  outline-none w-full border-2 border-gray-200  focus:border-sky-400';
+    const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg primaryBg outline-none w-full border-2 border-gray-200  focus:border-sky-400';
     const loginBtnCSS = 'w-full p-2 font-bold text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
 
     const registrationHandler = async (data) => {
@@ -49,7 +49,7 @@ const Page = () => {
                             'Your account has been created.',
                             'success'
                         )
-                        router.push('/dashboard/setting')
+                        router.push('/login')
                     })
             })
     }
@@ -65,7 +65,7 @@ const Page = () => {
                             <h1 className='font-bold text-2xl lg:text-4xl text-center primary '>Create Account</h1>
                             <div>
                                 <label className='text-xl font-semibold mb-2 secondColor'>Full Name</label>
-                                <input className={`${inputFieldCommonCSS} bg-transparent`} {...register("name", {
+                                <input className={`${inputFieldCommonCSS} bg-transparent text-black`} {...register("name", {
                                     required: {
                                         value: true,
                                         message: 'Name is required'
@@ -75,7 +75,7 @@ const Page = () => {
                             </div>
                             <div>
                                 <label className='text-xl font-semibold mb-2 secondColor'>Email Address</label>
-                                <input className={`${inputFieldCommonCSS} bg-transparent`} {...register("email", {
+                                <input className={`${inputFieldCommonCSS} bg-transparent text-black`} {...register("email", {
                                     required: {
                                         value: true,
                                         message: 'Email is required'
@@ -86,7 +86,7 @@ const Page = () => {
                             <div>
                                 <label className='text-xl font-semibold mb-2 secondColor'>Password</label>
                                 <div className='relative'>
-                                    <input className={`${inputFieldCommonCSS} w-full bg-transparent `} {...register("password", {
+                                    <input className={`${inputFieldCommonCSS} w-full bg-transparent text-black `} {...register("password", {
                                         required: {
                                             value: true,
                                             message: 'Password is required'
@@ -123,7 +123,7 @@ const Page = () => {
                             <div>
                                 <label className='text-xl font-semibold mb-2 secondColor'>Confirm Password</label>
                                 <div className="relative">
-                                    <input className={`${inputFieldCommonCSS} w-full bg-transparent`} type={`${isHidden2 ? 'password' : 'text'}`} {...register("confirmPassword", {
+                                    <input className={`${inputFieldCommonCSS} w-full bg-transparent text-black`} type={`${isHidden2 ? 'password' : 'text'}`} {...register("confirmPassword", {
                                         required: {
                                             value: true,
                                             message: 'Confirm Password'

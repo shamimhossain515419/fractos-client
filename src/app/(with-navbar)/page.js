@@ -1,4 +1,4 @@
-
+'use client'
 import Pricing from "@/Components/Pricing/Pricing";
 import Premium from "@/Components/Premium/Premium";
 import CounterSection from "@/Components/CounterSection/CounterSection";
@@ -9,13 +9,14 @@ import Container from "@/Components/Container/Container";
 import Subscribe from "@/Components/Subscribe/Subscribe";
 
 
+
 export default function Home() {
   return (
     <div>
       <Container>
         <Banner></Banner>
+        
 
-        {/* <BannerSwiper></BannerSwiper> */}
 
         <div className=" my-3">
           <CounterSection> </CounterSection>
@@ -32,6 +33,11 @@ export default function Home() {
         <Subscribe></Subscribe>
       </div>
       
+
+     
+
+      
+
       <div className="">
         <Feedback></Feedback>
       </div>

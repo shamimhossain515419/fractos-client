@@ -9,7 +9,7 @@ export async function GET(req) {
      try {
           await connectToDB();
 
-         const extractUser = await Admission.find({});
+        const extractUser = await Admission.find({ });
           if (extractUser) {
                return NextResponse.json({
                     success: true,
