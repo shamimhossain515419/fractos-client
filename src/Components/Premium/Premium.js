@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import Image from "next/image";
 import CommonTitle from "../CommonTitle/CommonTitle";
 import  mockImage from "./../../../public/liveexsm.png"

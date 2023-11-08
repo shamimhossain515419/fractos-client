@@ -3,7 +3,7 @@ import './globals.css'
 import GlobalState from '@/GlobalState'
 import Head from 'next/head'
 
-
+import 'react-toastify/dist/ReactToastify.css';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {

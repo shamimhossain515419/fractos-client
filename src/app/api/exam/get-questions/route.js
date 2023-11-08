@@ -7,8 +7,11 @@ export const dynamic = "force-dynamic";
 export async function GET(req) {
      try {
           await connectToDB();
+          const { searchParams } = new URL(req.url);
+          const subject = searchParams.get("subject");
 
-         const extractUser = await Questions.find({});
+
+          const extractUser = await Questions.find({ exam_name: { $regex: subject, $options: "i" } });
           if (extractUser) {
                return NextResponse.json({
                     success: true,
