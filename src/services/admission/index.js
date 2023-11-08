@@ -46,3 +46,29 @@ export const GetAdmission = async () => {
           console.log("error", e);
      }
 };
+export const admissionSingleData = async (university) => {
+
+     try {
+          const response = await fetch(`/api/admission/admissionBlogSingleData?university=${university}`, {
+               method: "GET",
+          });
+          const finalData = await response.json();
+          return finalData?.data;
+
+     } catch (e) {
+          console.log(e);
+     }
+}
+
+export const GetAdmissionBlog = async (search) => {
+     try {
+          const response = await fetch(`/api/admission/admissionGet?subject=${search}`, {
+               method: "GET",
+          });
+
+          const finalData = await response.json();
+          return finalData?.data;
+     } catch (e) {
+          console.log("error", e);
+     }
+};

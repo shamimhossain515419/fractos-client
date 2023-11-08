@@ -4,8 +4,8 @@
 
 
 body {
-  background-color: white;
-  color: black;
+  background-color: #11162B;
+  color: white;
   min-height: 100vh;
 }
 
@@ -23,25 +23,36 @@ body {
 }
 
 .primary {
-  color: #27895C;
+  color: #0EE6B8;
+}
+
+.buttonColor {
+  background-color: #0EE6B8;
 }
 
 .primaryBg {
-  background-color: #27895C;
+  background-color: #102B3A;
 }
 
 .textColor {
   color: #000000b0;
 }
 
+.secondBg {
+  background-color: #192035;
+}
+
+.secondColor {
+  color: #83FAFF;
+}
 
 .imageshodow {
   box-shadow: rgba(234, 88, 219, 0.2) 10px 10px 15px 22px;
 }
-
-.primaryBgColor {
-  background-color: #2d394b;
+.boxShodowClass {
+  border: #0EE6B8 (5px 5px 5px 5px);
 }
+
 
 
 
@@ -57,12 +68,20 @@ body {
 
 
 
+
+
 .backgrounDSubject {
 
   background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.179), rgba(0, 0, 0, 0.279)),
     url('../../public//banner1image.jpg');
 
-  color: white; 
+  color: white;
   padding: 10px;
 }
+
+#searchBar-part input {
+  border-bottom: 2px solid black;
+}
+
+

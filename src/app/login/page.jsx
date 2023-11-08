@@ -19,8 +19,8 @@ const Login = () => {
     const router = useRouter();
     const [isHidden, setIsHidden] = useState(true)
 
-    const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg bg-gray-200 outline-none border-2 border-gray-200  focus:border-sky-400';
-    const loginBtnCSS = 'w-full p-2 bg-green-500 text-white font-bold text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
+    const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg primaryBg outline-none border-2 border-gray-200  focus:border-sky-400';
+    const loginBtnCSS = 'w-full p-2 font-bold text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
 
     const { register, handleSubmit } = useForm();
 
@@ -32,12 +32,13 @@ const Login = () => {
         })
         loginUser(data.email, data.password)
             .then(res => {
+
+                setComponentLevelLoader({
+                    loading: false,
+                    id: "",
+                })
                 Swal.fire(
-                    setComponentLevelLoader({
-                        loading: false,
-                        id: "",
-                    })
-                        `Welcome, ${res.user?.email}`,
+                    `Welcome, ${res.user?.email}`,
                 )
                 router.push('/')
             })
@@ -46,24 +47,24 @@ const Login = () => {
         <>
             <Navbar></Navbar>
             <AuthContainer>
-                <div className='h-[100vh] sm:mx-auto max-w-lg py-6'>
+                <div className='h-[100vh]  sm:mx-auto max-w-lg py-6'>
                     <Head>
-                        <title>Login</title>
+                        <title >Login</title>
 
                     </Head>
                     <form className='flex justify-center flex-col gap-6 w-full mt-[112px]' onSubmit={handleSubmit(loginHandler)}>
-                        <h1 className='font-bold text-2xl lg:text-4xl text-center'>Login</h1>
+                        <h1 className='font-bold text-2xl lg:text-4xl primary text-center'>Login</h1>
                         <div className='flex flex-col'>
-                            <label className='text-xl font-semibold'>Email Address</label>
-                            <input className={`${inputFieldCommonCSS}`} {...register('email')} type="email" placeholder='example@gmail.com' />
+                            <label className='text-xl secondColor font-semibold mb-2'>Email Address</label>
+                            <input className={`${inputFieldCommonCSS} text-white`} {...register('email')} type="email" placeholder='example@gmail.com' />
                         </div>
                         <div>
                             <div className='flex justify-between'>
-                                <label className='text-xl font-semibold'>Password</label>
-                                <button className='text-xl text-[#4A3AFF] font-medium hover:underline'>Forgot Password</button>
+                                <label className='text-xl  primary font-semibold'>Password</label>
+                                <button className='text-xl    font-medium hover:underline'>Forgot Password</button>
                             </div>
-                            <div className='relative'>
-                                <input className={`${inputFieldCommonCSS} w-full`} {...register('password')} type={`${isHidden ? 'password' : 'text'}`} placeholder='XXXXXXXX' />
+                            <div className='relative mt-2'>
+                                <input className={`${inputFieldCommonCSS} w-full text-white`} {...register('password')} type={`${isHidden ? 'password' : 'text'}`} placeholder='XXXXXXXX' />
                                 <div onClick={() => setIsHidden(!isHidden)} className='absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer'>
                                     {isHidden ?
                                         <Image
@@ -85,16 +86,16 @@ const Login = () => {
                         </div>
                         {/* <button className={`${loginBtnCSS}`}>Next</button> */}
 
-                        <div className={`${loginBtnCSS}  text-xl   flex justify-center items-center`}>
+                        <div className={`${loginBtnCSS}  text-xl    buttonColor text-black  flex justify-center items-center`}>
                             {
-                                componentLevelLoader?.loading ? <><ComponentLevelLoader loading={componentLevelLoader.loading} text={'Login..'}></ComponentLevelLoader> </> : <button type='submit'> Login</button>
+                                componentLevelLoader?.loading ? <><ComponentLevelLoader loading={componentLevelLoader.loading} text={'Login...'}></ComponentLevelLoader> </> : <button type='submit'> Login</button>
                             }
 
                         </div>
 
                     </form>
                     <p className='flex gap-1 items-center mt-3'>Don t Have An Account?
-                        <Link className='text-[#4A3AFF] hover:underline' href={'/register'}>Register</Link>
+                        <Link className='primary hover:underline' href={'/register'}>Register</Link>
                     </p>
                     <GoogleSignIn></GoogleSignIn>
                 </div>

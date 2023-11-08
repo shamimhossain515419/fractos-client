@@ -9,42 +9,16 @@ import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "@/GlobalState";
 import CommonImage from "../CommonImage/CommonImage";
 import UserModal from "../UserModal/UserModal";
-
+import Image from "next/image";
+import logo from '../../../public/logo.png'
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin, setIsUserModalOpen, isUserModalOpen } = useContext(GlobalContext);
      const [Open, setOpen] = useState(true);
 
-     // <<<<<<< HEAD
      return (
           <div className=" mb-12">
                <div>
-                    <nav className={`px-2 py-2 z-50 bg-[#ECF0F3] shadow-lg fixed top-0 left-0 w-full transition-transform`}>
-                         {/* =======
-     useEffect(() => {
-          const handleScroll = () => {
-               if (window.scrollY > 500) {
-                    setIsShrink(true);
-               } else {
-                    setIsShrink(false);
-               }
-          };
-
-          window.addEventListener('scroll', handleScroll);
-
-          return () => {
-               window.removeEventListener('scroll', handleScroll);
-          };
-     }, []);
-
-
-     return (
-          <div className=" mb-12">
-               <div>
-                    <div className={`px-2 py-2 z-50 bg-[#ECF0F3] shadow-lg fixed top-0 left-0 w-full transition-transform ${isShrink ? 'h-[66px] bg-slate-300' : 'h-[74px]'
-                         } transition-all`}>
-
-                    <nav className='px-2 w-full fixed py-3 z-50 primaryBgColor text-white     top-0  left-0 right-0    shadow-lg'>
->>>>>>> 38b3a6f21add2d7416186108a6be19b86d3b441a */}
+                    <nav className={`px-2 py-2 z-50   primaryBg shadow-lg fixed top-0 left-0 w-full transition-transform`}>
                          <Container>
                               <div className=' '>
                                    <div className='flex justify-between items-center'>
@@ -63,31 +37,32 @@ const Navbar = () => {
                                                             <></>
                                                   }
                                              </div>
-                                             <Link href="/"> <h1 className='  py-2 font-semibold  text-base md:text-2xl uppercase'> FRACTOS </h1></Link>
+                                             <Link href="/">  <Image className="    w-[100px]   md:max-w-[200px]" src={logo} alt="image" /> </Link>
                                         </div>
-
 
                                         <div className=' hidden md:flex items-center gap-3  space-x-5'>
-                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/'}>Home</Link>
-                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/teacher'}>Teacher</Link>
-                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/blogs'}>Blogs</Link>
-                                             <Link className="p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all" href={'/contact'}>Contact Us</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all" href={'/'}>Home</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all" href={'/teacher'}>Teacher</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all" href={'/courses'}> All Courses</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all" href={'/blogs'}>Blogs</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all" href={'/contact'}>Contact Us</Link>
 
                                         </div>
 
 
+                                        {/* right side user image and modal for large screen */}
                                         <div className=" hidden sm:block">
                                              {
                                                   user ?
                                                        <div className='relative cursor-pointer hidden md:block '>
-                                                            <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className='flex gap-2 items-center  p-2 rounded-lg hover:bg-[#4A3AFF] hover:text-white transition-all'>
+                                                            <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className='flex gap-2 items-center  p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all'>
                                                                  <CommonImage data={user}></CommonImage>
                                                                  <h1 className='relative  text-base'>{user?.displayName}</h1>
                                                             </div>
                                                             {
                                                                  isUserModalOpen ?
                                                                       <div className="absolute top-[100%]">
-                                                                           <UserModal></UserModal>
+                                                                           <UserModal setIsUserModalOpen={setIsUserModalOpen}></UserModal>
                                                                       </div>
                                                                       :
                                                                       <></>
@@ -95,25 +70,26 @@ const Navbar = () => {
                                                        </div>
                                                        :
                                                        <div className="flex gap-2 items-center">
-                                                            <Link href={'/login'} className="px-3 py-2 text-white bg-[#4A3AFF] hover:bg-[#4a3affe1] rounded-lg hover:shadow-lg">Login</Link>
-                                                            <Link href={'/register'} className="px-3 py-2 bg-white hover:bg-slate-600 hover:text-white rounded-lg hover:shadow-lg">Register</Link>
+                                                            <Link href={'/login'} className="px-5 py-2 border-2 hover:border-white transition-all border-[#27895C] text-white bg-[#27895C] hover:bg-[#black font-mediumFe1] rounded-full font-mediumer:shadow-lg">Login</Link>
+                                                            <Link href={'/register'} className="px-3 py-2 bg-transparent text-white border-2 border-slate-600 hover:bg-slate-600 rounded-full hover:shadow-lg transition-all">Register</Link>
                                                        </div>
                                              }
                                         </div>
 
-
+                                        {/* three bar menu for mobile screen */}
                                         <div onClick={() => setOpen(!Open)} className=' md:hidden '>
-
                                              {
-                                                  Open ? <FaBars size={24} className=' '> </FaBars> : <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-                                                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                                  </svg>
+                                                  Open ? <FaBars size={24} className=' '> </FaBars>
+                                                       :
+                                                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                                       </svg>
 
                                              }
 
                                         </div>
                                    </div>
-
+                                   {/* navigation links  for mobile screen */}
                                    <div className='md:hidden'>
                                         {
                                              Open ? "" : <MenuBar user={user} setOpen={setOpen}></MenuBar>

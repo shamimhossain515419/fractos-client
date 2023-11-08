@@ -1,7 +1,7 @@
 export const GetSubjectByData = async (name,category) => {
 
   try {
-    const res = await fetch(`/api/exam/get-by-subject?subject=${name}&category=${category?category:null}`, {
+    const res = await fetch(`/api/exam/get-by-subject?subject=${name}&category=${category}`, {
       method: "GET",
       cache: "no-store"
     });
@@ -32,9 +32,9 @@ export const QuestionPost = async (formData) => {
     console.log("error", e);
   }
 };
-export const GetQuestion = async () => {
+export const GetQuestion = async (subject) => {
   try {
-    const response = await fetch("/api/exam/get-questions", {
+    const response = await fetch(`/api/exam/get-questions?subject=${subject}`, {
       method: "GET",
     });
 

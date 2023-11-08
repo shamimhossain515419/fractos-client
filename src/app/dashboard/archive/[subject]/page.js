@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { GetSubjectByData } from '@/services/exam';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
@@ -17,9 +17,9 @@ const page = () => {
           setExamData(result)
      }
      useEffect(() => {
-          console.log(prams?.subject);
+         
           if (prams?.subject) {
-               console.log(prams?.subject);
+               
                getData(prams?.subject);
           }
 

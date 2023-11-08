@@ -6,6 +6,7 @@ import './UserProfile.css';
 
 const UserProfile = () => {
     const { user, userinfo } = useContext(GlobalContext);
+    console.log(user,userinfo);
 
     return (
 
@@ -13,8 +14,8 @@ const UserProfile = () => {
             
 
             <div className=' w-full flex flex-col items-center justify-center my-6'>
-                < Image width={100} height={100} src={user?.photoURL ? user?.photoURL : "https://i.ibb.co/pzLXXQj/download.jpg"} alt="download" border="0" className='h-32 w-32 rounded-full' />
-                <h3 className='font-bold'>{user?.displayName ? user?.displayName : null}</h3>
+                < Image width={100} height={100} src={user?.photoURL ? user?.photoURL : "https://i.ibb.co/pzLXXQj/download.jpg"} alt="download" border="0" className='h-32 w-32 rounded-full border-2  border-[#0EE6B8]' />
+                <h3 className='font-bold primary text-xl'>{user?.displayName ? user?.displayName : null}</h3>
                 <p> {userinfo?.batch ? userinfo?.batch : null} </p>
                 <p> {userinfo?.collage ? userinfo?.collage : null} </p>
 
@@ -26,15 +27,15 @@ const UserProfile = () => {
                     <div className='md:flex lg:flex justify-between text-white'>
                         <div className='shadow-lg rounded-s-full bg-purple-900 border-t-0  shadow-purple-500 p-5 border-2 w-full'>
                             <p className='font-bold'>{userinfo?.rank ? userinfo?.rank : 0}</p>
-                            <p>Rank</p>
+                            <p className=' secondColor'>Rank</p>
                         </div>
                         <div className='shadow-md bg-purple-700 -ml-8 rounded-s-full  border-t-0 shadow-purple-500 p-5 border-2 w-full '>
                             <p className='font-bold'>{userinfo?.exam ? userinfo?.exam : 0}</p>
-                            <p>Exams</p>
+                            <p className=' secondColor'>Exams</p>
                         </div>
                         <div className='shadow-lg bg-purple-400 -ml-8 rounded-s-full   border-t-0 shadow-purple-500 p-5 border-2 w-full'>
                             <p className='font-bold'>{userinfo?.mark ? userinfo?.mark : 0}</p>
-                            <p>point</p>
+                            <p className=' secondColor'>point</p>
                         </div>
                     </div>
                     <div className='md:flex lg:flex justify-between gap-3 mt-8'>
@@ -52,7 +53,7 @@ const UserProfile = () => {
                                     <button className='h-3 w-3 bg-orange-500  rounded-full'></button>
                                     <small className='pe-3'>Wrong</small>
                                     <button className='h-3 w-3 bg-yellow-500 rounded-full'></button>
-                                    <small>Skipped</small>
+                                    <small className=' secondColor'>Skipped</small>
                                 </div>
                             </div>
                         </div>

@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import Image from "next/image";
 import Link from "next/link";
 
-import image from '../../../public/2912020.webp'
+import image from '../../../public/banner.webp'
 import { usePathname } from "next/navigation";
 import CommonTitle from "../CommonTitle/CommonTitle";
 const ContactSection = () => {
@@ -77,18 +77,18 @@ const ContactSection = () => {
                                    <form ref={form} onSubmit={sendEmail}>
                                         <div className=" w-full my-2">
                                              <label htmlFor="Name" className=" text-xl font-semibold  mt-3" > Name:</label>
-                                             <input required className="mt-2 bg-white w-full  hover:outline-1   focus:outline rounded-lg focus:outline-[#582ad8] p-2 text-lg font-semibold " type="text" placeholder=" Your name " name="name" id="" />
+                                             <input required className="mt-2 primaryBg  w-full  hover:outline-1   focus:outline rounded-lg focus:outline-[#582ad8] p-2 text-lg font-semibold " type="text" placeholder=" Your name " name="name" id="" />
                                         </div>
                                         <div className=" w-full my-2">
                                              <label className="  mt-4  text-xl font-semibold " htmlFor="Email" > Email:</label>
-                                             <input required className="p-2   bg-white    mt-2 w-full   hover:outline-1   focus:outline rounded-lg focus:outline-[#582ad8] " type="email" placeholder=" Your Email " name="email" id="email" />
+                                             <input required className="p-2   primaryBg     mt-2 w-full   hover:outline-1   focus:outline rounded-lg focus:outline-[#582ad8] " type="email" placeholder=" Your Email " name="email" id="email" />
                                         </div>
                                         <div className=" w-full my-2">
                                              <label className="  mt-4  text-xl font-semibold " htmlFor="Email" > Message:</label>
-                                             <textarea required className="p-2   bg-white    mt-2 w-full   hover:outline-1   focus:outline focus:outline-[#582ad8] " name="message" rows={8} ></textarea>
+                                             <textarea required className="p-2   primaryBg  mt-2 w-full   hover:outline-1   focus:outline focus:outline-[#582ad8] " name="message" rows={8} ></textarea>
                                         </div>
                                         <div className=" w-full my-2">
-                                             <button className="  hover:bg-[#27895C]  boxshadow outline-none border-none text-xl font-medium py-2 rounded-md text-center w-full " type="submit" >Send massage</button>
+                                             <button className="  hover:bg-[#27895C]  boxshadow secondBg outline-none border-none text-xl font-medium py-2 rounded-md text-center w-full " type="submit" >Send massage</button>
                                         </div>
                                    </form>
                               </div> </div>

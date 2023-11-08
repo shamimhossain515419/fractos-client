@@ -1,10 +1,4 @@
-"use client"
-// <<<<<<< HEAD
-// =======
-// // import { useState } from 'react';
-// // import { Chart } from 'react-apexcharts';
-// >>>>>>> 9a2e2d3fb3fa5b92d8962f929054d0c8e2214bbd
-
+'use client'
 
 import React from 'react';
 import { Bar, Doughnut } from 'react-chartjs-2';
@@ -149,19 +143,19 @@ const page = () => {
         <div>
 
             <CommonTitle title={"performance-analysis"}></CommonTitle>
-            <div className='grid grid-cols-1 md:grid-cols-12 gap-5'>
-                <div className='col-span-12 xl:col-span-4 p-2 lg:p-5 rounded-lg shadow-lg'>
-                    <h3 className='text-xl  capitalize mb-5'>accuracy</h3>
+            <div className='grid grid-cols-1  md:grid-cols-12 gap-5 '>
+                <div className='col-span-12 xl:col-span-4 p-2 lg:p-5 text-white rounded-lg  secondBg shadow-lg'>
+                    <h3 className='text-xl  capitalize mb-5 primary'>accuracy</h3>
                     <div className='h-[250px] w-[250px] mx-auto'>
                         <Doughnut data={dougnutData} options={doughnutOptions} />
                     </div>
                 </div>
-                <div className='col-span-12 xl:col-span-8 p-2 lg:p-5 rounded-lg shadow-lg'>
-                    <h3 className='text-xl mb-5 capitalize'>Subjective accuracy</h3>
+                <div className='col-span-12 text-white xl:col-span-8 p-2 lg:p-5 secondBg rounded-lg shadow-lg'>
+                    <h3 className='text-xl mb-5 capitalize primary'>Subjective accuracy</h3>
                     <Bar data={horizontalBarChartData} options={horizontalBarChartOptions} />
                 </div>
-                <div className='col-span-12 xl:col-span-6 p-2 lg:p-5 rounded-lg shadow-lg'>
-                    <h3 className='text-xl mb-5 capitalize'>Weakness: Bengali</h3>
+                <div className='col-span-12 xl:col-span-6 p-2 lg:p-5 secondBg rounded-lg shadow-lg'>
+                    <h3 className='text-xl mb-5 capitalize primary'>Weakness: Bengali</h3>
                     <Bar data={BanWeaknessBarChartData} options={verticalBarChartOptions}></Bar>
                 </div>
             </div>
