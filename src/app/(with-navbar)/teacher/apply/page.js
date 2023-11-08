@@ -51,7 +51,7 @@ const page = () => {
     }
     return (
 
-        <div className='min-h-screen overflow-y-scroll text-black'>
+        <div className='min-h-screen overflow-y-scroll pt-[10px] text-black'>
             <div className="p-6 bg-white shadow-2xl">
                 {/* BACK TO PREVIOUS PAGE */}
                 <Link

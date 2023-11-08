@@ -15,15 +15,16 @@ const MenuBar = ({ user }) => {
 
                               <Link href={'/teacher'}>Teacher </Link>
                               <Link href={'/leader-board'}> Leader board</Link>
+                              <Link href={'/courses'}> All Courses</Link>
                               <Link href={'/blogs'}> Blogs</Link>
                               <Link href={'/contact'}> Contact Us</Link>
 
 
                               <div>
-                                   { user ? <>   <div className="  flex items-center gap-1">
-                                            
-                                     <p> {user?.displayName} </p>
-                                       </div></> : <></>
+                                   {user ? <>   <div className="  flex items-center gap-1">
+
+                                        <p> {user?.displayName} </p>
+                                   </div></> : <></>
                                    }
                               </div>
 
