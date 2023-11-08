@@ -1,27 +1,31 @@
-"use client"
+'use client'
 
 import DUCUnit from '@/Components/ArchiveDUCUnit/DUCUnit';
 import { GetAdmission } from '@/services/admission';
+import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 const page = () => {
 
+     const params=useParams();
+     console.log(params);
+     const category=params?.universuty;
      const [subjects, setSubjects] = useState([]);
 
      const GetAllQuestion = async () => {
           const result = await GetAdmission();
-          const filter = result?.filter(item => item?.university == "DUET")
+          const filter = result?.filter(item => item?.university == category)
           setSubjects(filter)
      }
 
      useEffect(() => {
           GetAllQuestion()
      }, [2000]);
-     console.log(subjects);
+  
 
      return (
           <div>
-               <DUCUnit subjects={subjects}></DUCUnit>
+               <DUCUnit subjects={subjects} category={category}></DUCUnit>
           </div>
      );
 };
