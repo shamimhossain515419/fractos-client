@@ -1,4 +1,5 @@
 'use client'
+import AdminDashboard from "@/Components/Admin/AdminDashboard";
 import Dashboard from "@/Components/Dashboard/Dashboard";
 import TeacherProfile from "@/Components/TeacherProfile/TeacherProfile";
 import { GlobalContext } from "@/GlobalState";
@@ -19,7 +20,7 @@ const page = () => {
           <div>
 
                {
-                    Admin ? <> <h1 className=" text-4xl flex  justify-center items-center gap-2"> admin dashboard </h1>  </> : Teachers ? <> <TeacherProfile></TeacherProfile> </> : <Dashboard></Dashboard>
+                    Admin ? <AdminDashboard> </AdminDashboard> : Teachers ? <> <TeacherProfile></TeacherProfile> </> : <Dashboard></Dashboard>
                }
 
           </div>

@@ -7,7 +7,7 @@ import React, { useContext } from 'react';
 import { AiFillFolderAdd, AiOutlineHome } from 'react-icons/ai';
 import { BsArchive } from 'react-icons/bs';
 import { PiExamBold } from 'react-icons/pi';
-import { MdOutlineLeaderboard } from 'react-icons/md';
+import { MdBatchPrediction, MdOutlineLeaderboard } from 'react-icons/md';
 import DashboardNavbar from '@/Components/DashboardNavbar/DashboardNavbar';
 import { BiUserCircle } from 'react-icons/bi';
 import { FiSettings } from 'react-icons/fi';
@@ -101,11 +101,19 @@ const DashboardLayout = ({ children }) => {
 
                                                        <Link
                                                             href="/dashboard/academic"
-                                                            className={`${pathname == "/dashboard/mock-exam" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+                                                            className={`${pathname == "/dashboard/mock-exam" ? " bg-[#323b5d85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
 
                                                        >
                                                             <AiFillFolderAdd size={24}></AiFillFolderAdd>
                                                             <h1 className=' text-base md:text-lg f font-normal '>Academic </h1>
+                                                       </Link>
+                                                       <Link
+                                                            href="/dashboard/my-course"
+                                                            className={`${pathname == "/dashboard/mock-exam" ? " bg-[#323b5d85]" : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+
+                                                       >
+                                                            <MdBatchPrediction size={24}></MdBatchPrediction>
+                                                            <h1 className=' text-base md:text-lg f font-normal '>My Course </h1>
                                                        </Link>
 
                                                   </>
@@ -252,14 +260,6 @@ const DashboardLayout = ({ children }) => {
                                         </>
                                              : Teachers ? <>
 
-                                                  <Link
-                                                       href="/dashboard/setting"
-                                                       className={`${pathname == "/dashboard/setting" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
-
-                                                  >
-                                                       <FiSettings size={24}></FiSettings>
-                                                       <h1 className=' text-base md:text-lg f font-normal '> setting </h1>
-                                                  </Link>
 
                                                   <Link
                                                        href="/dashboard/academic"
@@ -269,6 +269,27 @@ const DashboardLayout = ({ children }) => {
                                                        <AiFillFolderAdd size={24}></AiFillFolderAdd>
                                                        <h1 className=' text-base md:text-lg f font-normal '>Academic </h1>
                                                   </Link>
+
+
+                                                  <Link
+                                                       href="/dashboard/my-course"
+                                                       className={`${pathname == "/dashboard/mock-exam" ? " bg-[#323b5d85]" : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+
+                                                  >
+                                                       <MdBatchPrediction size={24}></MdBatchPrediction>
+                                                       <h1 className=' text-base md:text-lg f font-normal '>My Course </h1>
+                                                  </Link>
+
+                                                  <Link
+                                                       href="/dashboard/setting"
+                                                       className={`${pathname == "/dashboard/setting" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
+
+                                                  >
+                                                       <FiSettings size={24}></FiSettings>
+                                                       <h1 className=' text-base md:text-lg f font-normal '> setting </h1>
+                                                  </Link>
+
+
 
                                              </>
                                                   : <>

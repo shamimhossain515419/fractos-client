@@ -43,7 +43,6 @@ const Pricing = () => {
     }));
 
     const card = {
-        date: new Date(),
         email: user?.email,
         status: true,
         amount: 25,
@@ -122,7 +121,7 @@ const Pricing = () => {
 
     if (orderSuccess) {
         return (
-            <section className="h-screen bg-gray-200 w-full z-50 ">
+            <section className="h-screen  fixed top-0 left-0  bottom-0  primaryBg  w-full z-50 ">
                 <div className="mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="mx-auto mt-8 max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
                         <div className="bg-white shadow">
@@ -144,7 +143,7 @@ const Pricing = () => {
 
     if (isOrderProcessing) {
         return (
-            <div className="w-full min-h-screen bgColor flex  justify-center items-center">
+            <div className="w-full fixed top-0 left-0  bottom-0  primaryBg  bgColor flex  justify-center items-center">
                 <PulseLoader
                     color={"#000000"}
                     loading={isOrderProcessing}

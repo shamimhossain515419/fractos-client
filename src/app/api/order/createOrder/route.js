@@ -1,7 +1,9 @@
 
 import connectToDB from "@/database";
 import AuthUser from "@/middleware/AuthUser";
-import Order from "@/models/Order";
+import OrdersPrice from "@/models/Order";
+
+
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
@@ -15,7 +17,7 @@ export async function POST(req) {
                const data = await req.json();
                const { email } = data;
                console.log(data);
-               const saveNewOrder = await Order.create(data);
+               const saveNewOrder = await OrdersPrice.create(data);
 
                if (saveNewOrder) {
                     return NextResponse.json({
