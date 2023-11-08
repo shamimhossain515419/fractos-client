@@ -4,10 +4,11 @@ import NotFoundData from '@/Components/NotFoundData/NotFoundData';
 import { GlobalContext } from '@/GlobalState';
 import { GetExam_reviews } from '@/services/exam-reviews';
 import moment from 'moment/moment';
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
-import { FcRefresh } from 'react-icons/fc'
+import { AiFillFileMarkdown, AiOutlineCompress } from 'react-icons/ai';
+import { BiRevision } from 'react-icons/bi';
+import { MdOutlineDateRange, MdTopic } from 'react-icons/md';
 
 const page = async () => {
     const { user } = useContext(GlobalContext)
@@ -46,41 +47,43 @@ const page = async () => {
 
                                     <th className='font-bold   primary primaryBg p-2'>
                                         <div className='flex items-center  gap-1'>
-                                            <Image width={24} height={24} src={'/calendar-icon.png'} alt='image'></Image>
-                                            <span>Date</span>
+                                            <MdOutlineDateRange size={28}></MdOutlineDateRange>
+                                            <span className='  text-lg   primary primaryBg font-medium'>Date</span>
                                         </div>
                                     </th>
                                     <th className='font-bold   primary primaryBg  border-x p-2 border-[#27895C]'>
                                         <div className='flex items-center  gap-1'>
-                                            <Image width={24} height={24} src={'/topic-icon.png'} alt='image'></Image>
-                                            <span className=' text-xl   primary primaryBg font-medium'>Topic</span>
+                                            <MdTopic size={28}></MdTopic>
+                                            <span className='  text-lg   primary primaryBg font-medium'>Topic</span>
                                         </div>
                                     </th>
                                     <th className='font-bold   primary primaryBg border-x p-2 border-[#27895C]'>
                                         <div className='flex items-center  gap-1'>
-                                            <Image width={24} height={24} src={'/marks-icon.png'} alt='image'></Image>
-                                            <span>Marks</span>
+                                            <AiFillFileMarkdown size={28}></AiFillFileMarkdown>
+
+                                            <span className='  text-lg   primary primaryBg font-medium'>Marks</span>
                                         </div>
                                     </th>
                                     <th className='font-bold   primary primaryBg border-x p-2 border-[#27895C]'>
                                         <div className='flex items-center  gap-1'>
-                                            {/* <Image width={24} height={24} src={'/marks-icon.png'} alt='image'></Image> */}
-                                            <FcRefresh className=' text-white' size={24}> </FcRefresh>
-                                            <span>Result</span>
+
+                                            <AiOutlineCompress className=' primary' size={28}> </AiOutlineCompress>
+                                            <span className='  text-lg   primary primaryBg font-medium'> Result</span>
                                         </div>
                                     </th>
 
                                     <th className='font-bold   primary primaryBg border-x  p-2 border-[#27895C]'>
                                         <div className='flex items-center  gap-1'>
-                                            <Image width={24} height={24} src={'/review-icon.png'} alt='image'></Image>
-                                            <span>Exam Review</span>
+                                            <BiRevision size={28}></BiRevision>
+
+                                            <span className='  text-lg   primary primaryBg font-medium'>Exam Review</span>
                                         </div>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {
-                                    examReviews?.map(item => <tr key={item?._id} className='hover:bg-[#0EE6B8]  hover:text-black text-start py-1 cursor-pointer  secondBg even:bg-[#102B3A]'>
+                                    examReviews?.map(item => <tr key={item?._id} className='hover:bg-[#0ee6b769]    hover:text-black text-start py-1 cursor-pointer  secondBg even:bg-[#102B3A]'>
                                         <td className=' p-2'> {moment(item?.date).format("MMMM Do YYYY, ")}  </td>
                                         <td className=' p-2 border-x border-[#27895C]  capitalize'> {item?.exam_name} </td>
                                         <td className='border-x border-[#27895C]'>
@@ -90,9 +93,9 @@ const page = async () => {
                                             </div>
                                         </td>
 
-                                        <td className=' p-2 border-x border-[#27895C]'>
+                                        <td className='  p-2 border-x  border-[#27895C]'>
                                             {
-                                                ((item?.right?.length / item?.wrong?.length) * 100) >= 33 ? <p className=' primary'>Pass</p> : <p className=' text-red-400' >Fail</p>
+                                                ((item?.right?.length / item?.wrong?.length) * 100) >= 33 ? <p className=' hover:text-black primary '>Pass</p> : <p className=' text-red-400 ' >Fail</p>
                                             }
                                         </td>
                                         <td className=' p-2 border-x border-[#27895C]'>
