@@ -1,4 +1,5 @@
 
+"use client"
 import ArchiveCollege from '@/Components/Archive/ArchiveCollege';
 import React from 'react';
 "use client"

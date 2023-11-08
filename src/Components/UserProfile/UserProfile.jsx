@@ -6,6 +6,7 @@ import './UserProfile.css';
 
 const UserProfile = () => {
     const { user, userinfo } = useContext(GlobalContext);
+    console.log(user,userinfo);
 
     return (
 
