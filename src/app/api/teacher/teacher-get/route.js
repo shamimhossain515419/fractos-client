@@ -12,14 +12,7 @@ export async function GET(req) {
 
      try {
 
-          const isAuthUser = await AuthUser(req);
-
-          if (!isAuthUser) {
-               return NextResponse.json({
-                    success: false,
-                    massage:"User not Authorization" ,
-               });
-          }
+        
           const TeacherData = await Teachers.find({});
 
           if (TeacherData) {

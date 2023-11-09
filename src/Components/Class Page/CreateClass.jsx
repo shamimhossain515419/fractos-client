@@ -10,6 +10,11 @@ import { useRouter } from "next/navigation";
 import { GetSingleTeacher } from "@/services/teacher";
 
 
+
+
+
+
+
 const CreateClass = () => {
 
   const router = useRouter();
@@ -46,7 +51,7 @@ const CreateClass = () => {
   const handleImage = (e) => {
     const file = e.target.files[0];
 
-    const Imagebb_URL = `https://api.imgbb.com/1/upload?key=22ed14c930e2dd03f17b9e05c5eba1e6`
+    const Imagebb_URL = `https://api.imgbb.com/1/upload?key=9203b0f26f76133e3002ac28554baf7a`
     const formData = new FormData();
     formData.append('image', file);
     fetch(Imagebb_URL, {
@@ -64,6 +69,9 @@ const CreateClass = () => {
     });
 
   };
+
+
+
 
 
   return (

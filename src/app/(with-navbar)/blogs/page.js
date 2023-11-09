@@ -1,7 +1,6 @@
 "use client"
 import BlogCard from '@/Components/BlogPage/BlogCard';
 import FeaturedBlogCard from '@/Components/BlogPage/FeaturedBlogCard';
-import Student from '@/Components/Student/Student';
 import React, { useEffect, useState } from 'react';
 
 
@@ -51,7 +50,7 @@ const page = () => {
             </div>
         </div >
         <div>
-            <Student></Student>
+           
         </div>
         </div>
 

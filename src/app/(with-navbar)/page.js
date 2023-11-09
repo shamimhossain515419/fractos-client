@@ -16,7 +16,7 @@ export default function Home() {
     <div>
       <Container>
         <Banner></Banner>
-        <PopularTeachers></PopularTeachers>
+
 
         <div className=" my-3">
           <CounterSection> </CounterSection>
@@ -27,7 +27,10 @@ export default function Home() {
         <div id="Premium" className=" py-5">
           <Premium></Premium>
         </div>
+        <PopularTeachers></PopularTeachers>
       </Container>
+
+ 
 
       <div className=" py-10">
         <Subscribe></Subscribe>

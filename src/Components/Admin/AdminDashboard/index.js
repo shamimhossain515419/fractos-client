@@ -151,19 +151,15 @@ export default function AdminDashboard() {
   const admission = totalData?.admission?.length ? totalData?.admission?.length : 0
   const questions = totalData?.questions?.length ? totalData?.questions?.length : 0;
   const exam_reviews = totalData?.exam_reviews?.length ? totalData?.exam_reviews?.length : 0;
-
   const order = totalData?.order
-
   const totalPrice = order?.reduce((sum, currentItem) => sum + currentItem?.amount, 0);
-
- 
 
   return (
     <div>
 
       <div className="admin-container flex primaryBg p-4">
 
-       
+
 
 
         <div className="admin-right w-full  primaryBg">
