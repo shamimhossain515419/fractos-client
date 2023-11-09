@@ -91,7 +91,7 @@ const GlobalState = ({ children }) => {
      const stateInfo = {
           openModal, setOpenModal,
           loading, setLoading,
-          user,
+          user, setUser,
           Error, setError,
           userinfo, setUserinfo,
           componentLevelLoader,
