@@ -4,8 +4,6 @@ import connectToDB from "@/database";
 import allUsers from "@/models/Users";
 import Teachers from "@/models/teacher";
 import { NextResponse } from "next/server";
-import { findDOMNode } from "react-dom";
-
 
 export const dynamic = "force-dynamic";
 

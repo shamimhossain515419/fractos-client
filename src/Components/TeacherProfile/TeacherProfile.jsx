@@ -78,7 +78,7 @@ const TeacherProfile = () => {
       <div className=' w-full flex flex-col items-center justify-center my-6'>
         < Image width={100} height={100} src={img} alt="download" border="0" className='h-32 w-32 rounded-full border-2  border-[#0EE6B8]' />
         <div className='primary mt-8 text-center'>
-          <h3 className='font-bold  text-2xl '>{data.name}</h3>
+          <h3 className='font-bold  text-2xl capitalize '>{data.name}</h3>
           <p className=''> {data.qualification1} </p>
           <p className=''> {data.qualification2} </p>
           <p className=''> {data.achievement} </p>

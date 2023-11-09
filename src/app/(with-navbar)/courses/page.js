@@ -4,7 +4,7 @@ import React from 'react';
 
 const Courses = () => {
     return (
-        <div>
+        <div className='  pt-5'>
            <AllCourse></AllCourse> 
         </div>
     );

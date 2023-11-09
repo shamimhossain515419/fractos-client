@@ -45,7 +45,7 @@ const PopularTeacher = ({ teacher }) => {
 
   return (
     <div>
-      <div className="border border-green-400   primaryBg w-full shadow-xl rounded-lg">
+      <div className="border border-green-400  h-full  primaryBg w-full shadow-xl rounded-lg">
         <div className="images max-h-[3000px]">
           <Image
             className="rounded-tl rounded-tr h-[300px] img"
@@ -56,7 +56,7 @@ const PopularTeacher = ({ teacher }) => {
         </div>
         <div className="card-body">
           <h2 className="text-3xl primary font-bold">{teacher?.name}</h2>
-          <p className="text-1xl text-white font-bold">{teacher?.title}</p>
+          <p className="text-1xl text-white font-bold">{teacher?.title?.slice(0,35)}...</p>
           <div className="card-actions justify-end">
             <button
               className="btn buttonColor   hover:text-white duration-100 textColor font-bold border border-green-400"

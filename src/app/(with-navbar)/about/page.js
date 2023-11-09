@@ -1,14 +1,13 @@
 import AboutUs from '@/Components/About/AboutUs'
-import Footer from '@/Components/Footer/Footer'
-import Navbar from '@/Components/Navbar'
+
 import React from 'react'
 
 export default function page() {
   return (
-    <div>
-        <Navbar> </Navbar>
+    <div className=' flex justify-center  items-center gap-2 min-h-[70vh]'>
+   
        <AboutUs> </AboutUs>
-       <Footer> </Footer> 
+     
     </div>
   )
 }

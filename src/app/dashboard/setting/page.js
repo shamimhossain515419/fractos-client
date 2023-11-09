@@ -49,38 +49,10 @@ const SettingPage = () => {
 
      const imageUpdate = async (image) => {
           const photoupdate = { photo: image, email: user?.email }
-          const data = await UpdateUser(photoupdate)
+          const data = await UpdateUser(photoupdate);
+          console.log(data);
 
      }
-
-     // const handleImage = (e) => {
-     //      const file = e.target.files[0];
-
-     //      const Imagebb_URL = `https://api.imgbb.com/1/upload?key=9203b0f26f76133e3002ac28554baf7a`
-     //      const formData = new FormData();
-     //      formData.append('image', file);
-     //      fetch(Imagebb_URL, {
-     //           method: "POST",
-     //           body: formData
-     //      }).then(res => res.json()).then(data => {
-     //           if (data?.data?.display_url) {
-     //                const photo = data?.data?.display_url;
-     //                const name = user?.displayName;
-
-     //                imageUpdate(photo)
-     //                updateUserProfile(name, photo).then((result) => {
-
-     //                     setPageLoader(true)
-     //                }).catch((error) => {
-
-     //                });
-
-     //           }
-     //      }).catch(error => {
-     //           toast.error("File Upload Not Working")
-     //      });
-
-     // };
 
 
 
@@ -89,7 +61,22 @@ const SettingPage = () => {
                event.target.files[0]
           );
 
-          console.log(extractImageUrl);
+          if (extractImageUrl) {
+               imageUpdate(extractImageUrl)
+               const name = user?.displayName;
+               updateUserProfile(name, extractImageUrl).then((result) => {
+                    console.log(result);
+
+                    if (result) {
+                         setPageLoader(true)
+                    }
+
+               }).catch((error) => {
+
+               });
+          }
+
+
 
      }
 
