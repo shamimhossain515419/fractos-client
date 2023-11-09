@@ -8,6 +8,43 @@ import { PostCourses } from "@/services/courses";
 import { GlobalContext } from "@/GlobalState";
 import { useRouter } from "next/navigation";
 import { GetSingleTeacher } from "@/services/teacher";
+import app from "../../../firebase/firebase.config";
+import { firebaseStroageURL } from "@/utils/ClassName";
+import { getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage"
+
+
+
+
+const storage = getStorage(app, firebaseStroageURL);
+
+const createUniqueFileName = (getFile) => {
+  const timeStamp = Date.now();
+  const randomStringValue = Math.random().toString(36).substring(2, 12);
+
+  return `${getFile.name}-${timeStamp}-${randomStringValue}`;
+};
+
+async function helperForUPloadingImageToFirebase(file) {
+  const getFileName = createUniqueFileName(file);
+  const storageReference = ref(storage, `fractos/${getFileName}`);
+  const uploadImage = uploadBytesResumable(storageReference, file);
+
+  return new Promise((resolve, reject) => {
+    uploadImage.on(
+      "state_changed",
+      (snapshot) => { },
+      (error) => {
+        console.log(error);
+        reject(error);
+      },
+      () => {
+        getDownloadURL(uploadImage.snapshot.ref)
+          .then((downloadUrl) => resolve(downloadUrl))
+          .catch((error) => reject(error));
+      }
+    );
+  });
+}
 
 
 const CreateClass = () => {
@@ -15,25 +52,26 @@ const CreateClass = () => {
   const router = useRouter();
   const [image, setImage] = useState("");
   const { user, userInfo } = useContext(GlobalContext)
-  const [Teacher, setTeacher] = useState({})
+  const [Teacher, setTeacher] = useState(null)
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   useEffect(() => {
 
     const getuser = async () => {
       const data = await GetSingleTeacher(user?.email);
-      console.log(data);
-      setTeacher(data?.data)
+      console.log(data, "dddddddddddddddddddddddd");
+      setTeacher(data)
     }
     getuser();
 
-  }, [1000, user])
+  }, [user])
 
-  const onSubmit = async data => {
+ const onSubmit = async data => {
     console.log(data);
     const newData = { ...data, image, user: Teacher?._id, status: false };
 
     const result = await PostCourses(newData);
+    console.log(result);
 
     if (result?.success == true) {
       toast.success(result?.message);
@@ -43,27 +81,21 @@ const CreateClass = () => {
   }
 
 
-  const handleImage = (e) => {
-    const file = e.target.files[0];
 
-    const Imagebb_URL = `https://api.imgbb.com/1/upload?key=22ed14c930e2dd03f17b9e05c5eba1e6`
-    const formData = new FormData();
-    formData.append('image', file);
-    fetch(Imagebb_URL, {
-      method: "POST",
-      body: formData
-    }).then(res => res.json()).then(data => {
-      console.log(data);
-      if (data?.success == true) {
-        console.log(data);
-        const photo = data?.data?.display_url
-        setImage(photo)
-      }
-    }).catch(error => {
-      toast.error("File Upload Not Working")
-    });
 
-  };
+  const handleImage = async (event) => {
+    const extractImageUrl = await helperForUPloadingImageToFirebase(
+      event.target.files[0]
+    ); 
+ console.log(extractImageUrl,"hsmijmdf");
+    if (extractImageUrl) {
+      setImage(extractImageUrl)
+    }
+
+
+
+  }
+
 
 
   return (

@@ -12,7 +12,7 @@ export default function TeacherModal({ data, setOpen }) {
 
      const handleUpdate = async () => {
           const result = await Teacherupdate(newData);
-          if (result.success == true) {
+          if (result?.success == true) {
                toast.success(result?.massage)
                setOpen(false)
           } else {
@@ -49,7 +49,7 @@ export default function TeacherModal({ data, setOpen }) {
                                    </div>
                                    {/*body*/}
                                    <div className="relative p-6 flex-auto">
-                                        <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
+                                        <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
 
 
                                              <div>
@@ -82,7 +82,7 @@ export default function TeacherModal({ data, setOpen }) {
 
 
 
-                                        </p>
+                                        </div>
                                    </div>
                                    {/*footer*/}
                                    <div className="flex items-center justify-end p-6  rounded-b">

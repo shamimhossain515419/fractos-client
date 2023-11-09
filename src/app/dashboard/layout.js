@@ -13,6 +13,7 @@ import { BiUserCircle } from 'react-icons/bi';
 import { FiSettings } from 'react-icons/fi';
 import Image from 'next/image';
 import logo from '../../../public/logo.png'
+import { FaUsers } from 'react-icons/fa';
 
 const DashboardLayout = ({ children }) => {
      const { user, openModal, userinfo } = useContext(GlobalContext)
@@ -67,6 +68,14 @@ const DashboardLayout = ({ children }) => {
                                                   >
                                                        <BsArchive size={24}></BsArchive>
                                                        <h1 className=' text-base md:text-lg f font-normal '> Archive </h1>
+                                                  </Link>
+                                                  <Link
+                                                       href="/dashboard/all-users"
+                                                       className={`${pathname == "/dashboard/all-users" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+
+                                                  >
+                                                       <FaUsers size={24}></FaUsers>
+                                                       <h1 className=' text-base md:text-lg f font-normal '> all-users </h1>
                                                   </Link>
 
                                                   <Link
@@ -240,6 +249,15 @@ const DashboardLayout = ({ children }) => {
                                              </Link>
 
                                              <Link
+                                                  href="/dashboard/all-users"
+                                                  className={`${pathname == "/dashboard/all-users" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+
+                                             >
+                                                  <FaUsers size={24}></FaUsers>
+                                                  <h1 className=' text-base md:text-lg f font-normal '> all-users </h1>
+                                             </Link>
+
+                                             <Link
                                                   href="/dashboard/leaderboard"
                                                   className={`${pathname == "/dashboard/leaderboard" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex hover:bg-[#8d9ddc85]  items-center   py-1 px-2 rounded-md gap-3`}
 
@@ -279,6 +297,8 @@ const DashboardLayout = ({ children }) => {
                                                        <MdBatchPrediction size={24}></MdBatchPrediction>
                                                        <h1 className=' text-base md:text-lg f font-normal '>My Course </h1>
                                                   </Link>
+
+
 
                                                   <Link
                                                        href="/dashboard/setting"

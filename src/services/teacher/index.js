@@ -43,10 +43,6 @@ export const TeacherGet = async () => {
      try {
           const res = await fetch("/api/teacher/teacher-get", {
                method: "GET",
-               headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${Cookies.get("token")}`,
-               },
           });
 
           const data = await res.json();

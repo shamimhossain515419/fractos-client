@@ -1,30 +1,43 @@
 
 import connectToDB from "@/database";
-import TeacherCourse from "@/models/courses";
+import AuthUser from "@/middleware/AuthUser";
+import allUsers from "@/models/Users";
+
 import { NextResponse } from "next/server";
+
+
 
 export const dynamic = "force-dynamic";
 
-export async function GET(req) {
+export async function DELETE(req) {
      try {
           await connectToDB();
+
           const { searchParams } = new URL(req.url);
           const id = searchParams.get("id");
-               console.log(id);
-          const extractData = await TeacherCourse.findById(id).populate("studentIdstudentIdstudentId").populate("user");
-          
-          if (extractData) {
+
+          const extractUser = await allUsers.deleteOne({ _id: id });
+
+          const isAuth = AuthUser(req);
+
+          if (!isAuth) {
+               return NextResponse.json({
+                    success: false,
+                    message: "User not Authorization",
+               });
+          }
+
+          if (extractUser) {
                return NextResponse.json({
                     success: true,
-                    data: extractData,
+                    message: "user delete successfully update",
                });
           } else {
                return NextResponse.json({
                     success: false,
-                    message: "Failed to get question not found  info ! Please try again",
+                    message: "Failed to get User  info ! Please try again",
                });
           }
-
 
      } catch (e) {
           return NextResponse.json({

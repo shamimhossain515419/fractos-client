@@ -5,7 +5,6 @@ import allUsers from "@/models/Users";
 import Teachers from "@/models/teacher";
 import { NextResponse } from "next/server";
 
-
 export const dynamic = "force-dynamic";
 
 export async function PUT(req) {
@@ -21,8 +20,8 @@ export async function PUT(req) {
           console.log(extractData);
 
           const currentUser = await allUsers.findOne({ email });
-
-          if (!currentUser) {
+        
+          if (!currentUser) { 
                return NextResponse.json({
                     success: false,
                     message: "User is not   found",

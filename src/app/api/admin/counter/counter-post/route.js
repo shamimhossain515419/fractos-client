@@ -1,32 +1,33 @@
-
 import connectToDB from "@/database";
-import TeacherCourse from "@/models/courses";
+import Counters from "@/models/counter";
 import { NextResponse } from "next/server";
+
 
 export const dynamic = "force-dynamic";
 
-export async function GET(req) {
+export async function POST(req) {
      try {
           await connectToDB();
-          const { searchParams } = new URL(req.url);
-          const id = searchParams.get("id");
-               console.log(id);
-          const extractData = await TeacherCourse.findById(id).populate("studentIdstudentIdstudentId").populate("user");
-          
-          if (extractData) {
+
+          const data = await req.json();
+          const CountersAddedAddress = await Counters.create(data);
+
+          if (CountersAddedAddress) {
                return NextResponse.json({
                     success: true,
-                    data: extractData,
+                    message: "Courses added successfully",
                });
           } else {
                return NextResponse.json({
                     success: false,
-                    message: "Failed to get question not found  info ! Please try again",
+                    message: "failed to add an address ! Please try again later",
                });
           }
 
 
+
      } catch (e) {
+          console.log(e);
           return NextResponse.json({
                success: false,
                message: "Something went wrong ! Please try again later",
