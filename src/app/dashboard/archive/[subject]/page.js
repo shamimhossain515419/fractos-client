@@ -27,7 +27,7 @@ const page = () => {
      }, [prams?.subject]);
  
      const QuestionData = examData?.data
-
+   
      return (
           <div>
                <div className=' backgrounDSubject  flex justify-center items-center flex-col gap-2 h-[500px]'>

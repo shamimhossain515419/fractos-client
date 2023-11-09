@@ -29,4 +29,5 @@ const StudentDetails = ({ userInfo }) => {
     );
 };
 
+
 export default StudentDetails;
