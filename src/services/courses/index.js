@@ -26,6 +26,23 @@ export const GetCourses = async () => {
           });
 
           const data = await res.json();
+          console.log(data);
+
+          return data?.data;
+
+     } catch (e) {
+          console.log(e);
+     }
+
+}
+export const Courses_By_id = async (id) => {
+     try {
+          const res = await fetch(`/api/courses/courses-by-id?id=${id}`, {
+               method: "GET",
+          });
+
+          const data = await res.json();
+          console.log(data);
 
           return data?.data;
 

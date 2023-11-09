@@ -20,6 +20,25 @@ export const TeacherApply = async (fromDate) => {
      }
 
 }
+export const GetSingleTeacher = async (email) => {
+     console.log(email);
+     try {
+          const res = await fetch(`/api/teacher/get-single-teacher?email=${email}`, {
+               method: "GET",
+               
+          });
+
+          const data = await res.json();
+
+          console.log(data);
+
+          return data?.data;
+
+     } catch (e) {
+          console.log(e);
+     }
+
+}
 export const TeacherGet = async () => {
      try {
           const res = await fetch("/api/teacher/teacher-get", {
@@ -28,7 +47,7 @@ export const TeacherGet = async () => {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${Cookies.get("token")}`,
                },
-         });
+          });
 
           const data = await res.json();
 
