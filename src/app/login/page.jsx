@@ -38,7 +38,7 @@ const Login = () => {
                     id: "",
                 })
                 Swal.fire(
-                    `Welcome, ${res.user?.email}`,
+                    `Welcome, ${res.user?.displayName}`,
                 )
                 router.push('/')
             })
