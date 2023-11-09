@@ -21,7 +21,7 @@ export default function Feedback() {
      const [Feedback, setFeedback] = useState([])
      const Get = async () => {
           const result = await FeedbackGet();
-          console.log(result, "shamimadffd");
+console.log('Feedback Result:', Feedback);
           setFeedback(result)
 
      }

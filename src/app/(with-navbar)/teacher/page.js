@@ -13,17 +13,18 @@ const latoFont = Lato({
 const page = () => {
 
     return (
-        <div className=' pt-[10px]'>
+        <div>
             {/* HERO SECTION */}
             <div class={`bg-cover bg-center bg-teacher-hero-bg ${latoFont.className} relative`}>
                 <div className='bg-slate-900 bg-opacity-50  px-5 min-h-screen w-full pt-2 md:pt-5'>
-                    <Link
+                    {/* BACK BTN TO HOME */}
+                    {/* <Link
                         href={'/'}
                         className='w-[80px] rounded-full flex items-center gap-1 bg-blue-500 py-1 px-2 md:py-2 md:px-3'
                     >
                         <Image src={'/arrow.png'} width={32} height={32} className='w-[24px] h-[24px]'></Image>
                         <span>Back</span>
-                    </Link>
+                    </Link> */}
                     <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-5 text-center'>
                         <h1 className={`text-6xl md:text-5xl font-black`}>Unlock Your Teaching Potential</h1>
                         <br className='mb-2' />

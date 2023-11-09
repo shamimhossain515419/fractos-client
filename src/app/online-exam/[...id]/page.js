@@ -31,7 +31,7 @@ const page = () => {
 
 
      const [Question, setQuestion] = useState([]);
-      const [selectQuestion, setSelectQuestion] = useState(null);
+     const [selectQuestion, setSelectQuestion] = useState(null);
      const [wrong, setWrong] = useState([]);
      const [countExamTime, setCountExamTime] = useState("00")
      const [selectId, setSelectId] = useState([])
@@ -76,12 +76,15 @@ const page = () => {
           return selectOption.includes(id) ? '   primary ' : ' ';
      }
 
-
+ console.log(user);
      const examSubmit = async () => {
           const exam_data = { email: user?.email, time: countExamTime, date: currentDate, exam_name: Question?.exam_name, wrong, number: RightAns?.length, right: RightAns }
           const Userdata = { rank: RightAns?.length * 50, mark: RightAns?.length * 5, exam: 1, email: user?.email }
+          console.log(Userdata);
+          console.log(exam_data);
           const result = await UpdateUser(Userdata);
           const exam_reviews = await PostExamReviews(exam_data);
+          console.log(result, exam_reviews);
           if (result?.success == true && exam_reviews?.success == true) {
                setSuccess(true);
                toast.success(" Exam successfully ")

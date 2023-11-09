@@ -1,8 +1,6 @@
 
-
-
 import connectToDB from "@/database";
-import TeacherCourse from "@/models/courses";
+import Teachers from "@/models/teacher";
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
@@ -11,19 +9,20 @@ export async function GET(req) {
      try {
           await connectToDB();
 
-          console.log("fgdfagdaf");
-
-          const extractAllOrders = await TeacherCourse.find({}).populate("studentIdstudentIdstudentId");
-          console.log(extractAllOrders);
-          if (extractAllOrders) {
+          const { searchParams } = new URL(req.url);
+          const email = searchParams.get("email");
+          console.log(email);
+          const extractUser = await Teachers.findOne({ email });
+          console.log(extractUser);
+          if (extractUser) {
                return NextResponse.json({
                     success: true,
-                    data: extractAllOrders,
+                    data: extractUser,
                });
           } else {
                return NextResponse.json({
                     success: false,
-                    message: "Data not get ! Please try again",
+                    message: "Failed to get question not found  info ! Please try again",
                });
           }
 

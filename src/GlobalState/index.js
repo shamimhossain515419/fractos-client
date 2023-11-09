@@ -6,7 +6,8 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import { GetSingleUser, jwtSingUp } from '@/services/users';
 import Cookies from 'js-cookie';
 import app from '../../firebase/firebase.config';
-import { GetAllDetails } from '@/services/admin';
+import { GetSingleTeacher } from '@/services/teacher';
+import { GetCourses } from '@/services/courses';
 export const GlobalContext = createContext(null);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -16,9 +17,11 @@ const GlobalState = ({ children }) => {
      const [loading, setLoading] = useState(true)
      const [user, setUser] = useState(null);
      const [Error, setError] = useState(false)
+     const [AllCourses, setAllCourses] = useState(false)
      const [setIsAdmin, isAdmin] = useState(false)
+
      const [userinfo, setUserinfo] = useState(null)
- 
+
      const [isUserModalOpen, setIsUserModalOpen] = useState(false);
 
      const [Open, setOpen] = useState(false);
@@ -42,10 +45,11 @@ const GlobalState = ({ children }) => {
      };
 
      const userCullaction = async (email) => {
-          const result = await GetSingleUser(email)
-          setUserinfo(result?.data)
+          const result = await GetSingleUser(email);
+    
+           setUserinfo(result?.data)
      }
-
+     console.log(userinfo?.role,'adfdf');
      const loginUser = (email, password) => {
           setLoading(true)
           return signInWithEmailAndPassword(auth, email, password);
@@ -68,7 +72,7 @@ const GlobalState = ({ children }) => {
 
      }
 
- 
+    
 
      useEffect(() => {
           const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -83,15 +87,18 @@ const GlobalState = ({ children }) => {
           })
           return () => {
                return unsubscribe();
-          }
+          };
+
+
+
      }, [])
      //
-
+  
 
      const stateInfo = {
           openModal, setOpenModal,
           loading, setLoading,
-          user,
+          user, setUser,
           Error, setError,
           userinfo, setUserinfo,
           componentLevelLoader,
@@ -103,7 +110,9 @@ const GlobalState = ({ children }) => {
           googleSignIn, setIsAdmin, isAdmin,
           setIsUserModalOpen, isUserModalOpen,
           Open, setOpen,
-       
+         
+          AllCourses
+
 
      }
 
