@@ -1,6 +1,3 @@
-
-
-
 export const registerNewUser = async (formData) => {
   try {
     const response = await fetch("/api/users/post-user", {
@@ -15,7 +12,7 @@ export const registerNewUser = async (formData) => {
 
     return finalData;
   } catch (e) {
-    console.log("error", e);
+    console.log("error", e); 
   }
 };
 
@@ -29,6 +26,7 @@ export const getAllUser = async () => {
      });
     const data = await res.json();
     return data;
+    // console.log(data);
   } catch (error) {
     console.log(error);
   }
