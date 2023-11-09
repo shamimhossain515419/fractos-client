@@ -43,6 +43,7 @@ const Navbar = () => {
                                         <div className=' hidden md:flex items-center gap-3  space-x-5'>
                                              <Link className="p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all" href={'/'}>Home</Link>
                                              <Link className="p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all" href={'/teacher'}>Teacher</Link>
+                                             <Link className="p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all" href={'/courses'}> All Courses</Link>
                                              <Link className="p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all" href={'/blogs'}>Blogs</Link>
                                              <Link className="p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all" href={'/contact'}>Contact Us</Link>
 
@@ -61,7 +62,7 @@ const Navbar = () => {
                                                             {
                                                                  isUserModalOpen ?
                                                                       <div className="absolute top-[100%]">
-                                                                           <UserModal></UserModal>
+                                                                           <UserModal setIsUserModalOpen={setIsUserModalOpen}></UserModal>
                                                                       </div>
                                                                       :
                                                                       <></>

@@ -1,6 +1,8 @@
 "use client";
 
 import { GetAllDetails } from "@/services/admin";
+import { TeacherGet } from "@/services/teacher";
+import Image from "next/image";
 import React, { PureComponent, useEffect, useState } from "react";
 import {
   LineChart,
@@ -105,13 +107,16 @@ const data2 = [
 
 export default function AdminDashboard() {
   const [totalData, setTotalData] = useState([])
+  const [teacher, setTeacher] = useState([])
+  const [ques, setQus] = useState([])
   useEffect(() => {
 
 
 
     async function GetData() {
       const res = await GetAllDetails();
-
+      const data = await TeacherGet();
+      setTeacher(data)
       setTotalData(res)
     }
 
@@ -121,11 +126,16 @@ export default function AdminDashboard() {
   console.log(totalData);
 
   const totalUser = totalData?.allUser?.length ? totalData?.allUser?.length : 0
+  const admission = totalData?.admission?.length ? totalData?.admission?.length : 0
+  const questions = totalData?.questions?.length ? totalData?.questions?.length : 0;
+  const exam_reviews = totalData?.exam_reviews?.length ? totalData?.exam_reviews?.length : 0;
+
   const order = totalData?.order
 
   const totalPrice = order?.reduce((sum, currentItem) => sum + currentItem?.amount, 0);
 
   console.log(totalPrice);
+  console.log(teacher);
 
 
   return (
@@ -141,24 +151,24 @@ export default function AdminDashboard() {
 
           <div className="upper-container grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-2 px-2  primaryBg text-white ">
             <div className="w-full text-center py-7 shadow-md">
-              <h1 className="text-2xl font-bold primary"> 89600</h1>
+              <h1 className="text-2xl font-bold primary">  {admission ? admission + questions : 0} </h1>
               <h1 className="text-1xl font-bold secondColor">
-                Life time total sell
+                Total Question Items
               </h1>
             </div>
             <div className="w-full  text-center py-7 shadow-md">
-              <h1 className="text-2xl font-bold primary">{totalPrice}</h1>
+              <h1 className="text-2xl font-bold primary">{totalPrice ? totalPrice : 0}</h1>
               <h1 className="text-1xl font-bold secondColor">
                 Income amounts
               </h1>
             </div>
             <div className="w-full  text-center py-7 shadow-md">
-              <h1 className="text-2xl font-bold primary">{totalUser}</h1>
+              <h1 className="text-2xl font-bold primary">{totalUser ? totalUser : 0}</h1>
               <h1 className="text-1xl font-bold secondColor">Total users</h1>
             </div>
             <div className="w-full text-center py-7 shadow-md">
-              <h1 className="text-2xl font-bold primary">600</h1>
-              <h1 className="text-1xl font-bold secondColor">Total visits</h1>
+              <h1 className="text-2xl font-bold primary">{exam_reviews ? exam_reviews : 0}</h1>
+              <h1 className="text-1xl font-bold secondColor">Total Exam</h1>
             </div>
           </div>
 
@@ -233,7 +243,7 @@ export default function AdminDashboard() {
           <div className="px-2 mt-5  ">
             <div className="lower-part w-full px-2 py-5 border ">
               <div className="px-2 py-5">
-                <h1 className="text-1xl font-bold px-2 py-2 primary">
+                <h1 className="text-4xl  font-bold px-2 py-2 primary">
                   Contact
                 </h1>
 
@@ -247,14 +257,54 @@ export default function AdminDashboard() {
                             <input type="checkbox" className="checkbox" />
                           </label>
                         </th>
-                        <th className="text-2xl font-bold primary">Name</th>
-                        <th className="text-2xl font-bold primary">Job</th>
-                        <th className="text-2xl font-bold primary">Favorite Color</th>
-                        <th></th>
+                        <th className="text-lg font-bold primary">Name</th>
+                        <th className="text-lg font-bold primary">Job</th>
+                        <th className="text-lg font-bold primary">Category</th>
+                        <th className="text-lg font-bold primary">Action</th>
+
                       </tr>
                     </thead>
                     <tbody>
                       {/* row 1 */}
+
+                      {
+                        teacher?.map(item => <tr key={item?._id}>
+                          <th>
+                            <label>
+                              <input type="checkbox" className="checkbox" />
+                            </label>
+                          </th>
+                          <td>
+                            <div className="flex items-center space-x-3">
+                              <div className="avatar">
+                                <div className="mask mask-squircle w-12 h-12">
+                                  <Image width={40} height={40} src={item?.image ? item?.image : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="image"></Image>
+
+                                </div>
+                              </div>
+                              <div>
+                                <div className="font-bold primary">
+                                  {item?.name}
+                                </div>
+                                <div className="text-sm opacity-50 primary">
+                                  {item?.collage}
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td className="primary">
+                          {item?.subject}
+                          </td>
+                          <td className="primary">   {item?.subject}</td>
+                          <th>
+                            <button className="btn btn-ghost btn-xs primary">
+                              details
+                            </button>
+                          </th>
+                        </tr>)
+                      }
+
+
                       <tr>
                         <th>
                           <label>
@@ -265,41 +315,8 @@ export default function AdminDashboard() {
                           <div className="flex items-center space-x-3">
                             <div className="avatar">
                               <div className="mask mask-squircle w-12 h-12">
-                                {/* image boshbe */}
-                              </div>
-                            </div>
-                            <div>
-                              <div className="font-bold primary">
-                                Hart Hagerty
-                              </div>
-                              <div className="text-sm opacity-50 primary">
-                                United States
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="primary">
-                          Zemlak, Daniel and Leannon
-                        </td>
-                        <td className="primary">Purple</td>
-                        <th>
-                          <button className="btn btn-ghost btn-xs primary">
-                            details
-                          </button>
-                        </th>
-                      </tr>
-                      {/* row 2 */}
-                      <tr>
-                        <th>
-                          <label>
-                            <input type="checkbox" className="checkbox" />
-                          </label>
-                        </th>
-                        <td>
-                          <div className="flex items-center space-x-3">
-                            <div className="avatar">
-                              <div className="mask mask-squircle w-12 h-12">
-                                {/* image boshbe */}
+                                <Image width={40} height={40} src={"https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="image"></Image>
+
                               </div>
                             </div>
                             <div>
@@ -334,7 +351,8 @@ export default function AdminDashboard() {
                           <div className="flex items-center space-x-3">
                             <div className="avatar">
                               <div className="mask mask-squircle w-12 h-12">
-                                {/* image boshbe */}
+                                <Image width={40} height={40} src={"https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="image"></Image>
+
                               </div>
                             </div>
                             <div>
@@ -369,7 +387,7 @@ export default function AdminDashboard() {
                           <div className="flex items-center space-x-3">
                             <div className="avatar">
                               <div className="mask mask-squircle w-12 h-12">
-                                {/* image boshbe */}
+                                <Image width={40} height={40} src={"https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="image"></Image>
                               </div>
                             </div>
                             <div>

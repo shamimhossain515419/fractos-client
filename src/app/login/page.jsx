@@ -56,7 +56,7 @@ const Login = () => {
                         <h1 className='font-bold text-2xl lg:text-4xl primary text-center'>Login</h1>
                         <div className='flex flex-col'>
                             <label className='text-xl secondColor font-semibold mb-2'>Email Address</label>
-                            <input className={`${inputFieldCommonCSS} text-black`} {...register('email')} type="email" placeholder='example@gmail.com' />
+                            <input className={`${inputFieldCommonCSS} text-white`} {...register('email')} type="email" placeholder='example@gmail.com' />
                         </div>
                         <div>
                             <div className='flex justify-between'>
@@ -64,7 +64,7 @@ const Login = () => {
                                 <button className='text-xl    font-medium hover:underline'>Forgot Password</button>
                             </div>
                             <div className='relative mt-2'>
-                                <input className={`${inputFieldCommonCSS} w-full text-black`} {...register('password')} type={`${isHidden ? 'password' : 'text'}`} placeholder='XXXXXXXX' />
+                                <input className={`${inputFieldCommonCSS} w-full text-white`} {...register('password')} type={`${isHidden ? 'password' : 'text'}`} placeholder='XXXXXXXX' />
                                 <div onClick={() => setIsHidden(!isHidden)} className='absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer'>
                                     {isHidden ?
                                         <Image

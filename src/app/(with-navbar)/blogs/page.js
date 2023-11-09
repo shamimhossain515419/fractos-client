@@ -1,6 +1,7 @@
 "use client"
 import BlogCard from '@/Components/BlogPage/BlogCard';
 import FeaturedBlogCard from '@/Components/BlogPage/FeaturedBlogCard';
+import Student from '@/Components/Student/Student';
 import React, { useEffect, useState } from 'react';
 
 
@@ -20,7 +21,9 @@ const page = () => {
     // Destructure featured blog
     const {id, detail, category, timeRequired, date, title, thumbnail } = featuredBlog;
     return (
-        <div className='w-full p-2 lg:p-0 lg:w-3/4 mx-auto mb-[130px]'>
+        <div>
+            <div className='w-full p-2 lg:p-0 lg:w-3/4 mx-auto mb-[130px]'>
+            
             <h1 className={`${headingTextClasses} pt-8`}>Featured</h1>
             {/* FEATURED BLOG IS SELECTED RANDOMLY */}
             {
@@ -47,6 +50,11 @@ const page = () => {
 
             </div>
         </div >
+        <div>
+            <Student></Student>
+        </div>
+        </div>
+
     );
 };
 
