@@ -12,6 +12,7 @@ import UserModal from "../UserModal/UserModal";
 import Image from "next/image";
 import logo from '../../../public/logo.png'
 import { usePathname } from "next/navigation";
+import { RxAvatar } from "react-icons/rx";
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin, setIsUserModalOpen, isUserModalOpen } = useContext(GlobalContext);
      const [Open, setOpen] = useState(true);
@@ -57,7 +58,12 @@ const Navbar = () => {
                                                   user ?
                                                        <div className='relative cursor-pointer hidden md:block '>
                                                             <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className='flex gap-x-2 items-center py-1  px-2 rounded-lg hover:bg-[#27895C] font-medium transition-all'>
-                                                                 <Image className=" rounded-full w-[46px] h-[46px]" src={user?.photoURL ? user?.photoURL : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="" height={46} width={46} />
+                                                                 {
+                                                                      user?.photoURL ?
+                                                                      <Image className=" rounded-full w-[46px] h-[46px]" src={user?.photoURL} alt="" height={46} width={46} />
+                                                                      :
+                                                                      <RxAvatar className="w-[46px] h-[46px] text-[#E8EAED]"></RxAvatar>
+                                                                 }
                                                                  <h1 className='relative  text-base'>{user?.displayName}</h1>
                                                             </div>
                                                             {
