@@ -13,7 +13,7 @@ const latoFont = Lato({
 const page = () => {
 
     return (
-        <div className=' pt-[10px]'>
+        <div>
             {/* HERO SECTION */}
             <div class={`bg-cover bg-center bg-teacher-hero-bg ${latoFont.className} relative`}>
                 <div className='bg-slate-900 bg-opacity-50  px-5 min-h-screen w-full pt-2 md:pt-5'>
