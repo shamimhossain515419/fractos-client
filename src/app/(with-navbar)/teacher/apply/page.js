@@ -9,7 +9,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
+import { IoIosArrowBack } from "react-icons/io";
+import Swal from 'sweetalert2';
 
 const page = () => {
     const { user, userinfo, componentLevelLoader, setComponentLevelLoader, Error, setError, } = useContext(GlobalContext);
@@ -30,8 +31,12 @@ const page = () => {
         console.log(result);
         if (result.success == true) {
 
-            setError(result?.massage)
-            toast.success(result?.massage, "massage")
+            setError(result?.message)
+            Swal.fire(
+                'successfull',
+                'We will respond to your application in 2 working days.',
+                'success'
+            )
             setComponentLevelLoader({
                 loading: false,
                 id: "",
@@ -39,25 +44,29 @@ const page = () => {
             route.push('/')
         } else {
             route.push('/')
-            toast.error(result?.message)
+            Swal.fire(
+                'Failed!'
+                    `${result?.message}`
+            )
             setComponentLevelLoader({
                 loading: false,
                 id: "",
             })
 
-            setError(result?.massage)
+            setError(result?.message)
         }
 
     }
     return (
 
-        <div className='min-h-screen overflow-y-scroll pt-[10px] text-black'>
-            <div className="p-6 bg-white shadow-2xl">
+        <div className='min-h-screen text-[#E8EAED] p-2'>
+            <div className="p-6 md:w-3/4 my-5 mx-auto rounded-md mt-10 bg-[#0D1124] lg:border lg:border-[#333] shadow-2xl">
                 {/* BACK TO PREVIOUS PAGE */}
-                <Link
-                    href={'/teacher'}
-                >
-                    <Image src={'/arrow.png'} width={32} height={32}></Image>
+                <Link className='cursor-pointer' href={'/teacher'}>
+                    <p className='text-[#E8EAED] lg:text-lg flex items-center'>
+                        <IoIosArrowBack></IoIosArrowBack>
+                        <span>Back</span>
+                    </p>
                 </Link>
                 {/*teacher application form here */}
                 <h2 className='text-center text-2xl font-black mb-5'>Teacher Application Form</h2>
@@ -108,7 +117,7 @@ const page = () => {
                     </div>
 
                     {/* TERMS AND CONDITIONS */}
-                    <div className=" p-6 bg-gray-100 mt-5 rounded-md shadow-lg">
+                    <div className=" p-6 bg-[#080a16] text-[#E8EAED]s mt-5 rounded-md shadow-lg">
                         <h1 className='text-xl lg:text-2xl font-bold mb-5'>Terms & Conditions:</h1>
                         <ol className='space-y-3'>
                             <li className='font-semibold'>

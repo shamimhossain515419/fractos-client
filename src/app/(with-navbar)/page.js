@@ -15,8 +15,6 @@ export default function Home() {
     <div>
       <Container>
         <Banner></Banner>
-        
-
 
         <div className=" my-3">
           <CounterSection> </CounterSection>
@@ -32,11 +30,11 @@ export default function Home() {
       <div className=" py-10">
         <Subscribe></Subscribe>
       </div>
-      
 
-     
 
-      
+
+
+
 
       <div className="">
         <Feedback></Feedback>
