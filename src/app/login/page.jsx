@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
 import Swal from 'sweetalert2';
 
 
@@ -67,19 +68,9 @@ const Login = () => {
                                 <input className={`${inputFieldCommonCSS} w-full text-white`} {...register('password')} type={`${isHidden ? 'password' : 'text'}`} placeholder='XXXXXXXX' />
                                 <div onClick={() => setIsHidden(!isHidden)} className='absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer'>
                                     {isHidden ?
-                                        <Image
-                                            src={'/eyeClose.png'}
-                                            width={30}
-                                            height={30}
-                                            alt='eye-close'
-                                        ></Image>
+                                        <BsEyeSlashFill className="w-[30px] h-[30px] text-[#0EE6B8]"></BsEyeSlashFill>
                                         :
-                                        <Image
-                                            src={'/eyeOpen.png'}
-                                            width={30}
-                                            height={30}
-                                            alt='eye-open'
-                                        ></Image>
+                                        <BsEyeFill className="w-[30px] h-[30px] text-[#0EE6B8]"></BsEyeFill>
                                     }
                                 </div>
                             </div>
