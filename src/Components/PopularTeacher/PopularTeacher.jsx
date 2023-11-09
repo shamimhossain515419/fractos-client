@@ -31,7 +31,7 @@ import "./PopularTeacher.css";
 import Container from "../Container/Container";
 
 const PopularTeacher = (props) => {
-  const { name, title, image,description } = props.teacher;
+  const { name, title, image, description } = props.teacher;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -74,16 +74,19 @@ const PopularTeacher = (props) => {
           onRequestClose={closeModal}
           contentLabel="Teacher Details"
         >
-          <div>
-            <Image
-              className="rounded-lg"
-              src={image}
-              width={500}
-              height={300}
-            ></Image>
+          <div className="text-center">
+            <div className="flex justify-center items-center">
+              <Image
+                className="rounded-lg"
+                src={image}
+                width={500}
+                height={300}
+              ></Image>
+            </div>
+
             <h2 className="text-3xl font-bold mt-3 primary">{name}</h2>
             <p className="text-2xl font-bold text-white mb-3 mt-3">{title}</p>
-            <p className="text-1xl font-bold primary  mb-4">{description}</p>
+            <p className="text-1xl font-bold primary mb-4 ">{description}</p>
             {/* Add more details as needed */}
             <button
               className="btn border border-green-400  buttonColor textColor font-bold "

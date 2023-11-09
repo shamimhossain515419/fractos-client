@@ -16,12 +16,7 @@ export default function Home() {
     <div>
       <Container>
         <Banner></Banner>
-<<<<<<< HEAD
         <PopularTeachers></PopularTeachers>
-        
-
-=======
->>>>>>> 06dd76f0b39d6c1c89958ab95a1d844f42c97ec7
 
         <div className=" my-3">
           <CounterSection> </CounterSection>

@@ -4,63 +4,63 @@
         "id": 1,
         "name": "Emily Dickens",
         "image": "https://i.ibb.co/LvtLDCp/pexels-max-fischer-5212338.jpg",
-        "description": "Product A is a versatile and reliable solution for your everyday needs. Its sleek design and advanced features make it a top choice for any situation. Its compatibility with various devices and elegant design make it a valuable asset"
+        "description": "Product A is a versatile and reliable solution for your everyday needs. Its sleek design and advanced features make it a top choice for any situation. "
       },
       {
         "title": "Math Teacher",
         "id": 2,
         "name": "Dr. Mannem",
         "image": "https://i.ibb.co/TtGHXTv/pexels-rdne-stock-project-7092613.jpg",
-        "description": "Item B is a compact and affordable option that doesn't compromise on quality. With its user-friendly interface, it's perfect for beginners. Its compatibility with various devices and elegant design make it a valuable asset"
+        "description": "Item B is a compact and affordable option that doesn't compromise on quality. With its user-friendly interface, it's perfect for beginners."
       },
       {
         "title": "Chemistry Teacher",
         "id": 3,
         "name": "Jonny de",
         "image": "https://i.ibb.co/sJjv3B9/rinku-doe.jpg",
-        "description": "Introducing Gadget X, the latest innovation in technology. Its cutting-edge design and powerful performance set new standards for the industry. Its compatibility with various devices and elegant design make it a valuable asset"
+        "description": "Introducing Gadget X, the latest innovation in technology. Its cutting-edge design and powerful performance set new standards for the industry."
       },
       {
         "title": "Biology Teacher",
         "id": 4,
         "name": "Malaika",
         "image": "https://i.ibb.co/xXpzMfn/pexels-kampus-production-5940831.jpg",
-        "description": "Widget Z is a reliable and durable choice for professionals. Its robust construction and customizable features make it a standout option.Its compatibility with various devices and elegant design make it a valuable asset"
+        "description": "Widget Z is a reliable and durable choice for professionals. Its robust construction and customizable features make it a standout option."
       },
       {
         "title": "Higher Math",
         "id": 5,
         "name": "Loffege",
         "image": "https://i.ibb.co/TP7kbg7/micale.jpg",
-        "description": "Device Y is a high-performance solution designed for enthusiasts. With its lightning-fast speed and seamless connectivity, it's the ultimate choice. Its compatibility with various devices and elegant design make it a valuable asset"
+        "description": "Device Y is a high-performance solution designed for enthusiasts. With its lightning-fast speed and seamless connectivity, it's the ultimate choice."
       },
       {
         "title": "English Teacher",
         "id": 6,
         "name": "Jeccy",
         "image": "https://i.ibb.co/VpYX2Mb/pexels-katerina-holmes-5905918.jpg",
-        "description": "Accessory C is a must-have addition to your setup. Its compatibility with various devices and elegant design make it a valuable asset.Its compatibility with various devices and elegant design make it a valuable asset"
+        "description": "Accessory C is a must-have addition to your setup. Its compatibility with various devices and elegant design make it a valuable asset"
       },
       {
         "title": "General Math",
         "id": 7,
         "name": "Tech Gizmo",
         "image": "https://i.ibb.co/287m7rj/pexels-fauxels-3184328.jpg",
-        "description": "Tech Gizmo is an innovative marvel that simplifies your life. Its intuitive interface and smart features redefine convenience. Its compatibility with various devices and elegant design make it a valuable asset"
+        "description": "Tech Gizmo is an innovative marvel that simplifies your life. Its intuitive interface and smart features redefine convenience. "
       },
       {
         "title": "Bangla Teacher",
         "id": 8,
         "name": "Farnandege",
         "image": "https://i.ibb.co/r2ZVfwN/pexels-fauxels-3184317.jpg",
-        "description": "Utility Tool is the Swiss Army knife of products. With its multifunctional design and durability, it's a versatile companion for any task. Its compatibility with various devices and elegant design make it a valuable asset"
+        "description": "Utility Tool is the Swiss Army knife of products. With its multifunctional design and durability, it's a versatile companion for any task."
       },
       {
         "title": "ICT Teacher",
         "id": 9,
         "name": "Jesica Marinda",
         "image": "https://i.ibb.co/ngs1Bz6/pexels-christina-morillo-1181534.jpg",
-        "description": "Smart Appliance revolutionizes your home. With its energy-efficient operation and remote control, it makes daily life more convenient.Its compatibility with various devices and elegant design make it a valuable asset"
+        "description": "Smart Appliance revolutionizes your home. With its energy-efficient operation and remote control, it makes daily life more convenient."
       }
 
     ]
