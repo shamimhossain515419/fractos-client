@@ -19,10 +19,10 @@ export default function Home() {
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
-        <div className=" py-5">
+        <div id="Pricing" className=" py-5">
           <Pricing></Pricing>
         </div>
-        <div className=" py-5">
+        <div id="Premium" className=" py-5">
           <Premium></Premium>
         </div>
       </Container>

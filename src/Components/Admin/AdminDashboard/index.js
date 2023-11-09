@@ -3,6 +3,7 @@
 import Notification from "@/Components/Notification/Notification";
 import TeacherModal from "@/Components/TeacherModal/TeacherModal";
 import { GetAllDetails } from "@/services/admin";
+import { UpdateCounter } from "@/services/counter";
 import { TeacherGet } from "@/services/teacher";
 import Image from "next/image";
 import React, { PureComponent, useEffect, useState } from "react";
@@ -113,20 +114,36 @@ export default function AdminDashboard() {
   const [Open, setOpen] = useState(false)
   const [singleTeacher, setSingleTeacher] = useState({})
   const [teacher, setTeacher] = useState([])
-  const [ques, setQus] = useState([])
+  const [ques, setQus] = useState([]);
+
+
+  const fomData = {
+    id: "654cd5cbe032002f41b82cbc",
+    orders: totalData?.order?.length,
+    reviews: totalData?.exam_reviews?.length,
+    student: totalData?.allUser?.length,
+    questions: totalData?.admission?.length + totalData?.questions?.length
+  }
+
   useEffect(() => {
-
-
 
     async function GetData() {
       const res = await GetAllDetails();
       const data = await TeacherGet();
       setTeacher(data)
-      setTotalData(res)
+      setTotalData(res);
+
+
+      if (res && fomData && totalData?.order?.length && totalData?.exam_reviews?.length && totalData?.allUser?.length && totalData?.admission?.length && totalData?.questions?.length) {
+
+        const result = await UpdateCounter(fomData);
+      }
+
+
     }
 
     GetData()
-  })
+  }, [fomData])
 
   console.log(totalData);
 
@@ -139,18 +156,18 @@ export default function AdminDashboard() {
 
   const totalPrice = order?.reduce((sum, currentItem) => sum + currentItem?.amount, 0);
 
-  console.log(totalPrice);
-  console.log(teacher);
-
+ 
 
   return (
     <div>
 
       <div className="admin-container flex primaryBg p-4">
 
+       
+
 
         <div className="admin-right w-full  primaryBg">
-          <h1 className="text-3xl font-bold primary px-1 py-2">
+          <h1 className=" text-3xl font-bold primary px-1 py-2">
             Welcome !
           </h1>
 

@@ -15,20 +15,20 @@ const CreateClass = () => {
   const router = useRouter();
   const [image, setImage] = useState("");
   const { user, userInfo } = useContext(GlobalContext)
-  const [Teacher, setTeacher] = useState({})
+  const [Teacher, setTeacher] = useState(null)
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   useEffect(() => {
 
     const getuser = async () => {
       const data = await GetSingleTeacher(user?.email);
-      console.log(data);
-      setTeacher(data?.data)
+      console.log(data,"shamimadf");
+      setTeacher(data)
     }
     getuser();
 
-  }, [1000, user])
-
+  }, [user])
+ console.log(Teacher,"fgdfgadffgadfgdf");
   const onSubmit = async data => {
     console.log(data);
     const newData = { ...data, image, user: Teacher?._id, status: false };

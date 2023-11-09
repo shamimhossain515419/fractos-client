@@ -11,9 +11,8 @@ export async function GET(req) {
      try {
           await connectToDB();
 
-          console.log("fgdfagdaf");
-
-          const extractAllOrders = await TeacherCourse.find({}).populate("studentIdstudentIdstudentId");
+         
+          const extractAllOrders = await TeacherCourse.find({}).populate("studentIdstudentIdstudentId").populate("user");
           console.log(extractAllOrders);
           if (extractAllOrders) {
                return NextResponse.json({

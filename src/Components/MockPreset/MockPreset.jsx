@@ -1,9 +1,11 @@
 'use client'
 
+import { GetAdmission, GetAdmissionBlog } from '@/services/admission';
 import { GetSubjectByData } from '@/services/exam';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { BsCheckLg } from 'react-icons/bs';
+import NotFoundData from '../NotFoundData/NotFoundData';
 
 const MockPreset = () => {
     const category = "mock"
@@ -90,10 +92,11 @@ const MockPreset = () => {
     const [select, setSelect] = useState(false);
     const [start, setStart] = useState(false);
     const [subject, setSubject] = useState("");
+    const [PresetData, setPresetData] = useState([]);
+    const [itemDataPreset, setItemDataPreset] = useState(false);
 
     const [Question, setQuestion] = useState([])
     const getData = async (subject, category) => {
-        console.log(subject,category);
 
         const result = await GetSubjectByData(subject, category)
         setQuestion(result?.data)
@@ -107,7 +110,28 @@ const MockPreset = () => {
 
     }, [subject, category])
 
- console.log(subject,category);
+    useEffect(() => {
+        const GetData = async () => {
+            const colleges = await GetAdmissionBlog("");
+            setPresetData(colleges)
+        }
+        GetData()
+    })
+
+
+
+
+    const GetAllQuestion = async (subject) => {
+        const result = await GetAdmission();
+        const filter = result?.filter(item => item?.university == subject)
+        setItemDataPreset(filter)
+    }
+
+    useEffect(() => {
+        GetAllQuestion(subject)
+    }, [subject]);
+
+    console.log(itemDataPreset, "dfgdfgadfgadf");
 
     return (
 
@@ -155,12 +179,44 @@ const MockPreset = () => {
                         <p className='font-bold text-2xl primary'>Preset</p>
                         <div className='my-10 grid justify-items-center '>
                             <div className='grid grid-cols-3 md:grid-cols-9  gap-2'>
-                                {qnNames?.map(item => <button onClick={() => setExamName(item?.id)} key={item.id} className={` ${examName === item?.id ? "  primaryBg" : " secondBg "} col px-auto py-4  hover:bg-[#102B3A]  border border-[#0EE6B8] rounded-lg font-bold text-lg w-11/12 text-center`}>{item.name}</button>)}
+                                {PresetData?.map(item => <button onClick={() => { setSubject(item?.path?.[0]), setStart(item?.path?.[0]) }} key={item._id} className={` ${subject === item?.path?.[0] ? "  primaryBg" : " secondBg "} col px-auto py-4  hover:bg-[#102B3A]  border border-[#0EE6B8] rounded-lg font-bold text-lg w-11/12 text-center`}>{item?.CollegeName}</button>)}
                             </div>
-                            <button className="my-4 px-8 py-4 secondBg hover:bg-[#102B3A]  border border-[#0EE6B8]  rounded-lg font-bold text-lg">CKRUET</button>
+
                         </div>
 
                     </div>
+
+
+                    <div>
+
+                        <div>
+                            {
+                                start ? <> {
+                                    itemDataPreset?.length ? <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4  gap-5  my-8'>
+                                        {
+                                            itemDataPreset?.map(item => <Link href={`/online-exam/${item?.exam_name}/${item?.university}/admission`} key={item._id} className='col border border-[#8d9ddc85] cursor-pointer rounded  bg-[#8d9ddc2a] hover:bg-[#8d9ddc85]  text-sm px-2 py-4'>
+                                                <div className='flex   justify-center'>
+                                                    <h1 className=' text-center  text-base  md:text-2xl font-medium'> {item?.title} </h1>
+                                                </div>
+                                                <div className='mt-4 flex  justify-center '>
+                                                    <p className='mr-8'>{item?.questions?.length} Question </p>
+                                                    <p>{item?.questions?.length} Time</p>
+                                                </div>
+                                            </Link>)
+                                        }
+
+                                    </div> : <>  <NotFoundData href={'dashboard/mock-exam'} title={" Data Not Found"} ></NotFoundData>    </>
+                                } </> : null
+                            }
+                        </div>
+
+
+
+
+
+                    </div>
+
+
 
 
                     <div className='font-bold text-2xl flex'>

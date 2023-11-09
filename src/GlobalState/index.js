@@ -8,6 +8,7 @@ import Cookies from 'js-cookie';
 import app from '../../firebase/firebase.config';
 import { GetSingleTeacher } from '@/services/teacher';
 import { GetCourses } from '@/services/courses';
+import { GetAllDetails } from '@/services/admin';
 export const GlobalContext = createContext(null);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -46,11 +47,11 @@ const GlobalState = ({ children }) => {
 
      const userCullaction = async (email) => {
           const result = await GetSingleUser(email);
-    
-           setUserinfo(result?.data)
+
+          setUserinfo(result?.data)
      }
-     console.log(userinfo?.role,'adfdf');
-     const loginUser = (email, password) => {
+  
+    const loginUser = (email, password) => {
           setLoading(true)
           return signInWithEmailAndPassword(auth, email, password);
      }
@@ -72,7 +73,16 @@ const GlobalState = ({ children }) => {
 
      }
 
-    
+
+     useEffect(() => {
+          const getAll = async () => {
+               const res = await GetAllDetails();
+
+          }
+
+          getAll();
+     })
+
 
      useEffect(() => {
           const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -93,7 +103,7 @@ const GlobalState = ({ children }) => {
 
      }, [])
      //
-  
+
 
      const stateInfo = {
           openModal, setOpenModal,
@@ -110,7 +120,7 @@ const GlobalState = ({ children }) => {
           googleSignIn, setIsAdmin, isAdmin,
           setIsUserModalOpen, isUserModalOpen,
           Open, setOpen,
-         
+
           AllCourses
 
 
