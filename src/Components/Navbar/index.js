@@ -18,7 +18,7 @@ const Navbar = () => {
      return (
           <div className=" mb-12">
                <div>
-                    <nav className={`px-2 py-2 z-50   primaryBg shadow-lg fixed top-0 left-0 w-full transition-transform`}>
+                    <nav className={`px-2 py-1 z-50   primaryBg shadow-lg fixed top-0 left-0 w-full transition-transform`}>
                          <Container>
                               <div className=' '>
                                    <div className='flex justify-between items-center'>
@@ -55,8 +55,8 @@ const Navbar = () => {
                                              {
                                                   user ?
                                                        <div className='relative cursor-pointer hidden md:block '>
-                                                            <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className='flex gap-2 items-center  p-2 rounded-lg hover:bg-[#27895C] font-medium transition-all'>
-                                                                 <CommonImage data={user}></CommonImage>
+                                                            <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className='flex gap-x-2 items-center py-1  px-2 rounded-lg hover:bg-[#27895C] font-medium transition-all'>
+                                                            <Image className=" rounded-full w-[46px] h-[46px]" src={user?.photoURL ? user?.photoURL  : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="" height={46} width={46} />
                                                                  <h1 className='relative  text-base'>{user?.displayName}</h1>
                                                             </div>
                                                             {
