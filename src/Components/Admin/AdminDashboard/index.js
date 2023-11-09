@@ -1,5 +1,7 @@
 "use client";
 
+import Notification from "@/Components/Notification/Notification";
+import TeacherModal from "@/Components/TeacherModal/TeacherModal";
 import { GetAllDetails } from "@/services/admin";
 import { TeacherGet } from "@/services/teacher";
 import Image from "next/image";
@@ -106,7 +108,10 @@ const data2 = [
 ];
 
 export default function AdminDashboard() {
+
   const [totalData, setTotalData] = useState([])
+  const [Open, setOpen] = useState(false)
+  const [singleTeacher, setSingleTeacher] = useState({})
   const [teacher, setTeacher] = useState([])
   const [ques, setQus] = useState([])
   useEffect(() => {
@@ -258,8 +263,9 @@ export default function AdminDashboard() {
                           </label>
                         </th>
                         <th className="text-lg font-bold primary">Name</th>
-                        <th className="text-lg font-bold primary">Job</th>
+                        <th className="text-lg font-bold primary">Subject</th>
                         <th className="text-lg font-bold primary">Category</th>
+                        <th className="text-lg font-bold primary">status</th>
                         <th className="text-lg font-bold primary">Action</th>
 
                       </tr>
@@ -293,10 +299,16 @@ export default function AdminDashboard() {
                             </div>
                           </td>
                           <td className="primary">
-                          {item?.subject}
+                            {item?.subject}
                           </td>
-                          <td className="primary">   {item?.subject}</td>
+                          <td className="primary">{item?.subject}</td>
                           <th>
+                            <button className="btn   capitalize btn-ghost btn-xs primary">
+                              {item?.status ? <p className="  primary "> {"Success"} </p> : <p className=" text-red-500  ">{"Pending"}</p>}
+                            </button>
+                          </th>
+
+                          <th onClick={() => { setSingleTeacher(item), setOpen(true) }}>
                             <button className="btn btn-ghost btn-xs primary">
                               details
                             </button>
@@ -420,6 +432,12 @@ export default function AdminDashboard() {
         </div>
       </div>
 
+      {
+        Open ? <TeacherModal data={singleTeacher} setOpen={setOpen}></TeacherModal> : <></>
+      }
+
+
+      <Notification></Notification>
     </div>
   );
 }

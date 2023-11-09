@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 
 
-const CreateClass = () => {
+const EditClass = () => {
    
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -26,7 +26,7 @@ const CreateClass = () => {
     return (
           <> 
           <div className="pt-20">
-          <p className="gFont2 md:text-5xl text-2xl  py-10 md:px-10 px-4 lg:ml-10">Add a new class</p> 
+          <p className="gFont2 md:text-5xl text-2xl  py-10 md:px-10 px-4 lg:ml-10">Edit class</p> 
           </div> 
             <div className="lg:px-20 px-5 pb-20">
               
@@ -157,7 +157,7 @@ const CreateClass = () => {
           type="submit"
           className="mt-10 md:mx-48 mx-5 my-7 mr-20 py-4 text-center font-bold text-white bg-green-700 rounded-full hover:bg-green-800"
         >
-          Add Class
+          Submit
         </button>
       </form>
              </div>   
@@ -166,4 +166,4 @@ const CreateClass = () => {
     );
 };
 
-export default CreateClass;
+export default EditClass;

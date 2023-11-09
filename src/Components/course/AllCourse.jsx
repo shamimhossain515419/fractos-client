@@ -2,11 +2,14 @@ import React from 'react';
 import SscBatch from './SscBatch';
 import HscBatch from './HscBatch';
 import Admission from './Addmission';
+import Container from '../Container/Container';
+import BatchDetails from './BatchDetails';
 // import BatchDetails from './BatchDetails';
 
 const AllCourse = () => {
     return (
-        <div>
+        <Container>
+
             <div className='text-center py-9'>
                 <h1 className='font-bold text-2xl md:text-3xl text-[#3eeac5]'>All Online Batches</h1>
             <p className='my-4 text-[#9cf9e5]'>Join With Our Batch And Prepare You From Any Part of Our Country</p>
@@ -24,8 +27,8 @@ const AllCourse = () => {
                <Admission></Admission>
             </div>
 
-            {/* <BatchDetails></BatchDetails> */}
-        </div>
+            <BatchDetails></BatchDetails>
+        </Container>
     );
 };
 

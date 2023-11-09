@@ -46,15 +46,15 @@ const Footer = () => {
               <h2 className="text-3xl font-bold  primary">Information</h2>
 
               <p className="mt-3 text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
-                About 
+                About
               </p>
-              <Link href={'context'} className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
+              <Link href={'contact'} className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
                 Contact us
               </Link>
-              <Link  href={'/courses'} className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
+              <Link href={'/courses'} className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
                 All courses
               </Link>
-              
+
               <p className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
                 FAQ
               </p>
@@ -64,9 +64,9 @@ const Footer = () => {
             <div className="footer-title lg:text-left md:text-center sm:text-center">
               <h2 className="text-3xl font-bold primary ">Popular Courses</h2>
 
-              <a id="_price" className="mt-3 text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
-                Pricing
-              </a>
+              <Link href={'/courses'} className="mt-3 text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
+                All Courses
+              </Link>
               <p className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
                 Documentation
               </p>
@@ -88,7 +88,7 @@ const Footer = () => {
               <p className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
                 <a href="">farctos@gmai.com</a>
               </p>
-             
+
             </div>
           </div>
         </div>
