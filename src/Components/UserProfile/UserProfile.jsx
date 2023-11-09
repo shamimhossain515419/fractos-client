@@ -24,26 +24,26 @@ const UserProfile = () => {
             <div className='md:flex lg:flex items-center my-4  justify-center '>
 
                 <div className='md:w-3/4 lg:w-3/4'>
-                    <div className='md:flex lg:flex justify-between text-white'>
-                        <div className='shadow-lg rounded-s-full bg-purple-900 border-t-0  shadow-purple-500 p-5 border-2 w-full'>
+                    <div className='md:flex lg:flex justify-between text-white gap-4'>
+                        <div className='shadow-md shadow-white p-5  w-full'>
                             <p className='font-bold'>{userinfo?.rank ? userinfo?.rank : 0}</p>
                             <p className=' secondColor'>Rank</p>
                         </div>
-                        <div className='shadow-md bg-purple-700 -ml-8 rounded-s-full  border-t-0 shadow-purple-500 p-5 border-2 w-full '>
+                        <div className='shadow-md shadow-white p-5 w-full '>
                             <p className='font-bold'>{userinfo?.exam ? userinfo?.exam : 0}</p>
                             <p className=' secondColor'>Exams</p>
                         </div>
-                        <div className='shadow-lg bg-purple-400 -ml-8 rounded-s-full   border-t-0 shadow-purple-500 p-5 border-2 w-full'>
+                        <div className='shadow-md shadow-white p-5 w-full'>
                             <p className='font-bold'>{userinfo?.mark ? userinfo?.mark : 0}</p>
                             <p className=' secondColor'>point</p>
                         </div>
                     </div>
                     <div className='md:flex lg:flex justify-between gap-3 mt-8'>
-                        <div className=' backgroundBG rounded-xl shadow border-t-0 h-52 shadow-slate-500 p-3 border-2 w-full'>
+                        <div className=' rounded-xl shadow border-t-0 h-52 shadow-slate-500 p-3 border-2 w-full'>
                             <p className='font-bold'>Achievement</p>
                         </div>
                         
-                        <div className='shadow rounded-xl backgroundBG border-t-0 h-52 shadow-slate-500 p-3 border-2 w-full'>
+                        <div className='shadow rounded-xl border-t-0 h-52 shadow-slate-500 p-3 border-2 w-full'>
                             <p className='font-bold'>Accuracy</p>
                             <div className='m-auto flex flex-col items-center'>
                                 <img src='https://i.ibb.co/5Mm3ybc/removal-ai-03620765-b252-454f-be72-97967e1a567d-chart.png' alt="" width={100} height={100} />
