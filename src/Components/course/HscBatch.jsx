@@ -23,7 +23,7 @@ const HscBatch = async () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 ">
                     {
                         data?.map(course => <div className='col ' key={course._id}>
-                            <div className="md:flex flex-row-reverse border primaryBg  mx-4 my-6 rounded-lg">
+                            <div className="md:flex flex-row-reverse border border-[#0EE6B8] primaryBg  mx-4 my-6 rounded-lg">
                                 <div className='md:w-1/2  p-4 '>
                                     <Image className='w-full h-[250px] object-fill md:mt-4 rounded-lg' width={100} height={250} src={course.image} alt="download" border="0" 
                                     ></Image>

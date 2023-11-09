@@ -19,7 +19,7 @@ const GlobalState = ({ children }) => {
      const [Error, setError] = useState(false)
      const [AllCourses, setAllCourses] = useState(false)
      const [setIsAdmin, isAdmin] = useState(false)
-     const [teacher, setTeacher] = useState(false)
+
      const [userinfo, setUserinfo] = useState(null)
 
      const [isUserModalOpen, setIsUserModalOpen] = useState(false);
@@ -46,16 +46,10 @@ const GlobalState = ({ children }) => {
 
      const userCullaction = async (email) => {
           const result = await GetSingleUser(email);
-
-
-          if (user?.role == "teacher") {
-               const data = await GetSingleTeacher(email)
-               setTeacher(data)
-          }
-
-          setUserinfo(result?.data)
+    
+           setUserinfo(result?.data)
      }
-
+     console.log(userinfo?.role,'adfdf');
      const loginUser = (email, password) => {
           setLoading(true)
           return signInWithEmailAndPassword(auth, email, password);
@@ -99,7 +93,7 @@ const GlobalState = ({ children }) => {
 
      }, [])
      //
-     console.log(teacher);
+  
 
      const stateInfo = {
           openModal, setOpenModal,
@@ -116,7 +110,7 @@ const GlobalState = ({ children }) => {
           googleSignIn, setIsAdmin, isAdmin,
           setIsUserModalOpen, isUserModalOpen,
           Open, setOpen,
-          teacher,
+         
           AllCourses
 
 

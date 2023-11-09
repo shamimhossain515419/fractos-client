@@ -1,27 +1,41 @@
 "use client"
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import Notification from "../Notification/Notification";
 import { PostCourses } from "@/services/courses";
 import { GlobalContext } from "@/GlobalState";
 import { useRouter } from "next/navigation";
+import { GetSingleTeacher } from "@/services/teacher";
 
 
 const CreateClass = () => {
 
-  const router=useRouter();
+  const router = useRouter();
   const [image, setImage] = useState("");
-  const { user, teacher } = useContext(GlobalContext)
+  const { user, userInfo } = useContext(GlobalContext)
+  const [Teacher, setTeacher] = useState({})
   const { register, handleSubmit, formState: { errors } } = useForm();
+
+  useEffect(() => {
+
+    const getuser = async () => {
+      const data = await GetSingleTeacher(user?.email);
+      console.log(data);
+      setTeacher(data?.data)
+    }
+    getuser();
+
+  }, [1000, user])
+
   const onSubmit = async data => {
     console.log(data);
-    const newData = { ...data, image, user: teacher?._id, status: false };
-   
+    const newData = { ...data, image, user: Teacher?._id, status: false };
+
     const result = await PostCourses(newData);
-    
-    if (result?.success==true) {
+
+    if (result?.success == true) {
       toast.success(result?.message);
       router.push('/dashboard/my-course')
     }
