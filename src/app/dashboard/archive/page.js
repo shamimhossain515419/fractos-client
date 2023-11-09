@@ -12,16 +12,9 @@ const ArchivePage = () => {
 
      return (
           <div>
-
-
-               <div className=' mt-11'>
-                    {
-                         Open ? <><ArchiveCollege ></ArchiveCollege>  </> : <>  <AcademicQuestion></AcademicQuestion>   </>
-                    }
-               </div>
-
-
-
+               {
+                    Open ? <><ArchiveCollege ></ArchiveCollege>  </> : <>  <AcademicQuestion></AcademicQuestion>   </>
+               }
           </div>
      );
 };
