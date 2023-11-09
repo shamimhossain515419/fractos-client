@@ -1,169 +1,193 @@
 "use client"
 import Link from "next/link";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import Notification from "../Notification/Notification";
+import { PostCourses } from "@/services/courses";
+import { GlobalContext } from "@/GlobalState";
+import { useRouter } from "next/navigation";
+import { GetSingleTeacher } from "@/services/teacher";
 
 
 const CreateClass = () => {
-   
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data =>  {
-    const classDes=data.des;
-    const classStatus=data.status;
-    const Email=data.email;
-    const Subject=data.subject;
-    const classLimitStudent=data.limitStudent;
-    const classCourseTime=data.courseTime;
-    const classPrice=data.price;
-    const classPic=data.pic;
-     const ClassData = {classPic,classDes,classLimitStudent,classStatus,Email,Subject,classCourseTime,classPrice};
-     console.log(ClassData);
+  const router = useRouter();
+  const [image, setImage] = useState("");
+  const { user, userInfo } = useContext(GlobalContext)
+  const [Teacher, setTeacher] = useState({})
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
-    
+  useEffect(() => {
 
-     }
+    const getuser = async () => {
+      const data = await GetSingleTeacher(user?.email);
+      console.log(data);
+      setTeacher(data?.data)
+    }
+    getuser();
 
-    return (
-          <> 
-          <div className="pt-20">
-          <p className="gFont2 md:text-5xl text-2xl  py-10 md:px-10 px-4 lg:ml-10">Add a new class</p> 
-          </div> 
-            <div className="lg:px-20 px-5 pb-20">
-              
-              <Link href="/" className='lg:ml-10' to="/" > <button className="mb-5 px-2 py-2 text-center font-bold text-white mt-5 bg-green-800 rounded-md hover:bg-green-900" >
-               Back to Dashboard
-             </button> </Link>
+  }, [1000, user])
 
-      <form  onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 lg:grid-cols-2">
+  const onSubmit = async data => {
+    console.log(data);
+    const newData = { ...data, image, user: Teacher?._id, status: false };
 
-        <div className="mb-4 lg:ml-10 mx-0">
-          <label
-            htmlFor="pic"
-            className="block mb-2 text-sm font-bold text-gray-200"
-          >
-           Class Picture:
-          </label>
-          <input
-            type="text"
-            name="pic"
-            {...register("pic", { required: true })}
-            className="lg:w-full lg:px-2 py-3 placeholder-white border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white text-black"
-          />
-        </div>
+    const result = await PostCourses(newData);
 
-        <div className="mb-4 lg:ml-10 mx-0">
-          <label
-            htmlFor="des"
-            className="block mb-2 text-sm font-bold text-gray-200"
-          >
-           Class Description:
-          </label>
-          <input
-            type="text"
-            name="des"
-            {...register("des", { required: true })}
-            className="lg:w-full lg:px-2 py-3 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white text-black"
-          />
-        </div>
-        <div className="mb-4 lg:ml-10 mx-0">
-          <label
-            htmlFor="status"
-            className="block mb-2 text-sm font-bold text-gray-200"
-          >
-           Class Status:
-          </label>
-          <input
-            type="text"
-            name="status"
-            {...register("status", { required: true })}
-            className="lg:w-full lg:px-2 py-3 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white text-black"
-          />
-        </div>
-        <div className="mb-4 lg:ml-10 mx-0">
-          <label
-            htmlFor="email"
-            className="block mb-2 text-sm font-bold text-gray-200"
-          >
-           Email:
-          </label>
-          <input
-            type="text"
-            name="email"
-            {...register("email", { required: true })}
-            className="lg:w-full lg:px-2 py-3 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white text-black"
-          />
-        </div>
-        <div className="mb-4 lg:ml-10 mx-0">
-          <label
-            htmlFor="subject"
-            className="block mb-2 text-sm font-bold text-gray-200"
-          >
-           Subject:
-          </label>
-          <input
-            type="text"
-            name="subject"
-            {...register("subject", { required: true })}
-            className="lg:w-full lg:px-2 py-3 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white text-black"
-          />
-        </div>
+    if (result?.success == true) {
+      toast.success(result?.message);
+      router.push('/dashboard/my-course')
+    }
 
-        <div className="mb-4 lg:ml-10 mx-0">
-          <label
-            htmlFor="limitStudent"
-            className="block mb-2 text-sm font-bold text-gray-200"
-          >
-           Limit Student:
-          </label>
-          <input
-            type="text"
-            name="limitStudent"
-            {...register("limitStudent", { required: true })}
-            className="lg:w-full lg:px-2 py-3 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white text-black"
-          />
-        </div>
+  }
 
-        <div className="mb-4 lg:ml-10 mx-0">
-          <label
-            htmlFor="courseTime"
-            className="block mb-2 text-sm font-bold text-gray-200"
-          >
-           Course Time:
-          </label>
-          <input
-            type="text"
-            name="courseTime"
-            {...register("courseTime", { required: true })}
-            className="lg:w-full lg:px-2 py-3 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white text-black"
-          />
-        </div>
 
-        <div className="mb-4 lg:ml-10 mx-0">
-          <label
-            htmlFor="price"
-            className="block mb-2 text-sm font-bold text-gray-200"
-          >
-            Price:
-          </label>
-          <input
-            type="text"
-            name="price"
-            {...register("price", { required: true })}
-            className="lg:w-full lg:px-2 py-3 placeholder-white border rounded-md focus:ring-2 focus:ring-blue-500 border-white text-black"
-          />
-        </div>
+  const handleImage = (e) => {
+    const file = e.target.files[0];
 
-        <button
-          type="submit"
-          className="mt-10 md:mx-48 mx-5 my-7 mr-20 py-4 text-center font-bold text-white bg-green-700 rounded-full hover:bg-green-800"
-        >
-          Add Class
-        </button>
-      </form>
-             </div>   
-             </>
-       
-    );
+    const Imagebb_URL = `https://api.imgbb.com/1/upload?key=22ed14c930e2dd03f17b9e05c5eba1e6`
+    const formData = new FormData();
+    formData.append('image', file);
+    fetch(Imagebb_URL, {
+      method: "POST",
+      body: formData
+    }).then(res => res.json()).then(data => {
+      console.log(data);
+      if (data?.success == true) {
+        console.log(data);
+        const photo = data?.data?.display_url
+        setImage(photo)
+      }
+    }).catch(error => {
+      toast.error("File Upload Not Working")
+    });
+
+  };
+
+
+  return (
+    <div className=" secondBg p-10 rounded-md ">
+      <div className="pt-20 ">
+        <p className="gFont2 md:text-5xl text-2xl  primary text-center  py-10 md:px-10 px-4 lg:ml-10">Add a new class</p>
+      </div>
+      <div className="lg:px-20 px-5 pb-20">
+
+
+
+        <form onSubmit={handleSubmit(onSubmit)} >
+
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+
+
+            <div className="mb-4 lg:ml-10 mx-0">
+              <label
+                htmlFor="pic"
+                className="block mb-2 text-sm font-bold text-gray-200"
+              >
+                Subject subject:
+              </label>
+              <input
+                type="text"
+                name="pic"
+                {...register("subject", { required: true })}
+                placeholder="Ex: Subject name"
+                className="w-full lg:px-2 py-3 primaryBg text-white border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white "
+              />
+            </div>
+
+
+            <div className="mb-4 lg:ml-10 mx-0">
+              <label
+                htmlFor="status"
+                className="block mb-2 text-sm font-bold text-gray-200"
+              >
+                Class time:
+              </label>
+              <input
+                type="text"
+                name="time"
+                {...register("time", { required: true })}
+                placeholder="Ex: Course time"
+                className="w-full lg:px-2 py-3 primaryBg text-white  primaryBg border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white "
+              />
+            </div>
+            <div className="mb-4 lg:ml-10 mx-0">
+              <label
+                htmlFor="email"
+                className="block mb-2 text-sm font-bold text-gray-200"
+              >
+                Student    limit:
+              </label>
+              <input
+                type="number"
+                name="limit"
+                placeholder="Ex: Student  limit"
+                {...register("limit", { required: true })}
+                className="w-full lg:px-2 py-3 primaryBg text-white  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white "
+              />
+            </div>
+            <div className="mb-4 lg:ml-10 mx-0">
+              <label
+                htmlFor="subject"
+                className="block mb-2 text-sm font-bold text-gray-200"
+              >
+                price :
+              </label>
+              <input
+                type="number"
+                name="price"
+                {...register("price", { required: true })}
+                placeholder="Ex: Course  price"
+                className="w-full lg:px-2 py-3 primaryBg text-white  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white "
+              />
+            </div>
+
+            <div className="mb-4 lg:ml-10 mx-0">
+              <label
+                htmlFor="des"
+                className="block mb-2 text-sm font-bold text-gray-200"
+              >
+                Class description:
+              </label>
+              <textarea rows={5}
+                type="text"
+                name="description"
+                placeholder="Ex: Course  description"
+                {...register("description", { required: true })}
+                className="w-full lg:px-2 py-3 primaryBg text-white  border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border-white "
+              />
+            </div>
+
+          </div>
+
+
+
+          <div>
+            {
+              image ? <p className=" lg:ml-10">  {image} </p> : <>  <label className='   lg:ml-10 text-white cursor-pointer  rounded-full left-16' htmlFor="image">
+                <input onChange={handleImage} type="file" name="" id="image" />
+              </label></>
+            }
+
+
+
+          </div>
+
+          <div className=" flex pt-5 justify-center items-center gap-2">
+            <button
+              type="submit"
+              className="  text-black md:w-[350px] px-5 py-3 rounded-xl text-base md:text-xl font-semibold  buttonColor   "
+            >
+              Add Class
+            </button>
+          </div>
+        </form>
+      </div>
+      <Notification></Notification>
+    </div>
+
+  );
 };
 
 export default CreateClass;
