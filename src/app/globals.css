@@ -30,6 +30,10 @@ body {
   background-color: #0EE6B8;
 }
 
+.buttonColor:hover {
+  background-color: #0ee6b7ee;
+}
+
 .primaryBg {
   background-color: #102B3A;
 }
@@ -49,6 +53,7 @@ body {
 .imageshodow {
   box-shadow: rgba(234, 88, 219, 0.2) 10px 10px 15px 22px;
 }
+
 .boxClass {
   border: #0EE6B8 (10px 10px 10px 10px);
 }
@@ -84,6 +89,6 @@ body {
   border-bottom: 2px solid black;
 }
 
-.activeLink{
+.activeLink {
   background-color: #0EE6B8;
 }
