@@ -1,36 +1,33 @@
 
-
 import connectToDB from "@/database";
-import Teachers from "@/models/teacher";
+import Blogs from "@/models/blosg";
+
 import { NextResponse } from "next/server";
+
 export const dynamic = "force-dynamic";
 
 export async function GET(req) {
-     await connectToDB();
-
-
      try {
-
-        
-          const TeacherData = await Teachers.find({});
-
-          if (TeacherData) {
+          await connectToDB();
+          const { searchParams } = new URL(req.url);
+          const id = searchParams.get("id");
+            
+          const extractData = await Blogs.findById(id)
+          
+          if (extractData) {
                return NextResponse.json({
                     success: true,
-                    data: TeacherData,
+                    data: extractData,
                });
           } else {
                return NextResponse.json({
                     success: false,
-                    message: "Something went wrong ! Please try again later",
+                    message: "Failed to get question not found  info ! Please try again",
                });
           }
 
 
-
-     } catch (error) {
-          console.log("Error while new user registration. Please try again");
-
+     } catch (e) {
           return NextResponse.json({
                success: false,
                message: "Something went wrong ! Please try again later",

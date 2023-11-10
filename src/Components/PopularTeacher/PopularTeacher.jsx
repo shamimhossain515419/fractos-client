@@ -75,7 +75,7 @@ const PopularTeacher = ({ teacher }) => {
           contentLabel="Teacher Details"
           className=" w-full lg:w-[200]"
         >
-          <div className="text-center ">
+          <div className="text-center  ">
             <div className="flex justify-center items-center">
               <Image
                 className="rounded-lg"

@@ -57,7 +57,7 @@ const page = () => {
 
           if (!exam_name) {
                setError(" Please Exam Name  Set")
-          } else if (questions?.length >=10) {
+          } else if (questions?.length >= 10) {
                setError(" Minimum Question 10 ")
           }
           else if (!title) {
@@ -91,6 +91,8 @@ const page = () => {
                     <TitleBar aline={"text-center"} subtitle={'Add new question for mock test'} title={"New Question Add"}></TitleBar>
                </div>
                <div className=' primaryBg p-4 rounded-md md:px-20 py-10'>
+
+                    <h1 className=' text-center mx-auto text-lg  md:text-lg font-medium  text-red-500'> At least 10 questions should be added</h1>
                     <div>
                          <div>
 
@@ -163,7 +165,7 @@ const page = () => {
                               </div>
 
 
-                              <div  className=' mt-6'>
+                              <div className=' mt-6'>
                                    <button onClick={handleQuestionSubmit} className=' py-2 disabled:bg-[#0ee6b740] w-full  flex justify-center items-center  buttonColor text-black  font-bold px-3 py-1 text-center rounded-md text-base md:text-2xl '>
 
                                         {componentLevelLoader && componentLevelLoader.loading ? (

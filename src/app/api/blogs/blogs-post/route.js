@@ -1,36 +1,36 @@
-
-
 import connectToDB from "@/database";
-import Teachers from "@/models/teacher";
+import Blogs from "@/models/blosg";
+
 import { NextResponse } from "next/server";
+
+
 export const dynamic = "force-dynamic";
 
-export async function GET(req) {
-     await connectToDB();
-
-
+export async function POST(req) {
      try {
+          await connectToDB();
 
-        
-          const TeacherData = await Teachers.find({});
+          const data = await req.json();
+         
 
-          if (TeacherData) {
+       const newlyAddedAddress = await Blogs.create(data);
+
+          if (newlyAddedAddress) {
                return NextResponse.json({
                     success: true,
-                    data: TeacherData,
+                    message: "Courses added successfully",
                });
           } else {
                return NextResponse.json({
                     success: false,
-                    message: "Something went wrong ! Please try again later",
+                    message: "failed to add an address ! Please try again later",
                });
           }
 
 
 
-     } catch (error) {
-          console.log("Error while new user registration. Please try again");
-
+     } catch (e) {
+          console.log(e);
           return NextResponse.json({
                success: false,
                message: "Something went wrong ! Please try again later",
