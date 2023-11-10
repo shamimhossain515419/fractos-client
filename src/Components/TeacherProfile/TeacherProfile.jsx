@@ -106,7 +106,7 @@ const TeacherProfile = () => {
               </div>)
             }
 
-          </div> : <Loading></Loading>
+          </div> : null
         }
 
 

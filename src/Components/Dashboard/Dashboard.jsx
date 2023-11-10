@@ -17,50 +17,28 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { GetExam_reviews } from "@/services/exam-reviews";
 
 const data2 = [
   {
-    name: "A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    name: "bangla",
+    right: 23,
+    wrong: 23,
+
   },
   {
-    name: "B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: "bangla",
+    right: 23,
+    wrong: 23,
+
   },
   {
-    name: "C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    name: "bangla",
+    right: 23,
+    wrong: 23,
+    subject: "bangla",
   },
-  {
-    name: "D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
+
 ];
 
 
@@ -70,10 +48,16 @@ const Dashboard = async () => {
   const { user, userinfo } = useContext(GlobalContext);
   const [allUser, setAllUser] = useState([]);
   const [rank, setRank] = useState(0);
+  const [Exam, setExam] = useState([]);
+  const [charData, setChartData] = useState([])
   const getAllData = async () => {
     const result = await getAllUser();
     const sortData = result?.data.sort((a, b) => b?.rank - a?.rank);
     setAllUser(sortData)
+    if (user) {
+      const data = await GetExam_reviews(user?.email);
+      setExam(data)
+    }
     sortData?.map((item, index) => {
       if (item?.email === user?.email) {
         setRank(index);
@@ -90,9 +74,12 @@ const Dashboard = async () => {
 
 
 
-
+  console.log(charData);
   console.log(allUser);
   console.log(rank);
+  console.log(Exam, "shnmimadf");
+
+
 
   return (
     <div>
@@ -113,7 +100,7 @@ const Dashboard = async () => {
                 <div>
                   <h4 className="text-1xl font-bold  secondColor "> {userinfo?.collage ? userinfo?.collage : "collage"} </h4>
                   <p className="lg:text-5xl md:text-3xl sm:text-2xl font-bold  primary">
-                    {userinfo?.rank ? userinfo?.rank : "00"}
+                    {userinfo?.rank ? userinfo?.rank : 0}
                   </p>
                 </div>
 
@@ -172,7 +159,7 @@ const Dashboard = async () => {
                 </select>
               </div>
             </div>
-            <Link href={'/dashboard/mock-exam'} className="px-2 py-2 primaryBg rounded text-white font-bold mt-2 float-right">
+            <Link href={'/dashboard/mock-exam'} className="px-2 py-2  rounded  buttonColor text-black font-bold mt-2 float-right">
               Start Now
             </Link>
           </div>
@@ -204,7 +191,7 @@ const Dashboard = async () => {
                 <select
                   id="currency"
                   name="currency"
-                  className="h-full primaryBg  rounded-md border-0  py-0 pl-2 pr-7 bg-transparent  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+                  className="h-full    rounded-md border-0  py-0 pl-2 pr-7 bg-transparent  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
                 >
                   <option>Physics</option>
                   <option>Chemistry</option>
@@ -215,7 +202,7 @@ const Dashboard = async () => {
                 </select>
               </div>
             </div>
-            <Link href={'/dashboard/mock-exam'} className="px-2 py-2 primaryBg rounded text-white font-bold mt-2 float-right">
+            <Link href={'/dashboard/mock-exam'} className="px-2 py-2  rounded buttonColor text-black font-bold mt-2 float-right">
               Start Now
             </Link>
           </div>
@@ -232,7 +219,18 @@ const Dashboard = async () => {
               <LineChart
                 width={500} // You can adjust this as needed
                 height={300}
-                data={data2}
+                data={Exam?.map(item => {
+                  const data = {
+                    name: item?.exam_name?.slice(0,8),
+                    right: item?.right?.length,
+                    wrong: item?.wrong?.length
+
+                  }
+                  return data
+
+
+
+                })}
                 margin={{
                   top: 5,
                   right: 30,
@@ -247,15 +245,15 @@ const Dashboard = async () => {
                 <Legend />
                 <Line
                   type="monotone"
-                  dataKey="pv"
+                  dataKey="wrong"
                   stroke="#8884d8"
                   activeDot={{ r: 8 }}
                 />
-                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                <Line type="monotone" dataKey="right" stroke="#82ca9d" />
               </LineChart>
             </ResponsiveContainer>
           </div>
-          <div  className="middle-right w-full sm:w-1/2 h-[400px] py-12 primaryBg border primary ">
+          <div className="middle-right w-full sm:w-1/2 h-[400px] py-12 primaryBg border primary ">
             <div className="overflow-x-auto">
               <table className="table w-full h-full">
 

@@ -16,14 +16,21 @@ const GoogleSignIn = () => {
         const fromData = { email: user?.email, exam: 0, photo: user?.photoURL, name: user?.displayName, password: "", role: "user", category: "student", phone: 0, about: "", batch: "", collage: "", level: "", rank: 0, mark: 0 }
 
         const data = await registerNewUser(fromData);
+
+        
         console.log(data);
-        if (data?.massage) {
+        if (data?.success) {
             Swal.fire(
                 `Welcome, ${user.displayName}`
             );
-
+            
+        }else{
+            Swal.fire(
+                `Welcome, ${user.displayName}`
+            );
+            router.push('/')
         }
-        router.push('/')
+      
 
 
 
