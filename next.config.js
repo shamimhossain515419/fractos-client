@@ -29,6 +29,10 @@ module.exports = {
                {
                     protocol: "https",
                     hostname: "poralekha.info"
+               },
+               {
+                    protocol: "https",
+                    hostname: "firebasestorage.googleapis.com"
                }
 
           ],

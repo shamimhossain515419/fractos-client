@@ -5,8 +5,6 @@ import GoogleSignIn from '@/Components/GoogleSignIn/GoogleSignIn';
 import Navbar from '@/Components/Navbar';
 import { GlobalContext } from '@/GlobalState';
 import { registerNewUser } from '@/services/users';
-import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useRef, useState } from 'react';

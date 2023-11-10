@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="w-full  py-10 rounded    primaryBg  primaryBgColor  ">
+    <div  className="w-full  py-10 rounded    primaryBg  primaryBgColor  ">
 
       <Container>
 
@@ -45,37 +45,35 @@ const Footer = () => {
             <div className="footer-title lg:text-left sm:text-center md:text-center">
               <h2 className="text-3xl font-bold  primary">Information</h2>
 
-              <p className="mt-3 text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
+              <Link href="/about" className="mt-3 text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2 block">
                 About
-              </p>
-              <Link href={'contact'} className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
+              </Link>
+              <Link href={'contact'} className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2 block">
                 Contact us
               </Link>
-              <Link href={'/courses'} className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
+              <Link href={'/courses'} className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2 block">
                 All courses
               </Link>
 
-              <p className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
-                FAQ
-              </p>
+              <a href="#Pricing" className="text-1xl block font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
+              Pricing
+              </a>
             </div>
           </div>
           <div className="footer-item w-full">
             <div className="footer-title lg:text-left md:text-center sm:text-center">
               <h2 className="text-3xl font-bold primary ">Popular Courses</h2>
 
-              <Link href={'/courses'} className="mt-3 text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
+              <Link href={'/courses'} className="mt-3 text-1xl block font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
                 All Courses
               </Link>
-              <p className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
-                Documentation
-              </p>
-              <p className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
-                Guids
-              </p>
-              <p className="text-1xl font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
-                Api status
-              </p>
+              <Link href={'/blogs'} className="mt-3 text-1xl block font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
+                Blogs
+              </Link>
+             
+             <a href="#Premium " className="text-1xl block font-bold  mb-1 cursor-pointer hover:duration-300 hover:text-[#0EE6B8] hover:ms-2">
+              Premium
+              </a>
             </div>
           </div>
           <div className="footer-item w-full">

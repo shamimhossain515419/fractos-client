@@ -24,7 +24,7 @@ const AllCourse =async () => {
             </div>
           
 
-            <BatchDetails></BatchDetails>
+            
         </Container>
     );
 };

@@ -42,10 +42,6 @@ const page = () => {
      return (
           <div>
                <div>
-
-
-
-
                     {allUser?.length > 0 ? <>
                          <h1 className='  text-xl font-bold   uppercase md:text-2xl textColor  '> Leaderboard</h1>
                          <div className=' flex justify-center  sm:gap-2  md:gap-14 '>

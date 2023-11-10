@@ -10,6 +10,7 @@ export async function POST(req) {
           await connectToDB();
 
           const data = await req.json();
+          console.log(data,"shmimmmmmmmmmmmmmmmm");
 
        const newlyAddedAddress = await TeacherCourse.create(data);
 
