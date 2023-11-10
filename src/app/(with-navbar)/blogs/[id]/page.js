@@ -1,6 +1,7 @@
 "use client"
 
 import DetailedBlog from '@/Components/BlogPage/DetailedBlog';
+import { GetSingleBlogs } from '@/services/blogs';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
@@ -11,12 +12,11 @@ const page = () => {
     console.log(id);
     const [myBlog, setMyBlog] = useState(false);
     useEffect(() => {
-        fetch('/blog-data/careerguidelines.json')
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setMyBlog(data.find(blog => blog.id = parseInt(id)))
-            })
+        const getData = async () => {
+            const data = await GetSingleBlogs(id)
+            setMyBlog(data)
+        }
+        getData()
 
         window.scrollTo(0, 0);
     }, [id])

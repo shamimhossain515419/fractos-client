@@ -14,11 +14,7 @@ const TeacherProfile = () => {
   const [teacher, setTeacher] = useState([])
   const [mycourse, setMycourse] = useState({})
 
-  const [users, setUsers] = useState([
-    { id: 1, name: 'John', age: 25 },
-    { id: 2, name: 'Jane', age: 30 },
-    { id: 3, name: 'Doe', age: 22 },
-  ]);
+
 
   useEffect(() => {
 
