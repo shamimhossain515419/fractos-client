@@ -4,12 +4,13 @@
 
 .ReactModal__Content{
     background-color: #102B3A !important; 
-    /* margin-top: 50px; */
-    border: 0;
-    /* width: 65%; */
+    border: 2px solid rgb(31, 138, 31);
+    width: 60%;
     padding: 10px 5px;
-    margin: 50px auto;
-    /* height: 600px; */
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 20px;
+   
 }
 
 .ReactModal__Overlay{

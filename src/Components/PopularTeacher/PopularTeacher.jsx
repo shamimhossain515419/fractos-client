@@ -73,6 +73,7 @@ const PopularTeacher = ({ teacher }) => {
           isOpen={isModalOpen}
           onRequestClose={closeModal}
           contentLabel="Teacher Details"
+          className=" w-full lg:w-[200]"
         >
           <div className="text-center ">
             <div className="flex justify-center items-center">
@@ -87,7 +88,7 @@ const PopularTeacher = ({ teacher }) => {
             <h2 className="text-3xl font-bold mt-3 primary capitalize">{teacher?.name}</h2>
             <p className="text-2xl font-bold text-white mb-3 mt-3">{teacher?.title}</p>
             <p className="text-1xl font-bold primary mb-4 ">{teacher?.description}</p>
-            {/* Add more details as needed */}
+            
             <button
               className="btn border border-green-400  buttonColor textColor font-bold "
               onClick={closeModal}
