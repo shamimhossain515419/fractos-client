@@ -25,7 +25,7 @@ const page = () => {
             <div>
                 {
                     myBlog ?
-                        <DetailedBlog detail={myBlog.detail} category={myBlog.category} timeRequired={myBlog.timeRequired} date={myBlog.date} title={myBlog.title} thumbnail={myBlog.thumbnail} authorName={myBlog.authorName} ></DetailedBlog>
+                        <DetailedBlog detail={myBlog.detail} category={myBlog.category} timeRequired={myBlog.timeRequired} date={myBlog.date} title={myBlog.title} thumbnail={myBlog.thumbnail} authorName={myBlog.authorName} authorImg={myBlog.authorImg} ></DetailedBlog>
                         :
                         ''
                 }
