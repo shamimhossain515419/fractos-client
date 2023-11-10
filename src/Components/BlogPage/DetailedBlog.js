@@ -4,7 +4,7 @@ import { BsArrowLeftSquareFill } from 'react-icons/bs';
 import Link from 'next/link';
 
 
-const DetailedBlog = ({ id, detail, category, timeRequired, date, title, thumbnail, authorName }) => {
+const DetailedBlog = ({ id,authorImg, detail, category, timeRequired, date, title, thumbnail, authorName }) => {
     return (
         <div className='w-full p-2 md:w-8/12 mx-auto lg:w-7/12'>
             <Link href={'/blogs'} className='flex items-center text-xl gap-2 mt-5 mb-3 md:mt-8 lg:mt-8 text-[#0EE6B8] hover:text-[#0ee6b7d3]'>
@@ -15,7 +15,7 @@ const DetailedBlog = ({ id, detail, category, timeRequired, date, title, thumbna
             <Image src={thumbnail} alt='img' width={1000} height={0} className='max-h-[463.5px] mx-auto rounded-md mb-2 w-full'></Image>
             {/* Author Information */}
             <div className='flex items-center gap-2 mb-10'>
-                <Image src={'/bannerImage.png'} width={60} height={50} className='rounded-full min-h-[60px] border border-[#0EE6B8]'></Image>
+                <Image src={authorImg} width={50} height={50} className='rounded-full min-h-[50px] border border-[#0EE6B8]'></Image>
                 <p className='flex flex-col text-[#E8EAED]'>
                     <span>{authorName}</span>
                     <span>{date}</span>
