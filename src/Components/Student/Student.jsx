@@ -25,12 +25,11 @@ const Student = async () => {
 
     console.log(getUserInfos.data);
     return (
-       
             <div className="overflow-x-auto pt-12">
                 <table className="table">
                     <thead className=' primaryBg'>
                         <tr className='text-white'>
-                            <th className=' text-base  md:text-lg font-medium'>Name</th>
+                            <th className=' text-base  md:text-lg font-medium w-96'>Name</th>
                             <th className=' text-base  md:text-lg font-medium'>Category</th>
                             <th className=' text-base  md:text-lg font-medium'>Email</th>
                             <th className=' text-base  md:text-lg font-medium'>Action</th>
@@ -42,7 +41,7 @@ const Student = async () => {
                                 <td>
                                     <div className="flex items-center space-x-3">
                                         <div className="avatar w-14 h-14">
-                                            <img src={userInfo?.photo? userInfo?.photo
+                                            <img src={userInfo?.photo ? userInfo?.photo
                                                 : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="" className='rounded-md' />
                                         </div>
                                         <div>
@@ -62,7 +61,6 @@ const Student = async () => {
                 <StudentDetails showModal={showModal} setShowModal={setShowModal} userInfo={modalData}></StudentDetails>
                 <Notification></Notification>
             </div>
-       
 
     );
 };

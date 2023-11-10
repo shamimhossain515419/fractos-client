@@ -1,6 +1,7 @@
 import React from 'react';
 import ContactSection from '../../../Components/Contact/index'
 import Container from '@/Components/Container/Container';
+import Student from '@/Components/Student/Student';
 
 
 export const metadata = {
@@ -16,7 +17,6 @@ const Contact = async () => {
                <Container>
                     <ContactSection></ContactSection>
                </Container>
-
           </div>
      );
 };

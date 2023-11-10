@@ -59,7 +59,7 @@ const CreateClass = () => {
 
     const getuser = async () => {
       const data = await GetSingleTeacher(user?.email);
-      console.log(data, "dddddddddddddddddddddddd");
+    
       setTeacher(data)
     }
     getuser();

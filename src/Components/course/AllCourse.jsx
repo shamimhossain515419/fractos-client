@@ -18,8 +18,8 @@ const AllCourse =async () => {
             <p className='my-4 text-[#9cf9e5]'>Join With Our Batch And Prepare You From Any Part of Our Country</p>
             </div>
             
-            <div className='mx-4 my-4'>
-                <h1 className=' text-3xl ml-4 font-bold text-[#3eeac5] mb-8'>HSC Online Batches</h1>
+            <div className='mx-4 my-4 flex justify-center items-center   min-h-[60vh]'>
+                
                 <HscBatch></HscBatch>
             </div>
           

@@ -16,6 +16,7 @@ export default function Home() {
     <div>
       <Container>
         <Banner></Banner>
+        
       
 
         <div className=" my-3">

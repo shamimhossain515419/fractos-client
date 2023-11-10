@@ -1,141 +1,120 @@
-import React from 'react';
-import img from './Images/teacherImage.png'
+"use client"
+import React, { useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import './TeacherProfile.css'
+import { GetCourses } from '@/services/courses';
+import { GlobalContext } from '@/GlobalState';
+import { GetSingleTeacher } from '@/services/teacher';
+import Loading from '../Loading/Loading';
+import Link from 'next/link';
 
 const TeacherProfile = () => {
+  const { user } = useContext(GlobalContext);
 
-  const data =
-  {
-    "id": 1,
-    "name": "Taohidur Rahman",
-    "qualification1": "MSc (English), University of Oxford (UK);",
-    "qualification2": " BA, MA (English), University of Dhaka;",
-    "achievement": "IELTS: 8.5",
-    "earning": "50,000",
-    "batch": "6",
-    "enrolled_student": "445169",
-    "batches": [
-      {
-        "id": 1,
-        "subject_name": "HSC English-1st",
-        "batch_no": "1",
-        "enrolled_student": "200",
-        "fees": "1500",
-        "class_time":"7am-8am",
-        "day":"Saturday,Monday,Wednesday"
-      },
-      {
-        "id": 2,
-        "subject_name": "HSC English-1st",
-        "batch_no": "2",
-        "enrolled_student": "200",
-        "fees": "1500",
-        "class_time":"8am-9am",
-        "day":"Saturday,Monday,Wednesday"
-      },
-      {
-        "id": 3,
-        "subject_name": "HSC English-2nd",
-        "batch_no": "1",
-        "enrolled_student": "200",
-        "fees": "1500",
-        "class_time":"7am-8am",
-        "day":"Sunday,Tuesday,Thursday"
-      },
-      {
-        "id": 4,
-        "subject_name": "SSC English-1st",
-        "batch_no": "1",
-        "enrolled_student": "200",
-        "fees": "1000",
-        "class_time":"8am-9am",
-        "day":"Sunday,Tuesday,Thursday"
-      },
-      {
-        "id": 5,
-        "subject_name": "SSC English-2nd",
-        "batch_no": "1",
-        "enrolled_student": "200",
-        "fees": "1000",
-        "class_time":"4.30pm-5.30pm",
-        "day":"Sunday,Tuesday,Thursday"
-      },
-      {
-        "id": 6,
-        "subject_name": "SSC English-2nd",
-        "batch_no": "2",
-        "enrolled_student": "200",
-        "fees": "1000",
-        "class_time":"4.30pm-5.30pm",
-        "day":"Saturday,Monday,Wednesday"
-      },
-    ]
-  }
+  const [teacher, setTeacher] = useState([])
+  const [mycourse, setMycourse] = useState({})
+
+
+
+  useEffect(() => {
+
+    const getData = async () => {
+      const result = await GetCourses();
+      const data = await GetSingleTeacher(user?.email)
+      setTeacher(data)
+
+      if (result?.length > 0) {
+        const filteredUsers = result.filter(item => item?.user?.email == user?.email);
+        setMycourse(filteredUsers);
+      }
+
+
+      console.log(result);
+    }
+    getData()
+  }, [user?.email]);
+
+
+
+
+  console.log(mycourse);
+
+  console.log(teacher);
+
 
   return (
     <div>
       <div className=' w-full flex flex-col items-center justify-center my-6'>
-        < Image width={100} height={100} src={img} alt="download" border="0" className='h-32 w-32 rounded-full border-2  border-[#0EE6B8]' />
+        < Image width={100} height={100} src={user?.photoURL ? user?.photoURL : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="download" border="0" className='h-32 w-32 rounded-full border-2  border-[#0EE6B8]' />
         <div className='primary mt-8 text-center'>
-          <h3 className='font-bold  text-2xl capitalize '>{data.name}</h3>
-          <p className=''> {data.qualification1} </p>
-          <p className=''> {data.qualification2} </p>
-          <p className=''> {data.achievement} </p>
+          <h3 className='font-bold  text-2xl capitalize '>{user?.displayName}</h3>
+          <p className=' text-lg     md:font-medium '> {teacher?.subject} </p>
+          <p className='max-w-[350px]  text-white text-base text-center mx-auto'> {teacher?.title} </p>
+
         </div>
       </div>
 
       <div className='md:flex lg:flex items-center my-4  justify-center text-2xl text-[#3eeac5]  mx-auto w-2/4 md:w-3/4 lg:w-3/4'>
-        <div className='border-2 shadow-lg border-white border-x rounded-full p-4  md:mx-4 my-4  bg-indigo-500 shadow-indigo-500 text-center w-full'><p className='mb-2'>{data.earning}</p>
+        <div className='border-2 shadow-lg border-white border-x rounded-full p-4  md:mx-4 my-4  bg-indigo-500 shadow-indigo-500 text-center w-full'><p className='mb-2'>00</p>
           <p className='mb-2'>/=</p>
         </div>
         <div className='border-2 shadow-lg border-white border-x rounded-full p-4 mr-4 w-full text-center bg-indigo-500 shadow-indigo-500 my-4'>
-          <p className='mb-2'>{data.batch}</p>
+          <p className='mb-2'>{mycourse?.length}</p>
           <p>Batches</p>
         </div>
-        <div className='border-2 border-white  border-x rounded-full p-4 mr-4 w-full text-center bg-indigo-500 my-4 shadow-lg shadow-indigo-500 '><p className='mb-2'>{data.enrolled_student}</p>
-          <p>Students</p></div>
+        <div className='border-2 border-white  border-x rounded-full p-4 mr-4 w-full text-center bg-indigo-500 my-4 shadow-lg shadow-indigo-500 '><p className='mb-2'>00</p>
+          <p>Students  </p></div>
 
       </div>
-      <div className='border rounded-lg border-[#0EE6B8] p-8 mx-4 my-8'>
+      <div className=' rounded-lg  p-8 mx-4 my-8'>
 
-      <p className='font-bold text-3xl text-[#0EE6B8] text-center'>Batches</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
+        <p className='font-bold text-3xl text-[#0EE6B8] text-center'>Batches</p>
 
-          {
-            data.batches.map(batch => <div key={batch.id} className='col '>
-              <div className='border border-blue-500 rounded-lg'>
 
-                <div className='backgroundImage p-8 rounded-lg text-center'>
+        {
+          mycourse?.length > 0 ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-8">
 
-                <h1 className='text-2xl font-bold'>{batch.subject_name}</h1>
-                <h1 className='text-2xl font-bold'>Batch: {batch.batch_no}</h1>
+            {
+              mycourse?.map(batch => <div key={batch?._id} className='col '>
+                <div className='border border-blue-500 rounded-lg'>
+
+                  <div className='  rounded-lg text-center relative'>
+                    <div className=' h-[200px]'>
+                      <Image width={100} height={100} className=' h-[200px] relative w-full ' src={batch?.image} alt='image'></Image>
+
+                    </div>
+                    <h1 className='text-2xl absolute top-0 w-full flex justify-center items-center gap-1  h-full  bg-[#ff42d36a] font-bold'>{batch?.subject
+                    }</h1>
+
+                  </div>
+
+                  <div className='mx-4 mt-8 text-sm text-[#0EE6B8]'>
+                    <p>Total Enrolled Students : {batch?.studentIdstudentIdstudentId?.length}</p>
+                    <p >Price: {batch?.price}</p>
+                    <p>Class Time: {batch?.time}</p>
+                    <p> Student Limit: {batch?.limit}</p>
+                    <div className=''>
+                      <button className='font-bold  border border-indigo-500 rounded-lg  p-2 hover:bg-indigo-700 text-[#0EE6B8] my-4'>Details</button>
+                    </div>
+
+                  </div>
+
                 </div>
-
-                <div className='mx-4 mt-8 text-sm text-[#0EE6B8]'>
-                  <p>Total Enrolled Students : {batch.enrolled_student}</p>
-                  <p >Payment: {batch.fees}</p>
-                  <p>Class Time: {batch.class_time}</p>
-                  <p>{batch.day}</p>
-                 <div className=''>
-                 <button className='font-bold  border border-indigo-500 rounded-lg  p-2 hover:bg-indigo-700 text-[#0EE6B8] my-4'>Details</button>
-                 </div>
-
-                </div>
-
-              </div>
-              <div></div>
+                <div></div>
 
 
-            </div>)
-          }
+              </div>)
+            }
 
-        </div>
-       
+          </div> : <Loading></Loading>
+        }
 
-              <div className='text-center'>
-              <button className='font-bold text-xl border-2 border-[#27deb7] rounded-lg  p-4 hover:bg-blue-700 text-[#0EE6B8]'>Create Batch</button>
-              </div>
+
+
+
+        <Link href={"/dashboard/my-course/add-batch"} className='text-center flex justify-center  items-center w-full'>
+          <button className='font-bold text-xl border-2 border-[#27deb7] rounded-lg  p-4 hover:bg-blue-700 text-[#0EE6B8]'>Create Batch</button>
+        </Link>
       </div>
 
 
