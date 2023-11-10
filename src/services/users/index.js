@@ -1,3 +1,5 @@
+import Cookies from "js-cookie";
+
 export const registerNewUser = async (formData) => {
   try {
     const response = await fetch("/api/users/post-user", {
@@ -12,7 +14,7 @@ export const registerNewUser = async (formData) => {
 
     return finalData;
   } catch (e) {
-    console.log("error", e); 
+    console.log("error", e);
   }
 };
 
@@ -23,7 +25,7 @@ export const getAllUser = async () => {
   try {
     const res = await fetch("/api/users/all-users", {
       method: "GET",
-     });
+    });
     const data = await res.json();
     return data;
     // console.log(data);
@@ -62,10 +64,10 @@ export const jwtSingUp = async (formData) => {
   } catch (e) {
     console.log(e);
   }
-} 
+}
 export const UpdateUser = async (formData) => {
 
- try {
+  try {
     const res = await fetch(`/api/users/update-user`, {
       method: "PUT",
       headers: {
@@ -76,10 +78,28 @@ export const UpdateUser = async (formData) => {
 
     const data = await res.json();
 
-   return data;
-} catch (e) {
+    return data;
+  } catch (e) {
     console.log(e);
-}
+  }
 
- 
+
+}
+export const DeleteUser = async (id) => {
+
+  try {
+    const res = await fetch(`/api/users/delete-user?id=${id}`, {
+      method: "DELETE",
+     
+      Authorization: `Bearer ${Cookies.get("token")}`,
+    });
+
+    const data = await res.json();
+
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+
+
 } 

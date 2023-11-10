@@ -17,6 +17,7 @@ const MenuBar = ({ user }) => {
                               <Link href={'/leader-board'}> Leader board</Link>
                               <Link href={'/courses'}> All Courses</Link>
                               <Link href={'/blogs'}> Blogs</Link>
+                              <Link href={'/about'}> About</Link>
                               <Link href={'/contact'}> Contact Us</Link>
 
 

@@ -1,7 +1,6 @@
 
 
 import connectToDB from "@/database";
-import AuthUser from "@/middleware/AuthUser";
 import Teachers from "@/models/teacher";
 import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
@@ -12,14 +11,7 @@ export async function GET(req) {
 
      try {
 
-          const isAuthUser = await AuthUser(req);
-
-          if (!isAuthUser) {
-               return NextResponse.json({
-                    success: false,
-                    massage:"User not Authorization" ,
-               });
-          }
+        
           const TeacherData = await Teachers.find({});
 
           if (TeacherData) {

@@ -1,0 +1,17 @@
+.images .img{
+    width: 100%;
+}
+
+.ReactModal__Content{
+    background-color: #102B3A !important; 
+    /* margin-top: 50px; */
+    border: 0;
+    /* width: 65%; */
+    padding: 10px 5px;
+    margin: 50px auto;
+    /* height: 600px; */
+}
+
+.ReactModal__Overlay{
+    background-color: transparent !important;
+}

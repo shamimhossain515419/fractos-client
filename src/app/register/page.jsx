@@ -5,17 +5,16 @@ import GoogleSignIn from '@/Components/GoogleSignIn/GoogleSignIn';
 import Navbar from '@/Components/Navbar';
 import { GlobalContext } from '@/GlobalState';
 import { registerNewUser } from '@/services/users';
-import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
 import Swal from 'sweetalert2';
 
 
 const Page = () => {
-    const { createUser, updateUserProfile, componentLevelLoader, setComponentLevelLoader } = useContext(GlobalContext);
+    const { createUser, updateUserProfile, componentLevelLoader, setComponentLevelLoader, logOutUser, setUser } = useContext(GlobalContext);
     const { register, handleSubmit, formState, watch } = useForm();
     const { errors } = formState;
     const router = useRouter();
@@ -35,8 +34,11 @@ const Page = () => {
 
 
 
+        // Creating a new user account
         createUser(data.email, data.password)
             .then(result => {
+                // forcing user to login by setting setUser(null)
+                setUser(null)
                 updateUserProfile(data.name)
                     .then(res => {
 
@@ -49,7 +51,11 @@ const Page = () => {
                             'Your account has been created.',
                             'success'
                         )
-                        router.push('/login')
+                        // after successfull creation of a account navigating to login page.
+                        logOutUser()
+                            .then(() => {
+                                router.push('/login')
+                            })
                     })
             })
     }
@@ -102,19 +108,9 @@ const Page = () => {
                                     })} type={`${isHidden ? 'password' : 'text'}`} name='password' placeholder='Enter Password' />
                                     <div onClick={() => setIsHidden(!isHidden)} className='absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer'>
                                         {isHidden ?
-                                            <Image
-                                                src={'/eyeClose.png'}
-                                                width={30}
-                                                height={30}
-                                                alt='eye-close'
-                                            ></Image>
-                                            :
-                                            <Image
-                                                src={'/eyeOpen.png'}
-                                                width={30}
-                                                height={30}
-                                                alt='eye-open'
-                                            ></Image>
+                                        <BsEyeSlashFill className="w-[30px] h-[30px] text-[#0EE6B8]"></BsEyeSlashFill>
+                                        :
+                                        <BsEyeFill className="w-[30px] h-[30px] text-[#0EE6B8]"></BsEyeFill>
                                         }
                                     </div>
                                 </div>
@@ -137,19 +133,9 @@ const Page = () => {
                                     })} name='confirmPassword' placeholder='Confirm Password' />
                                     <div onClick={() => setIsHidden2(!isHidden2)} className='absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer'>
                                         {isHidden2 ?
-                                            <Image
-                                                src={'/eyeClose.png'}
-                                                width={30}
-                                                height={30}
-                                                alt='eye-close'
-                                            ></Image>
-                                            :
-                                            <Image
-                                                src={'/eyeOpen.png'}
-                                                width={30}
-                                                height={30}
-                                                alt='eye-open'
-                                            ></Image>
+                                        <BsEyeSlashFill className="w-[30px] h-[30px] text-[#0EE6B8]"></BsEyeSlashFill>
+                                        :
+                                        <BsEyeFill className="w-[30px] h-[30px] text-[#0EE6B8]"></BsEyeFill>
                                         }
                                     </div>
                                 </div>

@@ -23,7 +23,7 @@ const GoogleSignIn = () => {
             );
 
         }
-        router.push('/dashboard/archive')
+        router.push('/')
 
 
 

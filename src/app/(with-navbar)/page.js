@@ -7,6 +7,7 @@ import Banner from "@/Home/Banner/Banner";
 import Container from "@/Components/Container/Container";
 
 import Subscribe from "@/Components/Subscribe/Subscribe";
+import PopularTeachers from "@/Components/PopularTeachers/PopularTeachers";
 
 
 
@@ -15,28 +16,30 @@ export default function Home() {
     <div>
       <Container>
         <Banner></Banner>
-        
-
+      
 
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>
-        <div className=" py-5">
+        <div id="Pricing" className=" py-5">
           <Pricing></Pricing>
         </div>
-        <div className=" py-5">
+        <div id="Premium" className=" py-5">
           <Premium></Premium>
         </div>
+        <PopularTeachers></PopularTeachers>
       </Container>
+
+ 
 
       <div className=" py-10">
         <Subscribe></Subscribe>
       </div>
-      
 
-     
 
-      
+
+
+
 
       <div className="">
         <Feedback></Feedback>

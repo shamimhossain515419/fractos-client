@@ -49,8 +49,8 @@ body {
 .imageshodow {
   box-shadow: rgba(234, 88, 219, 0.2) 10px 10px 15px 22px;
 }
-.boxShodowClass {
-  border: #0EE6B8 (5px 5px 5px 5px);
+.boxClass {
+  border: #0EE6B8 (10px 10px 10px 10px);
 }
 
 
@@ -84,4 +84,7 @@ body {
   border-bottom: 2px solid black;
 }
 
-
+.activeLink{
+  
+  color: #0EE6B8;
+}
