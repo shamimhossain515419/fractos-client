@@ -1,7 +1,6 @@
 
 
 import connectToDB from "@/database";
-import AuthUser from "@/middleware/AuthUser";
 import Teachers from "@/models/teacher";
 import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";

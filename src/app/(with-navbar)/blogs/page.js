@@ -18,40 +18,42 @@ const page = () => {
             });
     }, [])
     // Destructure featured blog
-    const {id, detail, category, timeRequired, date, title, thumbnail } = featuredBlog;
+    const { id, detail, category, timeRequired, date, title, thumbnail } = featuredBlog;
     return (
-        <div>
-            <div className='w-full p-2 lg:p-0 lg:w-3/4 mx-auto mb-[130px]'>
-            
-            <h1 className={`${headingTextClasses} pt-8`}>Featured</h1>
-            {/* FEATURED BLOG IS SELECTED RANDOMLY */}
-            {
-                featuredBlog ?
-                    <FeaturedBlogCard id={id} detail={detail} category={category} timeRequired={timeRequired} date={date} title={title} thumbnail={thumbnail}></FeaturedBlogCard>
-                    :
-                    ''
-            }
-            <h1 className={`${headingTextClasses}`}>All Blogs</h1>
-            {/* ALL BLOGS */}
-            <div className="grid grid-cols-3 gap-8">
-                {
-                    blogsData ? blogsData.map(blog => {
-                        const { id, detail, category, timeRequired, date, title, thumbnail } = blog;
-                        return (
-                            <div key={id} className="col-span-3 lg:col-span-1">
-                                <BlogCard id={id} detail={detail} title={title} timeRequired={timeRequired} date={date} thumbnail={thumbnail} category={category}></BlogCard>
-                            </div>
-                        )
-                    })
-                        :
-                        ''
-                }
+        <div className=' flex justify-center items-center gap-2 min-h-[60vh]'>
+            <div>
+                <div className='w-full p-2 lg:p-0 lg:w-3/4 mx-auto mb-[130px]'>
 
+                    <h1 className={`${headingTextClasses} pt-8`}>Featured</h1>
+                    {/* FEATURED BLOG IS SELECTED RANDOMLY */}
+                    {
+                        featuredBlog ?
+                            <FeaturedBlogCard id={id} detail={detail} category={category} timeRequired={timeRequired} date={date} title={title} thumbnail={thumbnail}></FeaturedBlogCard>
+                            :
+                            ''
+                    }
+                    <h1 className={`${headingTextClasses}`}>All Blogs</h1>
+                    {/* ALL BLOGS */}
+                    <div className="grid grid-cols-3 gap-8">
+                        {
+                            blogsData ? blogsData.map(blog => {
+                                const { id, detail, category, timeRequired, date, title, thumbnail } = blog;
+                                return (
+                                    <div key={id} className="col-span-3 lg:col-span-1">
+                                        <BlogCard id={id} detail={detail} title={title} timeRequired={timeRequired} date={date} thumbnail={thumbnail} category={category}></BlogCard>
+                                    </div>
+                                )
+                            })
+                                :
+                                ''
+                        }
+
+                    </div>
+                </div >
+                <div>
+
+                </div>
             </div>
-        </div >
-        <div>
-           
-        </div>
         </div>
 
     );
