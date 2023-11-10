@@ -21,7 +21,7 @@ const Login = () => {
     const [isHidden, setIsHidden] = useState(true)
 
     const inputFieldCommonCSS = 'rounded-lg p-2 text-base lg:text-lg primaryBg outline-none border-2 border-gray-200  focus:border-sky-400';
-    const loginBtnCSS = 'w-full p-2 font-bold text-xl rounded-lg hover:shadow-md hover:shadow-gray-200';
+    const loginBtnCSS = 'w-full p-2 font-bold text-xl rounded-lg';
 
     const { register, handleSubmit } = useForm();
 

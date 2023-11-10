@@ -409,7 +409,7 @@ const DashboardLayout = ({ children }) => {
 
                     </div>
 
-                    <div className=' md:ml-[300px] mt-10 p-3'>
+                    <div className=' md:ml-[300px] overflow-hidden p-3'>
                          {children}
                     </div>
 

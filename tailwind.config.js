@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'teacher-hero-bg': "url('/teacher-landing-page/hero-bg.jpg')",
+        'teacher-hero-bg': "url('/teacher-landing-page/man-waving-laptop-medium-shot.jpg')",
       }
     },
   },

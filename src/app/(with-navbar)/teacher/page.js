@@ -15,8 +15,8 @@ const page = () => {
     return (
         <div>
             {/* HERO SECTION */}
-            <div class={`bg-cover bg-center bg-teacher-hero-bg ${latoFont.className} relative`}>
-                <div className='bg-slate-900 bg-opacity-50  px-5 min-h-screen w-full pt-2 md:pt-5'>
+            <div style={{backgroundPosition:'60% 50%'}} className={`bg-cover bg-teacher-hero-bg ${latoFont.className} relative`}>
+                <div className='bg-black bg-opacity-50  px-5 min-h-screen w-full pt-2 md:pt-5'>
                     {/* BACK BTN TO HOME */}
                     {/* <Link
                         href={'/'}
@@ -26,14 +26,13 @@ const page = () => {
                         <span>Back</span>
                     </Link> */}
                     <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-5 text-center'>
-                        <h1 className={`text-6xl md:text-5xl font-black`}>Unlock Your Teaching Potential</h1>
-                        <br className='mb-2' />
-                        <p className='text-4xl md:text-3xl text-[#3498DB] font-semibold'>Discover Our Tailored Services to Empower Educators</p>
+                        <h1 className={` text-[32px] leading-[44.8px] md:text-[48px] md:leading-[67.2px] lg:text-[64px] lg:px-20 lg:leading-[89.6px] md:text-5xl font-black mb-10 `}>Empower Teachers to Shape Tomorrow's Leaders</h1>
+                        <p className='text-[18px] leading-[25.2px] md:text-[24px] md:leading-[33.6px] ld:text-[28px] lg:leading-[39.2px] lg:w-3/4 lg:mx-auto md:text-3xl text-[#ebf7ff] font-semibold capitalize'>Unlock your teaching potential with our Batch management feature, craft courses as you like, and more.</p>
                         <br className='mb-16' />
                         {/* CTA BTN GROUP */}
                         <div className='flex items-center gap-8 justify-center'>
-                            <Link href={'/teacher/apply'} className="px-5 py-2 border-2 hover:border-white transition-all border-[#3498DB] text-white bg-[#3498DB] hover:bg-[#black font-mediumFe1] rounded-full font-mediumer:shadow-lg font-bold">GET STARTED</Link>
-                            <Link href={'/register'} className="px-3 py-2 bg-transparent text-white border-2 border-[#3498DB] hover:bg-[#3498DB] hover:border-[#3498DB] rounded-full hover:shadow-lg transition-all font-medium">Learn More</Link>
+                            <Link href={'/teacher/apply'} className="px-3 sm:px-5 py-2 border-2 hover:border-white transition-all border-[#3498DB] text-white bg-[#3498DB] hover:bg-[#black font-mediumFe1] rounded-full font-mediumer:shadow-lg font-bold">GET STARTED</Link>
+                            <Link href={'/register'} className="px-3 sm:px-5 py-2 bg-transparent text-white border-2 border-[#3498DB] hover:bg-[#3498DB] hover:border-[#3498DB] rounded-full hover:shadow-lg transition-all font-medium">Learn More</Link>
                         </div>
                     </div>
                 </div>
