@@ -16,7 +16,7 @@ export default function Home() {
     <div>
       <Container>
         <Banner></Banner>
-        <PopularTeachers></PopularTeachers>
+        
       
 
         <div className=" my-3">

@@ -52,6 +52,7 @@ const PopularTeacher = ({ teacher }) => {
             src={teacher?.image ? teacher?.image : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"}
             width={200}
             height={300}
+            alt="image"
           ></Image>
         </div>
         <div className="card-body">
@@ -82,6 +83,7 @@ const PopularTeacher = ({ teacher }) => {
                 src={teacher?.image ? teacher?.image : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"}
                 width={500}
                 height={300}
+                alt="image"
               ></Image>
             </div>
 

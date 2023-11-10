@@ -64,6 +64,7 @@ const data = [
   },
 ];
 
+
 const data2 = [
   {
     name: "A",
@@ -108,6 +109,8 @@ const data2 = [
     amt: 2100,
   },
 ];
+
+
 
 export default function AdminDashboard() {
 
@@ -154,6 +157,34 @@ export default function AdminDashboard() {
   const exam_reviews = totalData?.exam_reviews?.length ? totalData?.exam_reviews?.length : 0;
   const order = totalData?.order
   const totalPrice = order?.reduce((sum, currentItem) => sum + currentItem?.amount, 0);
+
+
+  const data2 = [
+   
+    {
+      name: "TotalUser",
+      uv: totalUser,
+    },
+    {
+      name: "admission",
+      uv: admission,
+    },
+    {
+      name: "exam_reviews",
+      uv: exam_reviews,
+     },
+    {
+      name: "Income",
+      uv: totalPrice,
+     
+    },
+    {
+      name: "questions",
+      uv: questions,
+     
+    },
+    
+  ]
 
   return (
     <div>
@@ -202,7 +233,7 @@ export default function AdminDashboard() {
                   <LineChart
                     width={500} // You can adjust this as needed
                     height={300}
-                    data={data}
+                    data={data2}
                     margin={{
                       top: 5,
                       right: 30,
@@ -218,14 +249,14 @@ export default function AdminDashboard() {
                     <Line
                       type="monotone"
                       dataKey="pv"
-                      stroke="#8884d8"
+                      stroke="#000000b0"
                       activeDot={{ r: 8 }}
                     />
                     <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
                   </LineChart>
                 </ResponsiveContainer>
               </div>
-              <div className="middle-right w-full sm:w-1/2 h-[400px] py-12 primaryBg border text-white ">
+              <div className="middle-right w-full sm:w-1/2 h-[400px] py-12 primaryBg border primary ">
                 <h1 className="text-1xl font-bold px-2 py-2 primary">
                   Total Analytics
                 </h1>
