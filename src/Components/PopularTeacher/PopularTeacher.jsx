@@ -74,7 +74,7 @@ const PopularTeacher = ({ teacher }) => {
           onRequestClose={closeModal}
           contentLabel="Teacher Details"
         >
-          <div className="text-center ">
+          <div className="text-center  ">
             <div className="flex justify-center items-center">
               <Image
                 className="rounded-lg"

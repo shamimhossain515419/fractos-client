@@ -60,16 +60,16 @@ const page = () => {
     return (
 
         <div className='min-h-screen text-[#E8EAED] p-2'>
-            <div className="p-6 md:w-3/4 my-5 mx-auto rounded-md mt-10 bg-[#0D1124] lg:border lg:border-[#333] shadow-2xl">
+            <div className="p-6 md:w-3/4 my-5 mx-auto rounded-md mt-10  secondBg lg:border lg:border-[#333] shadow-2xl">
                 {/* BACK TO PREVIOUS PAGE */}
                 <Link className='cursor-pointer' href={'/teacher'}>
                     <p className='text-[#E8EAED] lg:text-lg flex items-center'>
                         <IoIosArrowBack></IoIosArrowBack>
-                        <span>Back</span>
+                        <span className='  secondColor'>Back</span>
                     </p>
                 </Link>
                 {/*teacher application form here */}
-                <h2 className='text-center text-2xl font-black mb-5'>Teacher Application Form</h2>
+                <h2 className='text-center text-2xl font-black primary mb-5'>Teacher Application Form</h2>
                 <form onSubmit={handleSubmit(handleTeacherApplicationForm)}>
                     {/* FIRST AND LAST NAME */}
                     <div className='grid grid-cols-2 gap-3'>
@@ -117,7 +117,7 @@ const page = () => {
                     </div>
 
                     {/* TERMS AND CONDITIONS */}
-                    <div className=" p-6 bg-[#080a16] text-[#E8EAED]s mt-5 rounded-md shadow-lg">
+                    <div className=" p-6  primaryBg text-[#E8EAED]s mt-5 rounded-md shadow-lg">
                         <h1 className='text-xl lg:text-2xl font-bold mb-5'>Terms & Conditions:</h1>
                         <ol className='space-y-3'>
                             <li className='font-semibold'>
