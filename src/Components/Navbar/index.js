@@ -27,9 +27,7 @@ const Navbar = () => {
                                         <div className=' flex  items-center gap-4'>
 
                                              <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className=" md:hidden relative cursor-pointer">
-                                                  {
-                                                       user ? <CommonImage data={user} className="w-[50px] h-[50px]"></CommonImage> : null
-                                                  }
+                                                  <CommonImage data={user} className="w-[50px] h-[50px]"></CommonImage>
                                                   {
                                                        isUserModalOpen ?
                                                             <div className="absolute top-[105%]">
@@ -59,17 +57,12 @@ const Navbar = () => {
                                                   user ?
                                                        <div className='relative cursor-pointer hidden md:block '>
                                                             <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className='flex gap-x-2 items-center py-1  px-2 rounded-lg hover:bg-[#27895C] font-medium transition-all'>
-                                                                 {
-                                                                      user?.photoURL ?
-                                                                      <Image className=" rounded-full w-[46px] h-[46px]" src={user?.photoURL} alt="" height={46} width={46} />
-                                                                      :
-                                                                      <RxAvatar className="w-[46px] h-[46px] text-[#E8EAED]"></RxAvatar>
-                                                                 }
+                                                                 <CommonImage data={user}></CommonImage>
                                                                  <h1 className='relative  text-base'>{user?.displayName}</h1>
                                                             </div>
                                                             {
                                                                  isUserModalOpen ?
-                                                                      <div className="absolute top-[100%]">
+                                                                      <div className="absolute top-[100%] -right-1/2">
                                                                            <UserModal setIsUserModalOpen={setIsUserModalOpen}></UserModal>
                                                                       </div>
                                                                       :
