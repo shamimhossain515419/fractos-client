@@ -7,10 +7,8 @@ import LiveImage from "./../../../public/mock.png"
 const Premium = () => {
     return (
         <div>
-
             <CommonTitle title={"Premium Features"}></CommonTitle>
             <div className="grid grid-cols-1 gap-y-10 w-full">
-
                 <div className="grid md:grid-cols-12 md:gap-10 rounded-xl   primaryBg  shadow-lg p-2 md:p-5 w-full col-span-1 border-2 border-[#0EE6B8]">
                     <div className=" md:col-span-4 w-full">
                         <Image src={mockImage} width={320} height={300} className="mx-auto"></Image>
