@@ -1,11 +1,16 @@
 import Image from "next/image";
 import React from 'react';
+import { RxAvatar } from "react-icons/rx";
 
 const CommonImage = ({ data }) => {
      return (
           <div>
                <div className="image">
-                    <Image className=" rounded-full   object-fill w-[50px] h-[50px]" src={data?.photoURL ? data?.photoURL  : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt="" height={50} width={50} />
+                    {data?.photoURL ?
+                         <Image className=" rounded-full   object-fill w-[50px] h-[50px]" src={data?.photoURL} alt="" height={50} width={50} />
+                         :
+                         <RxAvatar className="w-[50px] h-[50px] text-[#E8EAED]"></RxAvatar>
+                    }
                </div>
           </div>
      );
