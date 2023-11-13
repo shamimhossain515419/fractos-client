@@ -31,7 +31,7 @@ console.log('Feedback Result:', Feedback);
      }, [1000])
 
 
-     console.log(Feedback);
+   
      return (
           <div className=' w-full'>
 
@@ -48,29 +48,33 @@ console.log('Feedback Result:', Feedback);
                <div className='   py-8'>
                     <Container>
                          <Swiper
-                              spaceBetween={30}
-                              centeredSlides={true}
                               slidesPerView={2}
+                              spaceBetween={10}
+                              centeredSlides={true}
+                          
                               loop={true}
+
+                              
                               breakpoints={{
                                    sm: {
-                                        slidesPerView: 1,
-                                        spaceBetween: 8,
+                                     slidesPerView: 1,
+                                     spaceBetween: 8,
                                    },
                                    md: {
-                                        slidesPerView: 1,
-                                        spaceBetween: 12,
+                                     slidesPerView: 1,
+                                     spaceBetween: 12,
                                    },
                                    lg: {
-                                        slidesPerView: 2,
-                                        spaceBetween: 16,
+                                     slidesPerView: 2,
+                                     spaceBetween: 16,
                                    },
                                    xl: {
-                                        slidesPerView: 2,
-                                        spaceBetween: 20,
+                                     slidesPerView: 2,
+                                     spaceBetween: 20,
                                    },
                                    // You can add more breakpoints as needed
-                              }} s
+                                 }}
+
                               autoplay={{
                                    delay: 2500,
                                    disableOnInteraction: false,

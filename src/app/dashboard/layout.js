@@ -58,7 +58,7 @@ const DashboardLayout = ({ children }) => {
 
                                              >
                                                   <AiFillFolderAdd size={24}></AiFillFolderAdd>
-                                                  <h1 className=' text-base md:text-lg f font-normal '>Academic </h1>
+                                                  <h1 className=' text-base md:text-lg f font-normal '>add Question </h1>
                                              </Link>
 
                                                   <Link
@@ -114,7 +114,7 @@ const DashboardLayout = ({ children }) => {
 
                                                        >
                                                             <AiFillFolderAdd size={24}></AiFillFolderAdd>
-                                                            <h1 className=' text-base md:text-lg f font-normal '>Academic </h1>
+                                                            <h1 className=' text-base md:text-lg f font-normal '>add Question  </h1>
                                                        </Link>
                                                        <Link
                                                             href="/dashboard/my-course"
@@ -236,7 +236,7 @@ const DashboardLayout = ({ children }) => {
 
                                         >
                                              <AiFillFolderAdd size={24}></AiFillFolderAdd>
-                                             <h1 className=' text-base md:text-lg f font-normal '>Academic </h1>
+                                             <h1 className=' text-base md:text-lg f font-normal '>Add Question  </h1>
                                         </Link>
 
                                              <Link
@@ -285,7 +285,7 @@ const DashboardLayout = ({ children }) => {
 
                                                   >
                                                        <AiFillFolderAdd size={24}></AiFillFolderAdd>
-                                                       <h1 className=' text-base md:text-lg f font-normal '>Academic </h1>
+                                                       <h1 className=' text-base md:text-lg f font-normal '>Add Question </h1>
                                                   </Link>
 
 

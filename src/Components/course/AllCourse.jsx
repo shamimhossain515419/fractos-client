@@ -2,7 +2,6 @@ import React from 'react';
 
 import HscBatch from './HscBatch';
 import Container from '../Container/Container';
-import BatchDetails from './BatchDetails';
 import { GetCourses } from '@/services/courses';
 // import BatchDetails from './BatchDetails';
 

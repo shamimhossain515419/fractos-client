@@ -160,7 +160,7 @@ export default function AdminDashboard() {
 
 
   const data2 = [
-   
+
     {
       name: "TotalUser",
       uv: totalUser,
@@ -172,18 +172,18 @@ export default function AdminDashboard() {
     {
       name: "exam_reviews",
       uv: exam_reviews,
-     },
+    },
     {
       name: "Income",
       uv: totalPrice,
-     
+
     },
     {
       name: "questions",
       uv: questions,
-     
+
     },
-    
+
   ]
 
   return (
@@ -294,7 +294,7 @@ export default function AdminDashboard() {
               <div className="lower-part w-full px-2 py-5 border ">
                 <div className="px-2 py-5">
                   <h1 className="text-4xl  font-bold px-2 py-2 primary">
-                    Contact
+                    All Teacher
                   </h1>
 
                   <div className="overflow-x-auto">
@@ -362,7 +362,7 @@ export default function AdminDashboard() {
                         }
 
 
-                       
+
                       </tbody>
                     </table>
                   </div>

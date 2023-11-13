@@ -12,3 +12,13 @@ const UserSchema = new mongoose.Schema({
 const OrdersPrice = mongoose.models.OrdersPrice || mongoose.model("OrdersPrice", UserSchema);
 
 export default OrdersPrice;
+
+
+
+
+
+
+
+
+
+

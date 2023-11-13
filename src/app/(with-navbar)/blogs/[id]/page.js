@@ -1,6 +1,7 @@
 "use client"
 
 import DetailedBlog from '@/Components/BlogPage/DetailedBlog';
+import Loading from '@/Components/Loading/Loading';
 import { GetSingleBlogs } from '@/services/blogs';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
@@ -26,8 +27,8 @@ const page = () => {
                 {
                     myBlog ?
                         <DetailedBlog detail={myBlog.detail} category={myBlog.category} timeRequired={myBlog.timeRequired} date={myBlog.date} title={myBlog.title} thumbnail={myBlog.thumbnail} authorName={myBlog.authorName} ></DetailedBlog>
-                        :
-                        ''
+                        : <Loading></Loading>
+                        
                 }
             </div>
         </div>

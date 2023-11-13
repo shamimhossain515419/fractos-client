@@ -42,6 +42,8 @@ const UserProfile = () => {
 
                         <div className='shadow rounded-xl border-t-0 h-52 shadow-slate-500 p-3 border-2 w-full'>
                             <p className='font-bold'>Accuracy</p>
+
+
                             <div className='m-auto flex flex-col items-center'>
                                 <img src='https://i.ibb.co/5Mm3ybc/removal-ai-03620765-b252-454f-be72-97967e1a567d-chart.png' alt="" width={100} height={100} />
                                 <div>
@@ -54,6 +56,9 @@ const UserProfile = () => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* <PieChartComponent></PieChartComponent> */}
+
                     </div>
                 </div>
             </div>

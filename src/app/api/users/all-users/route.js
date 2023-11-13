@@ -7,13 +7,14 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req) {
      await connectToDB();
-  
+     const { searchParams } = new URL(req.url);
+     const name = searchParams.get("name");
 
      try {
-         
 
-          const allUser = await allUsers.find({});
-          
+
+          const allUser = await allUsers.find({ name: { $regex: name, $options: "i" } });;
+
           if (allUser) {
                return NextResponse.json({
                     success: true,
