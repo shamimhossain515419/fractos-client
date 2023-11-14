@@ -12,7 +12,6 @@ import UserModal from "../UserModal/UserModal";
 import Image from "next/image";
 import logo from '../../../public/logo.png'
 import { usePathname } from "next/navigation";
-import { RxAvatar } from "react-icons/rx";
 const Navbar = () => {
      const { userinfo, user, setIsAdmin, isAdmin, setIsUserModalOpen, isUserModalOpen } = useContext(GlobalContext);
      const [Open, setOpen] = useState(true);
@@ -26,11 +25,11 @@ const Navbar = () => {
                                    <div className='flex justify-between items-center'>
                                         <div className=' flex  items-center gap-4'>
 
-                                             <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className=" md:hidden relative cursor-pointer">
+                                             <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className=" lg:hidden relative cursor-pointer">
                                                   <CommonImage data={user} className="w-[50px] h-[50px]"></CommonImage>
                                                   {
                                                        isUserModalOpen ?
-                                                            <div className="absolute top-[105%]">
+                                                            <div className="absolute top-[100%] -right-1/2">
                                                                  <UserModal></UserModal>
                                                             </div>
                                                             :
@@ -40,7 +39,7 @@ const Navbar = () => {
                                              <Link href="/">  <Image className="    w-[100px]   md:max-w-[200px]" src={logo} alt="image" /> </Link>
                                         </div>
 
-                                        <div className=' hidden md:flex items-center gap-3  space-x-5'>
+                                        <div className=' hidden lg:flex items-center gap-3  space-x-5'>
                                              <Link className={`px-2 rounded-lg ${pathName == "/" ? "activeLink" : ""} hover:bg-[#0EE6B8] hover:text-black font-medium transition-all`} href={'/'}>Home</Link>
                                              <Link className={`px-2 rounded-lg ${pathName == "/teacher" ? "activeLink" : ""} hover:bg-[#0EE6B8] hover:text-black font-medium transition-all`} href={'/teacher'}>Teacher</Link>
                                              <Link className={`px-2 rounded-lg ${pathName == "/courses" ? "activeLink" : ""} hover:bg-[#0EE6B8] hover:text-black font-medium transition-all`} href={'/courses'}> All Courses</Link>
@@ -52,7 +51,7 @@ const Navbar = () => {
 
 
                                         {/* right side user image and modal for large screen */}
-                                        <div className=" hidden sm:block">
+                                        <div className=" hidden lg:block">
                                              {
                                                   user ?
                                                        <div className='relative cursor-pointer hidden md:block '>
@@ -78,7 +77,7 @@ const Navbar = () => {
                                         </div>
 
                                         {/* three bar menu for mobile screen */}
-                                        <div onClick={() => setOpen(!Open)} className=' md:hidden '>
+                                        <div onClick={() => setOpen(!Open)} className=' lg:hidden '>
                                              {
                                                   Open ? <FaBars size={24} className=' '> </FaBars>
                                                        :
@@ -91,7 +90,7 @@ const Navbar = () => {
                                         </div>
                                    </div>
                                    {/* navigation links  for mobile screen */}
-                                   <div className='md:hidden'>
+                                   <div className='lg:hidden'>
                                         {
                                              Open ? "" : <MenuBar user={user} setOpen={setOpen}></MenuBar>
                                         }
