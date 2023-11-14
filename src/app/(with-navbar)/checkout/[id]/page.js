@@ -1,4 +1,5 @@
 "use client"
+import Enroll from '@/Components/Enroll/Enroll';
 import Notification from '@/Components/Notification/Notification';
 import { GlobalContext } from '@/GlobalState';
 import { Courses_By_id } from '@/services/courses';
@@ -170,9 +171,11 @@ const page = () => {
      }
 
      return (
-          <div className='  h-[60vh]  flex  justify-center items-center gap-1'>
+          <div className='  min-h-[60vh]   '>
                <div>
-                    <button onClick={handleClick} className=' buttonColor px-2 py-1  text-black text-3xl  font-semibold '> {coursesData?.price} </button>
+
+                    <Enroll handleClick={handleClick}  coursesData={coursesData}></Enroll>
+                  
                </div>
                <Notification></Notification>
           </div>
