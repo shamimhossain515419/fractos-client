@@ -2,10 +2,10 @@ import React from 'react';
 import Container from '../Container/Container';
 // import Container from '../Container/Container';
 
-const Enroll = ({coursesData,handleClick}) => {
+const Enroll = ({ coursesData, handleClick }) => {
     return (
         <div>
-         
+            <Container>
                 <div className='py-8 secondBg px-3  w-full'>
 
                     <div className="md:flex w-full boxShodowClass border border-[#0EE6B8]    mx-4 my-6 rounded-lg ">
@@ -16,7 +16,7 @@ const Enroll = ({coursesData,handleClick}) => {
                         <div className='p-4 font-bold'>
                             <p>Subject : {coursesData?.subject}  </p>
                             <p>Teacher name : {coursesData?.subject}  </p>
-                            
+
                             <p>Price : {coursesData?.price}  </p>
                             <p>Limit : {coursesData?.limit}  </p>
                             <p>Time :  {coursesData?.time} </p>
@@ -43,7 +43,7 @@ const Enroll = ({coursesData,handleClick}) => {
                     </div>
 
                 </div>
-           
+            </Container>
         </div>
     );
 };
