@@ -229,7 +229,7 @@ export default function AdminDashboard() {
                   Total Revenue
                 </h1>
 
-                <ResponsiveContainer width="100%" height={300}>
+                <ResponsiveContainer width="100%" height={"100%"}>
                   <LineChart
                     width={500} // You can adjust this as needed
                     height={300}
