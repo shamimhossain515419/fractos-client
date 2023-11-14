@@ -158,9 +158,9 @@ const Pricing = () => {
         <div className='py-[130px]'>
             <CommonTitle title={"PLANS"}></CommonTitle>
             {/* pricing section */}
-            <div className=' grid  md:grid-cols-2 gap-y-5 gap-x-20 justify-center items-start w-full mt-10'>
+            <div className=' grid lg:grid-cols-2 gap-y-5 gap-x-20 justify-center items-start w-full mt-10'>
                 {/* basic price card */}
-                <div onClick={handleRoute} className=' secondBg rounded-lg p-5 w-full md:min-w-[400px] shadow-lg border border-[#0EE6B8]'>
+                <div onClick={handleRoute} className=' secondBg rounded-lg p-5 w-full md:min-w-[320px] lg:min-w-[400px] shadow-lg border border-[#0EE6B8]'>
                     <div className='flex items-center justify-between mb-5'>
                         <h3 className='text-2xl md:text-4xl  primary  font-bold'>Basic</h3>
                         <p className='font-semibold text-xl'>Free</p>
