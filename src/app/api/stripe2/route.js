@@ -16,13 +16,23 @@ export async function POST(req) {
           const isAuthUser = await AuthUser(req);
           if (isAuthUser) {
                const res = await req.json();
-               console.log(res);
+
+               const data = [
+
+                    {
+                         price_data: res?.[0]?.price_data,
+
+                         quantity: 1,
+                    }
+               ]
+               console.log(data,);
+               console.log(res, "shmimhossam");
 
                const session = await stripe.checkout.sessions.create({
-                    line_items:res,
+                    line_items: data,
                     mode: "payment",
-                    success_url: "http://localhost:3000" + "?status=success",
-                    cancel_url: "http://localhost:3000" + "?status=cancel",
+                    success_url: `http://localhost:3000/checkout/${res?.[0]?.id}` + "?status=success",
+                    cancel_url: `http://localhost:3000/checkout/${res?.[0]?.id}` + "?status=cancel",
                });
 
                return NextResponse.json({

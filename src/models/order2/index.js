@@ -6,6 +6,7 @@ const OrderSchema = new mongoose.Schema({
      amount: Number,
      email: String,
      status: Boolean,
+     address: String,
      course: {
           type: mongoose.Schema.Types.ObjectId,
           ref: "teacherCourse",

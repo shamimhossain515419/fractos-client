@@ -1,9 +1,8 @@
-
-
-
 import connectToDB from "@/database";
-import TeacherCourse from "@/models/courses";
+import Feedback from "@/models/feedback";
+import OrderCourse from "@/models/order2";
 import { NextResponse } from "next/server";
+
 
 export const dynamic = "force-dynamic";
 
@@ -11,18 +10,16 @@ export async function GET(req) {
      try {
           await connectToDB();
 
-         
-          const extractAllOrders = await TeacherCourse.find({}).populate("studentIdstudentIdstudentId").populate("user");
-
-          if (extractAllOrders) {
+          const extractUser = await OrderCourse.find({}).populate("user").populate("course");
+          if (extractUser) {
                return NextResponse.json({
                     success: true,
-                    data: extractAllOrders,
+                    data: extractUser,
                });
           } else {
                return NextResponse.json({
                     success: false,
-                    message: "Data not get ! Please try again",
+                    message: "Failed to get question not found  info ! Please try again",
                });
           }
 
