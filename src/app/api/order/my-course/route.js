@@ -1,37 +1,31 @@
 
 import connectToDB from "@/database";
-import allUsers from "@/models/Users";
-
+import Admission from "@/models/admission";
+import OrderCourse from "@/models/order2";
 import { NextResponse } from "next/server";
+
 export const dynamic = "force-dynamic";
 
 export async function GET(req) {
-     await connectToDB();
-     const { searchParams } = new URL(req.url);
-     const name = searchParams.get("name");
-
      try {
-
-
-          const allUser = await allUsers.find({ name: { $regex: name, $options: "i" } });;
-
-          if (allUser) {
+          await connectToDB();
+          const { searchParams } = new URL(req.url);
+          const email = searchParams.get("email");
+          const extractUser = await OrderCourse.findOne({ email }).populate("user").populate("course");
+          if (extractUser) {
                return NextResponse.json({
                     success: true,
-                    data: allUser,
+                    data: extractUser,
                });
           } else {
                return NextResponse.json({
                     success: false,
-                    message: "Something went wrong ! Please try again later",
+                    message: "Failed to get question not found  info ! Please try again",
                });
           }
 
 
-
-     } catch (error) {
-          console.log("Error while new user registration. Please try again");
-
+     } catch (e) {
           return NextResponse.json({
                success: false,
                message: "Something went wrong ! Please try again later",

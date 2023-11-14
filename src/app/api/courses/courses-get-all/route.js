@@ -13,7 +13,7 @@ export async function GET(req) {
 
          
           const extractAllOrders = await TeacherCourse.find({}).populate("studentIdstudentIdstudentId").populate("user");
-          console.log(extractAllOrders);
+
           if (extractAllOrders) {
                return NextResponse.json({
                     success: true,

@@ -4,27 +4,32 @@ import { getAllUser } from '@/services/users';
 import StudentDetails from '../StudentDetails/StudentDetails';
 import { useEffect, useState } from 'react';
 import Notification from '../Notification/Notification';
+import Container from '../Container/Container';
 
 
 const Student = async () => {
 
-
+    const [search, setSearch] = useState("")
     const [getUserInfos, setGetUserInfos] = useState([]);
     const [modalData, setModalData] = useState({});
     const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
-
         async function GetUser() {
-            const result = await getAllUser();
+            const result = await getAllUser(search);
             setGetUserInfos(result)
         }
 
-        GetUser();
-    }, [1000])
+        GetUser(search);
+    }, [1000, search])
 
-    console.log(getUserInfos.data);
+
+
     return (
+
+        <div>
+
+
             <div className="overflow-x-auto pt-12">
                 <table className="table">
                     <thead className=' primaryBg'>
@@ -61,6 +66,8 @@ const Student = async () => {
                 <StudentDetails showModal={showModal} setShowModal={setShowModal} userInfo={modalData}></StudentDetails>
                 <Notification></Notification>
             </div>
+
+        </div>
 
     );
 };

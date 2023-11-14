@@ -21,7 +21,7 @@ const GlobalState = ({ children }) => {
      const [AllCourses, setAllCourses] = useState(false)
      const [setIsAdmin, isAdmin] = useState(false)
 
-     const [userinfo, setUserinfo] = useState(null)
+     const [userinfo, setUserinfo] = useState({})
 
      const [isUserModalOpen, setIsUserModalOpen] = useState(false);
 
@@ -47,11 +47,14 @@ const GlobalState = ({ children }) => {
 
      const userCullaction = async (email) => {
           const result = await GetSingleUser(email);
-
-          setUserinfo(result?.data)
+          const data = result?.data;
+          console.log(
+               data
+          );
+          setUserinfo(data)
      }
-  
-    const loginUser = (email, password) => {
+
+     const loginUser = (email, password) => {
           setLoading(true)
           return signInWithEmailAndPassword(auth, email, password);
      }
@@ -110,7 +113,7 @@ const GlobalState = ({ children }) => {
           loading, setLoading,
           user, setUser,
           Error, setError,
-          userinfo, setUserinfo,
+          userinfo,
           componentLevelLoader,
           setComponentLevelLoader,
           pageLoader, setPageLoader,
