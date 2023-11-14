@@ -1,10 +1,12 @@
 'use client'
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { GlobalContext } from '@/GlobalState';
 import Image from 'next/image';
 import './UserProfile.css';
 import { RxAvatar } from 'react-icons/rx';
 import PieChartComponent from '../ChartCurcal';
+// import Myclass from '../MyClass/MyClass';
+import MyClasses from '../MyAllClass/MyClasses';
 
 const UserProfile = () => {
     const { user, userinfo } = useContext(GlobalContext);
@@ -27,6 +29,7 @@ const UserProfile = () => {
     console.log(examReviews);
     return (
         <div>
+            <div>
             <div className=' w-full flex flex-col items-center justify-center my-6'>
                 {
                     user?.photoURL ?
@@ -69,13 +72,11 @@ const UserProfile = () => {
                                 <PieChartComponent></PieChartComponent>
                             </div>
                         </div>
-
-
-
-
-                    </div>
+                   </div>
                 </div>
             </div>
+        </div>
+        <div><MyClasses></MyClasses></div>
         </div>
     );
 };
