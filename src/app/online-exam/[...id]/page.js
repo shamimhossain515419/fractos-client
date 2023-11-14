@@ -41,6 +41,8 @@ const page = () => {
      const [success, setSuccess] = useState(false)
      const currentDate = new Date();
      const time = Question?.questions?.length * 60;
+     // Abdur Rahman Code
+     const [skippedQuestions, setSkippedQuestions] = useState([]);
      const getData = async (subject, category, admission) => {
 
           if (admission === "admission") {
@@ -78,6 +80,10 @@ const page = () => {
 
  console.log(user);
      const examSubmit = async () => {
+          // Abdur Rahman Code
+          const skippedQuestionsArray = Question?.questions?.map((element, index) => index).filter(index => !selectId.includes(index));
+          setSkippedQuestions(skippedQuestionsArray);
+          // end
           const exam_data = { email: user?.email, time: countExamTime, date: currentDate, exam_name: Question?.exam_name, wrong, number: RightAns?.length, right: RightAns }
           const Userdata = { rank: RightAns?.length * 50, mark: RightAns?.length * 5, exam: 1, email: user?.email }
           console.log(Userdata);

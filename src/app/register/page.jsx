@@ -1,4 +1,5 @@
 'use client'
+import AuthBtnLoader from '@/Components/AuthBtnLoader/AuthBtnLoader';
 import AuthContainer from '@/Components/AuthContainer/AuthContainer';
 import ComponentLevelLoader from '@/Components/DashboardNavbar/commonLoader/Commonloader';
 import GoogleSignIn from '@/Components/GoogleSignIn/GoogleSignIn';
@@ -141,14 +142,7 @@ const Page = () => {
                                 </div>
                                 <p className='text-sm ml-3 text-red-600'>{errors.confirmPassword?.message === 'Confirm Password' ? '' : errors.confirmPassword?.message}</p>
                             </div>
-
-                            <div className={`${loginBtnCSS}  text-xl   buttonColor  text-white  flex justify-center items-center`}>
-                                {
-                                    componentLevelLoader?.loading ? <><ComponentLevelLoader loading={componentLevelLoader.loading} text={'create..'}></ComponentLevelLoader> </> : <button type='submit'>  Create</button>
-                                }
-
-                            </div>
-
+                            <AuthBtnLoader loading={componentLevelLoader.loading} text={'Create'}></AuthBtnLoader>
                         </form>
 
                         <p className='flex gap-1 items-center mt-3'>Already Have An Account?

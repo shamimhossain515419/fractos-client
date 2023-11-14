@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { RxAvatar } from 'react-icons/rx';
 import Swal from 'sweetalert2';
 
 const UserModal = () => {
@@ -21,7 +22,11 @@ const UserModal = () => {
             <div className='absolute top-2 right-2'>
                 <AiFillCloseCircle className='w-[28px] h-[28px] row-span-full text-red-600' onClick={() => setIsUserModalOpen(false)}></AiFillCloseCircle>
             </div>
-            <Image src={user?.photoURL ? user?.photoURL : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} width={100} height={100} className='mx-auto border-2  object-fill border-[#0EE6B8] h-[120px] w-[120px] rounded-full'></Image>
+            {user?.photoURL ?
+                <Image src={user?.photoURL} width={100} height={100} className='mx-auto border-2  object-fill border-[#0EE6B8] h-[120px] w-[120px] rounded-full'></Image>
+            :
+            <RxAvatar className='h-[120px] w-[120px] mx-auto block'></RxAvatar>
+            }
             <p className='text-xl text-center primary'>{user?.displayName}</p>
             <p className=' text-gray-700 text-center secondColor'>{user?.email}</p>
             <p className=' text-gray-700 text-center secondColor capitalize'>{userinfo?.role == "teacher" ? "Teacher" : userinfo?.role == "Admin" ? "Admin" : ""}</p>
