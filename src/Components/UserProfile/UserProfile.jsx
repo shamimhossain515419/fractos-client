@@ -5,7 +5,12 @@ import Image from 'next/image';
 import './UserProfile.css';
 import { RxAvatar } from 'react-icons/rx';
 import PieChartComponent from '../ChartCurcal';
+<<<<<<< HEAD
 import { GetExam_reviews } from '@/services/exam-reviews';
+=======
+// import Myclass from '../MyClass/MyClass';
+import MyClasses from '../MyAllClass/MyClasses';
+>>>>>>> 0219b3e36b071888eb3f8842213d8fcc38605a01
 
 const UserProfile = () => {
     const { user, userinfo } = useContext(GlobalContext);
@@ -27,6 +32,7 @@ const UserProfile = () => {
     console.log(examReviews);
     return (
         <div>
+            <div>
             <div className=' w-full flex flex-col items-center justify-center my-6'>
                 {
                     user?.photoURL ?
@@ -69,13 +75,11 @@ const UserProfile = () => {
                                 <PieChartComponent ></PieChartComponent>
                             </div>
                         </div>
-
-
-
-
-                    </div>
+                   </div>
                 </div>
             </div>
+        </div>
+        <div><MyClasses></MyClasses></div>
         </div>
     );
 };
