@@ -1,10 +1,11 @@
 'use client'
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { GlobalContext } from '@/GlobalState';
 import Image from 'next/image';
 import './UserProfile.css';
 import { RxAvatar } from 'react-icons/rx';
 import PieChartComponent from '../ChartCurcal';
+import { GetExam_reviews } from '@/services/exam-reviews';
 
 const UserProfile = () => {
     const { user, userinfo } = useContext(GlobalContext);
@@ -17,8 +18,7 @@ const UserProfile = () => {
         setExamReviews(data)
     }
 
-
-    useEffect(() => {
+  useEffect(() => {
         if (user) {
             GetExamData(user?.email)
         }
@@ -66,7 +66,7 @@ const UserProfile = () => {
 
 
                             <div className=' absolute  top-0'>
-                                <PieChartComponent></PieChartComponent>
+                                <PieChartComponent ></PieChartComponent>
                             </div>
                         </div>
 
