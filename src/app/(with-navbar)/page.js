@@ -15,9 +15,7 @@ export default function Home() {
   return (
     <div>
       <Container>
-        <Banner></Banner>
-        
-      
+        <Banner></Banner>    
 
         <div className=" my-3">
           <CounterSection> </CounterSection>

@@ -1,12 +1,10 @@
 "use client"
 
 import { GetCourses } from '@/services/courses';
-
 import { useRouter } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
 import Loading from '../Loading/Loading';
 import { GlobalContext } from '@/GlobalState';
-import { callStripeSession } from '@/services/stripe';
 import { loadStripe } from '@stripe/stripe-js';
 import Image from 'next/image';
 
@@ -115,24 +113,17 @@ const HscBatch = async () => {
                                         <p className='text-red-500 text-lg mt-2'>Price: ${course.price}/=</p>
                                         <div className='flex my-4 gap-4 items-center'>
                                             <button onClick={() => route.push(`/courses/${course?._id}`)} className='font-bold  border border-[#3eeac5]  p-2 bg-transparent hover:bg-[#6bebcf]  text-white hover:text-black  my-4'>View Details</button>
-                                            <div onClick={() => route.push(`/checkout/${course?._id}`)} className='font-bold cursor-pointer  border border-[#3eeac5] p-2 bg-[#6bebcf] hover:bg-transparent  text-black hover:text-white  my-4'>Enroll Now</div>
+                                            
+                                            <div onClick={() => route.push(`/checkout/${course?._id}`)} className='font-bold cursor-pointer  border border-[#3eeac5] p-2 bg-[#6bebcf] hover:bg-transparent  text-black hover:text-white  my-4'>
+                                                Enroll Now</div>
                                         </div>
                                     </div>
-
                                 </div>
-
-
                             </div>)
                         }</> : <Loading></Loading>
                     }
-
-
-
                 </div>
-
             </div>
-
-
         </div>
     );
 };
