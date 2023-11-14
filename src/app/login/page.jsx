@@ -1,4 +1,5 @@
 'use client'
+import AuthBtnLoader from '@/Components/AuthBtnLoader/AuthBtnLoader';
 import AuthContainer from '@/Components/AuthContainer/AuthContainer';
 import ComponentLevelLoader from '@/Components/DashboardNavbar/commonLoader/Commonloader';
 import GoogleSignIn from '@/Components/GoogleSignIn/GoogleSignIn';
@@ -75,15 +76,7 @@ const Login = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* <button className={`${loginBtnCSS}`}>Next</button> */}
-
-                        <div className={`${loginBtnCSS}  text-xl    buttonColor text-black  flex justify-center items-center`}>
-                            {
-                                componentLevelLoader?.loading ? <><ComponentLevelLoader loading={componentLevelLoader.loading} text={'Login...'}></ComponentLevelLoader> </> : <button type='submit'> Login</button>
-                            }
-
-                        </div>
-
+                                <AuthBtnLoader loading={componentLevelLoader.loading} text={'Login'}></AuthBtnLoader>
                     </form>
                     <p className='flex gap-1 items-center mt-3'>Don t Have An Account?
                         <Link className='primary hover:underline' href={'/register'}>Register</Link>
