@@ -91,7 +91,6 @@ const DisplayPage = () => {
 
           </div>))
         }
-
           <Link href="/dashboard/my-course/add-batch">
             <div className='pb-40 pt-40 rounded-2xl text-red text-gray-600 bg-gray-200 flex items-center justify-center flex-col'>
               <MdOutlineAddCircle className='text-6xl '> </MdOutlineAddCircle>

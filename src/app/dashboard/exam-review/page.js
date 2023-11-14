@@ -23,7 +23,7 @@ const page = async () => {
 
     useEffect(() => {
         if (user) {
-            GetExamData(user?.email)
+           GetExamData(user?.email)
         }
 
     }, [user])

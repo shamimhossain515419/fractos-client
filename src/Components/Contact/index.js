@@ -34,7 +34,7 @@ const ContactSection = () => {
 
 
      return (
-          <div className=" relative py-10">
+               <div className=" relative py-10">
                <div>
                     <div className=" my-8  text-center">
 
@@ -101,6 +101,7 @@ const ContactSection = () => {
 
                <Notification></Notification>
           </div>
+
 
 
      );

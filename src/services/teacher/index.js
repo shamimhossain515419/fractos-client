@@ -25,7 +25,7 @@ export const GetSingleTeacher = async (email) => {
      try {
           const res = await fetch(`/api/teacher/get-single-teacher?email=${email}`, {
                method: "GET",
-               
+
           });
 
           const data = await res.json();
@@ -72,3 +72,21 @@ export const Teacherupdate = async (fromDate) => {
      }
 
 }
+
+export const DeleteUser = async (email) => {
+
+     try {
+          const res = await fetch(`/api/teacher/delete-teacher?email=${email}`, {
+               method: "DELETE",
+
+               Authorization: `Bearer ${Cookies.get("token")}`,
+          });
+
+          const data = await res.json();
+
+          return data;
+     } catch (e) {
+          console.log(e);
+     }
+
+}   

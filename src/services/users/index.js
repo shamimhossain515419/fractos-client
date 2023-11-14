@@ -20,10 +20,10 @@ export const registerNewUser = async (formData) => {
 
 
 
-export const getAllUser = async () => {
+export const getAllUser = async (name) => {
 
   try {
-    const res = await fetch("/api/users/all-users", {
+    const res = await fetch(`/api/users/all-users?name=${name}`, {
       method: "GET",
     });
     const data = await res.json();
@@ -90,7 +90,7 @@ export const DeleteUser = async (id) => {
   try {
     const res = await fetch(`/api/users/delete-user?id=${id}`, {
       method: "DELETE",
-     
+
       Authorization: `Bearer ${Cookies.get("token")}`,
     });
 
