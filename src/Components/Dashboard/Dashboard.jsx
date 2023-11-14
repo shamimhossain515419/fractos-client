@@ -18,6 +18,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { GetExam_reviews } from "@/services/exam-reviews";
+import { RxAvatar } from "react-icons/rx";
 
 const data2 = [
   {
@@ -221,7 +222,7 @@ const Dashboard = async () => {
                 height={300}
                 data={Exam?.map(item => {
                   const data = {
-                    name: item?.exam_name?.slice(0,8),
+                    name: item?.exam_name?.slice(0, 8),
                     right: item?.right?.length,
                     wrong: item?.wrong?.length
 
@@ -277,7 +278,13 @@ const Dashboard = async () => {
                         </div>
                       </td>
                       <td className="text-center  mx-auto  py-3">
-                        <Image className=" text-center w-[50px] object-fill h-[50px] rounded-full" width={50} height={50} src={item?.photo ? item?.photo : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} alt=""></Image>
+                        {/* Displaying Rx Avatar if user has no image. */}
+                        {
+                          item?.photo ?
+                            <Image className="w-[50px] object-fill h-[50px] rounded-full" width={50} height={50} src={item?.photo} alt=""></Image>
+                            :
+                          <RxAvatar className="w-[50px] h-[50px] rounded-full"></RxAvatar>
+                          }
 
                       </td>
                       <td className="text-center">

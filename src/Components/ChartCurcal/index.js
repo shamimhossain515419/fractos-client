@@ -28,10 +28,10 @@ const PieChartComponent = () => {
 
 
      return (
-            <div>
-                <h1> </h1>
-             
-               <PieChart width={400} height={400}>
+            <div className=' relative top-1'>
+              
+            
+               <PieChart width={350} height={350}>
                     <Pie
                          data={data}
                          cx="50%"
@@ -47,7 +47,7 @@ const PieChartComponent = () => {
                          ))}
                     </Pie>
                </PieChart>
-          
+              
             </div>
      );
 }

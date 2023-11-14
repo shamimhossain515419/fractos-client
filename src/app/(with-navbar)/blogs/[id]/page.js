@@ -22,7 +22,7 @@ const page = () => {
         window.scrollTo(0, 0);
     }, [id])
     return (
-        <div className=' flex justify-center items-center gap-2 min-h-[60vh]'>
+        <div className='flex justify-center items-center gap-2 min-h-[60vh]'>
             <div>
                 {
                     myBlog ?

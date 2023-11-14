@@ -20,7 +20,7 @@ export const PostCourses = async (formData) => {
 
 export const GetCourses = async () => {
      try {
-          const res = await fetch("/api/courses/courses-get-all", {
+          const res = await fetch("http://localhost:3000/api/courses/courses-get-all", {
                method: "GET",
 
           });
@@ -37,7 +37,7 @@ export const GetCourses = async () => {
 }
 export const Courses_By_id = async (id) => {
      try {
-          const res = await fetch(`/api/courses/courses-by-id?id=${id}`, {
+          const res = await fetch(`http://localhost:3000/api/courses/courses-by-id?id=${id}`, {
                method: "GET",
           });
 
@@ -51,3 +51,5 @@ export const Courses_By_id = async (id) => {
      }
 
 }
+
+
