@@ -1,29 +1,4 @@
-// import React from "react";
-// import Image from 'next/image';
-// import "./PopularTeacher.css"
 
-// const PopularTeacher = (props) => {
-//   const { name,title, image } = props.teacher;
-//   return (
-//     <div >
-//       <div className="border w-full shadow-xl rounded-lg">
-//         <div className="images">
-//          <Image className="rounded-tl rounded-tr img" src={image} width={200} height={300}></Image>
-
-//         </div>
-//         <div className="card-body">
-//           <h2 className="text-3xl primary font-bold">{name}</h2>
-//           <p className="text-1xl primary font-bold">{title}</p>
-//           <div className="card-actions justify-end">
-//             <button className="btn buttonColor textColor font-bold" >Reade More</button>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default PopularTeacher;
 import React, { useState } from "react";
 import Image from "next/image";
 import Modal from "react-modal";
@@ -56,7 +31,7 @@ const PopularTeacher = ({ teacher }) => {
           ></Image>
         </div>
         <div className="card-body">
-          <h2 className="text-3xl primary font-bold">{teacher?.name}</h2>
+          <h2 className="text-3xl  primary font-bold">{teacher?.name}</h2>
           <p className="text-1xl text-white font-bold">{teacher?.title?.slice(0,35)}...</p>
           <div className="card-actions justify-end">
             <button
@@ -87,8 +62,8 @@ const PopularTeacher = ({ teacher }) => {
               ></Image>
             </div>
 
-            <h2 className="text-3xl font-bold mt-3 primary capitalize">{teacher?.name}</h2>
-            <p className="text-2xl font-bold text-white mb-3 mt-3">{teacher?.title}</p>
+            <h2 className="lg:text-3xl md:text-2xl sm:text-1xl font-bold mt-3 primary capitalize">{teacher?.name}</h2>
+            <p className="lg:text-2xl md:text-2xl sm:text-xl font-bold text-white mb-3 mt-3">{teacher?.title}</p>
             <p className="text-1xl font-bold primary mb-4 ">{teacher?.description}</p>
             
             <button

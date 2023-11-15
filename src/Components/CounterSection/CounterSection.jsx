@@ -7,10 +7,11 @@ import { SubscribeGet } from '@/services/Subscribe';
 
 
 const CounterSection = async () => {
-
-   const data = await GetCounter();
+ 
+const data = await GetCounter();
    const subscribe= await SubscribeGet()
 
+        
 
    return (
       <container className="grid lg:grid-cols-5 lg:py-10 py-5 grid-cols-1 gap-4 lg:gap-0 text-center lg:text-start w-full  overflow-hidden" >
@@ -39,7 +40,8 @@ const CounterSection = async () => {
             <h1 className='text-base text-white pt-2 font-semibold'>Subscriber</h1>
          </div>
       </container>
-   );
+   
+  );
 };
 
 export default CounterSection;

@@ -15,8 +15,11 @@ import MyAllClass from "@/Components/MyAllClass/MyAllClass";
 export default function Home() {
   return (
     <div>
+     
       <Container>
-        <Banner></Banner>  
+      <Banner></Banner> 
+         
+       
         
 
         <div className=" my-3">
