@@ -1,5 +1,8 @@
+// import connectToDB from "@/database";
+// import OrderCourse from "@/models/order2";
+// import { NextResponse } from "next/server";
+
 import connectToDB from "@/database";
-import Feedback from "@/models/feedback";
 import OrderCourse from "@/models/order2";
 import { NextResponse } from "next/server";
 
@@ -10,7 +13,7 @@ export async function GET(req) {
      try {
           await connectToDB();
 
-          const extractUser = await OrderCourse.find({}).populate("user").populate("course");
+          const extractUser = await OrderCourse.find({})
           if (extractUser) {
                return NextResponse.json({
                     success: true,
