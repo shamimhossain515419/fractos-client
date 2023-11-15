@@ -21,7 +21,8 @@ const page = () => {
 
 
      const getAllData = async () => {
-          const result = await getAllUser();
+          const result = await getAllUser("");
+          console.log(result);
           const sortData = result?.data.sort((a, b) => b?.rank - a?.rank);
           setAllUser(sortData)
           sortData?.map((item, index) => {

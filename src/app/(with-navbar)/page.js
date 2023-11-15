@@ -8,7 +8,6 @@ import Container from "@/Components/Container/Container";
 
 import Subscribe from "@/Components/Subscribe/Subscribe";
 import PopularTeachers from "@/Components/PopularTeachers/PopularTeachers";
-// import MyClasses from "@/Components/MyAllClass/MyAllClass";
 
 
 
@@ -16,7 +15,9 @@ export default function Home() {
   return (
     <div>
       <Container>
-        <Banner></Banner> 
+        <Banner></Banner>  
+        
+
         <div className=" my-3">
           <CounterSection> </CounterSection>
         </div>

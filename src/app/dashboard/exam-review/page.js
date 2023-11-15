@@ -107,7 +107,9 @@ const page = async () => {
                             </tbody>
                         </table>
                     </div>
-                </div> : <NotFoundData paragraph={"Reviews Exam Not Found "} title={'Please give exam  '} href={'/dashboard/mock-exam'}></NotFoundData>
+                </div>
+                    :
+                    <NotFoundData paragraph={"Reviews Exam Not Found "} title={'Please give exam  '} href={'/dashboard/mock-exam'}></NotFoundData>
             }
 
 

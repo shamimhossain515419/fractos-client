@@ -6,20 +6,20 @@ import Image from 'next/image';
 const Enroll = ({ coursesData, handleClick }) => {
     console.log(coursesData);
     return (
-        <div>
+        <div className=' mt-8'>
             <Container>
-                <div className='py-8 secondBg px-3 w-full'>
-                    <div className="border border-[#0EE6B8] w-4/4 mx-4 my-6 rounded-lg md:flex lg:flex">
-                        <div className='w-2/4'>
-                            <div className="my-4 m-auto rounded-md w-80 glass shadow-lg shadow-[#0EE6B8]">
+                <div className='py-8 secondBg md:px-3 w-full'>
+                    <div className=" w-4/4 md:mx-4 my-6  py-3 rounded-lg gap-6 md:flex lg:flex">
+                        <div className=' md:w-3/4  mx-auto'>
+                            <div className="my-4 m-auto rounded-md w-full glass shadow-lg shadow-[#0EE6B8]">
                                 <figure className='rounded-lg'>
-                                    <Image width={100} height={100} src={coursesData?.image} alt="download" border="0" className='h-[350px] w-72 p-2   m-auto'></Image>
+                                    <Image width={100} height={100} src={coursesData?.image} alt="download" border="0" className=' h-[350px] md:w-full object-fill  w-72 p-2   m-auto'></Image>
                                 </figure>
-                                <div className="px-4 pb-3">
-                                    <p>Subject : <small>{coursesData?.subject} </small> </p>
-                                    <p>Teacher Name : <small>{coursesData?.subject} </small> </p>
-                                    <p>Price : <small>{coursesData?.price}  </small></p>
-                                    <p>Limit : <small>{coursesData?.limit}</small>  </p>
+                                <div className="  px-2 md:px-4 pb-3">
+                                    <p className='text-base md:text-xl   primary'>Subject : <small>{coursesData?.subject} </small> </p>
+                                    <p className='text-base md:text-lg   primary'>Teacher Name : <small>{coursesData?.subject} </small> </p>
+                                    <p>Price : ৳  <small>{coursesData?.price}  </small></p>
+                                    <p>Limit : <small>{coursesData?.limit}</small> student  </p>
                                     <p>Time :  <small>{coursesData?.time}</small> </p>
                                     <p>Description : <small>{coursesData?.description}</small> </p>
                                 </div>
