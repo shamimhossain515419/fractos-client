@@ -24,7 +24,6 @@ export const GetCourses = async () => {
      try {
           const res = await fetch("/api/courses/courses-get-all", {
                method: "GET",
-
           });
 
           const data = await res.json();
@@ -41,7 +40,7 @@ export const Courses_By_id = async (id) => {
      try {
           const res = await fetch(`/api/courses/courses-by-id?id=${id}`, {
                method: "GET",
-         });
+          });
 
           const data = await res.json();
 

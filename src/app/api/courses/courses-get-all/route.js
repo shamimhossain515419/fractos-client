@@ -1,20 +1,22 @@
-
-
-
 import connectToDB from "@/database";
 import TeacherCourse from "@/models/courses";
 import { NextResponse } from "next/server";
 
+
+
+
+
 export const dynamic = "force-dynamic";
 
 export async function GET(req) {
+    
      try {
-          await connectToDB();
-
-         
-          const extractAllOrders = await TeacherCourse.find({}).populate("studentIdstudentIdstudentId").populate("user");
-
-          if (extractAllOrders) {
+          await connectToDB()
+          
+          const extractAllOrders = await TeacherCourse.find({}).populate("studentIdstudentIdstudentId")
+          .populate("user");
+          
+        if (extractAllOrders) {
                return NextResponse.json({
                     success: true,
                     data: extractAllOrders,
