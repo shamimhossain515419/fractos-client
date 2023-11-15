@@ -11,15 +11,14 @@ import PopularTeachers from "@/Components/PopularTeachers/PopularTeachers";
 
 
 
-
-
 export default function Home() {
   return (
     <div>
-      <Banner></Banner> 
+     
       <Container>
+      <Banner></Banner> 
          
-        {/* <PopularTeachers></PopularTeachers> */}
+       
         
 
         <div className=" my-3">

@@ -7,7 +7,7 @@ import Container from "../Container/Container";
 
 const PopularTeacher = ({ teacher }) => {
 
-  console.log(teacher);
+  // console.log(teacher);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
