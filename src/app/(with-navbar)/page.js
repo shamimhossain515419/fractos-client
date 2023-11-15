@@ -11,7 +11,6 @@ import PopularTeachers from "@/Components/PopularTeachers/PopularTeachers";
 
 
 
-
 export default function Home() {
   return (
     <div>

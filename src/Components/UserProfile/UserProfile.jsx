@@ -36,7 +36,6 @@ const UserProfile = () => {
     }, [user])
     console.log(examReviews);
     return (
-        <div>
             <div>
                 <div className=' w-full flex flex-col items-center justify-center my-6'>
                     {
@@ -102,8 +101,6 @@ const UserProfile = () => {
                     </div>
                 </div>
             </div>
-
-        </div>
     );
 };
 
