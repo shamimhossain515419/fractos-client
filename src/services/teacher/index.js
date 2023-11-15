@@ -73,7 +73,7 @@ export const Teacherupdate = async (fromDate) => {
 
 }
 
-export const DeleteUser = async (email) => {
+export const DeleteTeacherUser = async (email) => {
 
      try {
           const res = await fetch(`/api/teacher/delete-teacher?email=${email}`, {

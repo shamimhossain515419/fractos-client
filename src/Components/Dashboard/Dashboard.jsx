@@ -52,7 +52,7 @@ const Dashboard = async () => {
   const [Exam, setExam] = useState([]);
   const [charData, setChartData] = useState([])
   const getAllData = async () => {
-    const result = await getAllUser();
+    const result = await getAllUser("");
     const sortData = result?.data.sort((a, b) => b?.rank - a?.rank);
     setAllUser(sortData)
     if (user) {
@@ -75,10 +75,9 @@ const Dashboard = async () => {
 
 
 
-  console.log(charData);
-  console.log(allUser);
-  console.log(rank);
-  console.log(Exam, "shnmimadf");
+  
+  console.log(allUser,"ddddddddddddd");
+
 
 
 

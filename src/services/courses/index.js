@@ -1,3 +1,5 @@
+import Cookies from "js-cookie";
+
 export const PostCourses = async (formData) => {
 
      try {
@@ -39,6 +41,26 @@ export const Courses_By_id = async (id) => {
      try {
           const res = await fetch(`http://localhost:3000/api/courses/courses-by-id?id=${id}`, {
                method: "GET",
+         });
+
+          const data = await res.json();
+
+
+          return data?.data;
+
+     } catch (e) {
+          console.log(e);
+     }
+
+}
+export const Courses_Delete = async (id) => {
+     try {
+          const res = await fetch(`http://localhost:3000/api/courses/courses-delete?id=${id}`, {
+               method: "DELETE",
+               headers: {
+                    Authorization: `Bearer ${Cookies.get("token")}`,
+               },
+
           });
 
           const data = await res.json();

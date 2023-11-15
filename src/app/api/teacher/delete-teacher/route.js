@@ -14,6 +14,7 @@ export async function DELETE(req) {
 
           const { searchParams } = new URL(req.url);
           const email = searchParams.get("email");
+          console.log(email);
 
           const currentUser = await allUsers.findOne({ email });
 
