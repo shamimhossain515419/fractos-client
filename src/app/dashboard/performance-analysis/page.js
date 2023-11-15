@@ -214,7 +214,7 @@ const page = () => {
                 </div>
                 <div className='col-span-12 text-white xl:col-span-8 p-2 lg:p-5 secondBg rounded-lg shadow-lg'>
                     <h3 className='text-xl mb-5 capitalize primary'>Subjective accuracy</h3>
-                    <Bar  className=' capitalize' data={horizontalBarChartData} options={horizontalBarChartOptions} />
+                    <Bar  data={horizontalBarChartData} options={horizontalBarChartOptions} />
                 </div>
             </div>
         </div>

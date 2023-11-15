@@ -68,11 +68,11 @@ const AboutUs = () => {
               <p className="text-gray-700 text-center text-xl font-semibold mr-2 py-5">Shamiul Haque</p>
             </div>
 
-            <div className="rounded-lg bg-gray-200">
+            <div className="rounded-lg w-full bg-gray-200">
               <Image
                 width={300}
                 height={500}
-                src="/samim.jpg"
+                src="/shamim.png"
                 alt="LOgo"
                 className="h-96 rounded-t-lg"
               />

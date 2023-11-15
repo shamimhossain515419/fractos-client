@@ -79,12 +79,14 @@ const page = () => {
      }
 
      console.log(user);
+     const scriptQuestion = Question?.questions?.length - (RightAns?.length + wrong?.length);
+     console.log(scriptQuestion);
      const examSubmit = async () => {
           // Abdur Rahman Code
           const skippedQuestionsArray = Question?.questions?.map((element, index) => index).filter(index => !selectId.includes(index));
           setSkippedQuestions(skippedQuestionsArray);
           // end
-          const exam_data = { email: user?.email, time: countExamTime, date: currentDate, exam_name: Question?.exam_name, wrong, number: Question?.questions?.length, right: RightAns }
+          const exam_data = { email: user?.email, time: countExamTime, date: currentDate, exam_name: Question?.exam_name, wrong, number:scriptQuestion, right: RightAns }
           const Userdata = { rank: RightAns?.length * 50, mark: RightAns?.length * 5, exam: 1, email: user?.email }
           console.log(Userdata);
           console.log(exam_data);
