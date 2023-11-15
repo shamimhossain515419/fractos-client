@@ -11,6 +11,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { toast } from 'react-toastify';
 import Notification from '../Notification/Notification';
 import { PulseLoader } from 'react-spinners';
+import Container from '../Container/Container';
 
 
 const Pricing = () => {
@@ -155,7 +156,9 @@ const Pricing = () => {
     }
 
     return (
-        <div className='py-[130px]'>
+
+     
+                    <div className='py-[130px]'>
             <CommonTitle title={"PLANS"}></CommonTitle>
             {/* pricing section */}
             <div className=' grid lg:grid-cols-2 gap-y-5 gap-x-20 justify-center items-start w-full mt-10'>
@@ -230,6 +233,8 @@ const Pricing = () => {
             </div>
             <Notification></Notification>
         </div>
+       
+
     );
 };
 
