@@ -77,7 +77,7 @@ const BatchDetails = ({ details }) => {
             </div>
 
             <div className='mx-4 mt-4 md:flex justify-between text-white'>
-              <p>Price: {details.price
+              <p>Price: {details?.price
               }/=</p>
 
               <Link href={`/checkout/${details?._id}`}  className='font-bold text-xl border border-[#0EE6B8]  rounded-lg  p-4 hover:bg-[#0EE6B8] hover:text-black  mt-4 md:mt-0'>Enroll Now</Link>

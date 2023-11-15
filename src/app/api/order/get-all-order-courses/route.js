@@ -13,7 +13,7 @@ export async function GET(req) {
      try {
           await connectToDB();
 
-          const extractUser = await OrderCourse.find({})
+          const extractUser = await OrderCourse.find({}).populate("course").populate("user")
           if (extractUser) {
                return NextResponse.json({
                     success: true,

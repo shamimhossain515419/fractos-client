@@ -25,6 +25,7 @@ export const getAllUser = async (name) => {
   try {
     const res = await fetch(`/api/users/all-users?name=${name}`, {
       method: "GET",
+      cache:'no-store'
     });
     const data = await res.json();
     return data;

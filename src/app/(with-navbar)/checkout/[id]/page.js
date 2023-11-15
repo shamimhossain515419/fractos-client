@@ -28,7 +28,7 @@ const page = () => {
      // console.log(paramId);
      // console.log(coursesData);
 
-
+ console.log(coursesData);
 
      const cartItems = [{
           images: coursesData?.image,

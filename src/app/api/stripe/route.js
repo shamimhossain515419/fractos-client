@@ -21,8 +21,8 @@ export async function POST(req) {
                const session = await stripe.checkout.sessions.create({
                     line_items:res,
                     mode: "payment",
-                    success_url: "http://localhost:3000" + "?status=success",
-                    cancel_url: "http://localhost:3000" + "?status=cancel",
+                    success_url: "https://fractos-client.vercel.app" + "?status=success",
+                    cancel_url: "https://fractos-client.vercel.app" + "?status=cancel",
                });
 
                return NextResponse.json({
