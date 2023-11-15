@@ -1,26 +1,59 @@
-import { Teacherupdate } from "@/services/teacher";
+import { DeleteTeacherUser, Teacherupdate } from "@/services/teacher";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { toast } from "react-toastify";
 import Notification from "../Notification/Notification";
+import Swal from "sweetalert2";
+
 
 export default function TeacherModal({ data, setOpen }) {
 
      const newData = { email: data?.email, status: true }
-
      const handleUpdate = async () => {
           const result = await Teacherupdate(newData);
           if (result?.success == true) {
-               toast.success(result?.massage)
+               Swal.fire(
+                    'successfull!',
+                    `${result.message}`,
+                    'success'
+               )
                setOpen(false)
           } else {
-               toast.error(result?.massage);
+               toast.error(result?.message);
                setOpen(false)
           }
 
      }
+
+
+     const handleDelete = async (email) => {
+          console.log(email);
+          const result = await DeleteTeacherUser(email);
+          console.log(result);
+          if (result?.success) {
+               Swal.fire(
+                    'Successfull!',
+                    `${result.message}`,
+                    'success'
+               )
+               setOpen(false)
+          } else {
+               Swal.fire({
+                    icon: "error",
+                    title: "Deleting error",
+                    text:  `${result.message}` ,
+                    
+                  });
+               setOpen(false)
+          }
+
+
+
+     }
+
+
 
      return (
           <>
@@ -29,7 +62,7 @@ export default function TeacherModal({ data, setOpen }) {
                     <div
                          className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
                     >
-                         <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                         <div className="relative w-auto my-6 mx-auto md:max-w-3xl">
                               {/*content*/}
                               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full  primaryBg text-white outline-none focus:outline-none">
                                    {/*header*/}
@@ -48,15 +81,15 @@ export default function TeacherModal({ data, setOpen }) {
                                         </button>
                                    </div>
                                    {/*body*/}
-                                   <div className="relative p-6 flex-auto">
-                                        <div className="my-4 text-blueGray-500 text-lg leading-relaxed">
+                                   <div className="relative p-6 flex-auto w-full">
+                                        <div className="my-4 text-blueGray-500 text-lg leading-relaxed w-full">
 
 
                                              <div>
-                                                  <Image className="  h-[250px] px-10 w-full  object-contain rounded-lg overflow-hidden" src={data?.image ? data?.image : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} width={100} height={100} alt="image"></Image>
+                                                  <Image className="  h-[250px] px-10 w-full  object-contain rounded-lg " src={data?.image ? data?.image : "https://i.ibb.co/XpNhB9s/beautiful-woman-avatar-character-icon-free-vector.jpg"} width={100} height={100} alt="image"></Image>
                                              </div>
 
-                                             <div className=" flex   pt-5 gap-2 flex-wrap  md:gap-3 items-center">
+                                             <div className=" flex    pt-5 gap-2 flex-wrap  md:gap-3 items-center">
                                                   <AiFillCheckCircle className="primary" size={24}></AiFillCheckCircle>
                                                   <h1 className=" text-white">   {data?.title}  </h1>
                                              </div>
@@ -76,7 +109,7 @@ export default function TeacherModal({ data, setOpen }) {
                                                   <AiFillCheckCircle className="primary" size={24}></AiFillCheckCircle>
                                                   <h1 className=" text-white">   {data?.about}  </h1>
                                              </div>
-                                             <div className=" flex   gap-2   items-center  md:gap-3 ">
+                                             <div className="    w-[150px] sm:w-[250px] md:w-[400px] xl:w-full   overflow-hidden   md:gap-3 ">
                                                   <Link className="  hover:text-[#0EE6B8] " target="_blank" href={data?.cv}> CV Live Link : {data?.cv} </Link>
                                              </div>
 
@@ -93,13 +126,24 @@ export default function TeacherModal({ data, setOpen }) {
                                         >
                                              Close
                                         </button>
-                                        <button onClick={handleUpdate}
-                                             className=" buttonColor  text-black    font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                             type="button"
 
-                                        >
-                                             Accept
-                                        </button>
+                                        {
+                                             data?.status == true ? <button onClick={() => handleDelete(data?.email)}
+                                                  className=" buttonColor  text-black    font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                  type="button"
+
+                                             >
+                                                  Delete
+                                             </button> : <button onClick={handleUpdate}
+                                                  className=" buttonColor  text-black    font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                  type="button"
+
+                                             >
+                                                  Accept
+                                             </button>
+
+                                        }
+
                                    </div>
                               </div>
                          </div>

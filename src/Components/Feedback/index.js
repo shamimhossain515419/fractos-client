@@ -48,32 +48,44 @@ console.log('Feedback Result:', Feedback);
                <div className='   py-8'>
                     <Container>
                          <Swiper
-                              slidesPerView={2}
-                              spaceBetween={10}
+                           slidesPerView={1}
+                           spaceBetween={10}
+                          
+                           breakpoints={{
+                             640: {
+                               slidesPerView: 1,
+                               spaceBetween: 10,
+                             },
+                            
+                             1024: {
+                               slidesPerView: 2,
+                               spaceBetween: 20,
+                             },
+                           }}
                               centeredSlides={true}
                           
                               loop={true}
 
                               
-                              breakpoints={{
-                                   sm: {
-                                     slidesPerView: 1,
-                                     spaceBetween: 8,
-                                   },
-                                   md: {
-                                     slidesPerView: 1,
-                                     spaceBetween: 12,
-                                   },
-                                   lg: {
-                                     slidesPerView: 2,
-                                     spaceBetween: 16,
-                                   },
-                                   xl: {
-                                     slidesPerView: 2,
-                                     spaceBetween: 20,
-                                   },
-                                   // You can add more breakpoints as needed
-                                 }}
+                              // breakpoints={{
+                              //      sm: {
+                              //        slidesPerView: 1,
+                              //        spaceBetween: 8,
+                              //      },
+                              //      md: {
+                              //        slidesPerView: 1,
+                              //        spaceBetween: 12,
+                              //      },
+                              //      lg: {
+                              //        slidesPerView: 2,
+                              //        spaceBetween: 16,
+                              //      },
+                              //      xl: {
+                              //        slidesPerView: 2,
+                              //        spaceBetween: 20,
+                              //      },
+                              //      // You can add more breakpoints as needed
+                              //    }}
 
                               autoplay={{
                                    delay: 2500,

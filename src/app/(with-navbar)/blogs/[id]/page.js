@@ -21,6 +21,8 @@ const page = () => {
 
         window.scrollTo(0, 0);
     }, [id])
+
+    
     return (
         <div className='flex justify-center items-center gap-2 min-h-[60vh]'>
             <div>
@@ -28,7 +30,7 @@ const page = () => {
                     myBlog ?
                         <DetailedBlog detail={myBlog.detail} category={myBlog.category} timeRequired={myBlog.timeRequired} date={myBlog.date} title={myBlog.title} thumbnail={myBlog.thumbnail} authorName={myBlog.authorName} ></DetailedBlog>
                         : <Loading></Loading>
-                        
+
                 }
             </div>
         </div>

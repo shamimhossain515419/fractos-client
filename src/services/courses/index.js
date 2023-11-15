@@ -1,3 +1,5 @@
+import Cookies from "js-cookie";
+
 export const PostCourses = async (formData) => {
 
      try {
@@ -20,9 +22,8 @@ export const PostCourses = async (formData) => {
 
 export const GetCourses = async () => {
      try {
-          const res = await fetch("http://localhost:3000/api/courses/courses-get-all", {
+          const res = await fetch("/api/courses/courses-get-all", {
                method: "GET",
-
           });
 
           const data = await res.json();
@@ -37,8 +38,28 @@ export const GetCourses = async () => {
 }
 export const Courses_By_id = async (id) => {
      try {
-          const res = await fetch(`http://localhost:3000/api/courses/courses-by-id?id=${id}`, {
+          const res = await fetch(`/api/courses/courses-by-id?id=${id}`, {
                method: "GET",
+          });
+
+          const data = await res.json();
+
+
+          return data?.data;
+
+     } catch (e) {
+          console.log(e);
+     }
+
+}
+export const Courses_Delete = async (id) => {
+     try {
+          const res = await fetch(`/api/courses/courses-delete?id=${id}`, {
+               method: "DELETE",
+               headers: {
+                    Authorization: `Bearer ${Cookies.get("token")}`,
+               },
+
           });
 
           const data = await res.json();
