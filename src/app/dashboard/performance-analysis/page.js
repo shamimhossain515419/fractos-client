@@ -29,16 +29,13 @@ ChartJS.register(
 );
 
 
-
-
-
-
 const page = () => {
     const { user } = useContext(GlobalContext)
     const [analysisData, setAnalysisData] = useState(null);
     const [subjectLabels, setSubjectLabels] = useState([]);
     const [wrongPerSubject, setWrongPerSubject] = useState([]);
     const [correctPerSubject, setCorrectPerSubject] = useState([]);
+    const [ScriptPerSubject, setScriptPerSubject] = useState([]);
     const [totalAccuracy,setTotalAccuracy] = useState({})
 
     // abdur rahman Code
@@ -62,27 +59,32 @@ const page = () => {
         const examNameLengths = {};
         let totalCorrect = 0;
         let totalWrong = 0;
+        let totalScript = 0;
     
         // Iterate over the analysisData
         analysisData?.forEach(item => {
             const examName = item.exam_name;
             const wrong = item.wrong.length;
             const right = item.right.length;
+            const script = item.number;
     
             // Update totalCorrect and totalWrong
             totalCorrect += right;
             totalWrong += wrong;
+            totalScript += script;
     
             // Check if the exam name is already in the object
             if (examName in examNameLengths) {
                 // Accumulate the lengths for the existing exam name
                 examNameLengths[examName].wrong += wrong;
                 examNameLengths[examName].right += right;
+                examNameLengths[examName].script += script;
             } else {
                 // Add the exam name to the object
                 examNameLengths[examName] = {
                     wrong,
                     right,
+                    script
                 };
             }
         });
@@ -91,16 +93,19 @@ const page = () => {
         const examNamesArray = Object.keys(examNameLengths);
         const wrongArray = examNamesArray.map(examName => examNameLengths[examName].wrong);
         const rightArray = examNamesArray.map(examName => examNameLengths[examName].right);
+        const scriptArray = examNamesArray.map(examName => examNameLengths[examName].script);
     
         // Set state with the arrays
         setSubjectLabels(examNamesArray);
         setCorrectPerSubject(rightArray);
         setWrongPerSubject(wrongArray);
+        setScriptPerSubject(scriptArray);
     
         // Set state for totalAccuracy
         setTotalAccuracy({
             totalCorrect,
             totalWrong,
+            totalScript
         });
     
         console.log('SubjectLabels:', subjectLabels, 'rightPerSubject:', correctPerSubject, 'wrongPerSubject:', wrongPerSubject);
@@ -126,11 +131,11 @@ const page = () => {
                 data: correctPerSubject.map(stringNumbers => parseInt(stringNumbers)), // Replace with your 'Correct' data
                 backgroundColor: 'green',
             },
-            // {
-            //     label: 'Skipped',
-            //     data: [], // Replace with your 'Skipped' data
-            //     backgroundColor: 'yellow',
-            // },
+            {
+                label: 'Skipped',
+                data: ScriptPerSubject.map(stringNumbers => parseInt(stringNumbers)),
+                backgroundColor: 'yellow',
+            },
         ],
     };
     const horizontalBarChartOptions = {
@@ -151,15 +156,17 @@ const page = () => {
     };
 
     // doughnut chart configurations
+    console.log(totalAccuracy);
     const dougnutData = {
-        labels: ['Wrong', 'Correct'],
+        labels: ['Wrong', 'Correct',"Script"],
         datasets: [
             {
-                data: [totalAccuracy.totalWrong, totalAccuracy.totalCorrect],
-                backgroundColor: ['red', 'green'],
+                data: [totalAccuracy.totalWrong, totalAccuracy.totalCorrect,totalAccuracy?.totalScript],
+                backgroundColor: ['red', 'green',"yellow"],
             },
         ],
     };
+    console.log(dougnutData);
     const doughnutOptions = {
         responsive: true,
         maintainAspectRatio: false,
@@ -207,7 +214,7 @@ const page = () => {
                 </div>
                 <div className='col-span-12 text-white xl:col-span-8 p-2 lg:p-5 secondBg rounded-lg shadow-lg'>
                     <h3 className='text-xl mb-5 capitalize primary'>Subjective accuracy</h3>
-                    <Bar data={horizontalBarChartData} options={horizontalBarChartOptions} />
+                    <Bar  className=' capitalize' data={horizontalBarChartData} options={horizontalBarChartOptions} />
                 </div>
             </div>
         </div>

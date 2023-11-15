@@ -16,12 +16,12 @@ export default function TeacherModal({ data, setOpen }) {
           if (result?.success == true) {
                Swal.fire(
                     'successfull!',
-                    `${result.massage}`,
+                    `${result.message}`,
                     'success'
                )
                setOpen(false)
           } else {
-               toast.error(result?.massage);
+               toast.error(result?.message);
                setOpen(false)
           }
 
@@ -32,12 +32,21 @@ export default function TeacherModal({ data, setOpen }) {
           console.log(email);
           const result = await DeleteTeacherUser(email);
           console.log(result);
-          if (result?.massage) {
+          if (result?.success) {
                Swal.fire(
-                    'successfull!',
-                       `${result.massage}`,
+                    'Successfull!',
+                    `${result.message}`,
                     'success'
                )
+               setOpen(false)
+          } else {
+               Swal.fire({
+                    icon: "error",
+                    title: "Deleting error",
+                    text:  `${result.message}` ,
+                    
+                  });
+               setOpen(false)
           }
 
 
