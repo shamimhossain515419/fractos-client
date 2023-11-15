@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 export const PostCourses = async (formData) => {
 
      try {
-          const response = await fetch("https://fractos-client.vercel.app/api/courses/courses-post", {
+          const response = await fetch("/api/courses/courses-post", {
                method: "POST",
                headers: {
                     "content-type": "application/json",
@@ -22,7 +22,7 @@ export const PostCourses = async (formData) => {
 
 export const GetCourses = async () => {
      try {
-          const res = await fetch("https://fractos-client.vercel.app/api/courses/courses-get-all", {
+          const res = await fetch("/api/courses/courses-get-all", {
                method: "GET",
 
           });
@@ -39,7 +39,7 @@ export const GetCourses = async () => {
 }
 export const Courses_By_id = async (id) => {
      try {
-          const res = await fetch(`https://fractos-client.vercel.app/api/courses/courses-by-id?id=${id}`, {
+          const res = await fetch(`/api/courses/courses-by-id?id=${id}`, {
                method: "GET",
          });
 
@@ -55,7 +55,7 @@ export const Courses_By_id = async (id) => {
 }
 export const Courses_Delete = async (id) => {
      try {
-          const res = await fetch(`https://fractos-client.vercel.app/api/courses/courses-delete?id=${id}`, {
+          const res = await fetch(`/api/courses/courses-delete?id=${id}`, {
                method: "DELETE",
                headers: {
                     Authorization: `Bearer ${Cookies.get("token")}`,
