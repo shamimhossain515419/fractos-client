@@ -9,32 +9,32 @@ const AboutUs = () => {
     <div className="pt-12 pb-12">
       <CommonTitle  title={"About Fractos"}> </CommonTitle>
 
-      <div className="container mx-auto p-4 grid lg:grid-cols-2 grid-cols-1 md:grid-cols-2 gap-2">
+      <div className="container p-4 grid lg:grid-cols-2 grid-cols-1 md:grid-cols-2 gap-2">
         <motion.div
-          animate={{ x: 100 }}
+          animate={{ x: 10 }}
           transition={{ ease: "easeOut", duration: 3 }}
         >
-          <div className="flex">
+          <div className="grid grid-cols-1">
             <Image
               width={200}
               height={200}
               src="/banner-img.jpg"
-              alt="LOgo"
-              className=" rounded-full"
+              alt="Logo"
+              className="rounded-full"
             />
             <Image
               width={200}
               height={200}
               src="/live-exam-img.jpg"
               alt="LOgo"
-              className="absolute left-40 top-32 rounded-full"
+              className="lg:absolute left-40 top-32 rounded-full md:hidden hidden lg:flex xl:flex"
             />
             <Image
               width={200}
               height={200}
               src="/analysis-img.jpg"
               alt="LOgo"
-              className="absolute left-80 rounded-full"
+              className="lg:absolute left-80 rounded-full md:hidden hidden lg:flex xl:flex"
             />
           </div>
         </motion.div>
@@ -55,7 +55,7 @@ const AboutUs = () => {
       </div>
       <div className="Team pt-12">
       <CommonTitle  title={"Our Team"}> </CommonTitle>
-        <div className="py-10 grid lg:grid-cols-3 grid-cols-1 lg:px-36 px-24 gap-12" >
+        <div className="py-10 grid lg:grid-cols-3 grid-cols-1 xl:px-32 lg:px-20 md:grid-cols-2 px-10 gap-12" >
         
         <div className="rounded-lg bg-gray-200">
         <Image
@@ -63,9 +63,9 @@ const AboutUs = () => {
               height={500}
               src="/shamiul.jpg"
               alt="LOgo"
-              className="h-96 rounded-t-lg"
+              className="h-96 rounded-t-lg w-full"
             />
-            <p className="text-gray-700 text-center text-xl font-semibold mr-2 py-5">Shamiul Haque</p>
+            <p className="text-gray-700 text-center text-xl font-semibold mr-2 py-5   ">Shamiul Haque</p>
         </div>
 
         <div className="rounded-lg bg-gray-200">
@@ -74,7 +74,7 @@ const AboutUs = () => {
               height={500}
               src="/samim.jpg"
               alt="LOgo"
-              className="h-96 rounded-t-lg"
+              className="h-96 rounded-t-lg w-full"
             />
             <p className="text-gray-700 text-center text-xl font-semibold mr-2 py-5">Md Shamim Hossain</p>
         </div>
@@ -85,7 +85,7 @@ const AboutUs = () => {
               height={500}
               src="/mostafiz.jpg"
               alt="LOgo"
-              className="h-96 rounded-t-lg"
+              className="h-96 rounded-t-lg w-full"
             />
             <p className="text-gray-700 text-center text-xl font-semibold mr-2 py-5">Mostafizur Rahman</p>
         </div>
@@ -96,7 +96,7 @@ const AboutUs = () => {
               height={500}
               src="/banner.jpg"
               alt="LOgo"
-              className="h-96 rounded-t-lg"
+              className="h-96 rounded-t-lg w-full"
             />
             <p className="text-gray-700 text-center text-xl font-semibold mr-2 py-5">Ritupriya Chowdhury </p>
         </div>
@@ -107,7 +107,7 @@ const AboutUs = () => {
               height={500}
               src="/abdur.jpg"
               alt="LOgo"
-              className="h-96 rounded-t-lg"
+              className="h-96 rounded-t-lg w-full"
             />
             <p className="text-gray-700 text-center text-xl font-semibold mr-2 py-5">Abdur Rahman </p>
         </div>
@@ -118,7 +118,7 @@ const AboutUs = () => {
               height={500}
               src="/ratri.jpg"
               alt="LOgo"
-              className="h-96 rounded-t-lg"
+              className="h-96 rounded-t-lg w-full"
             />
             <p className="text-gray-700 text-center text-xl font-semibold mr-2 py-5">Ratri Khan</p>
         </div>
