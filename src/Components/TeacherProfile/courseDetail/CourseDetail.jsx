@@ -88,7 +88,7 @@ const ClassDetails = () => {
 
           </div>
 
-          <div className="text-center my-8 text-[#0EE6B8]">
+          <div className="text-center text-2xl font-bold my-8 text-[#0EE6B8]">
             <p>Enrolled Student</p>
           </div>
 
