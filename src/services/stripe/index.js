@@ -80,9 +80,8 @@ export const get_all_order_courses = async () => {
      try {
           const res = await fetch("/api/order/get-all-order-courses", {
                method: "GET",
-               
-           });
 
+          });
           const data = await res.json();
 
           return data?.data;
@@ -94,8 +93,8 @@ export const Single_order_courses = async (email) => {
      try {
           const res = await fetch(`/api/order/my-course?email${email}`, {
                method: "GET",
-               
-           });
+
+          });
 
           const data = await res.json();
 

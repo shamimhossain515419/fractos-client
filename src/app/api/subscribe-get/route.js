@@ -1,22 +1,19 @@
-
-
 import connectToDB from "@/database";
-import TeacherCourse from "@/models/courses";
+import Subscribe from "@/models/Subscribe";
 import { NextResponse } from "next/server";
+
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req) {
      try {
           await connectToDB();
-          const { searchParams } = new URL(req.url);
-          const id = searchParams.get("id");
-          console.log(searchParams);
-          const extractData = await TeacherCourse.findById(id).populate("user").populate('studentIdstudentIdstudentId');
-          if (extractData) {
+
+          const extractUser = await Subscribe.find({})
+          if (extractUser) {
                return NextResponse.json({
                     success: true,
-                    data: extractData,
+                    data: extractUser,
                });
           } else {
                return NextResponse.json({

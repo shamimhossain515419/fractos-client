@@ -109,7 +109,7 @@ export default function Modal({ Question, setSuccess, name, RightAns }) {
                                                        type="button"
 
                                                   >
-                                                       Please Feedback
+                                                       Submit
                                                   </button>
                                              </div>
                                         </div>

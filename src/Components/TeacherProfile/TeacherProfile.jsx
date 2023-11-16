@@ -12,9 +12,7 @@ const TeacherProfile = () => {
   const { user } = useContext(GlobalContext);
 
   const [teacher, setTeacher] = useState([])
-  const [mycourse, setMycourse] = useState({})
-
-
+  const [mycourse, setMycourse] = useState([])
 
   useEffect(() => {
 
@@ -34,12 +32,28 @@ const TeacherProfile = () => {
     getData()
   }, [user?.email]);
 
+ console.log(mycourse);
+
+
+  // Calculate the sum of price and the length of studentIdstudentIdstudentId array for each course
+  let totalSum = 0;
+  let totalStudents = 0;
+
+  // Iterate through each course and update the totals
+  mycourse?.forEach(course => {
+    totalSum += course.price;
+    totalStudents += course.studentIdstudentIdstudentId ? course.studentIdstudentIdstudentId.length : 0;
+  });
 
 
 
-  console.log(mycourse);
 
-  console.log(teacher);
+
+
+  console.log(totalSum);
+
+
+  console.log(totalStudents);
 
 
   return (
@@ -55,14 +69,14 @@ const TeacherProfile = () => {
       </div>
 
       <div className='md:flex lg:flex items-center my-4  justify-center text-2xl text-[#3eeac5]  mx-auto w-2/4 md:w-3/4 lg:w-3/4'>
-        <div className='border-2 shadow-lg border-white border-x rounded-full p-4  md:mx-4 my-4  bg-indigo-500 shadow-indigo-500 text-center w-full'><p className='mb-2'>00</p>
+        <div className='border-2 shadow-lg border-white border-x rounded-full p-4  md:mx-4 my-4  bg-indigo-500 shadow-indigo-500 text-center w-full'><p className='mb-2'>{totalSum}</p>
           <p className='mb-2'>/=</p>
         </div>
         <div className='border-2 shadow-lg border-white border-x rounded-full p-4 mr-4 w-full text-center bg-indigo-500 shadow-indigo-500 my-4'>
           <p className='mb-2'>{mycourse?.length}</p>
           <p>Batches</p>
         </div>
-        <div className='border-2 border-white  border-x rounded-full p-4 mr-4 w-full text-center bg-indigo-500 my-4 shadow-lg shadow-indigo-500 '><p className='mb-2'>00</p>
+        <div className='border-2 border-white  border-x rounded-full p-4 mr-4 w-full text-center bg-indigo-500 my-4 shadow-lg shadow-indigo-500 '><p className='mb-2'> {totalStudents} </p>
           <p>Students  </p></div>
 
       </div>
@@ -83,24 +97,25 @@ const TeacherProfile = () => {
                       <Image width={100} height={100} className=' h-[200px] relative w-full ' src={batch?.image} alt='image'></Image>
 
                     </div>
-                    <h1 className='text-2xl absolute top-0 w-full flex justify-center items-center gap-1  h-full  bg-[#ff42d36a] font-bold'>{batch?.subject
-                    }</h1>
+                  
 
                   </div>
 
                   <div className='mx-4 mt-8 text-sm text-[#0EE6B8]'>
+                  <h1 className='text-xl  w-full   h-full    primary font-bold'> Subject: {batch?.subject
+                    }</h1>
                     <p>Total Enrolled Students : {batch?.studentIdstudentIdstudentId?.length}</p>
                     <p >Price: {batch?.price}</p>
                     <p>Class Time: {batch?.time}</p>
                     <p> Student Limit: {batch?.limit}</p>
-                    <div className=''>
+                    <Link href={`/dashboard/my-course/${batch?._id}`} className=''>
                       <button className='font-bold  border border-indigo-500 rounded-lg  p-2 hover:bg-indigo-700 text-[#0EE6B8] my-4'>Details</button>
-                    </div>
+                    </Link>
 
                   </div>
 
                 </div>
-                <div></div>
+              
 
 
               </div>)

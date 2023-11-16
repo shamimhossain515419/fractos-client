@@ -14,7 +14,7 @@ import { FiSettings } from 'react-icons/fi';
 import Image from 'next/image';
 import logo from '../../../public/logo.png'
 import { FaUsers } from 'react-icons/fa';
-
+import { SiGoogleclassroom } from "react-icons/si";
 const DashboardLayout = ({ children }) => {
      const { user, openModal, userinfo } = useContext(GlobalContext)
      const pathname = usePathname();
@@ -136,6 +136,15 @@ const DashboardLayout = ({ children }) => {
                                                             >
                                                                  <BsArchive size={24}></BsArchive>
                                                                  <h1 className=' text-base md:text-lg f font-normal '> Archive </h1>
+                                                            </Link>
+                                                            <Link
+                                                                 href="/dashboard/my-class"
+                                                                 className={`${pathname == "/dashboard/my-class" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
+
+                                                            >
+
+                                                                 <SiGoogleclassroom size={24} />
+                                                                 <h1 className=' text-base md:text-lg f font-normal '> My Class </h1>
                                                             </Link>
 
 
@@ -314,7 +323,15 @@ const DashboardLayout = ({ children }) => {
                                              </>
                                                   : <>
 
+                                                       <Link
+                                                            href="/dashboard/my-class"
+                                                            className={`${pathname == "/dashboard/my-class" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}
 
+                                                       >
+
+                                                            <SiGoogleclassroom size={24} />
+                                                            <h1 className=' text-base md:text-lg f font-normal '> My Class </h1>
+                                                       </Link>
                                                        <Link
                                                             href="/dashboard/archive"
                                                             className={`${pathname == "/dashboard/archive" ? " bg-[#8d9ddc85] " : "bg-[#8d9ddc2c] "} flex  hover:bg-[#8d9ddc85] items-center   py-1 px-2 rounded-md gap-3`}

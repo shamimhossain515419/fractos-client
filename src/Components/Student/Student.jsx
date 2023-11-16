@@ -6,22 +6,23 @@ import { useEffect, useState } from 'react';
 import Notification from '../Notification/Notification';
 
 
-const Student = async () => {
+const Student = async ({search}) => {
 
-    const [search, setSearch] = useState("")
+    
     const [getUserInfos, setGetUserInfos] = useState([]);
     const [modalData, setModalData] = useState({});
     const [showModal, setShowModal] = useState(false);
 
-    useEffect(() => {
-        async function GetUser() {
-            const result = await getAllUser(search);
+  
+
+    const GetAllQuestion = async (search) => {
+        const result = await getAllUser(search);
             setGetUserInfos(result)
-        }
+    }
 
-        GetUser(search);
-    }, [1000, search])
-
+    useEffect(() => {
+        GetAllQuestion(search)
+    }, [search]);
 
 
     return (

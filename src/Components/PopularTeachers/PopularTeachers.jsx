@@ -20,13 +20,13 @@ const PopularTeachers = async () => {
         <CommonTitle title={" Popular Teachers"}></CommonTitle>
       </h1>
 
-      <Container>
+     
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2 md:gap-5">
           {teachers?.slice(0, 6)?.map((teacher) => (
             <PopularTeacher key={teacher._id} teacher={teacher}></PopularTeacher>
           ))}
         </div>
-      </Container>
+   
     </div>
   );
 };

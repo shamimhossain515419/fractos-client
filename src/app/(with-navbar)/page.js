@@ -8,15 +8,18 @@ import Container from "@/Components/Container/Container";
 
 import Subscribe from "@/Components/Subscribe/Subscribe";
 import PopularTeachers from "@/Components/PopularTeachers/PopularTeachers";
-
+import MyAllClass from "@/Components/MyAllClass/MyAllClass";
 
 
 
 export default function Home() {
   return (
     <div>
+     
       <Container>
-        <Banner></Banner>  
+      <Banner></Banner> 
+         
+       
         
 
         <div className=" my-3">
@@ -31,7 +34,7 @@ export default function Home() {
         <PopularTeachers></PopularTeachers>
       </Container>
 
- 
+  
 
       <div className=" py-10">
         <Subscribe></Subscribe>
