@@ -158,7 +158,7 @@ const page = () => {
     // doughnut chart configurations
     console.log(totalAccuracy);
     const dougnutData = {
-        labels: ['Wrong', 'Correct',"Script"],
+        labels: ['Wrong', 'Correct',"skipped"],
         datasets: [
             {
                 data: [totalAccuracy.totalWrong, totalAccuracy.totalCorrect,totalAccuracy?.totalScript],
