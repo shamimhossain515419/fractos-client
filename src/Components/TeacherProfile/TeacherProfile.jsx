@@ -7,6 +7,7 @@ import { GlobalContext } from '@/GlobalState';
 import { GetSingleTeacher } from '@/services/teacher';
 import Loading from '../Loading/Loading';
 import Link from 'next/link';
+import ClassDetails from './courseDetail/CourseDetail';
 
 const TeacherProfile = () => {
   const { user } = useContext(GlobalContext);
@@ -117,7 +118,7 @@ const TeacherProfile = () => {
         </Link>
       </div>
 
-
+{/* <ClassDetails></ClassDetails> */}
     </div>
   );
 };

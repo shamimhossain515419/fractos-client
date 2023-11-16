@@ -88,6 +88,10 @@ const ClassDetails = () => {
 
           </div>
 
+          <div className="text-center my-8 text-[#0EE6B8]">
+            <p>Enrolled Student</p>
+          </div>
+
           <div className="overflow-x-auto pt-12">
             <table className="table">
               <thead className=' primaryBg'>
