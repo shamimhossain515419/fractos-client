@@ -132,23 +132,13 @@ const SettingPage = () => {
                     </div>
                </div>
                <form onSubmit={handleSubmit}>
-                    <div className=''>
+               <div className=' my-3 py-2'>
                          <label className=' secondColor' htmlFor="">Name</label>
-                         {
-                              user ?
-                                   <p className='text-[#E8EAED] text-lg lg:text-xl font-semibold'>{user?.displayName}</p>
-                                   :
-                                   <input name='name' className='block w-full  px-2 py-2 rounded-md outline-1 outline-[#27895C] border-[#27895C] border   text-base  font-normal' type="text" placeholder='your name' />
-                         }
+                         <input name='name' className='  shadow bg-transparent  block w-full  px-2 py-2 rounded-md outline-1 outline-[#27895C] border-[#27895C] border  text-base  font-normal' type="number" placeholder='Your Name' />
                     </div>
-                    <div className=''>
+                    <div className=' my-3 py-2'>
                          <label className=' secondColor' htmlFor="">School/College</label>
-                         {
-                              userinfo?.collage ?
-                                   <p className='text-[#E8EAED] text-lg lg:text-xl font-semibold'>collage ace</p>
-                                   :
-                                   <input name='name' className='block w-full  px-2 py-2 rounded-md outline-1 outline-[#27895C] border-[#27895C] border   text-base  font-normal' type="text" placeholder='your name' />
-                         }
+                         <input name='collage' className='  shadow bg-transparent  block w-full  px-2 py-2 rounded-md outline-1 outline-[#27895C] border-[#27895C] border  text-base  font-normal' type="number" placeholder='Your School/College Name' />
                     </div>
                     <div className=' my-3 py-2'>
                          <label className=' secondColor' htmlFor="">Level</label>
