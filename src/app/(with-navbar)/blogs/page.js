@@ -13,18 +13,20 @@ const page = () => {
     useEffect(() => {
         const getData = async () => {
             const data = await BlogGet()
-            setFeaturedBlog(data[Math.floor(Math.random() * data.length)]);
+            setFeaturedBlog(data[Math.floor(Math.random() * data?.length)]);
             console.log(data);
             setBlogsData(data)
         }
         getData()
+        // For local test
+        // fetch('/blog-data/careerGuidelines.json')
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setFeaturedBlog(data[Math.floor(Math.random() * data.length)]);
+        //         setBlogsData(data);
+        //     });
     }, [1000])
-    // fetch('/api/blogs/blogs-get')
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         setFeaturedBlog(data[Math.floor(Math.random() * data.length)]);
-    //         setBlogsData(data);
-    //     });
+
     console.log(blogsData);
     const { _id, detail, category, timeRequired, date, title, thumbnail } = featuredBlog;
     return (

@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 
 const DetailedBlog = ({ id,authorImg, detail, category, timeRequired, date, title, thumbnail, authorName }) => {
+    console.log('authorImg:', authorImg)
     return (
         <div className='w-full p-2 md:w-8/12 mx-auto lg:w-7/12'>
             <Link href={'/blogs'} className='flex items-center text-xl gap-2 mt-5 mb-3 md:mt-8 lg:mt-8 text-[#0EE6B8] hover:text-[#0ee6b7d3]'>

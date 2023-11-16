@@ -14,12 +14,10 @@ const SettingLayout = ({ children }) => {
      const pathname = usePathname();
      const router=useRouter();
      const handleSingout = () => {
-          logOutUser().then(result => {
+          logOutUser()
+          .then(() => {
 
                router.push("/")
-               if (result) {
-                    toast.success("successfully logout user")
-               }
 
           })
      }

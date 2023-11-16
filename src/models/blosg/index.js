@@ -10,6 +10,7 @@ const UserSchema = new mongoose.Schema({
      view: String,
      category: String,
      authorName: String,
+     authorImg: String,
      detail: String,
    
 
