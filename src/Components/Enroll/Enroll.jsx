@@ -10,8 +10,8 @@ const Enroll = ({ coursesData, handleClick }) => {
             <Container>
                 <div className='py-8 secondBg md:px-3 w-full'>
                     <div className=" w-4/4 md:mx-4 my-6  py-3 rounded-lg gap-6 md:flex lg:flex">
-                        <div className=' md:w-3/4  mx-auto'>
-                            <div className="my-4 m-auto rounded-md w-full glass shadow-lg shadow-[#0EE6B8]">
+                        <div className=' md:w-2/2  mx-auto'>
+                            <div className="my-4 m-auto rounded-md  glass shadow-lg shadow-[#0EE6B8]">
                                 <figure className='rounded-lg'>
                                     <Image width={100} height={100} src={coursesData?.image} alt="download" border="0" className=' h-[350px] md:w-full object-fill  w-72 p-2   m-auto'></Image>
                                 </figure>
