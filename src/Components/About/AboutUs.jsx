@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import CommonTitle from "../CommonTitle/CommonTitle";
+
 import { motion } from "framer-motion";
+import CommonTitle from "../CommonTitle/CommonTitle";
 
 const AboutUs = () => {
   return (
