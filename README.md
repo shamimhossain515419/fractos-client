@@ -16,10 +16,10 @@ bun dev
 
 
 
- <img   align="center" src="[https://media.licdn.com/dms/image/D5616AQEJk_BXqD85PQ/profile-displaybackgroundimage-shrink_350_1400/0/1701023392318?e=1706745600&v=beta&t=vADdZ-hwtwzWdXC2KdL0nNhEuDad8rZy21U3xY5KnDQ](https://i.ibb.co/2k2RCLr/screencapture-fractos-client-vercel-app-2023-12-02-19-48-57.png)" width="100%" alt="">
+ <img   align="center" src="https://i.ibb.co/2k2RCLr/screencapture-fractos-client-vercel-app-2023-12-02-19-48-57.png" width="100%" alt="">
 
-
- Fractos Admission-Education-website  
+<h1 align="center">Fractos Admission-Education-website </h1>
+  
 Team project 10/15/2023 - 11/16/2022
 
 Free Admission Test: Offers users the opportunity to take a complimentary admission test.
