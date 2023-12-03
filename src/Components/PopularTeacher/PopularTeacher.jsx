@@ -31,7 +31,7 @@ const PopularTeacher = ({ teacher }) => {
           ></Image>
         </div>
         <div className="card-body">
-          <h2 className="text-3xl  primary font-bold">{teacher?.name}</h2>
+          <h2 className="text-3xl  capitalize primary font-bold">{teacher?.name}</h2>
           <p className="text-1xl text-white font-bold">{teacher?.title?.slice(0,35)}...</p>
           <div className="card-actions justify-end">
             <button
