@@ -59,35 +59,7 @@ const HscBatch = async () => {
     }));
 
 
-    // useEffect(() => {
-
-    //     async function createFinal() {
-
-    //         if (params.get("status") === "success") {
-
-    //             setIsOrderProcessing(true);
-    //             const res = await createFinalOrder(card)
-
-    //             if (res.success) {
-    //                 setIsOrderProcessing(false);
-    //                 setOrderSuccess(true);
-    //                 toast.success(res.message, {
-    //                     position: toast.POSITION.TOP_RIGHT,
-    //                 });
-    //             } else {
-    //                 setIsOrderProcessing(false);
-    //                 setOrderSuccess(false);
-    //                 toast.error(res.message, {
-    //                     position: toast.POSITION.TOP_RIGHT,
-    //                 });
-    //             }
-
-    //         }
-
-
-    //     }
-    //     createFinal();
-    // }, [])
+   
 
 
     return (

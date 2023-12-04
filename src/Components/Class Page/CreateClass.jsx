@@ -66,6 +66,7 @@ const CreateClass = () => {
 
   }, [user])
 
+  console.log(image);
  const onSubmit = async data => {
     console.log(data);
     const newData = { ...data, image, user: Teacher?._id, status: false };

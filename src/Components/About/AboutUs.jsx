@@ -12,7 +12,7 @@ const AboutUs = () => {
 
         <div className=" p-4 grid lg:grid-cols-2 grid-cols-1 items-center md:grid-cols-2 gap-2">
           <div className=" px-3">
-            <Image className=" w-full h-[500px]" width={500} height={350} src="/aboutpage.png " alt="iamge"></Image>
+            <Image className=" w-full h-[500px]" width={500} height={350} src="https://i.ibb.co/4YPBVqB/aboutpage.webp" alt="iamge"></Image>
 
           </div>
 
@@ -49,9 +49,9 @@ const AboutUs = () => {
               <Image
                 width={300}
                 height={500}
-                src="/shamim.png"
+                src="https://i.ibb.co/xLYyfvG/Progra-Hero-3200.jpg"
                 alt="LOgo"
-                className="h-96 object-fill rounded-t-lg w-full"
+                className="h-96   object-fill rounded-t-lg w-full"
               />
               <p className="text-gray-700 text-center text-xl font-semibold mr-2 py-5">Md Shamim Hossain</p>
             </div>
