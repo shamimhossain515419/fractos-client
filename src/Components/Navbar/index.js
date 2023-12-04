@@ -25,17 +25,22 @@ const Navbar = () => {
                                    <div className='flex justify-between items-center'>
                                         <div className=' flex  items-center gap-4'>
 
-                                             <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className=" lg:hidden relative cursor-pointer">
-                                                  <CommonImage data={user} className="w-[50px] h-[50px]"></CommonImage>
-                                                  {
-                                                       isUserModalOpen ?
-                                                            <div className="absolute top-[100%] -right-1/2">
-                                                                 <UserModal></UserModal>
-                                                            </div>
-                                                            :
-                                                            <></>
-                                                  }
-                                             </div>
+                                             {
+                                                  user ?
+                                                       <div onClick={() => setIsUserModalOpen(!isUserModalOpen)} className="lg:hidden relative cursor-pointer">
+                                                            <CommonImage data={user} className="w-[50px] h-[50px]"></CommonImage>
+                                                            {
+                                                                 isUserModalOpen ?
+                                                                      <div className="absolute top-[100%] -left-[20px] lg:-right-1/2">
+                                                                           <UserModal></UserModal>
+                                                                      </div>
+                                                                      :
+                                                                      <></>
+                                                            }
+                                                       </div>
+                                                       :
+                                                       ''
+                                             }
                                              <Link href="/">  <Image className="    w-[100px]   md:max-w-[200px]" src={logo} alt="image" /> </Link>
                                         </div>
 
