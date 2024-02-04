@@ -15,12 +15,12 @@ import MyAllClass from "@/Components/MyAllClass/MyAllClass";
 export default function Home() {
   return (
     <div>
-     
+
       <Container>
-      <Banner></Banner> 
-         
-       
-        
+        <Banner></Banner>
+
+
+
 
         <div className=" my-3">
           <CounterSection> </CounterSection>
@@ -34,21 +34,15 @@ export default function Home() {
         <PopularTeachers></PopularTeachers>
       </Container>
 
-  
+
 
       <div className=" py-10">
         <Subscribe></Subscribe>
       </div>
-
-
-
-
-
-
       <div className="">
         <Feedback></Feedback>
       </div>
-   
+
 
 
     </div>
